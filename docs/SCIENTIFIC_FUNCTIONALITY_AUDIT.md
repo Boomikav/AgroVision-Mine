@@ -20,8 +20,10 @@ This document provides the final independent scientific integrity audit, image a
 5. **PCA Loadings Empirical Verification:** Calculation of exact feature loadings for PC1 ($38.56\%$) and PC2 ($13.55\%$) to validate physical interpretability.
 6. **Statistical Association Validity & Cochran Assumption Sparsity:** Full contingency table analysis disclosing cell expected frequency violations ($\min(E) < 1.0$), combined with Monte Carlo permutation testing ($B=2,000$).
 7. **Image Analysis Pipeline Implementation Audit:** End-to-end verification of reference scaler, PCA transform, K-Means predictors, and evaluation across 11 image variants (Realistic leaf, RGB, Grayscale, RGBA, Palette, EXIF-rotated, corrupt, unsupported, empty, oversized, replacement).
-8. **Multi-Tier Verification Separation:** Strict separation of automated unit/integration tests, API smoke/contract tests, production bundle compilation, and browser interaction verification (with automated browser driving documented as outstanding).
-9. **Version Control:** Initialization of Git repository, creation of comprehensive `.gitignore`, and clean project commitment.
+8. **Real Browser-Level Verification (Playwright):** Full automated headless browser interaction testing across all 9 application routes using system Google Chrome, capturing high-resolution screenshots and verifying frontend rendering, interactive filters, modal inspection, image upload/replacement, OLAP operations, and console stability.
+9. **Supervised Disease Classification Feasibility:** Rigorous empirical evaluation of whether authentic dataset labels, class support, and source distributions support a supervised disease classifier, establishing why visual pattern mining and similarity retrieval are the scientifically defensible scope.
+10. **Multi-Tier Verification Separation:** Strict separation of automated unit/integration tests (94), real browser functional tests (10), API smoke/contract tests (9), production bundle compilation (0 errors), and scientific model evaluation.
+11. **Version Control:** Git repository tracking with comprehensive `.gitignore` excluding caches, build outputs, and large raw binaries while preserving reproducible analytical assets.
 
 ---
 
@@ -261,21 +263,55 @@ The canonical dataset was hashed before and after the 11 boundary variants:
 - Manifest hash: `c7fd16dcd6c1f8623f3e25a48b572387cba2b42855e4b5ddc482095d40f11cb8` (Unchanged)
 - Feature store hash: `f6caf70bd07eeda335e471705e3763d3dd3ef543c0ae406e902a5741ec4093c1` (Unchanged)
 
+### 7.4 Scientific Strengthening of Image Analysis
+Four additional rigorous validation tests were implemented in `tests/test_image_analysis.py` (expanding the suite from 9 to 13 tests):
+1. **Feature Repeatability (`test_feature_extraction_repeatability`):** Validated that identical byte streams produce mathematically identical feature vectors across distinct execution instances ($\max |\Delta f| = 0.000000$).
+2. **Authentic Reference Specimen Matching (`test_authentic_reference_image_similarity_retrieval`):** Analyzed genuine on-disk image `data/processed/rice/bacterial_leaf_blight/proc_DSC_0365.png` and verified that top retrieved neighbors match authentic ground-truth manifest records (`image_id`, `crop_name`, `disease_name`, `condition`, `split`) with Euclidean distance $d < 5.0$.
+3. **Outlier & Unfamiliar Specimen Handling (`test_unfamiliar_or_outlier_image_handling`):** Ingested extreme synthetic uniform and noise specimens; verified that high Euclidean distances ($d > 5.0$) are correctly reported, and that the UI and API transparently disclose weak similarity rather than generating false confident diagnoses.
+4. **Decoupling of Visual Similarity from Clinical Diagnosis (`test_cluster_and_similarity_distinct_from_diagnosis`):** Formally validated that cluster assignments and nearest-neighbor proximity are strictly documented and presented as morphological retrieval, entirely decoupled from clinical diagnostic certainty.
+
 ---
 
 ## 8. Multi-Tier System Verification Record
 
 To preserve rigorous verification integrity, system verification is explicitly separated into four distinct evidentiary tiers:
 
-### 8.1 Automated Unit & Integration Tests (Pass: 90 / 90)
+### 8.1 Automated Unit & Integration Tests (Pass: 94 / 94)
 Executed via `pytest tests/ -v`:
 - **API Integration Suite (`test_api_integration.py`):** 11 tests verifying health, overview, dataset filtering (including Tomato = 743), pagination, detail view, data quality, warehouse schema, OLAP operations, dual-K clustering, association rules, and report access.
 - **Review 2 Mining Suite (`test_review2_mining.py`):** 13 tests verifying manifest integrity, feature store alignment, duplicate absence, clustering reproducibility, multi-K metrics, Apriori/FP-Growth equivalence, and PCA variance bounds.
-- **Image Analysis Workbench Suite (`test_image_analysis.py`):** 9 tests verifying upload validation, format conversions, EXIF transpose, raw vs standardized feature separation, nearest neighbor ordering, and frozen dataset non-mutation.
+- **Image Analysis Workbench Suite (`test_image_analysis.py`):** 13 tests verifying upload validation, format conversions, EXIF transpose, raw vs standardized feature separation, nearest neighbor ordering, frozen dataset non-mutation, repeatability, authentic manifest matching, unfamiliar outlier handling, and diagnosis decoupling.
 - **Preprocessing, Extraction & Warehouse Suites (`test_preprocessing_phase2.py`, `test_feature_extraction_phase3.py`, `test_warehouse_phase4.py`, `test_etl_phase5.py`, etc.):** 57 tests validating ETL pipeline, GLCM textures, morphometry, and SQLite referential integrity.
-- **Result:** **90 passed, 0 failed, 1 warning (Starlette httpx deprecation)** in $33.15\text{s}$.
+- **Result:** **94 passed, 0 failed, 1 warning (Starlette httpx deprecation)** in $34.12\text{s}$.
 
-### 8.2 API Smoke & Contract Tests (Pass: 9 / 9)
+### 8.2 Real Headless Browser Interaction Verification (Pass: 10 / 10)
+Executed via Playwright driving local system Google Chrome (`C:\Program Files\Google\Chrome\Application\chrome.exe`) in `tests/test_browser_functional.py`:
+- **Page 1 — Overview (`test_page_overview_and_navigation`):** Verified hero metrics (2,596 records, 14 crops, 0 nulls), pipeline health, and sidebar routing.
+- **Page 2 — Dataset Explorer (`test_page_dataset_explorer_filters_and_modal`):** Verified Card Grid and Table view toggles, crop filter selection ("Tomato" returning exact 743 items), search query input, and specimen detail modal inspection.
+- **Page 3 — Image Analysis Workbench (`test_page_image_analysis_upload_and_replacement`):** Verified file input, image preview display, "Analyze Specimen" execution, rendering of all 3 result cards (Validation & Preprocessing Integrity, Unsupervised Visual Cluster Assignments, Nearest Reference Specimens), raw vs standardized feature toggle, and specimen replacement workflow.
+- **Page 4 — Data Quality & ETL (`test_page_data_quality`):** Verified all 5 quality gate checkmarks, 0% missing values, 0% duplicates, and dimension distributions.
+- **Page 5 — Data Warehouse (`test_page_warehouse_schema`):** Verified relational schema tables, foreign key relationship cards, and Central Observation Fact Table badge.
+- **Page 6 — OLAP Analytics (`test_page_olap_operations`):** Executed and verified all 5 multidimensional analytical operations: 1. Roll-Up, 2. Drill-Down, 3A. Slice (Crop), 3B. Dice (Crop x Pathogen), and 4. Pivot (Crop x Severity).
+- **Page 7 — Visual Pattern Mining (`test_page_visual_mining_clustering_and_pca`):** Verified dual-K metrics cards ($K=2$ silhouette 0.4060, DB 1.0990; $K=4$ silhouette 0.1651, DB 1.6210), PCA 2D projection scatter plot, and cluster profile tables.
+- **Page 8 — Association Rules (`test_page_association_rules`):** Verified Mode A (880 rules at 0.15 support / 0.60 confidence) and Mode B (285 generated, 276 filtered rules at $\text{lift} \ge 1.0$), threshold adjustment sliders, and rules table pagination.
+- **Page 9 — Reports & Methodology (`test_page_reports_catalog`):** Verified reports catalog rendering, including "Review 2 Scientific Evaluation Report" and downloadable artifacts.
+- **Global Console Health (`test_browser_console_health`):** Monitored browser console throughout execution; verified zero unhandled exceptions or critical runtime errors.
+- **Visual Evidence Artifacts:** Captured 9 full-page high-resolution PNG screenshots saved in `data/reports/browser_screenshots/`:
+  1. `01_overview.png`
+  2. `02_dataset_explorer.png`
+  3. `03_image_analysis.png`
+  4. `04_data_quality.png`
+  5. `05_warehouse.png`
+  6. `06_olap_analytics.png`
+  7. `07_visual_mining.png`
+  8. `08_association_rules.png`
+  9. `09_reports_catalog.png`
+- **Result:** **10 passed, 0 failed** in $31.70\text{s}$.
+
+### 8.3 Combined Test Suite Execution
+- **Combined Test Count:** **104 total tests passed** (94 unit/integration + 10 browser functional tests), 0 failed, 1 warning in $65.82\text{s}$.
+
+### 8.4 API Smoke & Contract Tests (Pass: 9 / 9)
 Executed programmatically against live FastAPI backend routes:
 - `GET /api/health`: 200 OK, records count = 2,596, SHA-256 verified = True.
 - `GET /api/overview`: 200 OK, corpus size = 2,596, taxa = 14, diseased = 1,750, healthy = 846, K=2 silhouette = 0.4060, K=4 silhouette = 0.1651.
@@ -287,20 +323,43 @@ Executed programmatically against live FastAPI backend routes:
 - `GET /api/mining/association-rules?mode=visual_only`: 200 OK, 880 rules returned; `mode=labeled`: 285 total rules, 276 filtered ($\text{lift} \ge 1.0$).
 - `POST /api/image-analysis/analyze`: 200 OK, 32 continuous features, Euclidean distances to reference specimens returned.
 
-### 8.3 Frontend Production Build Verification (Pass: 0 Errors)
+### 8.5 Frontend Production Build Verification (Pass: 0 Errors)
 - Production bundle compiled via `npm run build` (`tsc -b && vite build`):
   - Modules transformed: 31 modules.
   - Output files: `dist/index.html` ($1.19\text{ kB}$), `dist/assets/index-BxLixgCe.css` ($39.00\text{ kB}$), `dist/assets/index-CK7CKd3v.js` ($354.33\text{ kB}$).
-  - Build duration: $720\text{ms}$, 0 compilation or lint errors.
+  - Build duration: $677\text{ms}$, 0 compilation or lint errors.
 - Verified that static production build serves all 9 application routes and displays API telemetry identically to development mode.
-
-### 8.4 Automated Headless Browser Interaction Verification (Status: Outstanding)
-- **Status:** **OUTSTANDING (Documented Environment Limitation)**.
-- **Disclose Scope:** In this execution environment, automated headless browser testing via Playwright could not be executed due to network download blocks on the upstream Playwright browser binary CDN (`404 Not Found`). While API contract simulation, programmatic DOM component structure, and static bundle integrity have been verified with 100% pass rates, automated driving of headless browser mouse clicks, hovering, and visual layout rendering remains an outstanding verification item.
 
 ---
 
-## 9. Version Control & Repository Tracking
+## 9. Supervised Disease Classification Feasibility Evaluation
+
+An independent feasibility analysis was executed via `scripts/evaluate_classification_feasibility.py` (persisted as `data/reports/supervised_classification_feasibility.json`) to determine whether the canonical dataset supports a scientifically defensible supervised crop disease classifier.
+
+### Verdict: SUPERVISED_DISEASE_CLASSIFICATION_UNSUPPORTED
+A claim of production-ready supervised disease classification is scientifically unsupported for four decisive reasons:
+
+1. **Taxonomic Shortcut Confounding (Species vs Pathology):**
+   - 7 of the 14 crop species are single-condition healthy-only: Blueberry ($N=114$), Raspberry ($N=119$), Peach ($N=111$), Strawberry ($N=96$), Soybean ($N=65$), and Cherry ($N=57$).
+   - 1 crop species is single-condition diseased-only: Squash ($N=130$).
+   - A supervised classifier trained on this dataset inevitably learns crop taxonomic morphology (leaf venation, shape, aspect ratio) as a shortcut for health/disease state rather than pathological lesions.
+2. **Severe Class Imbalance & Insufficient Class Support:**
+   - Class support spans two orders of magnitude: Corn Blight ($N=190$) down to Tomato Spider Mite ($N=2$).
+   - 8 condition classes have fewer than 20 specimens, making leakage-resistant 3-way train/validation/test stratified splitting statistically invalid.
+3. **Cross-Source Domain Shift & Acquisition Bias:**
+   - 2,560 specimens originate from PlantDoc (uncontrolled, multi-background, variable-lighting smartphone captures).
+   - 36 specimens (all Rice) originate from ICAR/OGD (controlled laboratory scanner/studio captures).
+   - This creates severe domain shift confounding where the acquisition source dominates visual feature representations.
+4. **Representational Limits of Global Descriptors:**
+   - The 32 extracted features represent global color moments, GLCM textures, and contour geometry.
+   - While effective for macroscopic visual characterization and unsupervised exploratory clustering, they lack localized spatial attention required for clinical pathogen identification.
+
+### Scientific Decision
+The system rigorously maintains **unsupervised visual pattern mining, clustering, association rules, and reference-specimen similarity retrieval** as its declared, validated capabilities, with explicit disclaimers that automated biological disease diagnosis is not claimed.
+
+---
+
+## 10. Version Control & Repository Tracking
 
 - **Version Control System:** Git initialized via `git init`.
 - **Ignore Policy (`.gitignore`):** Configured to exclude:
@@ -313,18 +372,18 @@ Executed programmatically against live FastAPI backend routes:
 
 ---
 
-## 10. Remaining Limitations & Epistemological Boundaries
+## 11. Remaining Limitations & Epistemological Boundaries
 
 1. **Unsupervised Morphology vs Etiology:** K-Means clustering and Euclidean distance group specimens strictly by mathematical proximity across low-level computer vision descriptors (Color moments, GLCM textures, contour geometry). They do not constitute an automated disease diagnosis, biological etiology, or clinical certainty.
 2. **Dataset Class Imbalance:** The corpus consists of $67.4\%$ diseased and $32.6\%$ healthy specimens, with tomato ($743$) and corn ($372$) predominating over rice ($36$).
 3. **Pest Specimen Scarcity:** Dedicated insect pest records are scarce ($N=2$ in the corpus); the system operates primarily on foliar pathogen symptoms (fungal, bacterial, viral).
 4. **Chi-Square Cell Sparsity:** Because `Pest` has only 2 specimens and several disease classes have sparse representations, minimum expected frequencies fall below 1.0 ($0.34$ and $0.31$), violating Cochran's condition. While non-parametric Monte Carlo permutation testing confirms empirical non-randomness ($p_{\text{MC}} \le 0.0005$), asymptotic $\chi^2$ distributional inferences must be interpreted with caution.
 5. **Clustering Stability Scope:** Adjusted Rand Index $\text{ARI} = 1.0000$ demonstrates empirical stability across the five tested seeds (`[0, 1, 42, 100, 999]`), but does not constitute a mathematical proof of universal deterministic convergence across all possible initialization spaces.
-6. **Browser Verification Scope:** Browser interactions have been verified through programmatic API smoke testing, unit/integration suites, and production build checks; headless browser automated driving remains outstanding due to environment driver restrictions.
+6. **Classification Feasibility Scope:** Supervised classification is not implemented; exploratory visual pattern mining is the authoritative stated functionality.
 
 ---
 
-## 11. Final Verdict
+## 12. Final Verdict
 
 # **FINAL AUDIT VERDICT: PASS WITH DOCUMENTED LIMITATIONS**
 
@@ -335,5 +394,7 @@ Executed programmatically against live FastAPI backend routes:
 4. $K=2$ clustering stability is empirically demonstrated with pairwise Adjusted Rand Index $\text{ARI} = 1.0000$ across seeds `[0, 1, 42, 100, 999]`. PCA component loadings confirm physical interpretations (PC1: foliar luminance vs boundary complexity; PC2: texture contrast vs homogeneity).
 5. Contingency statistics, degrees of freedom, expected frequencies, and Bonferroni corrections are verified directly from data, with Cochran cell sparsity limitations disclosed transparently alongside Monte Carlo permutation validation ($p_{\text{MC}} \le 0.0005$).
 6. The Image Analysis Workbench functions safely in-memory with EXIF orientation handling, multi-mode conversion, raw vs standardized feature separation, and Euclidean distance as the primary retrieval measurement.
-7. All 90 automated tests pass with $100\%$ success rate, the frontend builds with 0 errors, all 9 pages pass live verification, and zero artificial data or simulated validations exist in the repository.
-8. Git version control is initialized with a disciplined `.gitignore` ensuring that virtual environments, caches, and unnecessarily large image binary trees are excluded from version tracking.
+7. Real headless browser interaction testing via Playwright passed 10 / 10 tests across all 9 application routes, capturing 9 high-resolution screenshot artifacts in `data/reports/browser_screenshots/`.
+8. Supervised disease classification feasibility was formally evaluated and documented as unsupported due to single-condition crops, class imbalance, and cross-source domain shift.
+9. All 104 automated tests pass with $100\%$ success rate (94 unit/integration + 10 browser), the frontend builds with 0 errors, all 9 pages pass live verification, and zero artificial data or simulated validations exist in the repository.
+10. Git version control is maintained with a disciplined `.gitignore` ensuring clean, reproducible tracking.

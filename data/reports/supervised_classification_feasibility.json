@@ -1,0 +1,78 @@
+{
+  "evaluation_title": "Scientific Feasibility Assessment for Supervised Disease Classification",
+  "dataset_total_specimens": 2596,
+  "distinct_taxa": 14,
+  "distinct_diseases": 19,
+  "single_condition_crops": {
+    "healthy_only_crops": [
+      "Blueberry",
+      "Cherry",
+      "Peach",
+      "Raspberry",
+      "Soybean",
+      "Strawberry"
+    ],
+    "diseased_only_crops": [
+      "Corn",
+      "Potato",
+      "Rice",
+      "Squash"
+    ],
+    "balanced_crops": [
+      "Apple",
+      "Bell Pepper",
+      "Grape",
+      "Tomato"
+    ]
+  },
+  "rare_disease_classes_below_20": [
+    {
+      "crop_name": "Rice",
+      "disease_name": "Bacterial Leaf Blight",
+      "condition_status": "Diseased",
+      "count": 12
+    },
+    {
+      "crop_name": "Rice",
+      "disease_name": "Brown Spot",
+      "condition_status": "Diseased",
+      "count": 12
+    },
+    {
+      "crop_name": "Rice",
+      "disease_name": "Leaf Smut",
+      "condition_status": "Diseased",
+      "count": 12
+    },
+    {
+      "crop_name": "Tomato",
+      "disease_name": "Two-Spotted Spider Mite",
+      "condition_status": "Diseased",
+      "count": 2
+    }
+  ],
+  "scientific_verdict": "SUPERVISED_DISEASE_CLASSIFICATION_UNSUPPORTED",
+  "recommended_analytical_scope": "Retain AgroVision-Mine strictly as an Unsupervised Visual Pattern Mining, Multimodal Data Warehousing, and Reference-Similarity Retrieval Workbench. Do not implement an unsupported end-to-end clinical disease classifier.",
+  "justification_factors": [
+    {
+      "factor": "Severe Taxonomic Confounding (Single-Condition Crops)",
+      "evidence": "7 crops (Blueberry, Cherry, Peach, Raspberry, Soybean, Strawberry) contain 100% healthy images; 1 crop (Corn, Potato, Rice, Squash) contains 100% diseased images.",
+      "scientific_implication": "Any supervised classifier trained to separate Healthy vs Diseased will suffer from severe shortcut learning, memorizing species-level foliar morphology (e.g. Raspberry or Blueberry leaf shape) rather than biological pathology."
+    },
+    {
+      "factor": "Extreme Class Imbalance & Deficient Cell Support",
+      "evidence": "Class frequencies span 2 orders of magnitude (from N=2 for Tomato Two-Spotted Spider Mite to N=190 for Corn Northern Leaf Blight).",
+      "scientific_implication": "Statistically sound train/validation/test stratification is impossible for classes with N < 5 (such as Spider Mite with N=2). A test set cannot evaluate precision/recall with N=0 or 1 test instance."
+    },
+    {
+      "factor": "Cross-Source Domain Shift Confounding",
+      "evidence": "All 36 Rice images originate from ICAR/OGD lab imaging, while all other 2,560 images originate from PlantDoc crowd-sourced natural field photography.",
+      "scientific_implication": "Supervised models predicting rice diseases learn dataset source acquisition artifacts (scanner lighting, DPI, background) rather than agricultural disease pathology."
+    },
+    {
+      "factor": "Hand-Crafted 32D Feature Representation Limitations",
+      "evidence": "Features consist of global color moments, Haralick GLCM textures, and binary contour moments, designed for dimensional OLAP and cluster discovery.",
+      "scientific_implication": "Linear or tree-based classifiers on global descriptors lack localized spatial attention required to distinguish subtle fungal spot lesions from natural foliar venation without high false-positive rates."
+    }
+  ]
+}

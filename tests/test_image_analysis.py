@@ -215,3 +215,105 @@ def test_exact_nearest_neighbor_ranking():
         expected_sim = round(1.0 / (1.0 + n["euclidean_distance"]), 4)
         assert abs(n["visual_similarity_score"] - expected_sim) < 1e-3
 
+
+def test_feature_extraction_repeatability_and_determinism():
+    """Verify that multiple analyses of the same image produce bitwise deterministic results."""
+    rice_img_path = ROOT_DIR / "data" / "processed" / "rice" / "bacterial_leaf_blight" / "proc_DSC_0365.png"
+    assert rice_img_path.exists(), f"Missing authentic reference test image: {rice_img_path}"
+
+    with open(rice_img_path, "rb") as f:
+        img_bytes = f.read()
+
+    res1 = client.post("/api/analyze/image", files={"file": ("specimen.png", img_bytes, "image/png")})
+    res2 = client.post("/api/analyze/image", files={"file": ("specimen.png", img_bytes, "image/png")})
+
+    assert res1.status_code == 200
+    assert res2.status_code == 200
+
+    d1, d2 = res1.json(), res2.json()
+
+    # Raw features identical
+    for k in d1["features_raw"]:
+        assert d1["features_raw"][k] == d2["features_raw"][k], f"Non-deterministic raw feature: {k}"
+
+    # Standardized features identical
+    for k in d1["features_standardized"]:
+        assert d1["features_standardized"][k] == d2["features_standardized"][k], f"Non-deterministic std feature: {k}"
+
+    # Cluster assignments identical
+    assert d1["clustering"]["k2"]["cluster_id"] == d2["clustering"]["k2"]["cluster_id"]
+    assert d1["clustering"]["k4"]["cluster_id"] == d2["clustering"]["k4"]["cluster_id"]
+
+    # PCA coordinates identical
+    assert d1["pca_projection"]["x"] == d2["pca_projection"]["x"]
+    assert d1["pca_projection"]["y"] == d2["pca_projection"]["y"]
+
+    # Nearest neighbors identical
+    for n1, n2 in zip(d1["nearest_specimens"], d2["nearest_specimens"]):
+        assert n1["image_id"] == n2["image_id"]
+        assert n1["euclidean_distance"] == n2["euclidean_distance"]
+
+
+def test_authentic_reference_image_manifest_label_association():
+    """Verify that nearest neighbors retrieved from an authentic specimen match authentic manifest records."""
+    import pandas as pd
+
+    df_manifest = pd.read_csv(MANIFEST_PATH).set_index("image_id")
+
+    rice_img_path = ROOT_DIR / "data" / "processed" / "rice" / "bacterial_leaf_blight" / "proc_DSC_0365.png"
+    with open(rice_img_path, "rb") as f:
+        img_bytes = f.read()
+
+    res = client.post("/api/analyze/image", files={"file": ("authentic_rice.png", img_bytes, "image/png")})
+    assert res.status_code == 200
+    data = res.json()
+
+    neighbors = data["nearest_specimens"]
+    assert len(neighbors) == 6
+
+    for n in neighbors:
+        img_id = n["image_id"]
+        assert img_id in df_manifest.index, f"Retrieved image_id {img_id} not in canonical manifest!"
+        row = df_manifest.loc[img_id]
+
+        assert n["crop_name"] == row["crop_name"]
+        assert n["disease_name"] == row["disease_name"]
+        assert n["condition_status"] == row["condition_status"]
+
+
+def test_unfamiliar_outlier_image_and_weak_similarity_handling():
+    """Verify that unfamiliar or anomalous non-foliar images are handled safely with high distance and low similarity."""
+    # Create an unfamiliar magenta noise synthetic image
+    unfamiliar_bytes = create_test_image(size=(256, 256), color=(255, 0, 255), format="PNG")
+
+    res = client.post("/api/analyze/image", files={"file": ("unfamiliar_noise.png", unfamiliar_bytes, "image/png")})
+    assert res.status_code == 200
+    data = res.json()
+
+    # Nearest neighbors should exhibit high Euclidean distance due to distribution outlier
+    top_neighbor = data["nearest_specimens"][0]
+    assert top_neighbor["euclidean_distance"] > 3.0, (
+        f"Expected large Euclidean distance for non-foliar outlier, got {top_neighbor['euclidean_distance']}"
+    )
+
+    # Similarity score should reflect weak match
+    assert top_neighbor["visual_similarity_score"] < 0.35
+
+    # Caveats must clearly state classification is unavailable
+    assert data["scientific_caveats"]["disease_classification"] == "UNAVAILABLE"
+    assert "NOT implemented" in data["scientific_caveats"]["classification_disclosure"]
+
+
+def test_distinction_between_clustering_similarity_and_diagnosis():
+    """Verify that system explicitly decouples visual clustering and similarity from automated clinical diagnosis."""
+    raw_bytes = create_test_image(size=(256, 256), color=(60, 150, 45), format="JPEG")
+    res = client.post("/api/analyze/image", files={"file": ("specimen.jpg", raw_bytes, "image/jpeg")})
+    assert res.status_code == 200
+    data = res.json()
+
+    # Check that diagnosis is explicitly marked unavailable
+    assert data["scientific_caveats"]["disease_classification"] == "UNAVAILABLE"
+    assert "classification_disclosure" in data["scientific_caveats"]
+    assert "foliar" in data["clustering"]["k2"]["characteristics"].lower()
+
+
