@@ -1,0 +1,211 @@
+{
+  "image_id": {
+    "category": "Provenance",
+    "type": "string",
+    "description": "Unique surrogate identifier for the source image record"
+  },
+  "filename": {
+    "category": "Provenance",
+    "type": "string",
+    "description": "Original raw filename on disk"
+  },
+  "crop_label": {
+    "category": "Taxonomy",
+    "type": "string",
+    "description": "Host crop category (e.g. rice, wheat)"
+  },
+  "condition_label": {
+    "category": "Taxonomy",
+    "type": "string",
+    "description": "Annotated disease or healthy condition"
+  },
+  "md5_hash": {
+    "category": "Provenance",
+    "type": "string",
+    "description": "128-bit cryptographic MD5 checksum for data lineage"
+  },
+  "rgb_r_mean": {
+    "category": "Color",
+    "type": "float",
+    "range": "[0, 255]",
+    "description": "First-order mean intensity of the Red channel"
+  },
+  "rgb_g_mean": {
+    "category": "Color",
+    "type": "float",
+    "range": "[0, 255]",
+    "description": "First-order mean intensity of the Green channel (chlorophyll indicator)"
+  },
+  "rgb_b_mean": {
+    "category": "Color",
+    "type": "float",
+    "range": "[0, 255]",
+    "description": "First-order mean intensity of the Blue channel"
+  },
+  "rgb_r_std": {
+    "category": "Color",
+    "type": "float",
+    "range": ">= 0",
+    "description": "Standard deviation of the Red channel (color variance)"
+  },
+  "rgb_g_std": {
+    "category": "Color",
+    "type": "float",
+    "range": ">= 0",
+    "description": "Standard deviation of the Green channel"
+  },
+  "rgb_b_std": {
+    "category": "Color",
+    "type": "float",
+    "range": ">= 0",
+    "description": "Standard deviation of the Blue channel"
+  },
+  "rgb_r_norm": {
+    "category": "Color",
+    "type": "float",
+    "range": "[0, 1]",
+    "description": "Normalized Red intensity in unit range [0, 1]"
+  },
+  "rgb_g_norm": {
+    "category": "Color",
+    "type": "float",
+    "range": "[0, 1]",
+    "description": "Normalized Green intensity in unit range [0, 1]"
+  },
+  "rgb_b_norm": {
+    "category": "Color",
+    "type": "float",
+    "range": "[0, 1]",
+    "description": "Normalized Blue intensity in unit range [0, 1]"
+  },
+  "hsv_h_mean": {
+    "category": "Color",
+    "type": "float",
+    "range": "[0, 360)",
+    "description": "Mean Hue angle in degrees"
+  },
+  "hsv_s_mean": {
+    "category": "Color",
+    "type": "float",
+    "range": "[0, 1]",
+    "description": "Mean Saturation (color purity)"
+  },
+  "hsv_v_mean": {
+    "category": "Color",
+    "type": "float",
+    "range": "[0, 1]",
+    "description": "Mean Value / Brightness"
+  },
+  "hsv_h_norm": {
+    "category": "Color",
+    "type": "float",
+    "range": "[0, 1]",
+    "description": "Normalized Hue angle in unit range [0, 1]"
+  },
+  "hsv_s_norm": {
+    "category": "Color",
+    "type": "float",
+    "range": "[0, 1]",
+    "description": "Normalized Saturation in unit range [0, 1]"
+  },
+  "hsv_v_norm": {
+    "category": "Color",
+    "type": "float",
+    "range": "[0, 1]",
+    "description": "Normalized Value in unit range [0, 1]"
+  },
+  "exg_index_mean": {
+    "category": "Color",
+    "type": "float",
+    "range": "[-255, 510]",
+    "description": "Excess Green Index (2G - R - B) for vegetative foliar contrast"
+  },
+  "dominant_color_tone": {
+    "category": "Color",
+    "type": "string",
+    "description": "Categorical dominant tone (e.g. Foliar_Green, Brown_Blight, Yellowish_Lesion)"
+  },
+  "glcm_contrast": {
+    "category": "Texture",
+    "type": "float",
+    "range": ">= 0",
+    "description": "Haralick contrast: measures intensity contrast between pixel pairs"
+  },
+  "glcm_contrast_norm": {
+    "category": "Texture",
+    "type": "float",
+    "range": "[0, 1]",
+    "description": "Normalized GLCM contrast scaled by maximum theoretical pair distance"
+  },
+  "glcm_dissimilarity": {
+    "category": "Texture",
+    "type": "float",
+    "range": ">= 0",
+    "description": "Linear difference between adjacent pixel gray levels"
+  },
+  "glcm_homogeneity": {
+    "category": "Texture",
+    "type": "float",
+    "range": "[0, 1]",
+    "description": "Measures closeness of element distribution to diagonal (local uniformity)"
+  },
+  "glcm_energy": {
+    "category": "Texture",
+    "type": "float",
+    "range": "[0, 1]",
+    "description": "Angular Second Moment (ASM): measures orderliness of textural patterns"
+  },
+  "glcm_correlation": {
+    "category": "Texture",
+    "type": "float",
+    "range": "[-1, 1]",
+    "description": "Linear dependency of gray levels of neighbor pixels"
+  },
+  "glcm_asm": {
+    "category": "Texture",
+    "type": "float",
+    "range": "[0, 1]",
+    "description": "Sum of squared elements in GLCM (equals energy)"
+  },
+  "has_valid_contour": {
+    "category": "Shape",
+    "type": "boolean",
+    "description": "Flag indicating whether a distinct pathological lesion contour exists"
+  },
+  "contour_area": {
+    "category": "Shape",
+    "type": "float",
+    "range": ">= 0",
+    "description": "Pixel area of the segmented lesion region"
+  },
+  "contour_perimeter": {
+    "category": "Shape",
+    "type": "float",
+    "range": ">= 0",
+    "description": "Boundary perimeter in pixels of the segmented lesion"
+  },
+  "contour_aspect_ratio": {
+    "category": "Shape",
+    "type": "float",
+    "range": ">= 0",
+    "description": "Bounding box aspect ratio (width / height)"
+  },
+  "contour_circularity": {
+    "category": "Shape",
+    "type": "float",
+    "range": "[0, 1]",
+    "description": "Isoperimetric quotient (4 * pi * Area / Perimeter^2)"
+  },
+  "contour_solidity": {
+    "category": "Shape",
+    "type": "float",
+    "range": "[0, 1]",
+    "description": "Area fraction of lesion relative to its bounding envelope"
+  },
+  "lesion_coverage_ratio": {
+    "category": "Shape",
+    "type": "float",
+    "range": "[0, 1]",
+    "description": "Fraction of total leaf foliage affected by lesion spots"
+  }
+}

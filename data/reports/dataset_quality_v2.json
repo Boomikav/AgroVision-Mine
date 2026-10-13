@@ -1,0 +1,9 @@
+{
+  "mean_raw_width": 1086.2503852080124,
+  "mean_raw_height": 908.0481510015409,
+  "mean_blur_score": 769.5448921417565,
+  "blurry_count": 407,
+  "standardized_dimension": "256x256 RGB",
+  "feature_columns_count": 44,
+  "missing_feature_values": 0
+}

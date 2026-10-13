@@ -1,0 +1,51 @@
+{
+  "batch_id": "BATCH_20261012_124323",
+  "timestamp": "2026-10-12T12:43:23.347243",
+  "execution_time_seconds": 0.2,
+  "extracted_records": 36,
+  "processed_records": 36,
+  "feature_records": 36,
+  "transformed_records": 36,
+  "rejected_records": [],
+  "load_statistics": {
+    "batch_id": "BATCH_20261012_124323",
+    "crops_inserted": 0,
+    "crops_existing": 1,
+    "crops_loaded": 0,
+    "diseases_inserted": 0,
+    "diseases_existing": 4,
+    "diseases_loaded": 0,
+    "images_inserted": 0,
+    "images_existing": 36,
+    "images_loaded": 0,
+    "features_inserted": 0,
+    "features_existing": 36,
+    "features_loaded": 0,
+    "facts_inserted": 0,
+    "facts_loaded": 0,
+    "facts_skipped_duplicate": 36,
+    "orphan_foreign_keys": 0,
+    "errors": [],
+    "load_duration_ms": 106.39
+  },
+  "warehouse_health": {
+    "status": "HEALTHY",
+    "existing_tables": [
+      "dim_crop",
+      "dim_disease",
+      "dim_image",
+      "dim_visual_feature",
+      "disease_observation_fact"
+    ],
+    "missing_tables": [],
+    "table_counts": {
+      "dim_crop": 1,
+      "dim_disease": 4,
+      "dim_image": 36,
+      "dim_visual_feature": 36,
+      "disease_observation_fact": 36
+    },
+    "total_facts": 36,
+    "total_dimensions": 77
+  }
+}

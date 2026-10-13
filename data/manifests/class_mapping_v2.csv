@@ -1,0 +1,32 @@
+original_source_label,canonical_crop_name,canonical_disease_name,pathogen_type,condition_status,is_pest,dataset_source
+bacterial_leaf_blight,Rice,Bacterial Leaf Blight,Bacterial,Diseased,False,icar_ogd
+brown_spot,Rice,Brown Spot,Fungal,Diseased,False,icar_ogd
+leaf_smut,Rice,Leaf Smut,Fungal,Diseased,False,icar_ogd
+Apple Scab Leaf,Apple,Apple Scab,Fungal,Diseased,False,plantdoc
+Apple leaf,Apple,Healthy,None,Healthy,False,plantdoc
+Apple rust leaf,Apple,Cedar Apple Rust,Fungal,Diseased,False,plantdoc
+Bell_pepper leaf,Bell Pepper,Healthy,None,Healthy,False,plantdoc
+Bell_pepper leaf spot,Bell Pepper,Bacterial Spot,Bacterial,Diseased,False,plantdoc
+Blueberry leaf,Blueberry,Healthy,None,Healthy,False,plantdoc
+Cherry leaf,Cherry,Healthy,None,Healthy,False,plantdoc
+Corn Gray leaf spot,Corn,Gray Leaf Spot,Fungal,Diseased,False,plantdoc
+Corn leaf blight,Corn,Northern Leaf Blight,Fungal,Diseased,False,plantdoc
+Corn rust leaf,Corn,Common Rust,Fungal,Diseased,False,plantdoc
+Peach leaf,Peach,Healthy,None,Healthy,False,plantdoc
+Potato leaf early blight,Potato,Early Blight,Fungal,Diseased,False,plantdoc
+Potato leaf late blight,Potato,Late Blight,Fungal,Diseased,False,plantdoc
+Raspberry leaf,Raspberry,Healthy,None,Healthy,False,plantdoc
+Soyabean leaf,Soybean,Healthy,None,Healthy,False,plantdoc
+Squash Powdery mildew leaf,Squash,Powdery Mildew,Fungal,Diseased,False,plantdoc
+Strawberry leaf,Strawberry,Healthy,None,Healthy,False,plantdoc
+Tomato Early blight leaf,Tomato,Early Blight,Fungal,Diseased,False,plantdoc
+Tomato Septoria leaf spot,Tomato,Septoria Leaf Spot,Fungal,Diseased,False,plantdoc
+Tomato leaf,Tomato,Healthy,None,Healthy,False,plantdoc
+Tomato leaf bacterial spot,Tomato,Bacterial Spot,Bacterial,Diseased,False,plantdoc
+Tomato leaf late blight,Tomato,Late Blight,Fungal,Diseased,False,plantdoc
+Tomato leaf mosaic virus,Tomato,Mosaic Virus,Viral,Diseased,False,plantdoc
+Tomato leaf yellow virus,Tomato,Yellow Leaf Curl Virus,Viral,Diseased,False,plantdoc
+Tomato mold leaf,Tomato,Leaf Mold,Fungal,Diseased,False,plantdoc
+Tomato two spotted spider mites leaf,Tomato,Two-Spotted Spider Mite,Pest,Diseased,True,plantdoc
+grape leaf,Grape,Healthy,None,Healthy,False,plantdoc
+grape leaf black rot,Grape,Black Rot,Fungal,Diseased,False,plantdoc

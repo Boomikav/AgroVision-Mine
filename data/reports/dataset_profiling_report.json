@@ -1,0 +1,97 @@
+{
+  "source_directory": "C:\\Users\\ajaya\\AppData\\Local\\Temp\\pytest-of-ajaya\\pytest-170\\test_profiler_with_structure_a0",
+  "dataset_present": true,
+  "file_counts": {
+    "total_files": 2,
+    "image_files": 1,
+    "annotation_files": 1,
+    "metadata_files": 0,
+    "other_files": 0
+  },
+  "discovered_files": {
+    "images": [
+      "rice/blast/sample.jpg"
+    ],
+    "annotations": [
+      "manifest.csv"
+    ],
+    "metadata": []
+  },
+  "annotation_schema": {
+    "manifest.csv": {
+      "type": "CSV",
+      "headers": [
+        "image_id",
+        "crop_name",
+        "disease_label",
+        "state",
+        "survey_date"
+      ],
+      "sample_row": [
+        "sample.jpg",
+        "Rice",
+        "Blast",
+        "Punjab",
+        "2024-09-15"
+      ],
+      "num_columns": 5
+    }
+  },
+  "directory_taxonomy": {
+    "hierarchy_depths_detected": [
+      2
+    ],
+    "level_categories": {
+      "level_1": [
+        "rice"
+      ],
+      "level_2": [
+        "blast"
+      ]
+    }
+  },
+  "image_metadata_summary": {
+    "samples_inspected": 1,
+    "image_formats": [
+      "JPEG"
+    ],
+    "resolutions_sample": [
+      "64x64"
+    ],
+    "exif_metadata_present": false,
+    "exif_tags_discovered": []
+  },
+  "detected_fields": {
+    "crop_fields": [
+      "manifest.csv::crop_name",
+      "directory_level_1"
+    ],
+    "disease_fields": [
+      "manifest.csv::disease_label",
+      "directory_level_2"
+    ],
+    "pest_fields": [],
+    "date_fields": [
+      "manifest.csv::survey_date"
+    ],
+    "geography_fields": [
+      "manifest.csv::state"
+    ]
+  },
+  "schema_implications": {
+    "total_images_available": 1,
+    "dim_crop_supported": true,
+    "dim_disease_supported": true,
+    "dim_pest_supported": false,
+    "dim_time_supported": true,
+    "dim_geography_supported": true,
+    "recommendations": [
+      "Dim_Image is REQUIRED (stores physical resolution, format, MD5 hash, blur variance, file storage paths).",
+      "Dim_VisualFeature is REQUIRED (stores classical RGB/HSV color moments, GLCM texture, and morphometric shape contours).",
+      "Dim_Crop is SUPPORTED by raw data (link host crop taxonomy and botanical names).",
+      "Dim_Disease and Dim_Pest are SUPPORTED by condition categorization.",
+      "Dim_Time is SUPPORTED by legitimate timestamps discovered in raw data.",
+      "Dim_Geography is SUPPORTED by legitimate location/GPS fields."
+    ]
+  }
+}

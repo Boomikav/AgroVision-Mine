@@ -1,0 +1,43 @@
+{
+  "retrieval_date": "2026-10-12",
+  "sources": [
+    {
+      "source_id": "icar_ogd",
+      "dataset_name": "Government of India / ICAR Crop Pathology Subset",
+      "provenance_url": "https://data.gov.in/catalogs",
+      "institution": "ICAR-CRIDA / ICAR-IIRR / Government of India",
+      "license": "Government Open Data License - India (GODL-India)",
+      "crops": [
+        "Rice"
+      ],
+      "imaging_setting": "Field Macro Photography",
+      "role_in_study": "Baseline Authentic Cereal Pathology"
+    },
+    {
+      "source_id": "plantdoc",
+      "dataset_name": "PlantDoc: A Dataset for Visual Plant Disease Detection",
+      "provenance_url": "https://github.com/pratikkayal/PlantDoc-Dataset",
+      "institution": "IIT Kharagpur / ACM CoDS-COMAD 2020",
+      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "crops": [
+        "Apple",
+        "Bell Pepper",
+        "Blueberry",
+        "Cherry",
+        "Corn",
+        "Peach",
+        "Potato",
+        "Raspberry",
+        "Soybean",
+        "Squash",
+        "Strawberry",
+        "Tomato",
+        "Grape"
+      ],
+      "imaging_setting": "In-Field Complex Natural Agricultural Environments",
+      "role_in_study": "Multi-Crop Generalization & Diverse Pathologies"
+    }
+  ],
+  "total_candidates_discovered": 2608,
+  "total_canonical_retained": 2596
+}

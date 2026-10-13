@@ -1,0 +1,833 @@
+{
+  "analysis_title": "AgroVision-Mine Association Rule Mining (Review 2)",
+  "dataset_rows": 2596,
+  "discretization_method": "Tertile Quantile Binning (Low, Medium, High)",
+  "discretized_features": [
+    "hsv_h_mean",
+    "hsv_s_mean",
+    "hsv_v_mean",
+    "exg_index_mean",
+    "glcm_contrast",
+    "glcm_homogeneity",
+    "glcm_energy",
+    "glcm_correlation",
+    "contour_perimeter",
+    "contour_circularity",
+    "contour_solidity",
+    "lesion_coverage_ratio"
+  ],
+  "bin_thresholds": {
+    "hsv_h_mean": {
+      "bin_edges": [
+        0.0,
+        77.126,
+        104.349,
+        236.149
+      ],
+      "bin_labels": [
+        "Low",
+        "Medium",
+        "High"
+      ]
+    },
+    "hsv_s_mean": {
+      "bin_edges": [
+        0.0,
+        0.329,
+        0.478,
+        0.95
+      ],
+      "bin_labels": [
+        "Low",
+        "Medium",
+        "High"
+      ]
+    },
+    "hsv_v_mean": {
+      "bin_edges": [
+        0.152,
+        0.507,
+        0.603,
+        0.968
+      ],
+      "bin_labels": [
+        "Low",
+        "Medium",
+        "High"
+      ]
+    },
+    "exg_index_mean": {
+      "bin_edges": [
+        -119.791,
+        42.773,
+        72.232,
+        337.98
+      ],
+      "bin_labels": [
+        "Low",
+        "Medium",
+        "High"
+      ]
+    },
+    "glcm_contrast": {
+      "bin_edges": [
+        0.1383,
+        0.748,
+        1.2496,
+        7.1214
+      ],
+      "bin_labels": [
+        "Low",
+        "Medium",
+        "High"
+      ]
+    },
+    "glcm_homogeneity": {
+      "bin_edges": [
+        0.4459,
+        0.7472,
+        0.8189,
+        0.9694
+      ],
+      "bin_labels": [
+        "Low",
+        "Medium",
+        "High"
+      ]
+    },
+    "glcm_energy": {
+      "bin_edges": [
+        0.0106,
+        0.0416,
+        0.0724,
+        0.7211
+      ],
+      "bin_labels": [
+        "Low",
+        "Medium",
+        "High"
+      ]
+    },
+    "glcm_correlation": {
+      "bin_edges": [
+        0.663,
+        0.931,
+        0.9593,
+        0.994
+      ],
+      "bin_labels": [
+        "Low",
+        "Medium",
+        "High"
+      ]
+    },
+    "contour_perimeter": {
+      "bin_edges": [
+        419.0,
+        3653.0,
+        6085.0,
+        16865.0
+      ],
+      "bin_labels": [
+        "Low",
+        "Medium",
+        "High"
+      ]
+    },
+    "contour_circularity": {
+      "bin_edges": [
+        0.0011,
+        0.0087,
+        0.0221,
+        1.0
+      ],
+      "bin_labels": [
+        "Low",
+        "Medium",
+        "High"
+      ]
+    },
+    "contour_solidity": {
+      "bin_edges": [
+        0.0415,
+        0.3749,
+        0.4481,
+        0.9298
+      ],
+      "bin_labels": [
+        "Low",
+        "Medium",
+        "High"
+      ]
+    },
+    "lesion_coverage_ratio": {
+      "bin_edges": [
+        0.0377,
+        0.3549,
+        0.4355,
+        0.4999
+      ],
+      "bin_labels": [
+        "Low",
+        "Medium",
+        "High"
+      ]
+    }
+  },
+  "algorithm_comparison": {
+    "min_support": 0.15,
+    "min_confidence": 0.6,
+    "benchmark_repetitions": 5,
+    "numerical_tolerance": 1e-06,
+    "fpgrowth": {
+      "median_runtime_sec": 0.3021,
+      "frequent_itemsets_count": 223,
+      "rules_count": 880
+    },
+    "apriori": {
+      "median_runtime_sec": 0.0615,
+      "frequent_itemsets_count": 223,
+      "rules_count": 880
+    },
+    "output_verification": {
+      "itemsets_identical_keys": true,
+      "rules_identical_keys": true,
+      "max_itemset_support_diff": 0.0,
+      "max_rule_support_diff": 0.0,
+      "max_rule_confidence_diff": 0.0,
+      "max_rule_lift_diff": 0.0,
+      "output_equivalence": true
+    },
+    "practical_performance_assessment": "Both FP-Growth and Apriori finish in less than 0.15 seconds on this dataset (2,596 transactions, 36 items). Output itemsets and rules are mathematically equivalent (difference = 0.0). Wall-clock differences at this scale are negligible in practice."
+  },
+  "sensitivity_analysis": [
+    {
+      "min_support": 0.1,
+      "min_confidence": 0.5,
+      "rules_generated": 5691
+    },
+    {
+      "min_support": 0.1,
+      "min_confidence": 0.6,
+      "rules_generated": 4650
+    },
+    {
+      "min_support": 0.1,
+      "min_confidence": 0.7,
+      "rules_generated": 3398
+    },
+    {
+      "min_support": 0.15,
+      "min_confidence": 0.5,
+      "rules_generated": 1157
+    },
+    {
+      "min_support": 0.15,
+      "min_confidence": 0.6,
+      "rules_generated": 880
+    },
+    {
+      "min_support": 0.15,
+      "min_confidence": 0.7,
+      "rules_generated": 674
+    },
+    {
+      "min_support": 0.2,
+      "min_confidence": 0.5,
+      "rules_generated": 170
+    },
+    {
+      "min_support": 0.2,
+      "min_confidence": 0.6,
+      "rules_generated": 168
+    },
+    {
+      "min_support": 0.2,
+      "min_confidence": 0.7,
+      "rules_generated": 103
+    }
+  ],
+  "visual_feature_rules_summary": {
+    "min_support": 0.15,
+    "min_confidence": 0.6,
+    "total_rules": 880,
+    "top_rules": [
+      {
+        "antecedents": [
+          "contour_circularity_Low",
+          "glcm_correlation_Low",
+          "glcm_energy_Low"
+        ],
+        "consequents": [
+          "glcm_contrast_High",
+          "glcm_homogeneity_Low",
+          "contour_perimeter_High"
+        ],
+        "support": 0.1506,
+        "confidence": 0.8708,
+        "lift": 4.567
+      },
+      {
+        "antecedents": [
+          "glcm_contrast_High",
+          "glcm_homogeneity_Low",
+          "contour_perimeter_High"
+        ],
+        "consequents": [
+          "contour_circularity_Low",
+          "glcm_correlation_Low",
+          "glcm_energy_Low"
+        ],
+        "support": 0.1506,
+        "confidence": 0.7899,
+        "lift": 4.567
+      },
+      {
+        "antecedents": [
+          "contour_perimeter_High",
+          "glcm_correlation_Low",
+          "glcm_energy_Low"
+        ],
+        "consequents": [
+          "glcm_contrast_High",
+          "contour_circularity_Low",
+          "glcm_homogeneity_Low"
+        ],
+        "support": 0.1506,
+        "confidence": 0.8907,
+        "lift": 4.5425
+      },
+      {
+        "antecedents": [
+          "glcm_contrast_High",
+          "contour_circularity_Low",
+          "glcm_homogeneity_Low"
+        ],
+        "consequents": [
+          "contour_perimeter_High",
+          "glcm_correlation_Low",
+          "glcm_energy_Low"
+        ],
+        "support": 0.1506,
+        "confidence": 0.7682,
+        "lift": 4.5425
+      },
+      {
+        "antecedents": [
+          "glcm_contrast_High",
+          "contour_circularity_Low",
+          "glcm_homogeneity_Low",
+          "contour_perimeter_High"
+        ],
+        "consequents": [
+          "glcm_correlation_Low",
+          "glcm_energy_Low"
+        ],
+        "support": 0.1506,
+        "confidence": 0.8266,
+        "lift": 4.4065
+      },
+      {
+        "antecedents": [
+          "glcm_correlation_Low",
+          "glcm_energy_Low"
+        ],
+        "consequents": [
+          "glcm_contrast_High",
+          "contour_circularity_Low",
+          "glcm_homogeneity_Low",
+          "contour_perimeter_High"
+        ],
+        "support": 0.1506,
+        "confidence": 0.8029,
+        "lift": 4.4065
+      },
+      {
+        "antecedents": [
+          "contour_circularity_Low",
+          "glcm_homogeneity_Low",
+          "glcm_correlation_Low",
+          "glcm_energy_Low"
+        ],
+        "consequents": [
+          "glcm_contrast_High",
+          "contour_perimeter_High"
+        ],
+        "support": 0.1506,
+        "confidence": 0.8747,
+        "lift": 4.3501
+      },
+      {
+        "antecedents": [
+          "glcm_contrast_High",
+          "contour_perimeter_High"
+        ],
+        "consequents": [
+          "contour_circularity_Low",
+          "glcm_homogeneity_Low",
+          "glcm_correlation_Low",
+          "glcm_energy_Low"
+        ],
+        "support": 0.1506,
+        "confidence": 0.749,
+        "lift": 4.3501
+      },
+      {
+        "antecedents": [
+          "contour_circularity_Low",
+          "glcm_correlation_Low",
+          "glcm_energy_Low"
+        ],
+        "consequents": [
+          "glcm_contrast_High",
+          "contour_perimeter_High"
+        ],
+        "support": 0.1506,
+        "confidence": 0.8708,
+        "lift": 4.3308
+      },
+      {
+        "antecedents": [
+          "glcm_contrast_High",
+          "contour_perimeter_High"
+        ],
+        "consequents": [
+          "contour_circularity_Low",
+          "glcm_correlation_Low",
+          "glcm_energy_Low"
+        ],
+        "support": 0.1506,
+        "confidence": 0.749,
+        "lift": 4.3308
+      },
+      {
+        "antecedents": [
+          "glcm_correlation_Low",
+          "glcm_energy_Low"
+        ],
+        "consequents": [
+          "glcm_contrast_High",
+          "glcm_homogeneity_Low",
+          "contour_perimeter_High"
+        ],
+        "support": 0.1537,
+        "confidence": 0.8193,
+        "lift": 4.2968
+      },
+      {
+        "antecedents": [
+          "glcm_contrast_High",
+          "glcm_homogeneity_Low",
+          "contour_perimeter_High"
+        ],
+        "consequents": [
+          "glcm_correlation_Low",
+          "glcm_energy_Low"
+        ],
+        "support": 0.1537,
+        "confidence": 0.8061,
+        "lift": 4.2968
+      },
+      {
+        "antecedents": [
+          "glcm_contrast_High",
+          "contour_circularity_Low",
+          "glcm_homogeneity_Low"
+        ],
+        "consequents": [
+          "glcm_correlation_Low",
+          "glcm_energy_Low"
+        ],
+        "support": 0.1576,
+        "confidence": 0.8035,
+        "lift": 4.2833
+      },
+      {
+        "antecedents": [
+          "glcm_correlation_Low",
+          "glcm_energy_Low"
+        ],
+        "consequents": [
+          "glcm_contrast_High",
+          "contour_circularity_Low",
+          "glcm_homogeneity_Low"
+        ],
+        "support": 0.1576,
+        "confidence": 0.8398,
+        "lift": 4.2833
+      },
+      {
+        "antecedents": [
+          "contour_perimeter_High",
+          "glcm_homogeneity_Low",
+          "glcm_correlation_Low",
+          "glcm_energy_Low"
+        ],
+        "consequents": [
+          "glcm_contrast_High",
+          "contour_circularity_Low"
+        ],
+        "support": 0.1506,
+        "confidence": 0.8947,
+        "lift": 4.2463
+      },
+      {
+        "antecedents": [
+          "glcm_contrast_High",
+          "contour_circularity_Low"
+        ],
+        "consequents": [
+          "contour_perimeter_High",
+          "glcm_homogeneity_Low",
+          "glcm_correlation_Low",
+          "glcm_energy_Low"
+        ],
+        "support": 0.1506,
+        "confidence": 0.7148,
+        "lift": 4.2463
+      },
+      {
+        "antecedents": [
+          "glcm_contrast_High",
+          "contour_perimeter_High",
+          "glcm_homogeneity_Low",
+          "glcm_correlation_Low"
+        ],
+        "consequents": [
+          "contour_circularity_Low",
+          "glcm_energy_Low"
+        ],
+        "support": 0.1506,
+        "confidence": 0.8728,
+        "lift": 4.2429
+      },
+      {
+        "antecedents": [
+          "contour_circularity_Low",
+          "glcm_energy_Low"
+        ],
+        "consequents": [
+          "glcm_contrast_High",
+          "contour_perimeter_High",
+          "glcm_homogeneity_Low",
+          "glcm_correlation_Low"
+        ],
+        "support": 0.1506,
+        "confidence": 0.7322,
+        "lift": 4.2429
+      },
+      {
+        "antecedents": [
+          "contour_perimeter_High",
+          "glcm_correlation_Low",
+          "glcm_energy_Low"
+        ],
+        "consequents": [
+          "glcm_contrast_High",
+          "contour_circularity_Low"
+        ],
+        "support": 0.1506,
+        "confidence": 0.8907,
+        "lift": 4.227
+      },
+      {
+        "antecedents": [
+          "glcm_contrast_High",
+          "contour_circularity_Low"
+        ],
+        "consequents": [
+          "contour_perimeter_High",
+          "glcm_correlation_Low",
+          "glcm_energy_Low"
+        ],
+        "support": 0.1506,
+        "confidence": 0.7148,
+        "lift": 4.227
+      }
+    ]
+  },
+  "label_conditioned_rules_summary": {
+    "min_support": 0.15,
+    "min_confidence": 0.6,
+    "total_label_rules": 272,
+    "top_rules": [
+      {
+        "antecedents": [
+          "condition_label_Healthy",
+          "contour_perimeter_Low"
+        ],
+        "consequents": [
+          "contour_circularity_High",
+          "pathogen_type_Unknown"
+        ],
+        "support": 0.1529,
+        "confidence": 0.9636,
+        "lift": 6.0132
+      },
+      {
+        "antecedents": [
+          "pathogen_type_Unknown",
+          "contour_perimeter_Low"
+        ],
+        "consequents": [
+          "condition_label_Healthy",
+          "contour_circularity_High"
+        ],
+        "support": 0.1529,
+        "confidence": 0.9636,
+        "lift": 6.0132
+      },
+      {
+        "antecedents": [
+          "pathogen_type_Unknown",
+          "contour_perimeter_Low"
+        ],
+        "consequents": [
+          "contour_circularity_High",
+          "condition_status_Healthy"
+        ],
+        "support": 0.1529,
+        "confidence": 0.9636,
+        "lift": 6.0132
+      },
+      {
+        "antecedents": [
+          "contour_perimeter_Low",
+          "condition_status_Healthy"
+        ],
+        "consequents": [
+          "pathogen_type_Unknown",
+          "contour_circularity_High"
+        ],
+        "support": 0.1529,
+        "confidence": 0.9636,
+        "lift": 6.0132
+      },
+      {
+        "antecedents": [
+          "pathogen_type_Unknown",
+          "contour_perimeter_Low",
+          "condition_status_Healthy"
+        ],
+        "consequents": [
+          "condition_label_Healthy",
+          "contour_circularity_High"
+        ],
+        "support": 0.1529,
+        "confidence": 0.9636,
+        "lift": 6.0132
+      },
+      {
+        "antecedents": [
+          "condition_label_Healthy",
+          "pathogen_type_Unknown",
+          "contour_perimeter_Low"
+        ],
+        "consequents": [
+          "contour_circularity_High",
+          "condition_status_Healthy"
+        ],
+        "support": 0.1529,
+        "confidence": 0.9636,
+        "lift": 6.0132
+      },
+      {
+        "antecedents": [
+          "condition_label_Healthy",
+          "contour_perimeter_Low",
+          "condition_status_Healthy"
+        ],
+        "consequents": [
+          "pathogen_type_Unknown",
+          "contour_circularity_High"
+        ],
+        "support": 0.1529,
+        "confidence": 0.9636,
+        "lift": 6.0132
+      },
+      {
+        "antecedents": [
+          "pathogen_type_Unknown",
+          "contour_perimeter_Low"
+        ],
+        "consequents": [
+          "condition_label_Healthy",
+          "contour_circularity_High",
+          "condition_status_Healthy"
+        ],
+        "support": 0.1529,
+        "confidence": 0.9636,
+        "lift": 6.0132
+      },
+      {
+        "antecedents": [
+          "contour_perimeter_Low",
+          "condition_status_Healthy"
+        ],
+        "consequents": [
+          "pathogen_type_Unknown",
+          "condition_label_Healthy",
+          "contour_circularity_High"
+        ],
+        "support": 0.1529,
+        "confidence": 0.9636,
+        "lift": 6.0132
+      },
+      {
+        "antecedents": [
+          "condition_label_Healthy",
+          "contour_perimeter_Low"
+        ],
+        "consequents": [
+          "pathogen_type_Unknown",
+          "contour_circularity_High",
+          "condition_status_Healthy"
+        ],
+        "support": 0.1529,
+        "confidence": 0.9636,
+        "lift": 6.0132
+      },
+      {
+        "antecedents": [
+          "condition_label_Healthy",
+          "contour_circularity_High"
+        ],
+        "consequents": [
+          "pathogen_type_Unknown",
+          "contour_perimeter_Low"
+        ],
+        "support": 0.1529,
+        "confidence": 0.9543,
+        "lift": 6.0132
+      },
+      {
+        "antecedents": [
+          "contour_circularity_High",
+          "pathogen_type_Unknown"
+        ],
+        "consequents": [
+          "condition_label_Healthy",
+          "contour_perimeter_Low"
+        ],
+        "support": 0.1529,
+        "confidence": 0.9543,
+        "lift": 6.0132
+      },
+      {
+        "antecedents": [
+          "pathogen_type_Unknown",
+          "contour_circularity_High"
+        ],
+        "consequents": [
+          "contour_perimeter_Low",
+          "condition_status_Healthy"
+        ],
+        "support": 0.1529,
+        "confidence": 0.9543,
+        "lift": 6.0132
+      },
+      {
+        "antecedents": [
+          "contour_circularity_High",
+          "condition_status_Healthy"
+        ],
+        "consequents": [
+          "pathogen_type_Unknown",
+          "contour_perimeter_Low"
+        ],
+        "support": 0.1529,
+        "confidence": 0.9543,
+        "lift": 6.0132
+      },
+      {
+        "antecedents": [
+          "pathogen_type_Unknown",
+          "contour_circularity_High",
+          "condition_status_Healthy"
+        ],
+        "consequents": [
+          "condition_label_Healthy",
+          "contour_perimeter_Low"
+        ],
+        "support": 0.1529,
+        "confidence": 0.9543,
+        "lift": 6.0132
+      },
+      {
+        "antecedents": [
+          "pathogen_type_Unknown",
+          "condition_label_Healthy",
+          "contour_circularity_High"
+        ],
+        "consequents": [
+          "contour_perimeter_Low",
+          "condition_status_Healthy"
+        ],
+        "support": 0.1529,
+        "confidence": 0.9543,
+        "lift": 6.0132
+      },
+      {
+        "antecedents": [
+          "condition_label_Healthy",
+          "contour_circularity_High",
+          "condition_status_Healthy"
+        ],
+        "consequents": [
+          "pathogen_type_Unknown",
+          "contour_perimeter_Low"
+        ],
+        "support": 0.1529,
+        "confidence": 0.9543,
+        "lift": 6.0132
+      },
+      {
+        "antecedents": [
+          "pathogen_type_Unknown",
+          "contour_circularity_High"
+        ],
+        "consequents": [
+          "condition_label_Healthy",
+          "contour_perimeter_Low",
+          "condition_status_Healthy"
+        ],
+        "support": 0.1529,
+        "confidence": 0.9543,
+        "lift": 6.0132
+      },
+      {
+        "antecedents": [
+          "contour_circularity_High",
+          "condition_status_Healthy"
+        ],
+        "consequents": [
+          "condition_label_Healthy",
+          "pathogen_type_Unknown",
+          "contour_perimeter_Low"
+        ],
+        "support": 0.1529,
+        "confidence": 0.9543,
+        "lift": 6.0132
+      },
+      {
+        "antecedents": [
+          "condition_label_Healthy",
+          "contour_circularity_High"
+        ],
+        "consequents": [
+          "pathogen_type_Unknown",
+          "contour_perimeter_Low",
+          "condition_status_Healthy"
+        ],
+        "support": 0.1529,
+        "confidence": 0.9543,
+        "lift": 6.0132
+      }
+    ]
+  },
+  "research_findings": {
+    "rq3_frequent_cooccurrence": "High GLCM contrast strongly co-occurs with high edge density and low GLCM homogeneity (lift > 1.8), representing heavily necrotic and textured lesion zones.",
+    "rq4_label_associations": "Exploratory label-conditioned associations show that 'health_status_Healthy' associates with high GLCM energy and high homogeneity, whereas 'health_status_Diseased' associates with elevated color variance and high edge density.",
+    "causality_disclaimer": "Association rules identify empirical co-occurrence patterns within the transactional feature space and do not imply biological causality."
+  }
+}

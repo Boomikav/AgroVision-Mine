@@ -1,0 +1,80 @@
+{
+  "total_candidates": 2608,
+  "retained_count": 2596,
+  "duplicate_count": 12,
+  "invalid_count": 0,
+  "exclusions": [
+    {
+      "filename": "blueberry-leaves-normal-above-and-iron-deficient-below-bgahf8.jpg",
+      "raw_path": "data\\external_raw\\plantdoc\\images\\train\\Blueberry leaf\\blueberry-leaves-normal-above-and-iron-deficient-below-bgahf8.jpg",
+      "reason": "EXACT_MD5_DUPLICATE: Matches AGRO_V2_00083",
+      "source": "plantdoc"
+    },
+    {
+      "filename": "2015070295153021.jpg",
+      "raw_path": "data\\external_raw\\plantdoc\\images\\train\\Corn Gray leaf spot\\2015070295153021.jpg",
+      "reason": "EXACT_MD5_DUPLICATE: Matches AGRO_V2_00115",
+      "source": "plantdoc"
+    },
+    {
+      "filename": "corn-gray-leaf-spot-f4.jpg",
+      "raw_path": "data\\external_raw\\plantdoc\\images\\train\\Corn Gray leaf spot\\corn-gray-leaf-spot-f4.jpg",
+      "reason": "EXACT_MD5_DUPLICATE: Matches AGRO_V2_00118",
+      "source": "plantdoc"
+    },
+    {
+      "filename": "IMG_42231.jpg",
+      "raw_path": "data\\external_raw\\plantdoc\\images\\train\\Corn leaf blight\\IMG_42231.jpg",
+      "reason": "EXACT_MD5_DUPLICATE: Matches AGRO_V2_00104",
+      "source": "plantdoc"
+    },
+    {
+      "filename": "1421_0.jpeg_itok=FMtmgePj.jpg",
+      "raw_path": "data\\external_raw\\plantdoc\\images\\train\\Potato leaf early blight\\1421_0.jpeg_itok=FMtmgePj.jpg",
+      "reason": "EXACT_MD5_DUPLICATE: Matches AGRO_V2_00167",
+      "source": "plantdoc"
+    },
+    {
+      "filename": "5816740026_d42ef24413_Phytophthora-Infestans.jpg",
+      "raw_path": "data\\external_raw\\plantdoc\\images\\train\\Potato leaf early blight\\5816740026_d42ef24413_Phytophthora-Infestans.jpg",
+      "reason": "EXACT_MD5_DUPLICATE: Matches AGRO_V2_00170",
+      "source": "plantdoc"
+    },
+    {
+      "filename": "irish-blight-symptoms-on-potato-leaves-atmf8b.jpg",
+      "raw_path": "data\\external_raw\\plantdoc\\images\\train\\Potato leaf early blight\\irish-blight-symptoms-on-potato-leaves-atmf8b.jpg",
+      "reason": "EXACT_MD5_DUPLICATE: Matches AGRO_V2_00172",
+      "source": "plantdoc"
+    },
+    {
+      "filename": "24064_1.jpg",
+      "raw_path": "data\\external_raw\\plantdoc\\images\\train\\Potato leaf late blight\\24064_1.jpg",
+      "reason": "EXACT_MD5_DUPLICATE: Matches AGRO_V2_01351",
+      "source": "plantdoc"
+    },
+    {
+      "filename": "backus-056-potato-blight.jpg",
+      "raw_path": "data\\external_raw\\plantdoc\\images\\train\\Potato leaf late blight\\backus-056-potato-blight.jpg",
+      "reason": "EXACT_MD5_DUPLICATE: Matches AGRO_V2_00160",
+      "source": "plantdoc"
+    },
+    {
+      "filename": "tylcv-seminar-1-638.jpg",
+      "raw_path": "data\\external_raw\\plantdoc\\images\\train\\Tomato leaf yellow virus\\tylcv-seminar-1-638.jpg",
+      "reason": "EXACT_MD5_DUPLICATE: Matches AGRO_V2_00255",
+      "source": "plantdoc"
+    },
+    {
+      "filename": "early-blight-septoria-ls-fig-3.jpg",
+      "raw_path": "data\\external_raw\\plantdoc\\images\\train\\Tomato Septoria leaf spot\\early-blight-septoria-ls-fig-3.jpg",
+      "reason": "EXACT_MD5_DUPLICATE: Matches AGRO_V2_00270",
+      "source": "plantdoc"
+    },
+    {
+      "filename": "tomato_V8.jpg",
+      "raw_path": "data\\external_raw\\plantdoc\\images\\train\\Tomato Septoria leaf spot\\tomato_V8.jpg",
+      "reason": "EXACT_MD5_DUPLICATE: Matches AGRO_V2_00229",
+      "source": "plantdoc"
+    }
+  ]
+}

@@ -1,0 +1,1253 @@
+{
+  "algorithm": "K-Means",
+  "feature_space": "Standardized Explainable Descriptors (Color Moments, GLCM Texture, Contour Geometry)",
+  "total_observations": 2596,
+  "features_dimension": 32,
+  "feature_names": [
+    "rgb_r_mean",
+    "rgb_g_mean",
+    "rgb_b_mean",
+    "rgb_r_std",
+    "rgb_g_std",
+    "rgb_b_std",
+    "rgb_r_norm",
+    "rgb_g_norm",
+    "rgb_b_norm",
+    "hsv_h_mean",
+    "hsv_s_mean",
+    "hsv_v_mean",
+    "hsv_h_std",
+    "hsv_s_std",
+    "hsv_v_std",
+    "hsv_h_norm",
+    "hsv_s_norm",
+    "hsv_v_norm",
+    "exg_index_mean",
+    "glcm_contrast",
+    "glcm_contrast_norm",
+    "glcm_dissimilarity",
+    "glcm_homogeneity",
+    "glcm_energy",
+    "glcm_correlation",
+    "glcm_asm",
+    "contour_area",
+    "contour_perimeter",
+    "contour_aspect_ratio",
+    "contour_circularity",
+    "contour_solidity",
+    "lesion_coverage_ratio"
+  ],
+  "random_seed": 42,
+  "metric_supported_k": 2,
+  "exploratory_subpartition_k": 4,
+  "active_selected_k": 2,
+  "optimal_k": 2,
+  "k_selection_rationale": {
+    "metric_supported_solution": "K=2 is the mathematically optimal clustering solution, yielding highest Silhouette score (0.4060), lowest Davies-Bouldin index (1.0990), highest Calinski-Harabasz score (1154.38), and 100% stability across multiple random initializations. It cleanly separates smooth, low-perimeter tissue (Cluster 1) from textured, high-perimeter foliar surfaces (Cluster 0).",
+    "exploratory_subpartition_solution": "K=4 is retained strictly as an exploratory sub-partition that divides the large textured cluster into sub-phenotypes (high local contrast, moderate spotting, and chlorotic/vitality variation). However, its internal validation metrics are substantially lower (Silhouette=0.1651, Davies-Bouldin=1.8339), and it should not be described as an objectively optimal partition."
+  },
+  "multi_k_evaluation": [
+    {
+      "k": 2,
+      "inertia": 57488.48,
+      "silhouette_score": 0.406,
+      "davies_bouldin_index": 1.099,
+      "calinski_harabasz_score": 1154.38
+    },
+    {
+      "k": 3,
+      "inertia": 50871.73,
+      "silhouette_score": 0.1821,
+      "davies_bouldin_index": 1.7629,
+      "calinski_harabasz_score": 820.65
+    },
+    {
+      "k": 4,
+      "inertia": 46657.1,
+      "silhouette_score": 0.1651,
+      "davies_bouldin_index": 1.8339,
+      "calinski_harabasz_score": 674.33
+    },
+    {
+      "k": 5,
+      "inertia": 43498.99,
+      "silhouette_score": 0.1623,
+      "davies_bouldin_index": 1.7326,
+      "calinski_harabasz_score": 589.29
+    },
+    {
+      "k": 6,
+      "inertia": 41084.03,
+      "silhouette_score": 0.1648,
+      "davies_bouldin_index": 1.6312,
+      "calinski_harabasz_score": 529.4
+    },
+    {
+      "k": 7,
+      "inertia": 38538.67,
+      "silhouette_score": 0.1719,
+      "davies_bouldin_index": 1.5076,
+      "calinski_harabasz_score": 498.62
+    },
+    {
+      "k": 8,
+      "inertia": 36413.34,
+      "silhouette_score": 0.1501,
+      "davies_bouldin_index": 1.5697,
+      "calinski_harabasz_score": 473.74
+    }
+  ],
+  "pca_projection": {
+    "explained_variance_ratio": [
+      0.3856,
+      0.1355
+    ],
+    "total_variance_explained": 0.5211
+  },
+  "pca_explained_variance_ratio": [
+    0.3856,
+    0.1355
+  ],
+  "pca_total_variance_explained": 0.5211,
+  "k2_solution": {
+    "k": 2,
+    "silhouette_score": 0.406,
+    "davies_bouldin_index": 1.099,
+    "calinski_harabasz_score": 1154.38,
+    "cluster_sizes": {
+      "0": 2150,
+      "1": 446
+    },
+    "cluster_profiles": [
+      {
+        "cluster_id": 0,
+        "size": 2150,
+        "percentage": 82.82,
+        "top_elevated_features": [
+          {
+            "feature": "contour_perimeter",
+            "cluster_mean": 5764.5772,
+            "global_mean": 5116.2161,
+            "z_score": 0.23
+          },
+          {
+            "feature": "hsv_h_norm",
+            "cluster_mean": 0.2795,
+            "global_mean": 0.2568,
+            "z_score": 0.2192
+          },
+          {
+            "feature": "hsv_h_mean",
+            "cluster_mean": 100.6271,
+            "global_mean": 92.4402,
+            "z_score": 0.2192
+          },
+          {
+            "feature": "hsv_s_norm",
+            "cluster_mean": 0.4497,
+            "global_mean": 0.4141,
+            "z_score": 0.2192
+          },
+          {
+            "feature": "hsv_s_mean",
+            "cluster_mean": 0.4497,
+            "global_mean": 0.4141,
+            "z_score": 0.2192
+          }
+        ],
+        "top_suppressed_features": [
+          {
+            "feature": "glcm_asm",
+            "cluster_mean": 0.0584,
+            "global_mean": 0.1085,
+            "z_score": -0.3774
+          },
+          {
+            "feature": "glcm_energy",
+            "cluster_mean": 0.0584,
+            "global_mean": 0.1085,
+            "z_score": -0.3774
+          },
+          {
+            "feature": "rgb_r_norm",
+            "cluster_mean": 0.4218,
+            "global_mean": 0.4861,
+            "z_score": -0.3738
+          },
+          {
+            "feature": "rgb_r_mean",
+            "cluster_mean": 107.549,
+            "global_mean": 123.9561,
+            "z_score": -0.3738
+          },
+          {
+            "feature": "rgb_g_mean",
+            "cluster_mean": 126.8612,
+            "global_mean": 140.8805,
+            "z_score": -0.3619
+          }
+        ]
+      },
+      {
+        "cluster_id": 1,
+        "size": 446,
+        "percentage": 17.18,
+        "top_elevated_features": [
+          {
+            "feature": "glcm_asm",
+            "cluster_mean": 0.3502,
+            "global_mean": 0.1085,
+            "z_score": 1.8192
+          },
+          {
+            "feature": "glcm_energy",
+            "cluster_mean": 0.3502,
+            "global_mean": 0.1085,
+            "z_score": 1.8192
+          },
+          {
+            "feature": "rgb_r_norm",
+            "cluster_mean": 0.7963,
+            "global_mean": 0.4861,
+            "z_score": 1.8019
+          },
+          {
+            "feature": "rgb_r_mean",
+            "cluster_mean": 203.0484,
+            "global_mean": 123.9561,
+            "z_score": 1.8019
+          },
+          {
+            "feature": "rgb_g_mean",
+            "cluster_mean": 208.4623,
+            "global_mean": 140.8805,
+            "z_score": 1.7448
+          }
+        ],
+        "top_suppressed_features": [
+          {
+            "feature": "contour_perimeter",
+            "cluster_mean": 1990.7085,
+            "global_mean": 5116.2161,
+            "z_score": -1.1087
+          },
+          {
+            "feature": "hsv_h_norm",
+            "cluster_mean": 0.1471,
+            "global_mean": 0.2568,
+            "z_score": -1.0569
+          },
+          {
+            "feature": "hsv_h_mean",
+            "cluster_mean": 52.9746,
+            "global_mean": 92.4402,
+            "z_score": -1.0569
+          },
+          {
+            "feature": "hsv_s_norm",
+            "cluster_mean": 0.2424,
+            "global_mean": 0.4141,
+            "z_score": -1.0567
+          },
+          {
+            "feature": "hsv_s_mean",
+            "cluster_mean": 0.2424,
+            "global_mean": 0.4141,
+            "z_score": -1.0566
+          }
+        ]
+      }
+    ],
+    "contingency_analysis": {
+      "health_status": {
+        "evaluated_column": "condition_status",
+        "chi2_statistic": 445.6,
+        "p_value": 6.534992658960201e-99,
+        "degrees_of_freedom": 1,
+        "cramers_v": 0.4143,
+        "cluster_composition": {
+          "Cluster_0": {
+            "Diseased": 1640,
+            "Healthy": 510
+          },
+          "Cluster_1": {
+            "Diseased": 110,
+            "Healthy": 336
+          }
+        }
+      },
+      "crop": {
+        "evaluated_column": "crop_name",
+        "chi2_statistic": 579.65,
+        "p_value": 1.6674993322983388e-115,
+        "degrees_of_freedom": 13,
+        "cramers_v": 0.4725,
+        "cluster_composition": {
+          "Cluster_0": {
+            "Apple": 196,
+            "Bell Pepper": 120,
+            "Blueberry": 83,
+            "Cherry": 45,
+            "Corn": 365,
+            "Grape": 100,
+            "Peach": 47,
+            "Potato": 204,
+            "Raspberry": 85,
+            "Rice": 4,
+            "Soybean": 42,
+            "Squash": 130,
+            "Strawberry": 43,
+            "Tomato": 686
+          },
+          "Cluster_1": {
+            "Apple": 76,
+            "Bell Pepper": 12,
+            "Blueberry": 31,
+            "Cherry": 12,
+            "Corn": 7,
+            "Grape": 33,
+            "Peach": 64,
+            "Potato": 12,
+            "Raspberry": 34,
+            "Rice": 32,
+            "Soybean": 23,
+            "Squash": 0,
+            "Strawberry": 53,
+            "Tomato": 57
+          }
+        }
+      },
+      "pathogen": {
+        "evaluated_column": "pathogen_type",
+        "chi2_statistic": 459.64,
+        "p_value": 3.583158388415275e-98,
+        "degrees_of_freedom": 4,
+        "cramers_v": 0.4208,
+        "cluster_composition": {
+          "Cluster_0": {
+            "Bacterial": 164,
+            "Fungal": 1352,
+            "Pest": 2,
+            "Unknown": 510,
+            "Viral": 122
+          },
+          "Cluster_1": {
+            "Bacterial": 29,
+            "Fungal": 74,
+            "Pest": 0,
+            "Unknown": 336,
+            "Viral": 7
+          }
+        }
+      },
+      "source": {
+        "evaluated_column": "dataset_source",
+        "chi2_statistic": 126.87,
+        "p_value": 1.9838960746351283e-29,
+        "degrees_of_freedom": 1,
+        "cramers_v": 0.2211,
+        "cluster_composition": {
+          "Cluster_0": {
+            "icar_ogd": 4,
+            "plantdoc": 2146
+          },
+          "Cluster_1": {
+            "icar_ogd": 32,
+            "plantdoc": 414
+          }
+        }
+      },
+      "disease": {
+        "evaluated_column": "disease_name",
+        "chi2_statistic": 639.61,
+        "p_value": 3.596434271006236e-124,
+        "degrees_of_freedom": 18,
+        "cramers_v": 0.4964,
+        "cluster_composition": {
+          "Cluster_0": {
+            "Apple Scab": 86,
+            "Bacterial Leaf Blight": 0,
+            "Bacterial Spot": 164,
+            "Black Rot": 61,
+            "Brown Spot": 4,
+            "Cedar Apple Rust": 83,
+            "Common Rust": 115,
+            "Early Blight": 195,
+            "Gray Leaf Spot": 64,
+            "Healthy": 510,
+            "Late Blight": 204,
+            "Leaf Mold": 86,
+            "Leaf Smut": 0,
+            "Mosaic Virus": 50,
+            "Northern Leaf Blight": 186,
+            "Powdery Mildew": 130,
+            "Septoria Leaf Spot": 138,
+            "Two-Spotted Spider Mite": 2,
+            "Yellow Leaf Curl Virus": 72
+          },
+          "Cluster_1": {
+            "Apple Scab": 7,
+            "Bacterial Leaf Blight": 12,
+            "Bacterial Spot": 17,
+            "Black Rot": 3,
+            "Brown Spot": 8,
+            "Cedar Apple Rust": 5,
+            "Common Rust": 1,
+            "Early Blight": 6,
+            "Gray Leaf Spot": 2,
+            "Healthy": 336,
+            "Late Blight": 10,
+            "Leaf Mold": 5,
+            "Leaf Smut": 12,
+            "Mosaic Virus": 4,
+            "Northern Leaf Blight": 4,
+            "Powdery Mildew": 0,
+            "Septoria Leaf Spot": 11,
+            "Two-Spotted Spider Mite": 0,
+            "Yellow Leaf Curl Virus": 3
+          }
+        }
+      }
+    }
+  },
+  "k4_solution": {
+    "k": 4,
+    "silhouette_score": 0.1651,
+    "davies_bouldin_index": 1.8339,
+    "calinski_harabasz_score": 674.33,
+    "cluster_sizes": {
+      "0": 497,
+      "1": 1005,
+      "2": 406,
+      "3": 688
+    },
+    "cluster_profiles": [
+      {
+        "cluster_id": 0,
+        "size": 497,
+        "percentage": 19.14,
+        "top_elevated_features": [
+          {
+            "feature": "glcm_dissimilarity",
+            "cluster_mean": 0.9099,
+            "global_mean": 0.5447,
+            "z_score": 1.5202
+          },
+          {
+            "feature": "glcm_contrast",
+            "cluster_mean": 2.3558,
+            "global_mean": 1.1826,
+            "z_score": 1.4588
+          },
+          {
+            "feature": "glcm_contrast_norm",
+            "cluster_mean": 0.0105,
+            "global_mean": 0.0053,
+            "z_score": 1.4587
+          },
+          {
+            "feature": "contour_perimeter",
+            "cluster_mean": 8525.1046,
+            "global_mean": 5116.2161,
+            "z_score": 1.2093
+          },
+          {
+            "feature": "hsv_v_std",
+            "cluster_mean": 0.2226,
+            "global_mean": 0.2007,
+            "z_score": 0.4412
+          }
+        ],
+        "top_suppressed_features": [
+          {
+            "feature": "glcm_homogeneity",
+            "cluster_mean": 0.6602,
+            "global_mean": 0.779,
+            "z_score": -1.406
+          },
+          {
+            "feature": "glcm_correlation",
+            "cluster_mean": 0.8868,
+            "global_mean": 0.9365,
+            "z_score": -1.206
+          },
+          {
+            "feature": "glcm_energy",
+            "cluster_mean": 0.037,
+            "global_mean": 0.1085,
+            "z_score": -0.5388
+          },
+          {
+            "feature": "glcm_asm",
+            "cluster_mean": 0.037,
+            "global_mean": 0.1085,
+            "z_score": -0.5388
+          },
+          {
+            "feature": "rgb_b_mean",
+            "cluster_mean": 80.4329,
+            "global_mean": 98.3113,
+            "z_score": -0.3916
+          }
+        ]
+      },
+      {
+        "cluster_id": 1,
+        "size": 1005,
+        "percentage": 38.71,
+        "top_elevated_features": [
+          {
+            "feature": "hsv_s_mean",
+            "cluster_mean": 0.5252,
+            "global_mean": 0.4141,
+            "z_score": 0.6838
+          },
+          {
+            "feature": "hsv_s_norm",
+            "cluster_mean": 0.5252,
+            "global_mean": 0.4141,
+            "z_score": 0.6838
+          },
+          {
+            "feature": "exg_index_mean",
+            "cluster_mean": 79.6664,
+            "global_mean": 59.4937,
+            "z_score": 0.5472
+          },
+          {
+            "feature": "glcm_correlation",
+            "cluster_mean": 0.9428,
+            "global_mean": 0.9365,
+            "z_score": 0.1526
+          },
+          {
+            "feature": "glcm_homogeneity",
+            "cluster_mean": 0.7891,
+            "global_mean": 0.779,
+            "z_score": 0.1193
+          }
+        ],
+        "top_suppressed_features": [
+          {
+            "feature": "rgb_b_norm",
+            "cluster_mean": 0.2547,
+            "global_mean": 0.3855,
+            "z_score": -0.7308
+          },
+          {
+            "feature": "rgb_b_mean",
+            "cluster_mean": 64.9477,
+            "global_mean": 98.3113,
+            "z_score": -0.7308
+          },
+          {
+            "feature": "rgb_b_std",
+            "cluster_mean": 43.3721,
+            "global_mean": 55.9817,
+            "z_score": -0.5973
+          },
+          {
+            "feature": "hsv_h_std",
+            "cluster_mean": 33.6428,
+            "global_mean": 48.7343,
+            "z_score": -0.5577
+          },
+          {
+            "feature": "rgb_r_mean",
+            "cluster_mean": 100.3039,
+            "global_mean": 123.9561,
+            "z_score": -0.5388
+          }
+        ]
+      },
+      {
+        "cluster_id": 2,
+        "size": 406,
+        "percentage": 15.64,
+        "top_elevated_features": [
+          {
+            "feature": "glcm_asm",
+            "cluster_mean": 0.3715,
+            "global_mean": 0.1085,
+            "z_score": 1.9796
+          },
+          {
+            "feature": "glcm_energy",
+            "cluster_mean": 0.3715,
+            "global_mean": 0.1085,
+            "z_score": 1.9796
+          },
+          {
+            "feature": "rgb_r_norm",
+            "cluster_mean": 0.8082,
+            "global_mean": 0.4861,
+            "z_score": 1.8711
+          },
+          {
+            "feature": "rgb_r_mean",
+            "cluster_mean": 206.0837,
+            "global_mean": 123.9561,
+            "z_score": 1.8711
+          },
+          {
+            "feature": "rgb_g_mean",
+            "cluster_mean": 211.3075,
+            "global_mean": 140.8805,
+            "z_score": 1.8182
+          }
+        ],
+        "top_suppressed_features": [
+          {
+            "feature": "hsv_h_norm",
+            "cluster_mean": 0.125,
+            "global_mean": 0.2568,
+            "z_score": -1.2705
+          },
+          {
+            "feature": "hsv_h_mean",
+            "cluster_mean": 44.9986,
+            "global_mean": 92.4402,
+            "z_score": -1.2705
+          },
+          {
+            "feature": "contour_perimeter",
+            "cluster_mean": 1938.1059,
+            "global_mean": 5116.2161,
+            "z_score": -1.1274
+          },
+          {
+            "feature": "hsv_s_norm",
+            "cluster_mean": 0.2406,
+            "global_mean": 0.4141,
+            "z_score": -1.0676
+          },
+          {
+            "feature": "hsv_s_mean",
+            "cluster_mean": 0.2407,
+            "global_mean": 0.4141,
+            "z_score": -1.0675
+          }
+        ]
+      },
+      {
+        "cluster_id": 3,
+        "size": 688,
+        "percentage": 26.5,
+        "top_elevated_features": [
+          {
+            "feature": "hsv_h_mean",
+            "cluster_mean": 125.3247,
+            "global_mean": 92.4402,
+            "z_score": 0.8806
+          },
+          {
+            "feature": "hsv_h_norm",
+            "cluster_mean": 0.3481,
+            "global_mean": 0.2568,
+            "z_score": 0.8806
+          },
+          {
+            "feature": "hsv_h_std",
+            "cluster_mean": 67.3261,
+            "global_mean": 48.7343,
+            "z_score": 0.687
+          },
+          {
+            "feature": "rgb_b_mean",
+            "cluster_mean": 112.1724,
+            "global_mean": 98.3113,
+            "z_score": 0.3036
+          },
+          {
+            "feature": "rgb_b_norm",
+            "cluster_mean": 0.4399,
+            "global_mean": 0.3855,
+            "z_score": 0.3036
+          }
+        ],
+        "top_suppressed_features": [
+          {
+            "feature": "hsv_s_mean",
+            "cluster_mean": 0.3221,
+            "global_mean": 0.4141,
+            "z_score": -0.5665
+          },
+          {
+            "feature": "hsv_s_norm",
+            "cluster_mean": 0.3221,
+            "global_mean": 0.4141,
+            "z_score": -0.5665
+          },
+          {
+            "feature": "exg_index_mean",
+            "cluster_mean": 40.5471,
+            "global_mean": 59.4937,
+            "z_score": -0.514
+          },
+          {
+            "feature": "hsv_s_std",
+            "cluster_mean": 0.1862,
+            "global_mean": 0.215,
+            "z_score": -0.3853
+          },
+          {
+            "feature": "glcm_asm",
+            "cluster_mean": 0.0656,
+            "global_mean": 0.1085,
+            "z_score": -0.3232
+          }
+        ]
+      }
+    ],
+    "contingency_analysis": {
+      "health_status": {
+        "evaluated_column": "condition_status",
+        "chi2_statistic": 485.9,
+        "p_value": 5.416129693906152e-105,
+        "degrees_of_freedom": 3,
+        "cramers_v": 0.4326,
+        "cluster_composition": {
+          "Cluster_0": {
+            "Diseased": 358,
+            "Healthy": 139
+          },
+          "Cluster_1": {
+            "Diseased": 749,
+            "Healthy": 256
+          },
+          "Cluster_2": {
+            "Diseased": 85,
+            "Healthy": 321
+          },
+          "Cluster_3": {
+            "Diseased": 558,
+            "Healthy": 130
+          }
+        }
+      },
+      "crop": {
+        "evaluated_column": "crop_name",
+        "chi2_statistic": 716.0,
+        "p_value": 2.2413614713654205e-125,
+        "degrees_of_freedom": 39,
+        "cramers_v": 0.3032,
+        "cluster_composition": {
+          "Cluster_0": {
+            "Apple": 25,
+            "Bell Pepper": 34,
+            "Blueberry": 20,
+            "Cherry": 10,
+            "Corn": 57,
+            "Grape": 16,
+            "Peach": 18,
+            "Potato": 42,
+            "Raspberry": 27,
+            "Rice": 0,
+            "Soybean": 5,
+            "Squash": 40,
+            "Strawberry": 14,
+            "Tomato": 189
+          },
+          "Cluster_1": {
+            "Apple": 120,
+            "Bell Pepper": 52,
+            "Blueberry": 37,
+            "Cherry": 20,
+            "Corn": 162,
+            "Grape": 57,
+            "Peach": 24,
+            "Potato": 106,
+            "Raspberry": 41,
+            "Rice": 4,
+            "Soybean": 26,
+            "Squash": 33,
+            "Strawberry": 22,
+            "Tomato": 301
+          },
+          "Cluster_2": {
+            "Apple": 71,
+            "Bell Pepper": 5,
+            "Blueberry": 27,
+            "Cherry": 12,
+            "Corn": 4,
+            "Grape": 30,
+            "Peach": 63,
+            "Potato": 11,
+            "Raspberry": 32,
+            "Rice": 31,
+            "Soybean": 21,
+            "Squash": 0,
+            "Strawberry": 53,
+            "Tomato": 46
+          },
+          "Cluster_3": {
+            "Apple": 56,
+            "Bell Pepper": 41,
+            "Blueberry": 30,
+            "Cherry": 15,
+            "Corn": 149,
+            "Grape": 30,
+            "Peach": 6,
+            "Potato": 57,
+            "Raspberry": 19,
+            "Rice": 1,
+            "Soybean": 13,
+            "Squash": 57,
+            "Strawberry": 7,
+            "Tomato": 207
+          }
+        }
+      },
+      "pathogen": {
+        "evaluated_column": "pathogen_type",
+        "chi2_statistic": 569.39,
+        "p_value": 3.625899916035938e-114,
+        "degrees_of_freedom": 12,
+        "cramers_v": 0.2704,
+        "cluster_composition": {
+          "Cluster_0": {
+            "Bacterial": 42,
+            "Fungal": 253,
+            "Pest": 2,
+            "Unknown": 139,
+            "Viral": 61
+          },
+          "Cluster_1": {
+            "Bacterial": 74,
+            "Fungal": 636,
+            "Pest": 0,
+            "Unknown": 256,
+            "Viral": 39
+          },
+          "Cluster_2": {
+            "Bacterial": 20,
+            "Fungal": 61,
+            "Pest": 0,
+            "Unknown": 321,
+            "Viral": 4
+          },
+          "Cluster_3": {
+            "Bacterial": 57,
+            "Fungal": 476,
+            "Pest": 0,
+            "Unknown": 130,
+            "Viral": 25
+          }
+        }
+      },
+      "source": {
+        "evaluated_column": "dataset_source",
+        "chi2_statistic": 137.85,
+        "p_value": 1.0984151244863433e-29,
+        "degrees_of_freedom": 3,
+        "cramers_v": 0.2304,
+        "cluster_composition": {
+          "Cluster_0": {
+            "icar_ogd": 0,
+            "plantdoc": 497
+          },
+          "Cluster_1": {
+            "icar_ogd": 4,
+            "plantdoc": 1001
+          },
+          "Cluster_2": {
+            "icar_ogd": 31,
+            "plantdoc": 375
+          },
+          "Cluster_3": {
+            "icar_ogd": 1,
+            "plantdoc": 687
+          }
+        }
+      },
+      "disease": {
+        "evaluated_column": "disease_name",
+        "chi2_statistic": 875.62,
+        "p_value": 9.026543679219555e-149,
+        "degrees_of_freedom": 54,
+        "cramers_v": 0.3353,
+        "cluster_composition": {
+          "Cluster_0": {
+            "Apple Scab": 10,
+            "Bacterial Leaf Blight": 0,
+            "Bacterial Spot": 42,
+            "Black Rot": 9,
+            "Brown Spot": 0,
+            "Cedar Apple Rust": 11,
+            "Common Rust": 11,
+            "Early Blight": 46,
+            "Gray Leaf Spot": 11,
+            "Healthy": 139,
+            "Late Blight": 33,
+            "Leaf Mold": 11,
+            "Leaf Smut": 0,
+            "Mosaic Virus": 13,
+            "Northern Leaf Blight": 35,
+            "Powdery Mildew": 40,
+            "Septoria Leaf Spot": 36,
+            "Two-Spotted Spider Mite": 2,
+            "Yellow Leaf Curl Virus": 48
+          },
+          "Cluster_1": {
+            "Apple Scab": 52,
+            "Bacterial Leaf Blight": 0,
+            "Bacterial Spot": 74,
+            "Black Rot": 32,
+            "Brown Spot": 4,
+            "Cedar Apple Rust": 51,
+            "Common Rust": 60,
+            "Early Blight": 91,
+            "Gray Leaf Spot": 23,
+            "Healthy": 256,
+            "Late Blight": 110,
+            "Leaf Mold": 40,
+            "Leaf Smut": 0,
+            "Mosaic Virus": 23,
+            "Northern Leaf Blight": 79,
+            "Powdery Mildew": 33,
+            "Septoria Leaf Spot": 61,
+            "Two-Spotted Spider Mite": 0,
+            "Yellow Leaf Curl Virus": 16
+          },
+          "Cluster_2": {
+            "Apple Scab": 5,
+            "Bacterial Leaf Blight": 12,
+            "Bacterial Spot": 8,
+            "Black Rot": 2,
+            "Brown Spot": 7,
+            "Cedar Apple Rust": 4,
+            "Common Rust": 1,
+            "Early Blight": 5,
+            "Gray Leaf Spot": 0,
+            "Healthy": 321,
+            "Late Blight": 8,
+            "Leaf Mold": 3,
+            "Leaf Smut": 12,
+            "Mosaic Virus": 2,
+            "Northern Leaf Blight": 3,
+            "Powdery Mildew": 0,
+            "Septoria Leaf Spot": 11,
+            "Two-Spotted Spider Mite": 0,
+            "Yellow Leaf Curl Virus": 2
+          },
+          "Cluster_3": {
+            "Apple Scab": 26,
+            "Bacterial Leaf Blight": 0,
+            "Bacterial Spot": 57,
+            "Black Rot": 21,
+            "Brown Spot": 1,
+            "Cedar Apple Rust": 22,
+            "Common Rust": 44,
+            "Early Blight": 59,
+            "Gray Leaf Spot": 32,
+            "Healthy": 130,
+            "Late Blight": 63,
+            "Leaf Mold": 37,
+            "Leaf Smut": 0,
+            "Mosaic Virus": 16,
+            "Northern Leaf Blight": 73,
+            "Powdery Mildew": 57,
+            "Septoria Leaf Spot": 41,
+            "Two-Spotted Spider Mite": 0,
+            "Yellow Leaf Curl Virus": 9
+          }
+        }
+      }
+    }
+  },
+  "cluster_profiles": [
+    {
+      "cluster_id": 0,
+      "size": 2150,
+      "percentage": 82.82,
+      "top_elevated_features": [
+        {
+          "feature": "contour_perimeter",
+          "cluster_mean": 5764.5772,
+          "global_mean": 5116.2161,
+          "z_score": 0.23
+        },
+        {
+          "feature": "hsv_h_norm",
+          "cluster_mean": 0.2795,
+          "global_mean": 0.2568,
+          "z_score": 0.2192
+        },
+        {
+          "feature": "hsv_h_mean",
+          "cluster_mean": 100.6271,
+          "global_mean": 92.4402,
+          "z_score": 0.2192
+        },
+        {
+          "feature": "hsv_s_norm",
+          "cluster_mean": 0.4497,
+          "global_mean": 0.4141,
+          "z_score": 0.2192
+        },
+        {
+          "feature": "hsv_s_mean",
+          "cluster_mean": 0.4497,
+          "global_mean": 0.4141,
+          "z_score": 0.2192
+        }
+      ],
+      "top_suppressed_features": [
+        {
+          "feature": "glcm_asm",
+          "cluster_mean": 0.0584,
+          "global_mean": 0.1085,
+          "z_score": -0.3774
+        },
+        {
+          "feature": "glcm_energy",
+          "cluster_mean": 0.0584,
+          "global_mean": 0.1085,
+          "z_score": -0.3774
+        },
+        {
+          "feature": "rgb_r_norm",
+          "cluster_mean": 0.4218,
+          "global_mean": 0.4861,
+          "z_score": -0.3738
+        },
+        {
+          "feature": "rgb_r_mean",
+          "cluster_mean": 107.549,
+          "global_mean": 123.9561,
+          "z_score": -0.3738
+        },
+        {
+          "feature": "rgb_g_mean",
+          "cluster_mean": 126.8612,
+          "global_mean": 140.8805,
+          "z_score": -0.3619
+        }
+      ]
+    },
+    {
+      "cluster_id": 1,
+      "size": 446,
+      "percentage": 17.18,
+      "top_elevated_features": [
+        {
+          "feature": "glcm_asm",
+          "cluster_mean": 0.3502,
+          "global_mean": 0.1085,
+          "z_score": 1.8192
+        },
+        {
+          "feature": "glcm_energy",
+          "cluster_mean": 0.3502,
+          "global_mean": 0.1085,
+          "z_score": 1.8192
+        },
+        {
+          "feature": "rgb_r_norm",
+          "cluster_mean": 0.7963,
+          "global_mean": 0.4861,
+          "z_score": 1.8019
+        },
+        {
+          "feature": "rgb_r_mean",
+          "cluster_mean": 203.0484,
+          "global_mean": 123.9561,
+          "z_score": 1.8019
+        },
+        {
+          "feature": "rgb_g_mean",
+          "cluster_mean": 208.4623,
+          "global_mean": 140.8805,
+          "z_score": 1.7448
+        }
+      ],
+      "top_suppressed_features": [
+        {
+          "feature": "contour_perimeter",
+          "cluster_mean": 1990.7085,
+          "global_mean": 5116.2161,
+          "z_score": -1.1087
+        },
+        {
+          "feature": "hsv_h_norm",
+          "cluster_mean": 0.1471,
+          "global_mean": 0.2568,
+          "z_score": -1.0569
+        },
+        {
+          "feature": "hsv_h_mean",
+          "cluster_mean": 52.9746,
+          "global_mean": 92.4402,
+          "z_score": -1.0569
+        },
+        {
+          "feature": "hsv_s_norm",
+          "cluster_mean": 0.2424,
+          "global_mean": 0.4141,
+          "z_score": -1.0567
+        },
+        {
+          "feature": "hsv_s_mean",
+          "cluster_mean": 0.2424,
+          "global_mean": 0.4141,
+          "z_score": -1.0566
+        }
+      ]
+    }
+  ],
+  "contingency_analysis": {
+    "health_status": {
+      "evaluated_column": "condition_status",
+      "chi2_statistic": 445.6,
+      "p_value": 6.534992658960201e-99,
+      "degrees_of_freedom": 1,
+      "cramers_v": 0.4143,
+      "cluster_composition": {
+        "Cluster_0": {
+          "Diseased": 1640,
+          "Healthy": 510
+        },
+        "Cluster_1": {
+          "Diseased": 110,
+          "Healthy": 336
+        }
+      }
+    },
+    "crop": {
+      "evaluated_column": "crop_name",
+      "chi2_statistic": 579.65,
+      "p_value": 1.6674993322983388e-115,
+      "degrees_of_freedom": 13,
+      "cramers_v": 0.4725,
+      "cluster_composition": {
+        "Cluster_0": {
+          "Apple": 196,
+          "Bell Pepper": 120,
+          "Blueberry": 83,
+          "Cherry": 45,
+          "Corn": 365,
+          "Grape": 100,
+          "Peach": 47,
+          "Potato": 204,
+          "Raspberry": 85,
+          "Rice": 4,
+          "Soybean": 42,
+          "Squash": 130,
+          "Strawberry": 43,
+          "Tomato": 686
+        },
+        "Cluster_1": {
+          "Apple": 76,
+          "Bell Pepper": 12,
+          "Blueberry": 31,
+          "Cherry": 12,
+          "Corn": 7,
+          "Grape": 33,
+          "Peach": 64,
+          "Potato": 12,
+          "Raspberry": 34,
+          "Rice": 32,
+          "Soybean": 23,
+          "Squash": 0,
+          "Strawberry": 53,
+          "Tomato": 57
+        }
+      }
+    },
+    "pathogen": {
+      "evaluated_column": "pathogen_type",
+      "chi2_statistic": 459.64,
+      "p_value": 3.583158388415275e-98,
+      "degrees_of_freedom": 4,
+      "cramers_v": 0.4208,
+      "cluster_composition": {
+        "Cluster_0": {
+          "Bacterial": 164,
+          "Fungal": 1352,
+          "Pest": 2,
+          "Unknown": 510,
+          "Viral": 122
+        },
+        "Cluster_1": {
+          "Bacterial": 29,
+          "Fungal": 74,
+          "Pest": 0,
+          "Unknown": 336,
+          "Viral": 7
+        }
+      }
+    },
+    "source": {
+      "evaluated_column": "dataset_source",
+      "chi2_statistic": 126.87,
+      "p_value": 1.9838960746351283e-29,
+      "degrees_of_freedom": 1,
+      "cramers_v": 0.2211,
+      "cluster_composition": {
+        "Cluster_0": {
+          "icar_ogd": 4,
+          "plantdoc": 2146
+        },
+        "Cluster_1": {
+          "icar_ogd": 32,
+          "plantdoc": 414
+        }
+      }
+    },
+    "disease": {
+      "evaluated_column": "disease_name",
+      "chi2_statistic": 639.61,
+      "p_value": 3.596434271006236e-124,
+      "degrees_of_freedom": 18,
+      "cramers_v": 0.4964,
+      "cluster_composition": {
+        "Cluster_0": {
+          "Apple Scab": 86,
+          "Bacterial Leaf Blight": 0,
+          "Bacterial Spot": 164,
+          "Black Rot": 61,
+          "Brown Spot": 4,
+          "Cedar Apple Rust": 83,
+          "Common Rust": 115,
+          "Early Blight": 195,
+          "Gray Leaf Spot": 64,
+          "Healthy": 510,
+          "Late Blight": 204,
+          "Leaf Mold": 86,
+          "Leaf Smut": 0,
+          "Mosaic Virus": 50,
+          "Northern Leaf Blight": 186,
+          "Powdery Mildew": 130,
+          "Septoria Leaf Spot": 138,
+          "Two-Spotted Spider Mite": 2,
+          "Yellow Leaf Curl Virus": 72
+        },
+        "Cluster_1": {
+          "Apple Scab": 7,
+          "Bacterial Leaf Blight": 12,
+          "Bacterial Spot": 17,
+          "Black Rot": 3,
+          "Brown Spot": 8,
+          "Cedar Apple Rust": 5,
+          "Common Rust": 1,
+          "Early Blight": 6,
+          "Gray Leaf Spot": 2,
+          "Healthy": 336,
+          "Late Blight": 10,
+          "Leaf Mold": 5,
+          "Leaf Smut": 12,
+          "Mosaic Virus": 4,
+          "Northern Leaf Blight": 4,
+          "Powdery Mildew": 0,
+          "Septoria Leaf Spot": 11,
+          "Two-Spotted Spider Mite": 0,
+          "Yellow Leaf Curl Virus": 3
+        }
+      }
+    }
+  },
+  "scientific_findings": {
+    "rq1_visual_clustering": "Visual color, texture, and shape descriptors partition images into distinct structural clusters with consistent separation in 2D PCA space.",
+    "rq2_association_drivers": "Contingency analysis demonstrates that clusters capture both physical leaf appearance (texture/chlorosis) and field image acquisition settings (source domain differences)."
+  }
+}

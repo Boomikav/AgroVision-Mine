@@ -1,0 +1,93 @@
+{
+  "audit_title": "AgroVision-Mine Data Integrity & Checksum Audit Report",
+  "timestamp": "2026-10-12",
+  "checksum_verification": {
+    "canonical_dataset_v2": {
+      "path": "data/manifests/canonical_dataset_v2.csv",
+      "expected_sha256": "c7fd16dcd6c1f8623f3e25a48b572387cba2b42855e4b5ddc482095d40f11cb8",
+      "actual_sha256": "c7fd16dcd6c1f8623f3e25a48b572387cba2b42855e4b5ddc482095d40f11cb8",
+      "match": true
+    },
+    "image_features_v2": {
+      "path": "data/features/image_features_v2.csv",
+      "expected_sha256": "f6caf70bd07eeda335e471705e3763d3dd3ef543c0ae406e902a5741ec4093c1",
+      "actual_sha256": "f6caf70bd07eeda335e471705e3763d3dd3ef543c0ae406e902a5741ec4093c1",
+      "match": true
+    }
+  },
+  "dimension_verification": {
+    "manifest_rows": 2596,
+    "manifest_cols": 21,
+    "features_rows": 2596,
+    "features_cols": 44,
+    "id_exact_order_match": true,
+    "unmatched_ids_count": 0
+  },
+  "missingness_audit": {
+    "manifest_nulls": {
+      "pathogen_type": 846
+    },
+    "manifest_nulls_explanation": "pathogen_type nulls (846) correspond strictly and exclusively to healthy foliar specimens (condition_status==Healthy).",
+    "features_store_nulls": {},
+    "features_store_null_count": 0
+  },
+  "class_and_source_distributions": {
+    "sources": {
+      "plantdoc": 2560,
+      "icar_ogd": 36
+    },
+    "crops_count": 14,
+    "crops": {
+      "Tomato": 743,
+      "Corn": 372,
+      "Apple": 272,
+      "Potato": 216,
+      "Grape": 133,
+      "Bell Pepper": 132,
+      "Squash": 130,
+      "Raspberry": 119,
+      "Blueberry": 114,
+      "Peach": 111,
+      "Strawberry": 96,
+      "Soybean": 65,
+      "Cherry": 57,
+      "Rice": 36
+    },
+    "conditions": {
+      "Diseased": 1750,
+      "Healthy": 846
+    },
+    "pathogens": {
+      "Fungal": 1426,
+      "nan": 846,
+      "Bacterial": 193,
+      "Viral": 129,
+      "Pest": 2
+    },
+    "diseases_count": 19,
+    "diseases": {
+      "Healthy": 846,
+      "Late Blight": 214,
+      "Early Blight": 201,
+      "Northern Leaf Blight": 190,
+      "Bacterial Spot": 181,
+      "Septoria Leaf Spot": 149,
+      "Powdery Mildew": 130,
+      "Common Rust": 116,
+      "Apple Scab": 93,
+      "Leaf Mold": 91,
+      "Cedar Apple Rust": 88,
+      "Yellow Leaf Curl Virus": 75,
+      "Gray Leaf Spot": 66,
+      "Black Rot": 64,
+      "Mosaic Virus": 54,
+      "Bacterial Leaf Blight": 12,
+      "Brown Spot": 12,
+      "Leaf Smut": 12,
+      "Two-Spotted Spider Mite": 2
+    },
+    "pest_observations_count": 2
+  },
+  "discrepancy_log": [],
+  "audit_gate_verdict": "INTEGRITY-PASSED"
+}

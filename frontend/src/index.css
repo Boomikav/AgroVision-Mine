@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --primary: #175d44;
+    --primary-container: #34765b;
+    --on-primary: #ffffff;
+    --secondary: #426831;
+    --secondary-container: #c3efaa;
+    --tertiary: #6c4c00;
+    --tertiary-fixed: #ffdea7;
+    --tertiary-fixed-dim: #f1bf60;
+    --surface: #ebfef3;
+    --surface-canvas: #f7f6ef;
+    --surface-container-lowest: #ffffff;
+    --surface-container-low: #e5f8ed;
+    --surface-container: #e0f2e8;
+    --surface-container-high: #daede2;
+    --surface-container-highest: #d4e7dc;
+    --inverse-surface: #24342d;
+    --inverse-on-surface: #e2f5eb;
+    --on-surface: #0f1f18;
+    --on-surface-variant: #404943;
+    --outline: #707973;
+    --outline-variant: #bfc9c2;
+    --error: #ba1a1a;
+    --error-container: #ffdad6;
+    --on-error-container: #93000a;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+    background-color: #f7f6ef;
+    color: #0f1f18;
+    font-family: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-headline {
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Material Symbols Icon Sizing Helper */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  vertical-align: middle;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f7f6ef;
+}
+::-webkit-scrollbar-thumb {
+  background: #bfc9c2;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #707973;
+}

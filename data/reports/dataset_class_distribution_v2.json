@@ -1,0 +1,55 @@
+{
+  "total_images": 2596,
+  "source_distribution": {
+    "plantdoc": 2560,
+    "icar_ogd": 36
+  },
+  "crop_distribution": {
+    "Tomato": 743,
+    "Corn": 372,
+    "Apple": 272,
+    "Potato": 216,
+    "Grape": 133,
+    "Bell Pepper": 132,
+    "Squash": 130,
+    "Raspberry": 119,
+    "Blueberry": 114,
+    "Peach": 111,
+    "Strawberry": 96,
+    "Soybean": 65,
+    "Cherry": 57,
+    "Rice": 36
+  },
+  "disease_distribution": {
+    "Healthy": 846,
+    "Late Blight": 214,
+    "Early Blight": 201,
+    "Northern Leaf Blight": 190,
+    "Bacterial Spot": 181,
+    "Septoria Leaf Spot": 149,
+    "Powdery Mildew": 130,
+    "Common Rust": 116,
+    "Apple Scab": 93,
+    "Leaf Mold": 91,
+    "Cedar Apple Rust": 88,
+    "Yellow Leaf Curl Virus": 75,
+    "Gray Leaf Spot": 66,
+    "Black Rot": 64,
+    "Mosaic Virus": 54,
+    "Bacterial Leaf Blight": 12,
+    "Brown Spot": 12,
+    "Leaf Smut": 12,
+    "Two-Spotted Spider Mite": 2
+  },
+  "status_distribution": {
+    "Diseased": 1750,
+    "Healthy": 846
+  },
+  "pathogen_distribution": {
+    "Fungal": 1426,
+    "None": 846,
+    "Bacterial": 193,
+    "Viral": 129,
+    "Pest": 2
+  }
+}
