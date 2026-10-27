@@ -1,112 +1,166 @@
 """
-ETL Extract Step Module for AgroVision-Mine (Phase 5).
-Extracts:
-1. Raw image metadata & inventory from data/raw/
-2. Processed image metadata from data/processed/cleaned_metadata.csv
-3. Extracted classical visual features from data/features/image_features.csv
+ETL Extract Step Module for AgroVision-Mine.
+Extracts and validates data from the canonical v2 multimodal feature store and manifest:
+1. Canonical Dataset Manifest: data/manifests/canonical_dataset_v2.csv (2,596 records)
+2. Canonical Visual Feature Store: data/features/image_features_v2.csv (2,596 records)
+3. Cryptographic hash verification against expected invariant SHA-256 baselines.
+4. Identifies and reconciles the 36 authentic ICAR/OGD Rice observations alongside the 2,560 PlantDoc observations.
 """
+import hashlib
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 import pandas as pd
 
-from src.ingestion.dataset_loader import DatasetInspector
-from src.preprocessing.preprocessor import ImagePreprocessor
-from src.feature_extraction.pipeline import FeatureExtractionPipeline
 from src.utils.config import get_config
 from src.utils.logger import setup_logger
 
 logger = setup_logger("etl_extract")
 
+CANONICAL_MANIFEST_SHA256 = "c7fd16dcd6c1f8623f3e25a48b572387cba2b42855e4b5ddc482095d40f11cb8"
+CANONICAL_FEATURES_SHA256 = "f6caf70bd07eeda335e471705e3763d3dd3ef543c0ae406e902a5741ec4093c1"
+
 
 class Extractor:
     """
-    Extracts raw image metadata, processed image information, and visual features.
+    Extracts canonical multimodal dataset records, visual feature vectors, and provenance metadata.
     """
 
-    def __init__(self, raw_data_dir: Optional[str] = None):
+    def __init__(
+        self,
+        manifest_path: Optional[str] = None,
+        features_path: Optional[str] = None
+    ):
         self.cfg = get_config()
-        self.raw_data_dir = raw_data_dir or self.cfg["paths"]["raw_data_dir"]
-        self.inspector = DatasetInspector(self.raw_data_dir)
-        self.processed_dir = Path(self.cfg["paths"].get("processed_data_dir", "data/processed"))
-        self.features_dir = Path(self.cfg["paths"].get("features_data_dir", "data/features"))
+        self.manifest_file = Path(
+            manifest_path or self.cfg.get("paths", {}).get("canonical_manifest", "data/manifests/canonical_dataset_v2.csv")
+        ).resolve()
+        self.features_file = Path(
+            features_path or self.cfg.get("paths", {}).get("canonical_features", "data/features/image_features_v2.csv")
+        ).resolve()
 
-    def extract_raw_metadata(self) -> List[Dict[str, Any]]:
-        """
-        Discovers raw images and parses directory-level metadata.
-        """
-        logger.info("Extracting raw metadata from raw storage...")
-        raw_inventory = self.inspector.scan_raw_directory()
-        logger.info(f"Extracted {len(raw_inventory)} raw image metadata records.")
-        return raw_inventory
+    def verify_sha256(self, file_path: Path, expected_hash: str) -> bool:
+        """Verifies cryptographic SHA-256 integrity of input file."""
+        if not file_path.exists():
+            return False
+        h = hashlib.sha256()
+        with open(file_path, "rb") as f:
+            while chunk := f.read(65536):
+                h.update(chunk)
+        actual = h.hexdigest().lower()
+        match = (actual == expected_hash.lower())
+        if not match:
+            logger.warning(f"SHA-256 mismatch for {file_path.name}: expected {expected_hash}, got {actual}")
+        return match
 
-    def extract_processed_metadata(self, raw_inventory: Optional[List[Dict[str, Any]]] = None) -> List[Dict[str, Any]]:
+    def extract_canonical_manifest(self) -> List[Dict[str, Any]]:
         """
-        Extracts preprocessed image metadata from cleaned_metadata.csv.
-        If file is absent, runs the preprocessing pipeline to generate it.
+        Loads and validates canonical manifest records.
         """
-        metadata_file = self.processed_dir / "cleaned_metadata.csv"
-        if metadata_file.exists():
-            logger.info(f"Extracting processed metadata from {metadata_file}...")
-            df = pd.read_csv(metadata_file)
-            # Replace NaN failure reasons with empty string
-            df["failure_reason"] = df["failure_reason"].fillna("")
-            records = df.to_dict(orient="records")
-            logger.info(f"Extracted {len(records)} preprocessed image records.")
-            return records
+        if not self.manifest_file.exists():
+            raise FileNotFoundError(f"Canonical manifest not found at: {self.manifest_file}")
 
-        logger.warning("cleaned_metadata.csv not found on disk. Running ImagePreprocessor...")
-        if raw_inventory is None:
-            raw_inventory = self.extract_raw_metadata()
-        preprocessor = ImagePreprocessor()
-        report = preprocessor.run_pipeline(raw_inventory)
-        return report["processed_records"]
+        logger.info(f"Extracting canonical manifest from {self.manifest_file}...")
+        df = pd.read_csv(self.manifest_file)
+        if len(df) != 2596:
+            raise ValueError(f"Expected 2,596 manifest records, found {len(df)}")
 
-    def extract_visual_features(self, valid_processed: Optional[List[Dict[str, Any]]] = None) -> List[Dict[str, Any]]:
-        """
-        Extracts visual feature records from image_features.csv.
-        If file is absent, runs the feature extraction pipeline.
-        """
-        features_file = self.features_dir / "image_features.csv"
-        if features_file.exists():
-            logger.info(f"Extracting visual features from {features_file}...")
-            df = pd.read_csv(features_file)
-            records = df.to_dict(orient="records")
-            logger.info(f"Extracted {len(records)} visual feature records.")
-            return records
+        # Verify presence of all 36 authentic rice records
+        rice_records = df[df["crop_name"].str.lower() == "rice"]
+        if len(rice_records) != 36:
+            raise ValueError(f"Expected exactly 36 authentic rice observations, found {len(rice_records)}")
 
-        logger.warning("image_features.csv not found on disk. Running FeatureExtractionPipeline...")
-        pipeline = FeatureExtractionPipeline()
-        if valid_processed is not None:
-            return pipeline.run_pipeline(valid_processed)
-        return pipeline.run_batch_from_metadata()
+        # Ensure no null image_ids
+        if df["image_id"].isnull().any():
+            raise ValueError("Canonical manifest contains null image_id values.")
+
+        records = df.to_dict(orient="records")
+        logger.info(f"Successfully extracted {len(records)} manifest records (including {len(rice_records)} authentic rice records).")
+        return records
+
+    def extract_visual_features(self) -> List[Dict[str, Any]]:
+        """
+        Loads and validates canonical visual feature store records.
+        """
+        if not self.features_file.exists():
+            raise FileNotFoundError(f"Canonical feature store not found at: {self.features_file}")
+
+        logger.info(f"Extracting visual features from {self.features_file}...")
+        df = pd.read_csv(self.features_file)
+        if len(df) != 2596:
+            raise ValueError(f"Expected 2,596 feature records, found {len(df)}")
+
+        # Check for 32 continuous numeric features
+        req_features = [
+            "rgb_r_mean", "rgb_g_mean", "rgb_b_mean",
+            "rgb_r_std", "rgb_g_std", "rgb_b_std",
+            "rgb_r_norm", "rgb_g_norm", "rgb_b_norm",
+            "hsv_h_mean", "hsv_s_mean", "hsv_v_mean",
+            "hsv_h_std", "hsv_s_std", "hsv_v_std",
+            "hsv_h_norm", "hsv_s_norm", "hsv_v_norm",
+            "exg_index_mean", "glcm_contrast", "glcm_contrast_norm",
+            "glcm_dissimilarity", "glcm_homogeneity", "glcm_energy",
+            "glcm_correlation", "glcm_asm", "contour_area",
+            "contour_perimeter", "contour_aspect_ratio",
+            "contour_circularity", "contour_solidity", "lesion_coverage_ratio"
+        ]
+        missing_feats = [col for col in req_features if col not in df.columns]
+        if missing_feats:
+            raise ValueError(f"Missing required continuous features in feature store: {missing_feats}")
+
+        # Check for nulls in required features
+        null_counts = df[req_features].isnull().sum()
+        if null_counts.sum() > 0:
+            bad_cols = null_counts[null_counts > 0].to_dict()
+            raise ValueError(f"Feature store contains null values in required features: {bad_cols}")
+
+        records = df.to_dict(orient="records")
+        logger.info(f"Successfully extracted {len(records)} visual feature records.")
+        return records
 
     def extract_all(self) -> Dict[str, Any]:
         """
-        Orchestrates full extraction across raw metadata, processed image metadata,
-        and extracted visual features.
+        Orchestrates full extraction and reconciliation across canonical manifest and feature store.
         """
-        logger.info("Starting complete ETL Extraction phase...")
-        raw_records = self.extract_raw_metadata()
-        processed_records = self.extract_processed_metadata(raw_records)
-        
-        # Valid processed subset for feature alignment
-        valid_processed = [r for r in processed_records if r.get("status") == "SUCCESS"]
-        feature_records = self.extract_visual_features(valid_processed)
+        logger.info("Starting complete canonical ETL Extraction phase...")
+        manifest_hash_valid = self.verify_sha256(self.manifest_file, CANONICAL_MANIFEST_SHA256)
+        features_hash_valid = self.verify_sha256(self.features_file, CANONICAL_FEATURES_SHA256)
 
-        extraction_bundle = {
-            "raw_metadata": raw_records,
-            "processed_metadata": processed_records,
+        manifest_records = self.extract_canonical_manifest()
+        feature_records = self.extract_visual_features()
+
+        # Reconcile one-to-one ID alignment
+        manifest_ids = [r["image_id"] for r in manifest_records]
+        feature_ids = [r["image_id"] for r in feature_records]
+
+        if manifest_ids != feature_ids:
+            set_diff = set(manifest_ids).symmetric_difference(set(feature_ids))
+            raise ValueError(f"Manifest IDs and Feature Store IDs do not match one-to-one! Mismatches: {len(set_diff)}")
+
+        rice_count = sum(1 for r in manifest_records if str(r.get("crop_name", "")).lower() == "rice")
+        plantdoc_count = sum(1 for r in manifest_records if str(r.get("dataset_source", "")).lower() == "plantdoc")
+        icar_count = sum(1 for r in manifest_records if str(r.get("dataset_source", "")).lower() == "icar_ogd")
+
+        bundle = {
+            "manifest_records": manifest_records,
+            "feature_records": feature_records,
+            "raw_metadata": manifest_records,
+            "processed_metadata": manifest_records,
             "visual_features": feature_records,
             "stats": {
-                "raw_count": len(raw_records),
-                "processed_count": len(processed_records),
-                "valid_processed_count": len(valid_processed),
-                "feature_count": len(feature_records)
+                "total_records": len(manifest_records),
+                "raw_count": len(manifest_records),
+                "processed_count": len(manifest_records),
+                "feature_count": len(feature_records),
+                "rice_records": rice_count,
+                "plantdoc_records": plantdoc_count,
+                "icar_records": icar_count,
+                "manifest_sha256_verified": manifest_hash_valid,
+                "features_sha256_verified": features_hash_valid,
             }
         }
+
         logger.info(
-            f"Extraction completed successfully: {extraction_bundle['stats']['raw_count']} raw, "
-            f"{extraction_bundle['stats']['processed_count']} processed, "
-            f"{extraction_bundle['stats']['feature_count']} features."
+            f"Canonical extraction complete: {bundle['stats']['total_records']} total records "
+            f"({bundle['stats']['plantdoc_records']} PlantDoc, {bundle['stats']['icar_records']} ICAR/OGD Rice)."
         )
-        return extraction_bundle
+        return bundle

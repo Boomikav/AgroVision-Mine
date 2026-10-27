@@ -127,4 +127,18 @@ export const api = {
     }
     return res.json()
   },
+
+  predictCropDisease: async (file: File): Promise<any> => {
+    const formData = new FormData()
+    formData.append('file', file)
+    const res = await fetch(`${API_BASE}/predict/disease`, {
+      method: 'POST',
+      body: formData,
+    })
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({ detail: `Prediction failed (${res.status})` }))
+      throw new Error(err.detail || `Prediction failed (${res.status})`)
+    }
+    return res.json()
+  },
 }

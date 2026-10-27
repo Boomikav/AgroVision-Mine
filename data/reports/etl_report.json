@@ -1,32 +1,49 @@
 {
-  "batch_id": "BATCH_20261013_035308",
-  "timestamp": "2026-10-13T03:53:09.469953",
-  "execution_time_seconds": 0.68,
-  "extracted_records": 36,
-  "processed_records": 36,
-  "feature_records": 36,
-  "transformed_records": 36,
+  "batch_id": "BATCH_20261027_130728",
+  "timestamp": "2026-10-27T13:07:31.882640",
+  "execution_time_seconds": 3.82,
+  "extracted_records": 2596,
+  "extraction_stats": {
+    "total_records": 2596,
+    "raw_count": 2596,
+    "processed_count": 2596,
+    "feature_count": 2596,
+    "rice_records": 36,
+    "plantdoc_records": 2560,
+    "icar_records": 36,
+    "manifest_sha256_verified": true,
+    "features_sha256_verified": true
+  },
+  "transformed_records": 2596,
+  "transformation_stats": {
+    "transformed_facts": 2596,
+    "unique_crops": 14,
+    "unique_diseases": 19,
+    "unique_images": 2596,
+    "unique_features": 2596,
+    "rejected_count": 0
+  },
   "rejected_records": [],
   "load_statistics": {
-    "batch_id": "BATCH_20261013_035308",
+    "batch_id": "BATCH_20261027_130728",
     "crops_inserted": 0,
-    "crops_existing": 1,
-    "crops_loaded": 0,
+    "crops_existing": 14,
+    "crops_loaded": 14,
     "diseases_inserted": 0,
-    "diseases_existing": 4,
-    "diseases_loaded": 0,
+    "diseases_existing": 19,
+    "diseases_loaded": 20,
     "images_inserted": 0,
-    "images_existing": 36,
-    "images_loaded": 0,
+    "images_existing": 2596,
+    "images_loaded": 2596,
     "features_inserted": 0,
-    "features_existing": 36,
-    "features_loaded": 0,
+    "features_existing": 2596,
+    "features_loaded": 2596,
     "facts_inserted": 0,
-    "facts_loaded": 0,
-    "facts_skipped_duplicate": 36,
+    "facts_loaded": 2596,
+    "facts_skipped_duplicate": 2596,
     "orphan_foreign_keys": 0,
     "errors": [],
-    "load_duration_ms": 428.92
+    "load_duration_ms": 3559.79
   },
   "warehouse_health": {
     "status": "HEALTHY",
@@ -39,13 +56,13 @@
     ],
     "missing_tables": [],
     "table_counts": {
-      "dim_crop": 1,
-      "dim_disease": 4,
-      "dim_image": 36,
-      "dim_visual_feature": 36,
-      "disease_observation_fact": 36
+      "dim_crop": 14,
+      "dim_disease": 20,
+      "dim_image": 2596,
+      "dim_visual_feature": 2596,
+      "disease_observation_fact": 2596
     },
-    "total_facts": 36,
-    "total_dimensions": 77
+    "total_facts": 2596,
+    "total_dimensions": 5226
   }
 }

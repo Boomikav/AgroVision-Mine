@@ -246,6 +246,10 @@ def test_association_rules_mode_separation():
     assert d_a["total_rules"] == 880
     assert d_a["methodological_warning"] is None
     assert d_a["algorithm_benchmark"]["output_verification"]["output_equivalence"] is True
+    assert d_a["algorithm_benchmark"]["mode"] == "visual_only"
+    assert d_a["algorithm_benchmark"]["unique_items_count"] == 36
+    assert d_a["algorithm_benchmark"]["fpgrowth"]["frequent_itemsets_count"] == 223
+    assert d_a["algorithm_benchmark"]["fpgrowth"]["rules_count"] == 880
 
     # Mode B: Label-Conditioned (Exploratory)
     res_b_all = client.get("/api/mining/association-rules?mode=labeled&min_lift=0.0&page=1&page_size=50")
@@ -255,6 +259,12 @@ def test_association_rules_mode_separation():
     assert d_b_all["total_rules"] == 285
     assert d_b_all["methodological_warning"] is not None
     assert "ground-truth labels" in d_b_all["methodological_warning"].lower()
+    assert d_b_all["algorithm_benchmark"]["mode"] == "labeled"
+    assert d_b_all["algorithm_benchmark"]["unique_items_count"] == 57
+    assert d_b_all["algorithm_benchmark"]["fpgrowth"]["frequent_itemsets_count"] == 387
+    assert d_b_all["algorithm_benchmark"]["fpgrowth"]["rules_count"] == 1165
+    assert d_b_all["algorithm_benchmark"]["fpgrowth"]["label_conditioned_rules_count"] == 285
+    assert d_b_all["algorithm_benchmark"]["output_verification"]["output_equivalence"] is True
 
     # Filtered by lift >= 1.0
     res_b_filt = client.get("/api/mining/association-rules?mode=labeled&page=1&page_size=50")

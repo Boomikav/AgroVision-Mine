@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { api } from '../../services/api'
 import type { SpecimenDetail } from '../../types/api'
+import { AppIcon } from './AppIcon'
 
 interface SpecimenModalProps {
   imageId: string | null
@@ -38,7 +39,7 @@ export const SpecimenModal: React.FC<SpecimenModalProps> = ({ imageId, onClose }
         <div className="px-6 py-4 bg-[#24342D] text-white flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 rounded-lg bg-[#34765B] flex items-center justify-center">
-              <span className="material-symbols-outlined text-[18px]">biotech</span>
+              <AppIcon name="biotech" className="text-[18px]" />
             </div>
             <div>
               <div className="flex items-center gap-2">
@@ -64,9 +65,10 @@ export const SpecimenModal: React.FC<SpecimenModalProps> = ({ imageId, onClose }
           </div>
           <button
             onClick={onClose}
+            aria-label="Close"
             className="w-8 h-8 rounded-lg bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors"
           >
-            <span className="material-symbols-outlined text-[20px]">close</span>
+            <AppIcon name="close" className="text-[20px]" />
           </button>
         </div>
 
@@ -74,16 +76,14 @@ export const SpecimenModal: React.FC<SpecimenModalProps> = ({ imageId, onClose }
         <div className="p-6 overflow-y-auto flex-1 flex flex-col gap-6">
           {loading && (
             <div className="flex flex-col items-center justify-center py-16 gap-3 text-[#404943]">
-              <span className="material-symbols-outlined text-4xl animate-spin text-[#175D44]">
-                progress_activity
-              </span>
+              <AppIcon name="progress_activity" className="text-4xl animate-spin text-[#175D44]" />
               <span className="text-sm">Retrieving specimen feature tensor...</span>
             </div>
           )}
 
           {error && (
             <div className="p-4 rounded-xl bg-[#FFDAD6] text-[#93000A] text-sm flex items-center gap-2">
-              <span className="material-symbols-outlined">error</span>
+              <AppIcon name="error" />
               <span>{error}</span>
             </div>
           )}
@@ -206,9 +206,7 @@ export const SpecimenModal: React.FC<SpecimenModalProps> = ({ imageId, onClose }
                 </div>
 
                 <div className="p-3 rounded-lg bg-[#E0F2E8]/60 text-[11px] text-[#404943] flex items-center gap-2">
-                  <span className="material-symbols-outlined text-[16px] text-[#175D44]">
-                    verified
-                  </span>
+                  <AppIcon name="verified" className="text-[16px] text-[#175D44]" />
                   <span>
                     Features standardized via z-score normalization across all 2,596 canonical specimens.
                   </span>

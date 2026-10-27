@@ -25,9 +25,11 @@ def test_extractor_components():
     assert "visual_features" in bundle
     assert "stats" in bundle
 
-    assert bundle["stats"]["raw_count"] >= 36
-    assert bundle["stats"]["processed_count"] == 36
-    assert bundle["stats"]["feature_count"] == 36
+    assert bundle["stats"]["raw_count"] == 2596
+    assert bundle["stats"]["processed_count"] == 2596
+    assert bundle["stats"]["feature_count"] == 2596
+    assert bundle["stats"]["rice_records"] == 36
+    assert bundle["stats"]["plantdoc_records"] == 2560
 
 
 def test_transformer_standardization():
@@ -41,7 +43,7 @@ def test_transformer_standardization():
 
     # Disease standardization
     dis_blight = transformer.standardize_disease("bacterial_leaf_blight")
-    assert dis_blight["disease_code"] == "BACTERIAL_BLIGHT"
+    assert dis_blight["disease_code"] == "BACTERIAL_LEAF_BLIGHT"
     assert dis_blight["pathogen_type"] == "Bacterial"
 
     dis_healthy = transformer.standardize_disease("healthy")
@@ -61,15 +63,15 @@ def test_transformer_validation_and_staging():
     assert "dim_features" in staged
     assert "fact_records" in staged
 
-    assert len(staged["fact_records"]) == 36
-    assert len(staged["dim_images"]) == 36
-    assert len(staged["dim_features"]) == 36
+    assert len(staged["fact_records"]) == 2596
+    assert len(staged["dim_images"]) == 2596
+    assert len(staged["dim_features"]) == 2596
     assert len(staged["rejected_records"]) == 0
 
     fact_sample = staged["fact_records"][0]
     assert "crop_code" in fact_sample
     assert "disease_code" in fact_sample
-    assert "raw_id" in fact_sample
+    assert "image_id" in fact_sample
     assert "observation_count" in fact_sample
     assert fact_sample["observation_count"] == 1
 
@@ -104,13 +106,13 @@ def test_end_to_end_etl_pipeline_run():
 
     assert "batch_id" in summary
     assert "execution_time_seconds" in summary
-    assert summary["transformed_records"] == 36
+    assert summary["transformed_records"] == 2596
     assert summary["warehouse_health"]["status"] == "HEALTHY"
 
     # Verify fact table row count in database
     session = get_db_session()
     try:
         fact_count = session.query(DiseaseObservationFact).count()
-        assert fact_count == 36
+        assert fact_count == 2596
     finally:
         session.close()

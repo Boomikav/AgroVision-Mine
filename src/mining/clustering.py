@@ -65,43 +65,103 @@ class CropVisualClusterer:
         self.pca_variance_ratio: List[float] = []
 
     def load_and_preprocess(self) -> Tuple[pd.DataFrame, np.ndarray]:
-        """Loads feature store, extracts numeric descriptors, and applies StandardScaler."""
-        if not self.features_path.exists():
-            raise FileNotFoundError(f"Feature store not found at {self.features_path}")
+        """Loads feature store, extracts numeric descriptors, and applies StandardScaler.
+        Prioritizes loading directly from the unified SQLite physical data warehouse."""
+        from src.warehouse.connection import get_db_engine
+        from sqlalchemy import text
+        import os
 
-        df_feat = pd.read_csv(self.features_path)
-        
-        # Merge with manifest if present for enriched metadata
-        if self.manifest_path.exists():
-            df_manifest = pd.read_csv(self.manifest_path)
-            meta_merge_cols = [
-                "image_id", "dataset_source", "crop_name", "disease_name",
-                "pathogen_type", "condition_status"
-            ]
-            manifest_sub = df_manifest[[c for c in meta_merge_cols if c in df_manifest.columns]]
-            df_merged = pd.merge(df_feat, manifest_sub, on="image_id", how="left")
+        loaded_from_db = False
+        db_path = Path("database/agrovision_warehouse.db")
+        if db_path.exists() and db_path.stat().st_size > 50000:
+            try:
+                engine = get_db_engine()
+                query = """
+                SELECT 
+                    f.image_id,
+                    i.filename,
+                    i.original_path AS raw_path,
+                    i.processed_path,
+                    c.crop_name,
+                    c.crop_name AS crop_label,
+                    d.disease_name,
+                    d.disease_name AS disease_label,
+                    f.condition_status,
+                    f.condition_status AS condition_label,
+                    d.pathogen_type,
+                    f.dataset_source,
+                    f.is_pest,
+                    vf.*
+                FROM disease_observation_fact f
+                JOIN dim_crop c ON f.crop_key = c.crop_key
+                JOIN dim_disease d ON f.disease_key = d.disease_key
+                JOIN dim_image i ON f.image_key = i.image_key
+                JOIN dim_visual_feature vf ON f.feature_key = vf.feature_key
+                ORDER BY f.observation_key ASC;
+                """
+                with engine.connect() as conn:
+                    df_merged = pd.read_sql_query(text(query), conn)
+                df_merged = df_merged.loc[:, ~df_merged.columns.duplicated()].copy()
+                if len(df_merged) == 2596:
+                    self.df_raw = df_merged
+                    loaded_from_db = True
+                    logger.info("Successfully loaded 2,596 observations directly from physical SQLite warehouse.")
+            except Exception as e:
+                logger.warning(f"Could not load from SQLite warehouse: {e}. Falling back to CSV.")
+
+        if not loaded_from_db:
+            if not self.features_path.exists():
+                raise FileNotFoundError(f"Feature store not found at {self.features_path}")
+
+            df_feat = pd.read_csv(self.features_path)
+            
+            # Merge with manifest if present for enriched metadata
+            if self.manifest_path.exists():
+                df_manifest = pd.read_csv(self.manifest_path)
+                meta_merge_cols = [
+                    "image_id", "dataset_source", "crop_name", "disease_name",
+                    "pathogen_type", "condition_status"
+                ]
+                manifest_sub = df_manifest[[c for c in meta_merge_cols if c in df_manifest.columns]]
+                df_merged = pd.merge(df_feat, manifest_sub, on="image_id", how="left")
+            else:
+                df_merged = df_feat.copy()
+
+            self.df_raw = df_merged
+
         else:
-            df_merged = df_feat.copy()
+            df_feat = self.df_raw
 
-        self.df_raw = df_merged
-
-        # Identify numeric visual features
-        exclude_cols = METADATA_COLS + [
-            "dataset_source", "crop_name", "disease_name", "pathogen_type", "condition_status"
+        # Identify continuous visual features (32 standard descriptors)
+        standard_32 = [
+            "rgb_r_mean", "rgb_g_mean", "rgb_b_mean",
+            "rgb_r_std", "rgb_g_std", "rgb_b_std",
+            "rgb_r_norm", "rgb_g_norm", "rgb_b_norm",
+            "hsv_h_mean", "hsv_s_mean", "hsv_v_mean",
+            "hsv_h_std", "hsv_s_std", "hsv_v_std",
+            "hsv_h_norm", "hsv_s_norm", "hsv_v_norm",
+            "exg_index_mean",
+            "glcm_contrast", "glcm_contrast_norm", "glcm_dissimilarity",
+            "glcm_homogeneity", "glcm_energy", "glcm_correlation", "glcm_asm",
+            "contour_area", "contour_perimeter", "contour_aspect_ratio",
+            "contour_circularity", "contour_solidity", "lesion_coverage_ratio"
         ]
-        
-        num_cols = []
-        for c in df_feat.columns:
-            if c not in exclude_cols:
-                if pd.api.types.is_numeric_dtype(df_feat[c]):
-                    num_cols.append(c)
-                elif df_feat[c].dtype == bool:
-                    num_cols.append(c)
+        if all(c in self.df_raw.columns for c in standard_32):
+            self.feature_names = standard_32
+        else:
+            exclude_cols = METADATA_COLS + [
+                "dataset_source", "crop_name", "disease_name", "pathogen_type", "condition_status",
+                "observation_key", "crop_key", "disease_key", "image_key", "feature_key"
+            ]
+            num_cols = []
+            for c in self.df_raw.columns:
+                if c not in exclude_cols:
+                    if pd.api.types.is_numeric_dtype(self.df_raw[c]):
+                        num_cols.append(c)
+            self.feature_names = num_cols
 
-        self.feature_names = num_cols
-        
         # Build numeric feature dataframe
-        f_df = df_feat[self.feature_names].copy()
+        f_df = self.df_raw[self.feature_names].copy()
         for c in f_df.columns:
             if f_df[c].dtype == bool:
                 f_df[c] = f_df[c].astype(float)

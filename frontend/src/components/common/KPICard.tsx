@@ -1,4 +1,5 @@
 import React from 'react'
+import { AppIcon } from './AppIcon'
 
 interface KPICardProps {
   label: string
@@ -40,9 +41,7 @@ export const KPICard: React.FC<KPICardProps> = ({
           </div>
         </div>
         <div className="w-9 h-9 rounded-lg bg-[#E0F2E8] flex items-center justify-center shrink-0">
-          <span className={`material-symbols-outlined text-[20px] ${iconColor}`}>
-            {icon}
-          </span>
+          <AppIcon name={icon} className={`w-5 h-5 ${iconColor}`} />
         </div>
       </div>
 

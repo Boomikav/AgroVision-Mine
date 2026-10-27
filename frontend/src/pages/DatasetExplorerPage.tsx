@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { api } from '../services/api'
 import type { DatasetResponse } from '../types/api'
 import { SpecimenModal } from '../components/common/SpecimenModal'
+import { AppIcon } from '../components/common/AppIcon'
 
 interface DatasetExplorerPageProps {
   initialSearch?: string
@@ -121,9 +122,7 @@ export const DatasetExplorerPage: React.FC<DatasetExplorerPageProps> = ({ initia
         {/* Row 1: Search & Controls */}
         <div className="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4">
           <form onSubmit={handleSearchSubmit} className="relative flex-1 max-w-xl">
-            <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#707973] text-[20px]">
-              search
-            </span>
+            <AppIcon name="search" className="absolute left-3 top-1/2 -translate-y-1/2 text-[#707973] text-[20px]" />
             <input
               type="text"
               value={search}
@@ -140,7 +139,7 @@ export const DatasetExplorerPage: React.FC<DatasetExplorerPageProps> = ({ initia
                 }}
                 className="absolute right-12 top-1/2 -translate-y-1/2 text-[#707973] hover:text-[#0F1F18]"
               >
-                <span className="material-symbols-outlined text-[16px]">close</span>
+                <AppIcon name="close" className="text-[16px]" />
               </button>
             )}
             <button
@@ -171,7 +170,7 @@ export const DatasetExplorerPage: React.FC<DatasetExplorerPageProps> = ({ initia
                     : 'text-[#404943] hover:text-[#0F1F18]'
                 }`}
               >
-                <span className="material-symbols-outlined text-[16px]">grid_view</span>
+                <AppIcon name="grid_view" className="text-[16px]" />
                 <span className="hidden md:inline">Grid</span>
               </button>
               <button
@@ -182,7 +181,7 @@ export const DatasetExplorerPage: React.FC<DatasetExplorerPageProps> = ({ initia
                     : 'text-[#404943] hover:text-[#0F1F18]'
                 }`}
               >
-                <span className="material-symbols-outlined text-[16px]">table_rows</span>
+                <AppIcon name="table_rows" className="text-[16px]" />
                 <span className="hidden md:inline">Table</span>
               </button>
             </div>
@@ -192,7 +191,7 @@ export const DatasetExplorerPage: React.FC<DatasetExplorerPageProps> = ({ initia
               onClick={handleExportCsv}
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#34765B] text-white hover:bg-[#175D44] text-xs font-semibold transition-colors shadow-xs"
             >
-              <span className="material-symbols-outlined text-[16px]">file_download</span>
+              <AppIcon name="file_download" className="text-[16px]" />
               <span>Export CSV</span>
             </button>
           </div>
@@ -312,7 +311,7 @@ export const DatasetExplorerPage: React.FC<DatasetExplorerPageProps> = ({ initia
                   : 'bg-[#F7F6EF] text-[#707973] border-[#E2E7DF] cursor-not-allowed'
               }`}
             >
-              <span className="material-symbols-outlined text-[15px]">restart_alt</span>
+              <AppIcon name="restart_alt" className="text-[15px]" />
               <span>Reset ({activeFiltersCount})</span>
             </button>
           </div>
@@ -322,14 +321,12 @@ export const DatasetExplorerPage: React.FC<DatasetExplorerPageProps> = ({ initia
       {/* Main Specimen Grid / Table View */}
       {loading ? (
         <div className="flex flex-col items-center justify-center py-20 gap-3 text-[#404943]">
-          <span className="material-symbols-outlined text-4xl animate-spin text-[#175D44]">
-            progress_activity
-          </span>
+          <AppIcon name="progress_activity" className="text-4xl animate-spin text-[#175D44]" />
           <span className="text-sm font-mono">Retrieving specimen inventory from data warehouse...</span>
         </div>
       ) : data?.records.length === 0 ? (
         <div className="bg-white rounded-2xl p-12 text-center border border-[#E2E7DF] flex flex-col items-center gap-3">
-          <span className="material-symbols-outlined text-4xl text-[#707973]">search_off</span>
+          <AppIcon name="search_off" className="text-4xl text-[#707973]" />
           <h3 className="font-headline font-semibold text-lg text-[#0F1F18]">
             No matching specimens found
           </h3>
@@ -407,7 +404,7 @@ export const DatasetExplorerPage: React.FC<DatasetExplorerPageProps> = ({ initia
                     <span className="truncate">{rec.dominant_color_tone}</span>
                     <span className="text-[#175D44] font-medium flex items-center gap-0.5">
                       Inspect
-                      <span className="material-symbols-outlined text-[12px]">chevron_right</span>
+                      <AppIcon name="chevron_right" className="text-[12px]" />
                     </span>
                   </div>
                 </div>

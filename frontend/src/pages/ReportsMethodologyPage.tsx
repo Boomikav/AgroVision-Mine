@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { api } from '../services/api'
 import { SectionCard } from '../components/common/SectionCard'
+import { AppIcon } from '../components/common/AppIcon'
 
 export const ReportsMethodologyPage: React.FC = () => {
   const [catalog, setCatalog] = useState<any | null>(null)
@@ -57,7 +58,7 @@ export const ReportsMethodologyPage: React.FC = () => {
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-[#E0F2E8] text-[#175D44] flex items-center justify-center">
-              <span className="material-symbols-outlined text-[24px]">menu_book</span>
+              <AppIcon name="menu_book" className="text-[24px]" />
             </div>
             <div>
               <div className="flex items-center gap-2">
@@ -102,7 +103,7 @@ export const ReportsMethodologyPage: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-xs pt-1">
           <div className="p-4 rounded-xl bg-[#F7F6EF] border border-[#E2E7DF] flex flex-col gap-2">
             <div className="flex items-center gap-2 text-[#175D44] font-semibold">
-              <span className="material-symbols-outlined text-[18px]">bubble_chart</span>
+              <AppIcon name="bubble_chart" className="text-[18px]" />
               <span>K=2 Metric-Supported Solution</span>
             </div>
             <p className="text-[#404943] leading-relaxed">
@@ -112,7 +113,7 @@ export const ReportsMethodologyPage: React.FC = () => {
 
           <div className="p-4 rounded-xl bg-[#F7F6EF] border border-[#E2E7DF] flex flex-col gap-2">
             <div className="flex items-center gap-2 text-[#6C4C00] font-semibold">
-              <span className="material-symbols-outlined text-[18px]">hub</span>
+              <AppIcon name="hub" className="text-[18px]" />
               <span>Association Does Not Prove Causality</span>
             </div>
             <p className="text-[#404943] leading-relaxed">
@@ -122,7 +123,7 @@ export const ReportsMethodologyPage: React.FC = () => {
 
           <div className="p-4 rounded-xl bg-[#F7F6EF] border border-[#E2E7DF] flex flex-col gap-2">
             <div className="flex items-center gap-2 text-[#BA1A1A] font-semibold">
-              <span className="material-symbols-outlined text-[18px]">warning</span>
+              <AppIcon name="warning" className="text-[18px]" />
               <span>No Autonomous Clinical Diagnosis</span>
             </div>
             <p className="text-[#404943] leading-relaxed">
@@ -132,7 +133,7 @@ export const ReportsMethodologyPage: React.FC = () => {
 
           <div className="p-4 rounded-xl bg-[#F7F6EF] border border-[#E2E7DF] flex flex-col gap-2">
             <div className="flex items-center gap-2 text-[#404943] font-semibold">
-              <span className="material-symbols-outlined text-[18px]">pie_chart</span>
+              <AppIcon name="pie_chart" className="text-[18px]" />
               <span>Dataset Provenance Imbalance</span>
             </div>
             <p className="text-[#404943] leading-relaxed">
@@ -142,7 +143,7 @@ export const ReportsMethodologyPage: React.FC = () => {
 
           <div className="p-4 rounded-xl bg-[#F7F6EF] border border-[#E2E7DF] flex flex-col gap-2">
             <div className="flex items-center gap-2 text-[#404943] font-semibold">
-              <span className="material-symbols-outlined text-[18px]">bug_report</span>
+              <AppIcon name="bug_report" className="text-[18px]" />
               <span>Pest Symptom Underrepresentation</span>
             </div>
             <p className="text-[#404943] leading-relaxed">
@@ -152,7 +153,7 @@ export const ReportsMethodologyPage: React.FC = () => {
 
           <div className="p-4 rounded-xl bg-[#F7F6EF] border border-[#E2E7DF] flex flex-col gap-2">
             <div className="flex items-center gap-2 text-[#175D44] font-semibold">
-              <span className="material-symbols-outlined text-[18px]">verified</span>
+              <AppIcon name="verified" className="text-[18px]" />
               <span>100% Cryptographic Reproducibility</span>
             </div>
             <p className="text-[#404943] leading-relaxed">
@@ -172,14 +173,14 @@ export const ReportsMethodologyPage: React.FC = () => {
             onClick={handleDownload}
             className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#175D44] text-white hover:bg-[#34765B] text-xs font-semibold transition-colors shadow-xs"
           >
-            <span className="material-symbols-outlined text-[16px]">download</span>
+            <AppIcon name="download" className="text-[16px]" />
             <span>Download JSON</span>
           </button>
         }
       >
         {loading ? (
           <div className="flex items-center justify-center py-16 gap-2 text-xs text-[#404943]">
-            <span className="material-symbols-outlined animate-spin text-[18px]">progress_activity</span>
+            <AppIcon name="progress_activity" className="animate-spin text-[18px]" />
             <span>Loading evaluation artifact...</span>
           </div>
         ) : (

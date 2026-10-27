@@ -58,18 +58,58 @@ class VisualAssociationMiner:
         self.df_transactions_labeled: Optional[pd.DataFrame] = None
 
     def load_and_discretize(self, num_bins: int = 3) -> Tuple[pd.DataFrame, Dict[str, Any]]:
-        """Loads features and discretizes continuous descriptors into tertiles (Low, Medium, High)."""
-        if not self.features_path.exists():
-            raise FileNotFoundError(f"Feature store not found at {self.features_path}")
+        """Loads features and discretizes continuous descriptors into tertiles (Low, Medium, High).
+        Prioritizes loading directly from the unified SQLite physical data warehouse."""
+        from src.warehouse.connection import get_db_engine
+        from sqlalchemy import text
 
-        df_feat = pd.read_csv(self.features_path)
-        if self.manifest_path.exists():
-            df_manifest = pd.read_csv(self.manifest_path)
-            meta_cols = ["image_id", "crop_name", "disease_name", "pathogen_type", "condition_status", "dataset_source"]
-            sub_m = df_manifest[[c for c in meta_cols if c in df_manifest.columns]]
-            self.df_raw = pd.merge(df_feat, sub_m, on="image_id", how="left")
-        else:
-            self.df_raw = df_feat
+        loaded_from_db = False
+        db_path = Path("database/agrovision_warehouse.db")
+        if db_path.exists() and db_path.stat().st_size > 50000:
+            try:
+                engine = get_db_engine()
+                query = """
+                SELECT 
+                    f.image_id,
+                    i.filename,
+                    i.original_path AS raw_path,
+                    i.processed_path,
+                    c.crop_name,
+                    d.disease_name,
+                    f.condition_status,
+                    d.pathogen_type,
+                    f.dataset_source,
+                    f.is_pest,
+                    vf.*
+                FROM disease_observation_fact f
+                JOIN dim_crop c ON f.crop_key = c.crop_key
+                JOIN dim_disease d ON f.disease_key = d.disease_key
+                JOIN dim_image i ON f.image_key = i.image_key
+                JOIN dim_visual_feature vf ON f.feature_key = vf.feature_key
+                ORDER BY f.observation_key ASC;
+                """
+                with engine.connect() as conn:
+                    df_merged = pd.read_sql_query(text(query), conn)
+                df_merged = df_merged.loc[:, ~df_merged.columns.duplicated()].copy()
+                if len(df_merged) == 2596:
+                    self.df_raw = df_merged
+                    loaded_from_db = True
+                    logger.info("VisualAssociationMiner loaded 2,596 observations directly from physical SQLite warehouse.")
+            except Exception as e:
+                logger.warning(f"Could not load from SQLite warehouse: {e}")
+
+        if not loaded_from_db:
+            if not self.features_path.exists():
+                raise FileNotFoundError(f"Feature store not found at {self.features_path}")
+
+            df_feat = pd.read_csv(self.features_path)
+            if self.manifest_path.exists():
+                df_manifest = pd.read_csv(self.manifest_path)
+                meta_cols = ["image_id", "crop_name", "disease_name", "pathogen_type", "condition_status", "dataset_source"]
+                sub_m = df_manifest[[c for c in meta_cols if c in df_manifest.columns]]
+                self.df_raw = pd.merge(df_feat, sub_m, on="image_id", how="left")
+            else:
+                self.df_raw = df_feat
 
         labels = ["Low", "Medium", "High"]
         bin_meta = {}
@@ -115,9 +155,10 @@ class VisualAssociationMiner:
 
         # Build transaction matrix with labels (Health status, Crop, Pathogen)
         labeled_dummies = [self.df_transactions_visual.copy()]
-        for label_col in ["condition_status", "crop_name", "pathogen_type", "crop_label", "condition_label"]:
+        for label_col in ["condition_status", "crop_name", "pathogen_type"]:
             if label_col in self.df_raw.columns:
-                dum = pd.get_dummies(self.df_raw[label_col].fillna("Unknown"), prefix=label_col)
+                fill_val = "None" if label_col == "pathogen_type" else "Unknown"
+                dum = pd.get_dummies(self.df_raw[label_col].fillna(fill_val), prefix=label_col)
                 labeled_dummies.append(dum)
 
         self.df_transactions_labeled = pd.concat(labeled_dummies, axis=1).astype(bool)
@@ -176,16 +217,21 @@ class VisualAssociationMiner:
 
         return frequent_itemsets, rules, elapsed_sec
 
-    def compare_algorithms(self, num_runs: int = 5, tolerance: float = 1e-6) -> Dict[str, Any]:
+    def compare_algorithms(self, mode: str = "visual_only", num_runs: int = 10, tolerance: float = 1e-6) -> Dict[str, Any]:
         """Compares runtime, frequent itemsets, and association rules between FP-Growth and Apriori.
         
-        Performs normalized equality verification:
-        - Frequent itemsets normalized as frozensets.
-        - Supports compared within floating-point tolerance.
-        - Rules normalized by (antecedent, consequent) itemsets.
-        - Support, confidence, and lift matched across all rules.
+        Args:
+            mode: 'visual_only' (Mode A) or 'labeled' (Mode B)
+            num_runs: Repetitions to compute median runtimes
+            tolerance: Float comparison tolerance
         """
         import statistics
+
+        if self.df_transactions_visual is None or self.df_transactions_labeled is None:
+            self.load_and_discretize()
+
+        tx_matrix = self.df_transactions_visual if mode == "visual_only" else self.df_transactions_labeled
+        assert tx_matrix is not None
 
         # Multi-run benchmark
         fp_times: List[float] = []
@@ -196,7 +242,7 @@ class VisualAssociationMiner:
         for i in range(num_runs):
             t0 = time.perf_counter()
             cur_fp_is, cur_fp_r, _ = self.mine_patterns(
-                mode="visual_only", algorithm="fpgrowth", min_support=self.min_support, min_confidence=self.min_confidence
+                mode=mode, algorithm="fpgrowth", min_support=self.min_support, min_confidence=self.min_confidence
             )
             fp_times.append(time.perf_counter() - t0)
             if i == 0:
@@ -204,7 +250,7 @@ class VisualAssociationMiner:
 
             t0 = time.perf_counter()
             cur_ap_is, cur_ap_r, _ = self.mine_patterns(
-                mode="visual_only", algorithm="apriori", min_support=self.min_support, min_confidence=self.min_confidence
+                mode=mode, algorithm="apriori", min_support=self.min_support, min_confidence=self.min_confidence
             )
             ap_times.append(time.perf_counter() - t0)
             if i == 0:
@@ -246,7 +292,27 @@ class VisualAssociationMiner:
 
         overall_equivalent = itemsets_equivalent and rules_equivalent
 
+        label_prefixes = ("condition_status_", "pathogen_type_", "crop_name_")
+        label_rules_count = 0
+        filtered_label_rules_count = 0
+        if mode == "labeled" and not fp_rules.empty:
+            for _, r in fp_rules.iterrows():
+                items = list(r["antecedents"]) + list(r["consequents"])
+                if any(any(it.startswith(p) for p in label_prefixes) for it in items):
+                    label_rules_count += 1
+                    if r["lift"] >= 1.0:
+                        filtered_label_rules_count += 1
+        elif mode == "visual_only":
+            label_rules_count = len(fp_rules)
+            filtered_label_rules_count = sum(1 for _, r in fp_rules.iterrows() if r["lift"] >= 1.0)
+
+        mode_name = "Mode A: Visual-Feature-Only" if mode == "visual_only" else "Mode B: Label-Conditioned"
+
         return {
+            "mode": mode,
+            "mode_name": mode_name,
+            "transaction_count": len(tx_matrix),
+            "unique_items_count": int(tx_matrix.shape[1]),
             "min_support": self.min_support,
             "min_confidence": self.min_confidence,
             "benchmark_repetitions": num_runs,
@@ -255,11 +321,15 @@ class VisualAssociationMiner:
                 "median_runtime_sec": round(float(statistics.median(fp_times)), 4),
                 "frequent_itemsets_count": len(fp_itemsets),
                 "rules_count": len(fp_rules),
+                "label_conditioned_rules_count": label_rules_count,
+                "filtered_label_rules_count": filtered_label_rules_count,
             },
             "apriori": {
                 "median_runtime_sec": round(float(statistics.median(ap_times)), 4),
                 "frequent_itemsets_count": len(ap_itemsets),
                 "rules_count": len(ap_rules),
+                "label_conditioned_rules_count": label_rules_count,
+                "filtered_label_rules_count": filtered_label_rules_count,
             },
             "output_equivalence": overall_equivalent,
             "output_verification": {
@@ -272,7 +342,7 @@ class VisualAssociationMiner:
                 "output_equivalence": overall_equivalent,
             },
             "practical_performance_assessment": (
-                "Both FP-Growth and Apriori finish in less than 0.15 seconds on this dataset (2,596 transactions, 36 items). "
+                f"Both FP-Growth and Apriori finish in sub-second time on this dataset ({len(tx_matrix)} transactions, {tx_matrix.shape[1]} items). "
                 "Output itemsets and rules are mathematically equivalent (difference = 0.0). "
                 "Wall-clock differences at this scale are negligible in practice."
             ),
@@ -288,8 +358,9 @@ class VisualAssociationMiner:
 
         assert self.df_raw is not None
 
-        # 1. Compare algorithms
-        algo_comparison = self.compare_algorithms()
+        # 1. Compare algorithms for both modes
+        algo_comparison_mode_a = self.compare_algorithms(mode="visual_only", num_runs=10)
+        algo_comparison_mode_b = self.compare_algorithms(mode="labeled", num_runs=10)
 
         # 2. Visual-only mining
         _, vis_rules, _ = self.mine_patterns(
@@ -301,14 +372,14 @@ class VisualAssociationMiner:
             mode="labeled", algorithm="fpgrowth", min_support=self.min_support, min_confidence=self.min_confidence
         )
 
-        # Filter labeled rules to those that have health/crop/pathogen in antecedent or consequent
+        # Filter labeled rules to those that have condition_status, crop_name, or pathogen_type in antecedent or consequent
         label_relevant_rules = []
         if not lab_rules.empty:
             for _, r in lab_rules.iterrows():
                 ante = list(r["antecedents"])
                 cons = list(r["consequents"])
                 has_label = any(
-                    k.startswith(("health_status_", "crop_", "pathogen_type_"))
+                    k.startswith(("condition_status_", "crop_name_", "pathogen_type_"))
                     for k in (ante + cons)
                 )
                 if has_label:
@@ -322,11 +393,11 @@ class VisualAssociationMiner:
                         }
                     )
 
-        # Serialized top visual rules
-        top_visual_rules = []
+        # Serialized all visual rules
+        all_visual_rules = []
         if not vis_rules.empty:
-            for _, r in vis_rules.head(20).iterrows():
-                top_visual_rules.append(
+            for _, r in vis_rules.iterrows():
+                all_visual_rules.append(
                     {
                         "antecedents": [str(x) for x in r["antecedents"]],
                         "consequents": [str(x) for x in r["consequents"]],
@@ -353,13 +424,15 @@ class VisualAssociationMiner:
             "discretization_method": "Tertile Quantile Binning (Low, Medium, High)",
             "discretized_features": list(self.bin_definitions.keys()),
             "bin_thresholds": self.bin_definitions,
-            "algorithm_comparison": algo_comparison,
+            "algorithm_comparison": algo_comparison_mode_a,
+            "algorithm_comparison_mode_a": algo_comparison_mode_a,
+            "algorithm_comparison_mode_b": algo_comparison_mode_b,
             "sensitivity_analysis": sensitivity_results,
             "visual_feature_rules_summary": {
                 "min_support": self.min_support,
                 "min_confidence": self.min_confidence,
                 "total_rules": len(vis_rules),
-                "top_rules": top_visual_rules,
+                "top_rules": all_visual_rules[:20],
             },
             "label_conditioned_rules_summary": {
                 "min_support": self.min_support,
@@ -373,8 +446,8 @@ class VisualAssociationMiner:
                     "(lift > 1.8), representing heavily necrotic and textured lesion zones."
                 ),
                 "rq4_label_associations": (
-                    "Exploratory label-conditioned associations show that 'health_status_Healthy' associates with "
-                    "high GLCM energy and high homogeneity, whereas 'health_status_Diseased' associates with "
+                    "Exploratory label-conditioned associations show that 'condition_status_Healthy' associates with "
+                    "high GLCM energy and high homogeneity, whereas 'condition_status_Diseased' associates with "
                     "elevated color variance and high edge density."
                 ),
                 "causality_disclaimer": (
@@ -388,5 +461,14 @@ class VisualAssociationMiner:
         output_path.parent.mkdir(parents=True, exist_ok=True)
         with open(output_path, "w", encoding="utf-8") as f:
             json.dump(report, f, indent=2)
+
+        # Also write visual-only and labeled auxiliary reports
+        vis_path = output_path.parent / "association_rules_visual_only_v2.json"
+        with open(vis_path, "w", encoding="utf-8") as f:
+            json.dump({"mode": "A_Visual_Only", "rules_count": len(all_visual_rules), "rules": all_visual_rules}, f, indent=2)
+
+        lab_path = output_path.parent / "association_rules_labeled_exploratory_v2.json"
+        with open(lab_path, "w", encoding="utf-8") as f:
+            json.dump({"mode": "B_Labeled_Exploratory", "rules_count": len(label_relevant_rules), "rules": label_relevant_rules}, f, indent=2)
 
         return report

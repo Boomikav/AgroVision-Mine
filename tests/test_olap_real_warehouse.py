@@ -25,10 +25,11 @@ def test_real_warehouse_rollup(real_olap_engine):
     assert len(df) > 0
     assert "crop_category" in df.columns
     assert "total_observations" in df.columns
-    # Total observations across all categories must equal 36
+    # Total observations across all categories must equal 2,596 in unified warehouse
     total_obs = df["total_observations"].sum()
-    assert total_obs == 36
+    assert total_obs == 2596
     assert "Cereal" in df["crop_category"].values
+    assert "Horticultural" in df["crop_category"].values
 
 
 def test_real_warehouse_drilldown(real_olap_engine):
@@ -41,7 +42,8 @@ def test_real_warehouse_drilldown(real_olap_engine):
     assert "pathogen_type" in df.columns
     assert "dominant_color_tone" in df.columns
     assert "observation_count" in df.columns
-    assert df["observation_count"].sum() == 36
+    # Cereal category includes Rice (36) and Corn (372) = 408
+    assert df["observation_count"].sum() == 408
 
 
 def test_real_warehouse_true_drilldown(real_olap_engine):
@@ -50,19 +52,17 @@ def test_real_warehouse_true_drilldown(real_olap_engine):
     assert res["operation"] == "TRUE OLAP DRILL-DOWN"
     assert res["hierarchy"] == "dim_disease: Pathogen Type -> Disease Name"
     df = res["data"]
-    assert len(df) == 3  # 3 observed diseases: Bacterial Blight, Brown Spot, Leaf Smut
+    assert len(df) == 19  # 19 conditions/diseases across unified warehouse
     assert "pathogen_type" in df.columns
     assert "disease_name" in df.columns
     assert "total_observations" in df.columns
-    assert df["total_observations"].sum() == 36
+    assert df["total_observations"].sum() == 2596
 
     # Test drill-down constrained to Fungal pathogen
     res_fungal = real_olap_engine.true_drilldown(pathogen_type="Fungal")
     df_f = res_fungal["data"]
-    assert len(df_f) == 2  # Brown Spot and Leaf Smut
-    assert set(df_f["disease_name"].values) == {"Brown Spot", "Leaf Smut"}
-    assert df_f["total_observations"].sum() == 24
-
+    assert len(df_f) == 13  # 13 fungal conditions
+    assert df_f["total_observations"].sum() == 1426
 
 
 def test_real_warehouse_slice_by_crop(real_olap_engine):
@@ -81,14 +81,14 @@ def test_real_warehouse_slice_by_pathogen(real_olap_engine):
     assert res_fungal["operation"] == "SLICE"
     df_f = res_fungal["data"]
     assert len(df_f) > 0
-    assert df_f["observations"].sum() == 24  # 12 Brown Spot + 12 Leaf Smut
+    assert df_f["observations"].sum() == 1426
 
     # Slice Bacterial
     res_bact = real_olap_engine.slice_by_pathogen("Bacterial")
     assert res_bact["operation"] == "SLICE"
     df_b = res_bact["data"]
     assert len(df_b) > 0
-    assert df_b["observations"].sum() == 12  # 12 Bacterial Leaf Blight
+    assert df_b["observations"].sum() == 193
 
 
 def test_real_warehouse_dice(real_olap_engine):

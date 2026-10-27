@@ -317,3 +317,76 @@ def test_distinction_between_clustering_similarity_and_diagnosis():
     assert "foliar" in data["clustering"]["k2"]["characteristics"].lower()
 
 
+def test_healthy_specimen_inference_and_non_diagnostic_neutrality():
+    """Verify inference on authentic healthy leaf AGRO_V2_00037, self-matching, and neutral guidance."""
+    proc_path = ROOT_DIR / "data" / "processed_v2" / "plantdoc" / "apple" / "healthy" / "proc_AGRO_V2_00037.png"
+    assert proc_path.exists(), f"Reference file {proc_path} must exist"
+
+    with open(proc_path, "rb") as f:
+        img_bytes = f.read()
+
+    res = client.post("/api/analyze/image", files={"file": ("proc_AGRO_V2_00037.png", img_bytes, "image/png")})
+    assert res.status_code == 200
+    data = res.json()
+
+    # 1. Feature extraction exactness
+    assert data["feature_counts"]["total_continuous_features"] == 32
+    assert "exg_index_mean" in data["features_raw"]
+    assert "glcm_contrast" in data["features_raw"]
+
+    # 2. Neutral non-diagnostic interpretation presence
+    assert "diagnostic_interpretation" in data
+    assert "Visual similarity analysis complete" in data["diagnostic_interpretation"]["message"]
+    assert "disease status has not been determined" in data["diagnostic_interpretation"]["message"]
+    assert data["diagnostic_interpretation"]["status"] == "NON_DIAGNOSTIC"
+
+    # 3. Repository distribution metadata
+    assert data["repository_distribution"]["total"] == 2596
+    assert data["repository_distribution"]["diseased"] == 1750
+    assert data["repository_distribution"]["healthy"] == 846
+
+    # 4. Nearest neighbors ordering and self-match
+    neighbors = data["nearest_specimens"]
+    assert len(neighbors) == 6
+    assert neighbors[0]["image_id"] == "AGRO_V2_00037"
+    assert neighbors[0]["euclidean_distance"] == 0.0
+    assert neighbors[0]["is_self_match"] is True
+
+    # Distances strictly ascending
+    distances = [n["euclidean_distance"] for n in neighbors]
+    assert distances == sorted(distances)
+
+    # 5. Non-self neighbors include diseased exemplars purely due to visual geometry
+    non_self = [n for n in neighbors if n["image_id"] != "AGRO_V2_00037"]
+    assert len(non_self) == 5
+    # Confirming that diseased exemplars appear as nearest neighbors without triggering a disease verdict
+    diseased_exemplars = [n for n in non_self if n["condition_status"] == "Diseased"]
+    assert len(diseased_exemplars) > 0, "Healthy leaf has diseased geometric neighbors in continuous 32D space"
+    assert data["scientific_caveats"]["disease_classification"] == "UNAVAILABLE"
+
+
+def test_diseased_specimen_inference_and_self_matching():
+    """Verify inference on authentic diseased leaf AGRO_V2_00001 (Rice Bacterial Leaf Blight)."""
+    proc_path = ROOT_DIR / "data" / "processed_v2" / "icar_ogd" / "rice" / "bacterial_leaf_blight" / "proc_AGRO_V2_00001.png"
+    assert proc_path.exists(), f"Reference file {proc_path} must exist"
+
+    with open(proc_path, "rb") as f:
+        img_bytes = f.read()
+
+    res = client.post("/api/analyze/image", files={"file": ("proc_AGRO_V2_00001.png", img_bytes, "image/png")})
+    assert res.status_code == 200
+    data = res.json()
+
+    # Self-match at rank 1
+    top = data["nearest_specimens"][0]
+    assert top["image_id"] == "AGRO_V2_00001"
+    assert top["condition_status"] == "Diseased"
+    assert top["disease_name"] == "Bacterial Leaf Blight"
+    assert top["euclidean_distance"] == 0.0
+    assert top["is_self_match"] is True
+
+    # Strict distance sorting
+    distances = [n["euclidean_distance"] for n in data["nearest_specimens"]]
+    assert distances == sorted(distances)
+
+

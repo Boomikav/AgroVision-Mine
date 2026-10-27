@@ -17,8 +17,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_Low",
-        "pathogen_type_None"
+        "pathogen_type_None",
+        "contour_perimeter_Low"
       ],
       "consequents": [
         "contour_circularity_High",
@@ -34,8 +34,8 @@
         "condition_status_Healthy"
       ],
       "consequents": [
-        "contour_perimeter_Low",
-        "pathogen_type_None"
+        "pathogen_type_None",
+        "contour_perimeter_Low"
       ],
       "support": 0.1529,
       "confidence": 0.9543,
@@ -56,8 +56,8 @@
     },
     {
       "antecedents": [
-        "pathogen_type_Fungal",
-        "lesion_coverage_ratio_Low"
+        "lesion_coverage_ratio_Low",
+        "pathogen_type_Fungal"
       ],
       "consequents": [
         "contour_solidity_Low",
@@ -73,8 +73,8 @@
         "condition_status_Diseased"
       ],
       "consequents": [
-        "pathogen_type_Fungal",
-        "lesion_coverage_ratio_Low"
+        "lesion_coverage_ratio_Low",
+        "pathogen_type_Fungal"
       ],
       "support": 0.1683,
       "confidence": 0.7271,
@@ -82,12 +82,12 @@
     },
     {
       "antecedents": [
-        "pathogen_type_Fungal",
-        "contour_solidity_Low"
+        "contour_solidity_Low",
+        "pathogen_type_Fungal"
       ],
       "consequents": [
-        "lesion_coverage_ratio_Low",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "lesion_coverage_ratio_Low"
       ],
       "support": 0.1683,
       "confidence": 0.8552,
@@ -95,12 +95,12 @@
     },
     {
       "antecedents": [
-        "lesion_coverage_ratio_Low",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "lesion_coverage_ratio_Low"
       ],
       "consequents": [
-        "pathogen_type_Fungal",
-        "contour_solidity_Low"
+        "contour_solidity_Low",
+        "pathogen_type_Fungal"
       ],
       "support": 0.1683,
       "confidence": 0.779,
@@ -108,12 +108,12 @@
     },
     {
       "antecedents": [
-        "pathogen_type_Fungal",
-        "lesion_coverage_ratio_High"
+        "lesion_coverage_ratio_High",
+        "pathogen_type_Fungal"
       ],
       "consequents": [
-        "contour_solidity_High",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "contour_solidity_High"
       ],
       "support": 0.1579,
       "confidence": 0.8333,
@@ -121,12 +121,12 @@
     },
     {
       "antecedents": [
-        "contour_solidity_High",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "contour_solidity_High"
       ],
       "consequents": [
-        "pathogen_type_Fungal",
-        "lesion_coverage_ratio_High"
+        "lesion_coverage_ratio_High",
+        "pathogen_type_Fungal"
       ],
       "support": 0.1579,
       "confidence": 0.7206,
@@ -134,8 +134,8 @@
     },
     {
       "antecedents": [
-        "pathogen_type_Fungal",
-        "contour_solidity_High"
+        "contour_solidity_High",
+        "pathogen_type_Fungal"
       ],
       "consequents": [
         "condition_status_Diseased",
@@ -151,8 +151,8 @@
         "lesion_coverage_ratio_High"
       ],
       "consequents": [
-        "pathogen_type_Fungal",
-        "contour_solidity_High"
+        "contour_solidity_High",
+        "pathogen_type_Fungal"
       ],
       "support": 0.1579,
       "confidence": 0.6581,
@@ -160,12 +160,12 @@
     },
     {
       "antecedents": [
-        "pathogen_type_Fungal",
-        "contour_perimeter_High"
+        "contour_perimeter_High",
+        "pathogen_type_Fungal"
       ],
       "consequents": [
-        "contour_circularity_Low",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "contour_circularity_Low"
       ],
       "support": 0.1768,
       "confidence": 0.8965,
@@ -173,12 +173,12 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "contour_circularity_Low"
       ],
       "consequents": [
-        "pathogen_type_Fungal",
-        "contour_perimeter_High"
+        "contour_perimeter_High",
+        "pathogen_type_Fungal"
       ],
       "support": 0.1768,
       "confidence": 0.673,
@@ -186,8 +186,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "contour_perimeter_High"
       ],
       "consequents": [
         "contour_circularity_Low",
@@ -203,8 +203,8 @@
         "pathogen_type_Fungal"
       ],
       "consequents": [
-        "contour_perimeter_High",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "contour_perimeter_High"
       ],
       "support": 0.1768,
       "confidence": 0.8743,
@@ -216,8 +216,8 @@
         "contour_perimeter_Medium"
       ],
       "consequents": [
-        "pathogen_type_Fungal",
-        "contour_circularity_Medium"
+        "contour_circularity_Medium",
+        "pathogen_type_Fungal"
       ],
       "support": 0.1653,
       "confidence": 0.6831,
@@ -225,8 +225,8 @@
     },
     {
       "antecedents": [
-        "pathogen_type_Fungal",
-        "contour_circularity_Medium"
+        "contour_circularity_Medium",
+        "pathogen_type_Fungal"
       ],
       "consequents": [
         "condition_status_Diseased",
@@ -242,8 +242,8 @@
         "contour_perimeter_Medium"
       ],
       "consequents": [
-        "contour_circularity_Medium",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "contour_circularity_Medium"
       ],
       "support": 0.1653,
       "confidence": 0.8049,
@@ -251,8 +251,8 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Medium",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "contour_circularity_Medium"
       ],
       "consequents": [
         "pathogen_type_Fungal",
@@ -290,16 +290,27 @@
     },
     {
       "antecedents": [
-        "pathogen_type_Fungal",
-        "glcm_correlation_Low"
+        "glcm_correlation_Low",
+        "pathogen_type_Fungal"
       ],
       "consequents": [
-        "contour_circularity_Low",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "contour_circularity_Low"
       ],
       "support": 0.1576,
       "confidence": 0.818,
       "lift": 3.1137
+    },
+    {
+      "antecedents": [
+        "pathogen_type_None"
+      ],
+      "consequents": [
+        "condition_status_Healthy"
+      ],
+      "support": 0.3259,
+      "confidence": 1.0,
+      "lift": 3.0686
     },
     {
       "antecedents": [
@@ -314,12 +325,13 @@
     },
     {
       "antecedents": [
-        "pathogen_type_None"
+        "pathogen_type_None",
+        "glcm_homogeneity_High"
       ],
       "consequents": [
         "condition_status_Healthy"
       ],
-      "support": 0.3259,
+      "support": 0.1641,
       "confidence": 1.0,
       "lift": 3.0686
     },
@@ -338,19 +350,19 @@
     {
       "antecedents": [
         "pathogen_type_None",
-        "glcm_homogeneity_High"
+        "glcm_correlation_High"
       ],
       "consequents": [
         "condition_status_Healthy"
       ],
-      "support": 0.1641,
+      "support": 0.1518,
       "confidence": 1.0,
       "lift": 3.0686
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
-        "condition_status_Healthy"
+        "condition_status_Healthy",
+        "glcm_correlation_High"
       ],
       "consequents": [
         "pathogen_type_None"
@@ -361,13 +373,13 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
-        "pathogen_type_None"
+        "pathogen_type_None",
+        "hsv_h_mean_Low"
       ],
       "consequents": [
         "condition_status_Healthy"
       ],
-      "support": 0.1518,
+      "support": 0.1626,
       "confidence": 1.0,
       "lift": 3.0686
     },
@@ -385,18 +397,6 @@
     },
     {
       "antecedents": [
-        "hsv_h_mean_Low",
-        "pathogen_type_None"
-      ],
-      "consequents": [
-        "condition_status_Healthy"
-      ],
-      "support": 0.1626,
-      "confidence": 1.0,
-      "lift": 3.0686
-    },
-    {
-      "antecedents": [
         "contour_circularity_High",
         "condition_status_Healthy"
       ],
@@ -421,11 +421,11 @@
     },
     {
       "antecedents": [
-        "condition_status_Healthy",
+        "pathogen_type_None",
         "contour_perimeter_Low"
       ],
       "consequents": [
-        "pathogen_type_None"
+        "condition_status_Healthy"
       ],
       "support": 0.1587,
       "confidence": 1.0,
@@ -433,11 +433,11 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_Low",
-        "pathogen_type_None"
+        "condition_status_Healthy",
+        "contour_perimeter_Low"
       ],
       "consequents": [
-        "condition_status_Healthy"
+        "pathogen_type_None"
       ],
       "support": 0.1587,
       "confidence": 1.0,
@@ -459,13 +459,25 @@
     {
       "antecedents": [
         "contour_circularity_High",
-        "contour_perimeter_Low",
-        "pathogen_type_None"
+        "pathogen_type_None",
+        "contour_perimeter_Low"
       ],
       "consequents": [
         "condition_status_Healthy"
       ],
       "support": 0.1529,
+      "confidence": 1.0,
+      "lift": 3.0686
+    },
+    {
+      "antecedents": [
+        "pathogen_type_None",
+        "hsv_v_mean_High"
+      ],
+      "consequents": [
+        "condition_status_Healthy"
+      ],
+      "support": 0.1741,
       "confidence": 1.0,
       "lift": 3.0686
     },
@@ -483,13 +495,13 @@
     },
     {
       "antecedents": [
-        "hsv_v_mean_High",
-        "pathogen_type_None"
+        "pathogen_type_None",
+        "glcm_energy_High"
       ],
       "consequents": [
         "condition_status_Healthy"
       ],
-      "support": 0.1741,
+      "support": 0.1576,
       "confidence": 1.0,
       "lift": 3.0686
     },
@@ -508,19 +520,7 @@
     {
       "antecedents": [
         "pathogen_type_None",
-        "glcm_energy_High"
-      ],
-      "consequents": [
-        "condition_status_Healthy"
-      ],
-      "support": 0.1576,
-      "confidence": 1.0,
-      "lift": 3.0686
-    },
-    {
-      "antecedents": [
-        "contour_perimeter_Low",
-        "pathogen_type_None"
+        "contour_perimeter_Low"
       ],
       "consequents": [
         "contour_circularity_High"
@@ -543,9 +543,9 @@
     },
     {
       "antecedents": [
+        "pathogen_type_None",
         "condition_status_Healthy",
-        "contour_perimeter_Low",
-        "pathogen_type_None"
+        "contour_perimeter_Low"
       ],
       "consequents": [
         "contour_circularity_High"
@@ -557,8 +557,8 @@
     {
       "antecedents": [
         "condition_status_Diseased",
-        "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_contrast_High"
       ],
       "consequents": [
         "glcm_homogeneity_Low"
@@ -606,9 +606,9 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
         "glcm_correlation_Low",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "contour_perimeter_High"
       ],
       "consequents": [
         "contour_circularity_Low"
@@ -619,9 +619,9 @@
     },
     {
       "antecedents": [
+        "condition_status_Diseased",
         "contour_circularity_Low",
-        "glcm_homogeneity_Low",
-        "condition_status_Diseased"
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "contour_perimeter_High"
@@ -632,9 +632,9 @@
     },
     {
       "antecedents": [
+        "condition_status_Diseased",
         "contour_perimeter_High",
-        "glcm_homogeneity_Low",
-        "condition_status_Diseased"
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "contour_circularity_Low"
@@ -645,21 +645,8 @@
     },
     {
       "antecedents": [
-        "pathogen_type_Fungal",
-        "lesion_coverage_ratio_Low"
-      ],
-      "consequents": [
-        "contour_solidity_Low"
-      ],
-      "support": 0.1683,
-      "confidence": 0.9298,
-      "lift": 2.7872
-    },
-    {
-      "antecedents": [
-        "pathogen_type_Fungal",
         "lesion_coverage_ratio_Low",
-        "condition_status_Diseased"
+        "pathogen_type_Fungal"
       ],
       "consequents": [
         "contour_solidity_Low"
@@ -670,9 +657,22 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
+        "condition_status_Diseased",
+        "lesion_coverage_ratio_Low",
+        "pathogen_type_Fungal"
+      ],
+      "consequents": [
+        "contour_solidity_Low"
+      ],
+      "support": 0.1683,
+      "confidence": 0.9298,
+      "lift": 2.7872
+    },
+    {
+      "antecedents": [
         "glcm_correlation_Low",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "contour_circularity_Low"
       ],
       "consequents": [
         "contour_perimeter_High"
@@ -683,8 +683,8 @@
     },
     {
       "antecedents": [
-        "lesion_coverage_ratio_Low",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "lesion_coverage_ratio_Low"
       ],
       "consequents": [
         "contour_solidity_Low"
@@ -695,12 +695,12 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "contour_circularity_Low"
       ],
       "consequents": [
-        "contour_perimeter_High",
-        "glcm_correlation_Low"
+        "glcm_correlation_Low",
+        "contour_perimeter_High"
       ],
       "support": 0.188,
       "confidence": 0.7155,
@@ -708,12 +708,12 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
-        "glcm_correlation_Low"
+        "glcm_correlation_Low",
+        "contour_perimeter_High"
       ],
       "consequents": [
-        "contour_circularity_Low",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "contour_circularity_Low"
       ],
       "support": 0.188,
       "confidence": 0.7176,
@@ -721,8 +721,8 @@
     },
     {
       "antecedents": [
-        "pathogen_type_Fungal",
-        "contour_solidity_High"
+        "contour_solidity_High",
+        "pathogen_type_Fungal"
       ],
       "consequents": [
         "lesion_coverage_ratio_High"
@@ -733,9 +733,9 @@
     },
     {
       "antecedents": [
-        "pathogen_type_Fungal",
+        "condition_status_Diseased",
         "contour_solidity_High",
-        "condition_status_Diseased"
+        "pathogen_type_Fungal"
       ],
       "consequents": [
         "lesion_coverage_ratio_High"
@@ -750,8 +750,8 @@
         "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "contour_perimeter_High",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "contour_perimeter_High"
       ],
       "support": 0.1691,
       "confidence": 0.6957,
@@ -759,8 +759,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "contour_perimeter_High"
       ],
       "consequents": [
         "contour_circularity_Low",
@@ -772,8 +772,8 @@
     },
     {
       "antecedents": [
-        "contour_solidity_High",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "contour_solidity_High"
       ],
       "consequents": [
         "lesion_coverage_ratio_High"
@@ -800,8 +800,8 @@
         "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "contour_circularity_Low",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "contour_circularity_Low"
       ],
       "support": 0.1691,
       "confidence": 0.7069,
@@ -809,8 +809,8 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "contour_circularity_Low"
       ],
       "consequents": [
         "contour_perimeter_High",
@@ -822,8 +822,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "contour_perimeter_High"
       ],
       "consequents": [
         "contour_circularity_Low"
@@ -837,8 +837,8 @@
         "contour_circularity_Low"
       ],
       "consequents": [
-        "contour_perimeter_High",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "contour_perimeter_High"
       ],
       "support": 0.2327,
       "confidence": 0.6856,
@@ -846,8 +846,8 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "contour_circularity_Low"
       ],
       "consequents": [
         "contour_perimeter_High"
@@ -861,8 +861,8 @@
         "contour_perimeter_High"
       ],
       "consequents": [
-        "contour_circularity_Low",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "contour_circularity_Low"
       ],
       "support": 0.2327,
       "confidence": 0.6983,
@@ -882,12 +882,12 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "contour_perimeter_High"
       ],
       "consequents": [
-        "contour_circularity_Low",
-        "glcm_correlation_Low"
+        "glcm_correlation_Low",
+        "contour_circularity_Low"
       ],
       "support": 0.188,
       "confidence": 0.7305,
@@ -895,12 +895,12 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
-        "glcm_correlation_Low"
+        "glcm_correlation_Low",
+        "contour_circularity_Low"
       ],
       "consequents": [
-        "contour_perimeter_High",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "contour_perimeter_High"
       ],
       "support": 0.188,
       "confidence": 0.6825,
@@ -908,12 +908,12 @@
     },
     {
       "antecedents": [
-        "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_contrast_High"
       ],
       "consequents": [
-        "glcm_homogeneity_Low",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "glcm_homogeneity_Low"
       ],
       "support": 0.1552,
       "confidence": 0.6807,
@@ -921,12 +921,12 @@
     },
     {
       "antecedents": [
-        "glcm_homogeneity_Low",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_contrast_High"
       ],
       "support": 0.1552,
       "confidence": 0.6033,
@@ -934,8 +934,8 @@
     },
     {
       "antecedents": [
-        "pathogen_type_Fungal",
-        "contour_perimeter_High"
+        "contour_perimeter_High",
+        "pathogen_type_Fungal"
       ],
       "consequents": [
         "contour_circularity_Low"
@@ -946,9 +946,9 @@
     },
     {
       "antecedents": [
-        "pathogen_type_Fungal",
+        "condition_status_Diseased",
         "contour_perimeter_High",
-        "condition_status_Diseased"
+        "pathogen_type_Fungal"
       ],
       "consequents": [
         "contour_circularity_Low"
@@ -960,8 +960,8 @@
     {
       "antecedents": [
         "glcm_correlation_Low",
-        "glcm_homogeneity_Low",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "contour_circularity_Low"
@@ -984,9 +984,9 @@
     },
     {
       "antecedents": [
+        "condition_status_Diseased",
         "contour_circularity_Low",
-        "pathogen_type_Fungal",
-        "condition_status_Diseased"
+        "pathogen_type_Fungal"
       ],
       "consequents": [
         "contour_perimeter_High"
@@ -997,21 +997,8 @@
     },
     {
       "antecedents": [
-        "pathogen_type_Fungal",
-        "contour_solidity_Low"
-      ],
-      "consequents": [
-        "lesion_coverage_ratio_Low"
-      ],
-      "support": 0.1683,
-      "confidence": 0.8552,
-      "lift": 2.5606
-    },
-    {
-      "antecedents": [
-        "pathogen_type_Fungal",
         "contour_solidity_Low",
-        "condition_status_Diseased"
+        "pathogen_type_Fungal"
       ],
       "consequents": [
         "lesion_coverage_ratio_Low"
@@ -1022,9 +1009,22 @@
     },
     {
       "antecedents": [
+        "contour_solidity_Low",
+        "condition_status_Diseased",
+        "pathogen_type_Fungal"
+      ],
+      "consequents": [
+        "lesion_coverage_ratio_Low"
+      ],
+      "support": 0.1683,
+      "confidence": 0.8552,
+      "lift": 2.5606
+    },
+    {
+      "antecedents": [
+        "condition_status_Diseased",
         "contour_circularity_Low",
-        "glcm_homogeneity_Low",
-        "condition_status_Diseased"
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "glcm_correlation_Low"
@@ -1073,12 +1073,12 @@
     },
     {
       "antecedents": [
-        "glcm_contrast_High",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "glcm_contrast_High"
       ],
       "consequents": [
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_homogeneity_Low"
       ],
       "support": 0.1552,
       "confidence": 0.6521,
@@ -1086,8 +1086,8 @@
     },
     {
       "antecedents": [
-        "pathogen_type_Fungal",
-        "lesion_coverage_ratio_High"
+        "lesion_coverage_ratio_High",
+        "pathogen_type_Fungal"
       ],
       "consequents": [
         "contour_solidity_High"
@@ -1098,9 +1098,9 @@
     },
     {
       "antecedents": [
-        "pathogen_type_Fungal",
         "condition_status_Diseased",
-        "lesion_coverage_ratio_High"
+        "lesion_coverage_ratio_High",
+        "pathogen_type_Fungal"
       ],
       "consequents": [
         "contour_solidity_High"
@@ -1115,8 +1115,8 @@
         "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "contour_circularity_Low",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "contour_circularity_Low"
       ],
       "support": 0.1549,
       "confidence": 0.6547,
@@ -1162,9 +1162,9 @@
     },
     {
       "antecedents": [
+        "condition_status_Diseased",
         "glcm_contrast_High",
-        "glcm_homogeneity_Low",
-        "condition_status_Diseased"
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "glcm_energy_Low"
@@ -1175,8 +1175,8 @@
     },
     {
       "antecedents": [
-        "pathogen_type_Fungal",
-        "contour_circularity_Medium"
+        "contour_circularity_Medium",
+        "pathogen_type_Fungal"
       ],
       "consequents": [
         "contour_perimeter_Medium"
@@ -1187,9 +1187,9 @@
     },
     {
       "antecedents": [
-        "pathogen_type_Fungal",
+        "condition_status_Diseased",
         "contour_circularity_Medium",
-        "condition_status_Diseased"
+        "pathogen_type_Fungal"
       ],
       "consequents": [
         "contour_perimeter_Medium"
@@ -1224,8 +1224,8 @@
     },
     {
       "antecedents": [
-        "pathogen_type_Fungal",
         "condition_status_Diseased",
+        "pathogen_type_Fungal",
         "contour_perimeter_Medium"
       ],
       "consequents": [
@@ -1263,8 +1263,8 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Medium",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "contour_circularity_Medium"
       ],
       "consequents": [
         "contour_perimeter_Medium"
@@ -1299,9 +1299,9 @@
     },
     {
       "antecedents": [
+        "condition_status_Diseased",
         "contour_circularity_Low",
-        "contour_perimeter_High",
-        "condition_status_Diseased"
+        "contour_perimeter_High"
       ],
       "consequents": [
         "glcm_correlation_Low"
@@ -1312,8 +1312,8 @@
     },
     {
       "antecedents": [
-        "pathogen_type_Fungal",
-        "glcm_correlation_Low"
+        "glcm_correlation_Low",
+        "pathogen_type_Fungal"
       ],
       "consequents": [
         "contour_circularity_Low"
@@ -1324,9 +1324,9 @@
     },
     {
       "antecedents": [
-        "pathogen_type_Fungal",
         "glcm_correlation_Low",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "pathogen_type_Fungal"
       ],
       "consequents": [
         "contour_circularity_Low"
@@ -1349,8 +1349,8 @@
     },
     {
       "antecedents": [
-        "glcm_contrast_High",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "glcm_contrast_High"
       ],
       "consequents": [
         "glcm_homogeneity_Low"
@@ -1362,8 +1362,8 @@
     {
       "antecedents": [
         "condition_status_Diseased",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "glcm_contrast_High"
@@ -1401,8 +1401,8 @@
         "glcm_correlation_Low"
       ],
       "consequents": [
-        "contour_circularity_Low",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "contour_circularity_Low"
       ],
       "support": 0.2061,
       "confidence": 0.6157,
@@ -1410,8 +1410,8 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "contour_circularity_Low"
       ],
       "consequents": [
         "glcm_correlation_Low"
@@ -1434,9 +1434,9 @@
     },
     {
       "antecedents": [
+        "condition_status_Diseased",
         "contour_circularity_Low",
-        "pathogen_type_Fungal",
-        "condition_status_Diseased"
+        "pathogen_type_Fungal"
       ],
       "consequents": [
         "glcm_correlation_Low"
@@ -1447,8 +1447,8 @@
     },
     {
       "antecedents": [
-        "condition_status_Diseased",
-        "contour_solidity_Medium"
+        "contour_solidity_Medium",
+        "condition_status_Diseased"
       ],
       "consequents": [
         "lesion_coverage_ratio_Medium"
@@ -1459,8 +1459,8 @@
     },
     {
       "antecedents": [
-        "glcm_homogeneity_Low",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "glcm_energy_Low"
@@ -1471,8 +1471,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "contour_perimeter_High"
       ],
       "consequents": [
         "glcm_correlation_Low"
@@ -1483,9 +1483,9 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "contour_circularity_Low"
       ],
       "consequents": [
         "glcm_homogeneity_Low"
@@ -1496,8 +1496,8 @@
     },
     {
       "antecedents": [
-        "glcm_homogeneity_Low",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "glcm_contrast_High"
@@ -1508,12 +1508,12 @@
     },
     {
       "antecedents": [
-        "glcm_homogeneity_Low",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "contour_circularity_Low",
-        "glcm_correlation_Low"
+        "glcm_correlation_Low",
+        "contour_circularity_Low"
       ],
       "support": 0.1549,
       "confidence": 0.6018,
@@ -1521,9 +1521,9 @@
     },
     {
       "antecedents": [
+        "condition_status_Diseased",
         "contour_circularity_Low",
-        "contour_perimeter_High",
-        "condition_status_Diseased"
+        "contour_perimeter_High"
       ],
       "consequents": [
         "glcm_homogeneity_Low"
@@ -1534,8 +1534,8 @@
     },
     {
       "antecedents": [
-        "glcm_homogeneity_Low",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "contour_circularity_Low",
@@ -1559,8 +1559,8 @@
     },
     {
       "antecedents": [
-        "glcm_homogeneity_Low",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "contour_perimeter_High"
@@ -1571,8 +1571,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "contour_perimeter_High"
       ],
       "consequents": [
         "glcm_homogeneity_Low"
@@ -1583,8 +1583,8 @@
     },
     {
       "antecedents": [
-        "glcm_homogeneity_Low",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "contour_circularity_Low"
@@ -1595,8 +1595,8 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "contour_circularity_Low"
       ],
       "consequents": [
         "glcm_homogeneity_Low"
@@ -1607,8 +1607,8 @@
     },
     {
       "antecedents": [
-        "glcm_contrast_High",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "glcm_contrast_High"
       ],
       "consequents": [
         "glcm_energy_Low"
@@ -1619,8 +1619,8 @@
     },
     {
       "antecedents": [
-        "glcm_homogeneity_Low",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "glcm_correlation_Low"
@@ -1643,8 +1643,8 @@
     },
     {
       "antecedents": [
-        "glcm_contrast_High",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "glcm_contrast_High"
       ],
       "consequents": [
         "glcm_correlation_Low"
@@ -1655,8 +1655,8 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Medium",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "contour_circularity_Medium"
       ],
       "consequents": [
         "glcm_correlation_Medium"
@@ -1667,8 +1667,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_Medium",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "glcm_correlation_Medium"
       ],
       "consequents": [
         "contour_circularity_Medium"
@@ -1679,8 +1679,8 @@
     },
     {
       "antecedents": [
-        "glcm_contrast_High",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "glcm_contrast_High"
       ],
       "consequents": [
         "contour_circularity_Low"
@@ -1752,8 +1752,8 @@
     {
       "antecedents": [
         "contour_solidity_Low",
-        "lesion_coverage_ratio_Low",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "lesion_coverage_ratio_Low"
       ],
       "consequents": [
         "pathogen_type_Fungal"
@@ -1800,8 +1800,8 @@
     },
     {
       "antecedents": [
-        "condition_status_Diseased",
-        "glcm_energy_Medium"
+        "glcm_energy_Medium",
+        "condition_status_Diseased"
       ],
       "consequents": [
         "pathogen_type_Fungal"
@@ -1824,8 +1824,8 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Medium",
         "condition_status_Diseased",
+        "contour_circularity_Medium",
         "contour_perimeter_Medium"
       ],
       "consequents": [
@@ -1837,8 +1837,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "glcm_correlation_High"
       ],
       "consequents": [
         "pathogen_type_Fungal"
@@ -1849,8 +1849,8 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Medium",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "contour_circularity_Medium"
       ],
       "consequents": [
         "pathogen_type_Fungal"
@@ -1861,8 +1861,8 @@
     },
     {
       "antecedents": [
-        "hsv_s_mean_Low",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "hsv_s_mean_Low"
       ],
       "consequents": [
         "pathogen_type_Fungal"
@@ -1885,8 +1885,8 @@
     },
     {
       "antecedents": [
-        "lesion_coverage_ratio_Low",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "lesion_coverage_ratio_Low"
       ],
       "consequents": [
         "pathogen_type_Fungal"
@@ -1909,8 +1909,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_Medium",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "glcm_correlation_Medium"
       ],
       "consequents": [
         "pathogen_type_Fungal"
@@ -1957,8 +1957,8 @@
     },
     {
       "antecedents": [
-        "pathogen_type_Fungal",
-        "lesion_coverage_ratio_Low"
+        "lesion_coverage_ratio_Low",
+        "pathogen_type_Fungal"
       ],
       "consequents": [
         "condition_status_Diseased"
@@ -1993,8 +1993,8 @@
     },
     {
       "antecedents": [
-        "pathogen_type_Fungal",
-        "glcm_contrast_Low"
+        "glcm_contrast_Low",
+        "pathogen_type_Fungal"
       ],
       "consequents": [
         "condition_status_Diseased"
@@ -2005,8 +2005,8 @@
     },
     {
       "antecedents": [
-        "pathogen_type_Fungal",
-        "glcm_correlation_High"
+        "glcm_correlation_High",
+        "pathogen_type_Fungal"
       ],
       "consequents": [
         "condition_status_Diseased"
@@ -2017,8 +2017,8 @@
     },
     {
       "antecedents": [
-        "pathogen_type_Fungal",
-        "contour_solidity_High"
+        "contour_solidity_High",
+        "pathogen_type_Fungal"
       ],
       "consequents": [
         "condition_status_Diseased"
@@ -2029,9 +2029,9 @@
     },
     {
       "antecedents": [
-        "pathogen_type_Fungal",
+        "lesion_coverage_ratio_High",
         "contour_solidity_High",
-        "lesion_coverage_ratio_High"
+        "pathogen_type_Fungal"
       ],
       "consequents": [
         "condition_status_Diseased"
@@ -2042,8 +2042,8 @@
     },
     {
       "antecedents": [
-        "pathogen_type_Fungal",
-        "hsv_s_mean_Medium"
+        "hsv_s_mean_Medium",
+        "pathogen_type_Fungal"
       ],
       "consequents": [
         "condition_status_Diseased"
@@ -2066,8 +2066,8 @@
     },
     {
       "antecedents": [
-        "pathogen_type_Fungal",
-        "lesion_coverage_ratio_High"
+        "lesion_coverage_ratio_High",
+        "pathogen_type_Fungal"
       ],
       "consequents": [
         "condition_status_Diseased"
@@ -2078,8 +2078,8 @@
     },
     {
       "antecedents": [
-        "pathogen_type_Fungal",
-        "exg_index_mean_Medium"
+        "exg_index_mean_Medium",
+        "pathogen_type_Fungal"
       ],
       "consequents": [
         "condition_status_Diseased"
@@ -2137,8 +2137,8 @@
     },
     {
       "antecedents": [
-        "pathogen_type_Fungal",
-        "contour_solidity_Medium"
+        "contour_solidity_Medium",
+        "pathogen_type_Fungal"
       ],
       "consequents": [
         "condition_status_Diseased"
@@ -2149,8 +2149,8 @@
     },
     {
       "antecedents": [
-        "pathogen_type_Fungal",
-        "exg_index_mean_High"
+        "exg_index_mean_High",
+        "pathogen_type_Fungal"
       ],
       "consequents": [
         "condition_status_Diseased"
@@ -2161,8 +2161,8 @@
     },
     {
       "antecedents": [
-        "pathogen_type_Fungal",
-        "glcm_contrast_Medium"
+        "glcm_contrast_Medium",
+        "pathogen_type_Fungal"
       ],
       "consequents": [
         "condition_status_Diseased"
@@ -2173,8 +2173,8 @@
     },
     {
       "antecedents": [
-        "pathogen_type_Fungal",
-        "glcm_homogeneity_Medium"
+        "glcm_homogeneity_Medium",
+        "pathogen_type_Fungal"
       ],
       "consequents": [
         "condition_status_Diseased"
@@ -2185,8 +2185,8 @@
     },
     {
       "antecedents": [
-        "pathogen_type_Fungal",
-        "contour_perimeter_High"
+        "contour_perimeter_High",
+        "pathogen_type_Fungal"
       ],
       "consequents": [
         "condition_status_Diseased"
@@ -2210,8 +2210,8 @@
     },
     {
       "antecedents": [
-        "pathogen_type_Fungal",
-        "glcm_energy_Medium"
+        "glcm_energy_Medium",
+        "pathogen_type_Fungal"
       ],
       "consequents": [
         "condition_status_Diseased"
@@ -2222,8 +2222,8 @@
     },
     {
       "antecedents": [
-        "pathogen_type_Fungal",
-        "glcm_correlation_Medium"
+        "glcm_correlation_Medium",
+        "pathogen_type_Fungal"
       ],
       "consequents": [
         "condition_status_Diseased"
@@ -2234,8 +2234,8 @@
     },
     {
       "antecedents": [
-        "pathogen_type_Fungal",
-        "contour_solidity_Low"
+        "contour_solidity_Low",
+        "pathogen_type_Fungal"
       ],
       "consequents": [
         "condition_status_Diseased"
@@ -2246,9 +2246,9 @@
     },
     {
       "antecedents": [
-        "pathogen_type_Fungal",
         "contour_solidity_Low",
-        "lesion_coverage_ratio_Low"
+        "lesion_coverage_ratio_Low",
+        "pathogen_type_Fungal"
       ],
       "consequents": [
         "condition_status_Diseased"
@@ -2259,8 +2259,8 @@
     },
     {
       "antecedents": [
-        "pathogen_type_Fungal",
-        "contour_circularity_Medium"
+        "contour_circularity_Medium",
+        "pathogen_type_Fungal"
       ],
       "consequents": [
         "condition_status_Diseased"
@@ -2271,8 +2271,8 @@
     },
     {
       "antecedents": [
-        "pathogen_type_Fungal",
         "contour_circularity_Medium",
+        "pathogen_type_Fungal",
         "contour_perimeter_Medium"
       ],
       "consequents": [
@@ -2284,8 +2284,8 @@
     },
     {
       "antecedents": [
-        "pathogen_type_Fungal",
-        "hsv_v_mean_Low"
+        "hsv_v_mean_Low",
+        "pathogen_type_Fungal"
       ],
       "consequents": [
         "condition_status_Diseased"
@@ -2308,8 +2308,8 @@
     },
     {
       "antecedents": [
-        "pathogen_type_Fungal",
-        "hsv_v_mean_Medium"
+        "hsv_v_mean_Medium",
+        "pathogen_type_Fungal"
       ],
       "consequents": [
         "condition_status_Diseased"
@@ -2320,8 +2320,8 @@
     },
     {
       "antecedents": [
-        "pathogen_type_Fungal",
-        "glcm_correlation_Low"
+        "glcm_correlation_Low",
+        "pathogen_type_Fungal"
       ],
       "consequents": [
         "condition_status_Diseased"
@@ -2332,8 +2332,8 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
+        "contour_circularity_Low",
         "pathogen_type_Fungal"
       ],
       "consequents": [
@@ -2345,8 +2345,8 @@
     },
     {
       "antecedents": [
-        "pathogen_type_Fungal",
-        "glcm_homogeneity_Low"
+        "glcm_homogeneity_Low",
+        "pathogen_type_Fungal"
       ],
       "consequents": [
         "condition_status_Diseased"
@@ -2357,8 +2357,8 @@
     },
     {
       "antecedents": [
-        "pathogen_type_Fungal",
-        "glcm_contrast_High"
+        "glcm_contrast_High",
+        "pathogen_type_Fungal"
       ],
       "consequents": [
         "condition_status_Diseased"
@@ -2369,8 +2369,8 @@
     },
     {
       "antecedents": [
-        "pathogen_type_Fungal",
-        "hsv_h_mean_High"
+        "hsv_h_mean_High",
+        "pathogen_type_Fungal"
       ],
       "consequents": [
         "condition_status_Diseased"
@@ -2381,8 +2381,8 @@
     },
     {
       "antecedents": [
-        "pathogen_type_Fungal",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "pathogen_type_Fungal"
       ],
       "consequents": [
         "condition_status_Diseased"
@@ -2393,8 +2393,8 @@
     },
     {
       "antecedents": [
-        "pathogen_type_Fungal",
-        "crop_name_Tomato"
+        "crop_name_Tomato",
+        "pathogen_type_Fungal"
       ],
       "consequents": [
         "condition_status_Diseased"
@@ -2428,8 +2428,8 @@
     },
     {
       "antecedents": [
-        "condition_status_Diseased",
-        "hsv_s_mean_Medium"
+        "hsv_s_mean_Medium",
+        "condition_status_Diseased"
       ],
       "consequents": [
         "pathogen_type_Fungal"
@@ -2440,8 +2440,8 @@
     },
     {
       "antecedents": [
-        "hsv_s_mean_High",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "hsv_s_mean_High"
       ],
       "consequents": [
         "pathogen_type_Fungal"
@@ -2452,9 +2452,9 @@
     },
     {
       "antecedents": [
-        "contour_solidity_High",
         "condition_status_Diseased",
-        "lesion_coverage_ratio_High"
+        "lesion_coverage_ratio_High",
+        "contour_solidity_High"
       ],
       "consequents": [
         "pathogen_type_Fungal"
@@ -2465,8 +2465,8 @@
     },
     {
       "antecedents": [
-        "contour_solidity_High",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "contour_solidity_High"
       ],
       "consequents": [
         "pathogen_type_Fungal"
@@ -2477,8 +2477,8 @@
     },
     {
       "antecedents": [
-        "condition_status_Diseased",
-        "contour_solidity_Medium"
+        "contour_solidity_Medium",
+        "condition_status_Diseased"
       ],
       "consequents": [
         "pathogen_type_Fungal"
@@ -2489,8 +2489,8 @@
     },
     {
       "antecedents": [
-        "hsv_h_mean_Medium",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "hsv_h_mean_Medium"
       ],
       "consequents": [
         "pathogen_type_Fungal"
@@ -2513,8 +2513,8 @@
     },
     {
       "antecedents": [
-        "condition_status_Diseased",
-        "exg_index_mean_High"
+        "exg_index_mean_High",
+        "condition_status_Diseased"
       ],
       "consequents": [
         "pathogen_type_Fungal"
@@ -2549,8 +2549,8 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "contour_circularity_Low"
       ],
       "consequents": [
         "pathogen_type_Fungal"
@@ -2561,8 +2561,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "contour_perimeter_High"
       ],
       "consequents": [
         "pathogen_type_Fungal"
@@ -2573,9 +2573,9 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "contour_circularity_Low"
       ],
       "consequents": [
         "pathogen_type_Fungal"
@@ -2586,8 +2586,8 @@
     },
     {
       "antecedents": [
-        "glcm_contrast_High",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "glcm_contrast_High"
       ],
       "consequents": [
         "pathogen_type_Fungal"
@@ -2598,8 +2598,8 @@
     },
     {
       "antecedents": [
-        "glcm_homogeneity_Low",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "pathogen_type_Fungal"
@@ -2610,9 +2610,9 @@
     },
     {
       "antecedents": [
+        "condition_status_Diseased",
         "contour_circularity_Low",
-        "contour_perimeter_High",
-        "condition_status_Diseased"
+        "contour_perimeter_High"
       ],
       "consequents": [
         "pathogen_type_Fungal"
@@ -2648,8 +2648,8 @@
         "hsv_v_mean_Low"
       ],
       "consequents": [
-        "pathogen_type_Fungal",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "pathogen_type_Fungal"
       ],
       "support": 0.2211,
       "confidence": 0.6621,
@@ -2657,8 +2657,8 @@
     },
     {
       "antecedents": [
-        "condition_status_Diseased",
-        "crop_name_Tomato"
+        "crop_name_Tomato",
+        "condition_status_Diseased"
       ],
       "consequents": [
         "pathogen_type_Fungal"
@@ -2683,8 +2683,8 @@
         "glcm_energy_Medium"
       ],
       "consequents": [
-        "pathogen_type_Fungal",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "pathogen_type_Fungal"
       ],
       "support": 0.2146,
       "confidence": 0.6447,
@@ -2728,8 +2728,8 @@
         "glcm_homogeneity_Medium"
       ],
       "consequents": [
-        "pathogen_type_Fungal",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "pathogen_type_Fungal"
       ],
       "support": 0.2126,
       "confidence": 0.6382,
@@ -2751,8 +2751,8 @@
         "hsv_s_mean_Medium"
       ],
       "consequents": [
-        "pathogen_type_Fungal",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "pathogen_type_Fungal"
       ],
       "support": 0.2122,
       "confidence": 0.6348,
@@ -2774,8 +2774,8 @@
         "hsv_h_mean_High"
       ],
       "consequents": [
-        "pathogen_type_Fungal",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "pathogen_type_Fungal"
       ],
       "support": 0.2115,
       "confidence": 0.6347,
@@ -2853,8 +2853,8 @@
         "hsv_v_mean_Medium"
       ],
       "consequents": [
-        "pathogen_type_Fungal",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "pathogen_type_Fungal"
       ],
       "support": 0.208,
       "confidence": 0.6207,
@@ -2862,8 +2862,8 @@
     },
     {
       "antecedents": [
-        "glcm_homogeneity_Medium",
-        "glcm_energy_Medium"
+        "glcm_energy_Medium",
+        "glcm_homogeneity_Medium"
       ],
       "consequents": [
         "condition_status_Diseased"
@@ -2910,8 +2910,8 @@
         "contour_perimeter_Medium"
       ],
       "consequents": [
-        "pathogen_type_Fungal",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "pathogen_type_Fungal"
       ],
       "support": 0.2053,
       "confidence": 0.6162,
@@ -2919,8 +2919,8 @@
     },
     {
       "antecedents": [
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "condition_status_Diseased"
@@ -2945,8 +2945,8 @@
         "contour_circularity_Medium"
       ],
       "consequents": [
-        "pathogen_type_Fungal",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "pathogen_type_Fungal"
       ],
       "support": 0.2022,
       "confidence": 0.614,
@@ -2968,8 +2968,8 @@
         "glcm_correlation_Medium"
       ],
       "consequents": [
-        "pathogen_type_Fungal",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "pathogen_type_Fungal"
       ],
       "support": 0.2034,
       "confidence": 0.6125,
@@ -2977,8 +2977,8 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
-        "glcm_correlation_Low"
+        "glcm_correlation_Low",
+        "contour_circularity_Low"
       ],
       "consequents": [
         "condition_status_Diseased"
@@ -3025,8 +3025,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
-        "glcm_correlation_Low"
+        "glcm_correlation_Low",
+        "contour_perimeter_High"
       ],
       "consequents": [
         "condition_status_Diseased"
@@ -3037,9 +3037,9 @@
     },
     {
       "antecedents": [
+        "glcm_correlation_Low",
         "contour_circularity_Low",
-        "contour_perimeter_High",
-        "glcm_correlation_Low"
+        "contour_perimeter_High"
       ],
       "consequents": [
         "condition_status_Diseased"
@@ -3066,8 +3066,8 @@
         "contour_perimeter_Medium"
       ],
       "consequents": [
-        "pathogen_type_Fungal",
-        "condition_status_Diseased"
+        "condition_status_Diseased",
+        "pathogen_type_Fungal"
       ],
       "support": 0.1653,
       "confidence": 0.6059,
@@ -3144,8 +3144,8 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low"
       ],
       "consequents": [
         "condition_status_Diseased"
@@ -3167,8 +3167,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_perimeter_High"
       ],
       "consequents": [
         "condition_status_Diseased"
@@ -3190,8 +3190,8 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
+        "contour_circularity_Low",
         "glcm_homogeneity_Low"
       ],
       "consequents": [
@@ -3226,9 +3226,9 @@
     },
     {
       "antecedents": [
+        "glcm_energy_Low",
         "glcm_contrast_High",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "condition_status_Diseased"
@@ -3285,8 +3285,8 @@
     },
     {
       "antecedents": [
-        "contour_solidity_High",
-        "lesion_coverage_ratio_High"
+        "lesion_coverage_ratio_High",
+        "contour_solidity_High"
       ],
       "consequents": [
         "condition_status_Diseased"
@@ -3309,8 +3309,8 @@
     },
     {
       "antecedents": [
-        "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_contrast_High"
       ],
       "consequents": [
         "condition_status_Diseased"

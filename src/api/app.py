@@ -65,11 +65,11 @@ _DATA_CACHE: Dict[str, Any] = {}
 
 
 def get_data_cache() -> Dict[str, Any]:
-    """Loads and caches datasets, models, and reports on demand."""
+    """Loads and caches datasets, models, and reports on demand from unified SQLite warehouse."""
     if _DATA_CACHE:
         return _DATA_CACHE
 
-    logger.info("Initializing AgroVision-Mine Data Cache...")
+    logger.info("Initializing AgroVision-Mine Data Cache from Unified SQLite Data Warehouse...")
 
     # Verify SHA256 checksums
     def verify_sha256(path: Path, expected: str) -> bool:
@@ -81,9 +81,63 @@ def get_data_cache() -> Dict[str, Any]:
     manifest_valid = verify_sha256(MANIFEST_FILE, CANONICAL_EXPECTED_SHA256)
     features_valid = verify_sha256(FEATURES_FILE, FEATURES_EXPECTED_SHA256)
 
-    df_manifest = pd.read_csv(MANIFEST_FILE) if MANIFEST_FILE.exists() else pd.DataFrame()
-    df_features = pd.read_csv(FEATURES_FILE) if FEATURES_FILE.exists() else pd.DataFrame()
-    df_clustering = pd.read_csv(CLUSTERING_FILE) if CLUSTERING_FILE.exists() else pd.DataFrame()
+    # Initialize Warehouse & OLAP Engine
+    schema_manager = SchemaManager()
+    olap_engine = OLAPEngine()
+
+    # Load authentic observations directly from physical SQLite warehouse
+    db_engine = get_db_engine()
+    warehouse_query = """
+    SELECT 
+        f.image_id,
+        f.observation_key,
+        f.dataset_source,
+        f.condition_status,
+        f.condition_status AS condition_label,
+        f.is_pest,
+        f.lesion_severity_score,
+        f.image_sharpness_score,
+        c.crop_code,
+        c.crop_name,
+        c.crop_name AS crop_label,
+        c.botanical_name,
+        c.crop_category,
+        d.disease_code,
+        d.disease_name,
+        d.disease_name AS disease_label,
+        d.pathogen_type,
+        d.causal_agent,
+        i.filename,
+        i.original_path AS raw_path,
+        i.processed_path,
+        i.raw_width,
+        i.raw_height,
+        i.md5_hash,
+        vf.*
+    FROM disease_observation_fact f
+    JOIN dim_crop c ON f.crop_key = c.crop_key
+    JOIN dim_disease d ON f.disease_key = d.disease_key
+    JOIN dim_image i ON f.image_key = i.image_key
+    JOIN dim_visual_feature vf ON f.feature_key = vf.feature_key
+    ORDER BY f.observation_key ASC;
+    """
+    with db_engine.connect() as conn:
+        df_warehouse = pd.read_sql_query(text(warehouse_query), conn)
+    df_warehouse = df_warehouse.loc[:, ~df_warehouse.columns.duplicated()].copy()
+
+    df_manifest = df_warehouse.copy()
+    df_features = df_warehouse.copy()
+    df_clustering = df_warehouse.copy()
+
+    if CLUSTERING_FILE.exists():
+        cl_csv = pd.read_csv(CLUSTERING_FILE)
+        cols_to_merge = [c for c in ["image_id", "cluster_id_k2", "cluster_id_k4", "pca_x", "pca_y", "dominant_color_tone"] if c in cl_csv.columns]
+        if cols_to_merge:
+            cl_sub = cl_csv[cols_to_merge]
+            df_clustering = pd.merge(df_warehouse, cl_sub, on="image_id", how="left")
+            df_clustering = df_clustering.loc[:, ~df_clustering.columns.duplicated()].copy()
+            df_features = pd.merge(df_features, cl_sub, on="image_id", how="left")
+            df_features = df_features.loc[:, ~df_features.columns.duplicated()].copy()
 
     # Load Reports
     def load_json(name: str) -> Dict[str, Any]:
@@ -102,10 +156,6 @@ def get_data_cache() -> Dict[str, Any]:
     preprocessing_report = load_json("preprocessing_report.json")
     etl_report = load_json("etl_report.json")
     data_integrity = load_json("data_integrity_audit_v2.json")
-
-    # Initialize Warehouse & OLAP Engine
-    schema_manager = SchemaManager()
-    olap_engine = OLAPEngine()
 
     _DATA_CACHE.update({
         "manifest_valid": manifest_valid,
@@ -192,7 +242,7 @@ def get_overview() -> Dict[str, Any]:
         },
         "feature_dimensions": {
             "continuous_count": 32,
-            "groups": "Color Moments (9), GLCM Haralick (16), Contour & Geometry (7)",
+            "groups": "Color and foliar index (19), GLCM texture (7), Morphometry and coverage (6)",
             "normalization": "Standardized z-score transform (zero mean, unit variance)",
         },
         "clustering_summary": {
@@ -325,7 +375,7 @@ def get_specimen_detail(image_id: str) -> Dict[str, Any]:
     # Partition features into groups
     color_features = {k: round(float(v), 4) for k, v in row.items() if (k.startswith("rgb_") or k.startswith("hsv_") or k.startswith("exg_")) and isinstance(v, (int, float, np.number))}
     glcm_features = {k: round(float(v), 4) for k, v in row.items() if k.startswith("glcm_") and isinstance(v, (int, float, np.number))}
-    shape_features = {k: round(float(v), 4) for k, v in row.items() if (k.startswith("contour_") or k.startswith("lesion_")) and isinstance(v, (int, float, np.number))}
+    shape_features = {k: round(float(v), 4) for k, v in row.items() if (k.startswith("contour_") or k == "lesion_coverage_ratio") and isinstance(v, (int, float, np.number))}
 
     raw_path_str = str(row.get("raw_path", ""))
     image_exists = bool(raw_path_str and Path(raw_path_str).exists())
@@ -630,7 +680,7 @@ def get_association_rules(
         "mode": "Mode B: Label-Conditioned (Exploratory)" if is_mode_b else "Mode A: Visual-Feature-Only (Unsupervised)",
         "mode_id": "B" if is_mode_b else "A",
         "methodological_warning": (
-            "DISCLOSURE: This mode incorporates ground-truth labels in itemsets. Rules reflect supervised co-occurrence rather than purely unsupervised visual patterns."
+            "DISCLOSURE: This mode incorporates ground-truth labels (condition_status_Healthy, pathogen_type_None) in itemsets. Rules reflect supervised co-occurrence rather than purely unsupervised visual patterns."
             if is_mode_b
             else None
         ),
@@ -647,11 +697,15 @@ def get_association_rules(
         "page_size": page_size,
         "total_pages": total_pages,
         "rules": paged_rules,
-        "algorithm_benchmark": assoc_report.get("algorithm_comparison", {}),
+        "algorithm_benchmark": (
+            assoc_report.get("algorithm_comparison_mode_b", assoc_report.get("algorithm_comparison", {}))
+            if is_mode_b
+            else assoc_report.get("algorithm_comparison_mode_a", assoc_report.get("algorithm_comparison", {}))
+        ),
         "scientific_advisory": {
             "title": "Statistical Association vs Etiology",
             "principle": "High lift reflects spatial/descriptor co-occurrence, NOT biological causation or automated diagnosis.",
-            "discretization": "Equal-frequency quintile binning across 32 visual feature vectors.",
+            "discretization": "Tertile quantile binning across 12 selected visual feature vectors (36 one-hot items).",
         },
     }
 
@@ -713,7 +767,8 @@ def get_report_content(report_id: str) -> Dict[str, Any]:
 
 @app.post("/api/analyze/image")
 async def analyze_uploaded_image(file: UploadFile = File(...)) -> Dict[str, Any]:
-    """Analyzes an uploaded image specimen using the frozen visual pipeline and models."""
+    """Analyzes an uploaded image specimen using both the supervised prediction module
+    and the exploratory unsupervised visual clustering and nearest-specimen retrieval."""
     from src.mining.image_analyzer import get_image_analyzer
 
     try:
@@ -726,6 +781,49 @@ async def analyze_uploaded_image(file: UploadFile = File(...)) -> Dict[str, Any]
     except Exception as e:
         logger.error(f"Image analysis error: {e}", exc_info=True)
         raise HTTPException(status_code=500, detail=f"Image analysis failed: {str(e)}")
+
+
+@app.post("/api/predict/disease")
+async def predict_crop_disease(file: UploadFile = File(...)) -> Dict[str, Any]:
+    """Runs supervised transfer-learning foliar disease prediction on an uploaded image.
+    Returns calibrated probabilities, top candidates, and statistical uncertainty flag."""
+    from src.mining.predictor import get_crop_disease_predictor
+
+    try:
+        content = await file.read()
+        if not content:
+            raise HTTPException(status_code=400, detail="Uploaded file is empty.")
+        predictor = get_crop_disease_predictor()
+        prediction = predictor.predict(content)
+        return prediction
+    except HTTPException:
+        raise
+    except ValueError as ve:
+        raise HTTPException(status_code=400, detail=str(ve))
+    except Exception as e:
+        logger.error(f"Crop disease prediction error: {e}", exc_info=True)
+        raise HTTPException(status_code=500, detail=f"Prediction failed: {str(e)}")
+
+
+@app.get("/api/prediction/metadata")
+def get_prediction_metadata() -> Dict[str, Any]:
+    """Returns metadata, class mapping, and evaluation benchmarks for the supervised prediction module."""
+    from src.mining.predictor import get_crop_disease_predictor
+    predictor = get_crop_disease_predictor()
+    eval_report_path = ROOT_DIR / "data" / "reports" / "prediction" / "prediction_evaluation_report.json"
+    eval_data = {}
+    if eval_report_path.exists():
+        with open(eval_report_path, "r", encoding="utf-8") as f:
+            eval_data = json.load(f)
+
+    return {
+        "model_architecture": "EfficientNet-B0 (Transfer Learning)",
+        "num_classes": predictor.num_classes,
+        "classes": list(predictor.idx_to_class.values()),
+        "confidence_threshold": 0.35,
+        "metadata": predictor.metadata,
+        "evaluation_summary": eval_data.get("evaluation_summary", {}),
+    }
 
 
 # Mount frontend static distribution if built

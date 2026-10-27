@@ -1,0 +1,700 @@
+
+======================================================================
+SLIDE 1 (Shapes: 6)
+======================================================================
+  Shape 1: Name='Rectangle 1', Type=AUTO_SHAPE (1)
+  Shape 2: Name='Rounded Rectangle 2', Type=AUTO_SHAPE (1)
+  Shape 3: Name='Rectangle 3', Type=AUTO_SHAPE (1)
+  Shape 4: Name='TextBox 4', Type=TEXT_BOX (17)
+    [P]: AgroVision-Mine
+    [P]: A Multimodal Data Warehouse and Visual Pattern Mining Frameworkfor Crop Disease and Pest Intelligence
+    [P]: DATA WAREHOUSING & DATA MINING (CSI3010) — FINAL LAB PROJECT REVIEW
+  Shape 5: Name='Rounded Rectangle 5', Type=AUTO_SHAPE (1)
+  Shape 6: Name='TextBox 6', Type=TEXT_BOX (17)
+    [P]: PROJECT TEAM DETAILS & ACADEMIC SUPERVISION
+    [P]: • Team Members:  Boomika V (23MID0326)   |   Ajay M (23MID0020)
+    [P]: • Faculty Guide:  Dr. Devipriya A      • Lab Slot:  L41 + L42      • Academic Term:  Fall 2026-27
+    [P]: • Department:  School of Computer Science and Engineering (SCOPE), VIT University
+
+======================================================================
+SLIDE 2 (Shapes: 11)
+======================================================================
+  Shape 1: Name='TextBox 1', Type=TEXT_BOX (17)
+    [P]: CSI3010: DATA WAREHOUSING & DATA MINING
+  Shape 2: Name='TextBox 2', Type=TEXT_BOX (17)
+    [P]: Executive Summary: The Multimodal Analytical Bridge
+  Shape 3: Name='Rectangle 3', Type=AUTO_SHAPE (1)
+  Shape 4: Name='TextBox 4', Type=TEXT_BOX (17)
+    [P]: AgroVision-Mine: Multimodal Data Warehouse & Visual Pattern Mining Framework
+  Shape 5: Name='TextBox 5', Type=TEXT_BOX (17)
+    [P]: 2 / 24
+  Shape 6: Name='Rounded Rectangle 6', Type=AUTO_SHAPE (1)
+  Shape 7: Name='TextBox 7', Type=TEXT_BOX (17)
+    [P]: CORE CHALLENGE & IMPLEMENTED WORK
+    [P]: • Agricultural Data Fragmentation: Standard foliar image datasets reside in disconnected flat folders, lacking multidimensional taxonomy, referential integrity, and verifiable quality controls.
+    [P]: • Multimodal Data Warehousing: Engineered Ralph Kimball's Star Schema in SQLite with 1 Fact table and 4 Dimensions, enabling SQL-backed OLAP aggregation across 2,596 authentic specimens.
+    [P]: • Explainable Feature Engineering: Extracted 32 continuous morphological, textural (GLCM), and color moment descriptors into a 44-column feature store.
+    [P]: • Unsupervised Visual Mining: Fitted K-Means clustering (K=2 metric-supported, K=4 exploratory) and mined 880 visual association rules via Apriori and FP-Growth.
+    [P]: • Scientific Verification: 104 automated tests (94 unit/integration + 10 Playwright browser tests across all 9 pages) pass with 100% cryptographic dataset hash invariance.
+  Shape 8: Name='Rounded Rectangle 8', Type=AUTO_SHAPE (1)
+  Shape 9: Name='TextBox 9', Type=TEXT_BOX (17)
+    [P]: VERIFIED SYSTEM ARCHITECTURE OUTPUTS
+    [P]: • Frozen Canonical Dataset: 2,596 authentic images across 14 crops (1,750 diseased, 846 healthy; PlantDoc: 2,560, ICAR/OGD: 36).
+    [P]: • Dimensional OLAP Engine: Roll-up, Drill-down, Slice, Dice, and Pivot queries executed in <10ms via parameterized SQL.
+    [P]: • Interactive Web Workbench: Production React 18 + TypeScript GUI + FastAPI asynchronous backend with live image similarity retrieval.
+  Shape 10: Name='Rounded Rectangle 10', Type=AUTO_SHAPE (1)
+  Shape 11: Name='TextBox 11', Type=TEXT_BOX (17)
+    [P]: SCIENTIFIC POSITIONING & METHODOLOGICAL BOUNDARY
+    [P]: • Exploratory Mining Only: The system provides visual pattern clustering and reference specimen retrieval. It does NOT claim automated biological disease diagnosis.
+    [P]: • Supervised Classification: Formally evaluated and rejected as unsupported due to single-condition crop confounding and class imbalance.
+
+======================================================================
+SLIDE 3 (Shapes: 11)
+======================================================================
+  Shape 1: Name='TextBox 1', Type=TEXT_BOX (17)
+    [P]: CSI3010: DATA WAREHOUSING & DATA MINING
+  Shape 2: Name='TextBox 2', Type=TEXT_BOX (17)
+    [P]: Research Motivation: The Agricultural Data Gap
+  Shape 3: Name='Rectangle 3', Type=AUTO_SHAPE (1)
+  Shape 4: Name='TextBox 4', Type=TEXT_BOX (17)
+    [P]: AgroVision-Mine: Multimodal Data Warehouse & Visual Pattern Mining Framework
+  Shape 5: Name='TextBox 5', Type=TEXT_BOX (17)
+    [P]: 3 / 24
+  Shape 6: Name='Rounded Rectangle 6', Type=AUTO_SHAPE (1)
+  Shape 7: Name='TextBox 7', Type=TEXT_BOX (17)
+    [P]: LIMITATIONS OF CONVENTIONAL APPROACHES
+    [P]: • Isolated Point Classifiers: Standard deep learning (CNNs/YOLO) treats foliar images as single-image black boxes without historical lineage or multi-attribute queryability.
+    [P]: • Metadata Fragmentation: Agronomic taxonomy, host plant varieties, acquisition modalities, and disease stages are trapped in disparate CSVs or directory paths.
+    [P]: • Absence of Quality Audits: Raw web corpora contain duplicate files, corrupted image headers, and uncalibrated aspect ratios that distort feature models.
+    [P]: • Lack of Dimensional Slicing: Agronomists cannot perform multi-attribute SQL drill-downs (e.g., comparing fungal vs bacterial texture across crop types).
+  Shape 8: Name='Rounded Rectangle 8', Type=AUTO_SHAPE (1)
+  Shape 9: Name='TextBox 9', Type=TEXT_BOX (17)
+    [P]: THE AGROVISION-MINE MULTIMODAL SOLUTION
+    [P]: • Kimball Star-Schema Warehouse: Integrates image technical metadata, botanical taxonomy, and visual metrics into a relational fact table with enforced foreign keys.
+    [P]: • Automated ETL Quality Gates: Validates byte headers, eliminates duplicate records via MD5 hashing, and enforces 256x256 RGB normalization.
+    [P]: • Explainable Computer Vision Descriptors: Color moments, Haralick GLCM textures, and morphometry provide transparent physical features instead of opaque hidden weights.
+    [P]: • Multi-Angle OLAP & Association Mining: Enables agronomists to slice observation cubes by host crop, disease severity, and textural co-occurrence patterns.
+  Shape 10: Name='Rounded Rectangle 10', Type=AUTO_SHAPE (1)
+  Shape 11: Name='TextBox 11', Type=TEXT_BOX (17)
+    [P]: CORE RESEARCH QUESTION: How can multimodal foliar observations and explainable visual features be integrated into an audited dimensional data warehouse to enable SQL OLAP analytics and unsupervised visual pattern discovery without misleading diagnostic overclaims?
+
+======================================================================
+SLIDE 4 (Shapes: 6)
+======================================================================
+  Shape 1: Name='TextBox 1', Type=TEXT_BOX (17)
+    [P]: CSI3010: DATA WAREHOUSING & DATA MINING
+  Shape 2: Name='TextBox 2', Type=TEXT_BOX (17)
+    [P]: Project Objectives & Implemented Deliverables
+  Shape 3: Name='Rectangle 3', Type=AUTO_SHAPE (1)
+  Shape 4: Name='TextBox 4', Type=TEXT_BOX (17)
+    [P]: AgroVision-Mine: Multimodal Data Warehouse & Visual Pattern Mining Framework
+  Shape 5: Name='TextBox 5', Type=TEXT_BOX (17)
+    [P]: 4 / 24
+  Shape 6: Name='Table 6', Type=TABLE (19)
+    [TABLE 7x4]:
+      R1: # | Objective & Scope | Implemented Component / Logic | Verified System Deliverable
+      R2: 1 | Data Governance & Ingestion | Ingest 2,596 specimens across 14 crops with SHA-256 cryptographic immutability | canonical_dataset_v2.csv(c7fd16dc... invariant)
+      R3: 2 | Automated Quality Gates | 5 validation gates: byte headers, formats, dimensions, duplicates, EXIF transpose | 5 quality gates verified;Zero corrupt images ingested
+      R4: 3 | Explainable Feature Store | Extract 32 continuous descriptors (19 Color, 7 GLCM Texture, 6 Morphometry) | image_features_v2.csv(44 columns, 2,596 rows)
+      R5: 4 | Dimensional Data Warehouse | Kimball Star Schema with SQLite PRAGMA foreign_keys = 1 enforced via SQLAlchemy | agrovision_warehouse.db(1 Fact + 4 Dimension tables)
+      R6: 5 | SQL-Backed OLAP Engine | Parameterized SQL engine supporting Roll-up, Drill-down, Slice, Dice, Pivot | Interactive OLAP Console;Latency <10ms per query
+      R7: 6 | Unsupervised Visual Mining | Dual-K K-Means clustering (K=2, K=4), 2D PCA, and Apriori / FP-Growth rule mining | 880 Mode A rules (parity Δ=0);K=2 Silhouette = 0.4060
+
+======================================================================
+SLIDE 5 (Shapes: 12)
+======================================================================
+  Shape 1: Name='TextBox 1', Type=TEXT_BOX (17)
+    [P]: CSI3010: DATA WAREHOUSING & DATA MINING
+  Shape 2: Name='TextBox 2', Type=TEXT_BOX (17)
+    [P]: Dataset Provenance: Reconciling Review 1 & Current Scope
+  Shape 3: Name='Rectangle 3', Type=AUTO_SHAPE (1)
+  Shape 4: Name='TextBox 4', Type=TEXT_BOX (17)
+    [P]: AgroVision-Mine: Multimodal Data Warehouse & Visual Pattern Mining Framework
+  Shape 5: Name='TextBox 5', Type=TEXT_BOX (17)
+    [P]: 5 / 24
+  Shape 6: Name='Rounded Rectangle 6', Type=AUTO_SHAPE (1)
+  Shape 7: Name='TextBox 7', Type=TEXT_BOX (17)
+    [P]: CRITICAL DATASET RECONCILIATION & LINEAGE
+    [P]: • Review 1 Baseline (36 Images): The initial prototype utilized 36 authentic rice pathology images from ICAR / Open Government Data (OGD) across 3 diseases (Bacterial Leaf Blight, Brown Spot, Leaf Smut) and healthy specimens. This subset forms the physical baseline for the relational warehouse (database/agrovision_warehouse.db).
+    [P]: • Current Frozen Dataset (2,596 Images): Expanded to 2,596 authentic specimens across 14 crops, sourced from PlantDoc (2,560 field images) + ICAR/OGD (36 studio scans). Frozen in data/manifests/canonical_dataset_v2.csv.
+    [P]: • Reconciliation of Tomato Count: Documented draft notes cited 736 vs 743. Verified that the frozen manifest contains exactly 743 Tomato records (736 was an uncurated pre-freeze draft totaling 2,668 records).
+    [P]: • Cryptographic Invariance: SHA-256 digests verified 100% invariant before and after all analytical executions, uploads, and automated test runs.
+  Shape 8: Name='Rounded Rectangle 8', Type=AUTO_SHAPE (1)
+  Shape 9: Name='TextBox 9', Type=TEXT_BOX (17)
+    [P]: CANONICAL TAXONOMIC DISTRIBUTION (N=2,596)
+  Shape 10: Name='Table 10', Type=TABLE (19)
+    [TABLE 9x3]:
+      R1: Crop Species | Record Count | Percentage
+      R2: Tomato | 743 | 28.62%
+      R3: Corn | 372 | 14.33%
+      R4: Apple | 272 | 10.48%
+      R5: Potato | 216 | 8.32%
+      R6: Grape & Bell Pepper | 265 (133 + 132) | 10.20%
+      R7: Squash & Raspberry | 249 (130 + 119) | 9.59%
+      R8: Blueberry, Peach, Strawb. | 321 (114+111+96) | 12.36%
+      R9: Soybean, Cherry, Rice | 158 (65+57+36) | 6.09%
+  Shape 11: Name='Rounded Rectangle 11', Type=AUTO_SHAPE (1)
+  Shape 12: Name='TextBox 12', Type=TEXT_BOX (17)
+    [P]: Condition Split: 1,750 Diseased (67.4%) | 846 Healthy (32.6%)Sources: PlantDoc (2,560, 98.6%) | ICAR/OGD (36, 1.4%)Manifest SHA-256: c7fd16dc...1cb8 (Verified Invariant)
+
+======================================================================
+SLIDE 6 (Shapes: 17)
+======================================================================
+  Shape 1: Name='TextBox 1', Type=TEXT_BOX (17)
+    [P]: CSI3010: DATA WAREHOUSING & DATA MINING
+  Shape 2: Name='TextBox 2', Type=TEXT_BOX (17)
+    [P]: End-to-End System Architecture & Data Flow
+  Shape 3: Name='Rectangle 3', Type=AUTO_SHAPE (1)
+  Shape 4: Name='TextBox 4', Type=TEXT_BOX (17)
+    [P]: AgroVision-Mine: Multimodal Data Warehouse & Visual Pattern Mining Framework
+  Shape 5: Name='TextBox 5', Type=TEXT_BOX (17)
+    [P]: 6 / 24
+  Shape 6: Name='Rounded Rectangle 6', Type=AUTO_SHAPE (1)
+  Shape 7: Name='TextBox 7', Type=TEXT_BOX (17)
+    [P]: 1. INGESTION & GATES
+    [P]: • Ingests 2,596 images• 5 validation gates• Rejects corrupt bytes• MD5 deduplication
+  Shape 8: Name='Rounded Rectangle 8', Type=AUTO_SHAPE (1)
+  Shape 9: Name='TextBox 9', Type=TEXT_BOX (17)
+    [P]: 2. PREPROCESSING
+    [P]: • 256x256 RGB resize• EXIF auto-transpose• RGBA canvas composite• Zero dataset mutation
+  Shape 10: Name='Rounded Rectangle 10', Type=AUTO_SHAPE (1)
+  Shape 11: Name='TextBox 11', Type=TEXT_BOX (17)
+    [P]: 3. FEATURE STORE
+    [P]: • 32 continuous features• Color moments (19)• Haralick GLCM (7)• Morphometry (6)
+  Shape 12: Name='Rounded Rectangle 12', Type=AUTO_SHAPE (1)
+  Shape 13: Name='TextBox 13', Type=TEXT_BOX (17)
+    [P]: 4. WAREHOUSE & ETL
+    [P]: • Kimball Star Schema• SQLite 3 database• Dimension-first load• 100% idempotent
+  Shape 14: Name='Rounded Rectangle 14', Type=AUTO_SHAPE (1)
+  Shape 15: Name='TextBox 15', Type=TEXT_BOX (17)
+    [P]: 5. ANALYTICAL MINING & OLAP ENGINES
+    [P]: • SQL OLAP Engine: Executes parameterized Roll-up, Drill-down, Slice, Dice, and Pivot queries (<10ms).
+    [P]: • Dual-K K-Means Clustering: K=2 metric-supported (Silhouette=0.4060) and K=4 exploratory subpartition.
+    [P]: • 2D PCA Projection: Explains 52.11% variance (PC1=38.56%, PC2=13.55%).
+    [P]: • Association Mining: FP-Growth & Apriori produce 880 identical Mode A rules.
+  Shape 16: Name='Rounded Rectangle 16', Type=AUTO_SHAPE (1)
+  Shape 17: Name='TextBox 17', Type=TEXT_BOX (17)
+    [P]: 6. API & INTERACTIVE PRESENTATION TIER
+    [P]: • FastAPI Asynchronous Backend: 9 RESTful endpoints delivering JSON telemetry for health, dataset, OLAP, and mining.
+    [P]: • React 18 + TypeScript GUI: Stitch-engineered 9-page responsive dashboard with interactive data exploration.
+    [P]: • Image Analysis Workbench: Real-time in-memory specimen extraction and reference Euclidean distance retrieval.
+    [P]: • Playwright Browser Automation: 10 end-to-end automated tests driving system Chrome.
+
+======================================================================
+SLIDE 7 (Shapes: 6)
+======================================================================
+  Shape 1: Name='TextBox 1', Type=TEXT_BOX (17)
+    [P]: CSI3010: DATA WAREHOUSING & DATA MINING
+  Shape 2: Name='TextBox 2', Type=TEXT_BOX (17)
+    [P]: Technology Stack & Architectural Rationale
+  Shape 3: Name='Rectangle 3', Type=AUTO_SHAPE (1)
+  Shape 4: Name='TextBox 4', Type=TEXT_BOX (17)
+    [P]: AgroVision-Mine: Multimodal Data Warehouse & Visual Pattern Mining Framework
+  Shape 5: Name='TextBox 5', Type=TEXT_BOX (17)
+    [P]: 7 / 24
+  Shape 6: Name='Table 6', Type=TABLE (19)
+    [TABLE 9x4]:
+      R1: Technology / Library | Layer / Module | Functional Implementation Role | Architectural Rationale
+      R2: Python 3.11 | Core Runtime | ETL pipeline, feature extraction, mining engines | High performance, robust scientific computing ecosystem
+      R3: NumPy & Pandas | Data Processing | Vectorized calculations, 44-col feature store | Fast matrix operations and tabular data transformation
+      R4: Pillow & OpenCV | Image Engineering | EXIF transposition, color conversion, contour geometry | Robust multi-format decoding and geometric shape extraction
+      R5: scikit-image & sklearn | Machine Learning | GLCM gray-level matrix, StandardScaler, K-Means, PCA | Gold-standard reproducible implementations of classical CV & ML
+      R6: mlxtend | Pattern Mining | Apriori & FP-Growth frequent itemset / rule generation | Enables exact parity comparison between mining algorithms
+      R7: SQLite & SQLAlchemy | Data Warehouse | Kimball Star Schema with PRAGMA foreign_keys = 1 | Lightweight, zero-config ACID-compliant relational warehouse
+      R8: FastAPI | API Backend | Asynchronous REST endpoints for all analytical services | Low-latency JSON serialization, automated OpenAPI documentation
+      R9: React 18 & TypeScript | Frontend GUI | Interactive 9-page responsive analytical dashboard | Component-driven modularity with strict type-safety checks
+
+======================================================================
+SLIDE 8 (Shapes: 11)
+======================================================================
+  Shape 1: Name='TextBox 1', Type=TEXT_BOX (17)
+    [P]: CSI3010: DATA WAREHOUSING & DATA MINING
+  Shape 2: Name='TextBox 2', Type=TEXT_BOX (17)
+    [P]: Data Quality & Preprocessing: 5 Automated Gates
+  Shape 3: Name='Rectangle 3', Type=AUTO_SHAPE (1)
+  Shape 4: Name='TextBox 4', Type=TEXT_BOX (17)
+    [P]: AgroVision-Mine: Multimodal Data Warehouse & Visual Pattern Mining Framework
+  Shape 5: Name='TextBox 5', Type=TEXT_BOX (17)
+    [P]: 8 / 24
+  Shape 6: Name='Rounded Rectangle 6', Type=AUTO_SHAPE (1)
+  Shape 7: Name='TextBox 7', Type=TEXT_BOX (17)
+    [P]: THE 5 AUTOMATED DATA QUALITY GATES
+    [P]: • Gate 1: Byte Header & Format Gate: Validates binary Magic Bytes. Rejects truncated streams and unsupported formats (.txt, .exe) with HTTP 400.
+    [P]: • Gate 2: Dimension & Aspect Ratio Gate: Enforces minimum resolution (100x100 px) and rejects extreme distortion (aspect ratio > 5.0).
+    [P]: • Gate 3: File Payload Limit Gate: Enforces a strict 15 MB payload ceiling to prevent denial-of-service memory exhaustion.
+    [P]: • Gate 4: Cryptographic Deduplication Gate: Calculates MD5 content digests to detect exact duplicate images regardless of file renaming.
+    [P]: • Gate 5: Channel & Orientation Normalization: Applies PIL ImageOps.exif_transpose for smartphone photos, composites RGBA onto white canvas, and resizes to 256x256 RGB.
+  Shape 8: Name='Rounded Rectangle 8', Type=AUTO_SHAPE (1)
+  Shape 9: Name='Picture 9', Type=PICTURE (13)
+    [PICTURE]: left=6583680, top=1832969, width=4785055, height=1621805
+  Shape 10: Name='Rounded Rectangle 10', Type=AUTO_SHAPE (1)
+  Shape 11: Name='TextBox 11', Type=TEXT_BOX (17)
+    [P]: CONTROLLED DIAGNOSTIC EDGE HARNESS AUDIT• 100% Rejection of Corrupt Diagnostic Fixtures: Truncated bytes, corrupt headers, unsupported extensions, and empty files reliably rejected.• Authentic Dataset Standardization: All 2,596 images standardized to 256x256 RGB with zero channel drops or orientation distortion.
+
+======================================================================
+SLIDE 9 (Shapes: 13)
+======================================================================
+  Shape 1: Name='TextBox 1', Type=TEXT_BOX (17)
+    [P]: CSI3010: DATA WAREHOUSING & DATA MINING
+  Shape 2: Name='TextBox 2', Type=TEXT_BOX (17)
+    [P]: Feature Engineering: 32 Continuous Descriptors
+  Shape 3: Name='Rectangle 3', Type=AUTO_SHAPE (1)
+  Shape 4: Name='TextBox 4', Type=TEXT_BOX (17)
+    [P]: AgroVision-Mine: Multimodal Data Warehouse & Visual Pattern Mining Framework
+  Shape 5: Name='TextBox 5', Type=TEXT_BOX (17)
+    [P]: 9 / 24
+  Shape 6: Name='Rounded Rectangle 6', Type=AUTO_SHAPE (1)
+  Shape 7: Name='TextBox 7', Type=TEXT_BOX (17)
+    [P]: COLOR MOMENTS (19 FEATURES)
+    [P]: • RGB Channel Means & Std Devs• Normalized RGB Color Means• HSV Hue, Saturation, Value Means• Excess Green Index (ExG = 2G - R - B)Agronomic Significance: Quantifies foliar chlorosis, yellowing, and necrotic spot discoloration.
+  Shape 8: Name='Rounded Rectangle 8', Type=AUTO_SHAPE (1)
+  Shape 9: Name='TextBox 9', Type=TEXT_BOX (17)
+    [P]: GLCM TEXTURE (7 FEATURES)
+    [P]: • Contrast (local intensity variation)• Dissimilarity (gray-level difference)• Homogeneity (subtle smoothness)• Energy & Angular Second Moment (ASM)• Correlation (linear dependency)Agronomic Significance: Measures surface roughness, pustule mottling, and tissue degradation.
+  Shape 10: Name='Rounded Rectangle 10', Type=AUTO_SHAPE (1)
+  Shape 11: Name='TextBox 11', Type=TEXT_BOX (17)
+    [P]: MORPHOMETRIC SHAPE (6 FEATURES)
+    [P]: • Contour Area & Perimeter• Circularity (4π·Area / Perimeter²)• Bounding Box Aspect Ratio• Extent (Area / Bounding Box Area)• Lesion Coverage Area RatioAgronomic Significance: Captures boundary regularity and spot structural geometries.
+  Shape 12: Name='Rounded Rectangle 12', Type=AUTO_SHAPE (1)
+  Shape 13: Name='TextBox 13', Type=TEXT_BOX (17)
+    [P]: ANALYTICAL FEATURE STORE STRUCTURE (data/features/image_features_v2.csv)• 44 Total Columns: Exactly 32 continuous numerical features used by K-Means & PCA + 12 metadata columns (image_id, filename, crop_name, disease_name, condition, pathogen_type, split, dataset_source, dimensions).
+
+======================================================================
+SLIDE 10 (Shapes: 6)
+======================================================================
+  Shape 1: Name='TextBox 1', Type=TEXT_BOX (17)
+    [P]: CSI3010: DATA WAREHOUSING & DATA MINING
+  Shape 2: Name='TextBox 2', Type=TEXT_BOX (17)
+    [P]: Algorithm Selection: Technical Rationale Matrix
+  Shape 3: Name='Rectangle 3', Type=AUTO_SHAPE (1)
+  Shape 4: Name='TextBox 4', Type=TEXT_BOX (17)
+    [P]: AgroVision-Mine: Multimodal Data Warehouse & Visual Pattern Mining Framework
+  Shape 5: Name='TextBox 5', Type=TEXT_BOX (17)
+    [P]: 10 / 24
+  Shape 6: Name='Table 6', Type=TABLE (19)
+    [TABLE 7x5]:
+      R1: Algorithm / Technique | Input Vector | Why Selected (Rationale) | Output Representation | Limitations Disclosed
+      R2: StandardScaler | 32 continuous features | Normalizes feature scales (z = (x-μ)/σ), preventing high-magnitude contour biases | Standardized 32D matrix (μ=0, σ=1) | Assumes Gaussian-like bell curves
+      R3: K-Means Clustering | 32 standardized features | Discovers unsupervised structural groupings of foliar morphology; tested K=2 to 8 | Cluster labels (K=2 primary, K=4 exploratory) | Groups visual appearance, NOT etiology
+      R4: PCA Projection | 32 standardized features | Reduces 32D space to 2 principal components explaining 52.11% total variance | 2D orthogonal scatter coordinates (PC1, PC2) | Linear projection loses 47.89% residual variance
+      R5: Apriori Mining | 12 discretized features | Exhaustive level-wise breadth-first search for frequent visual itemsets | Frequent itemsets and association rules | Exponential candidate generation overhead
+      R6: FP-Growth Mining | 12 discretized features | Compressed FP-Tree eliminates candidate generation; exact parity with Apriori | Exact 880 Mode A rules (parity Δ = 0.00000000) | Tree construction memory footprint
+      R7: Nearest Neighbors | 32D Euclidean metric | Ranks authentic reference specimens by visual feature distance: d = ||zq - zr||2 | Ranked reference matches with distances | Proximity index 1/(1+d) is uncalibrated
+
+======================================================================
+SLIDE 11 (Shapes: 9)
+======================================================================
+  Shape 1: Name='TextBox 1', Type=TEXT_BOX (17)
+    [P]: CSI3010: DATA WAREHOUSING & DATA MINING
+  Shape 2: Name='TextBox 2', Type=TEXT_BOX (17)
+    [P]: Data Warehouse Design: Kimball Star Schema
+  Shape 3: Name='Rectangle 3', Type=AUTO_SHAPE (1)
+  Shape 4: Name='TextBox 4', Type=TEXT_BOX (17)
+    [P]: AgroVision-Mine: Multimodal Data Warehouse & Visual Pattern Mining Framework
+  Shape 5: Name='TextBox 5', Type=TEXT_BOX (17)
+    [P]: 11 / 24
+  Shape 6: Name='Rounded Rectangle 6', Type=AUTO_SHAPE (1)
+  Shape 7: Name='Picture 7', Type=PICTURE (13)
+    [PICTURE]: left=822960, top=1463040, width=5303520, height=4232102
+  Shape 8: Name='Rounded Rectangle 8', Type=AUTO_SHAPE (1)
+  Shape 9: Name='TextBox 9', Type=TEXT_BOX (17)
+    [P]: PHYSICAL STAR SCHEMA SPECIFICATION
+    [P]: • Central Fact Table: disease_observation_fact (Grain: Exactly ONE row per validated leaf specimen observation).
+    [P]: • Additive / Semi-Additive Measures: observation_count (1), lesion_severity_score (continuous 0.0–1.0), image_sharpness_score.
+    [P]: • Dimension 1 (dim_crop): Botanical Host hierarchy (crop_key, crop_name, botanical_name, crop_category).
+    [P]: • Dimension 2 (dim_disease): Pathology taxonomy (disease_key, disease_name, pathogen_type, causal_agent, primary_symptom).
+    [P]: • Dimension 3 (dim_image): Acquisition technical metadata (image_key, raw_id, file_format, dimensions, size_kb).
+    [P]: • Dimension 4 (dim_visual_feature): Extracted continuous features (feature_key, color moments, GLCM textures, morphometry).
+
+======================================================================
+SLIDE 12 (Shapes: 9)
+======================================================================
+  Shape 1: Name='TextBox 1', Type=TEXT_BOX (17)
+    [P]: CSI3010: DATA WAREHOUSING & DATA MINING
+  Shape 2: Name='TextBox 2', Type=TEXT_BOX (17)
+    [P]: Production ETL Pipeline: Dimension-First Loading
+  Shape 3: Name='Rectangle 3', Type=AUTO_SHAPE (1)
+  Shape 4: Name='TextBox 4', Type=TEXT_BOX (17)
+    [P]: AgroVision-Mine: Multimodal Data Warehouse & Visual Pattern Mining Framework
+  Shape 5: Name='TextBox 5', Type=TEXT_BOX (17)
+    [P]: 12 / 24
+  Shape 6: Name='Rounded Rectangle 6', Type=AUTO_SHAPE (1)
+  Shape 7: Name='TextBox 7', Type=TEXT_BOX (17)
+    [P]: # PRODUCTION ETL WORKFLOW (Extract -> Transform -> Load)
+    [P]: with engine.begin() as conn:
+    [P]: # 1. Enforce SQLite Foreign Key Pragma natively
+    [P]: conn.execute(text('PRAGMA foreign_keys = ON;'))
+    [P]: # 2. Dimension-First Loading (Idempotent Natural Keys)
+    [P]: crop_key = load_dim_crop(conn, row['crop_name'])
+    [P]: disease_key = load_dim_disease(conn, row['disease'])
+    [P]: image_key = load_dim_image(conn, row['metadata'])
+    [P]: feature_key = load_dim_features(conn, row['features'])
+    [P]: # 3. Fact Table Ingestion with Deduplication
+    [P]: stmt = insert(disease_observation_fact).values(
+    [P]: crop_key=crop_key, disease_key=disease_key,
+    [P]: image_key=image_key, feature_key=feature_key,
+    [P]: lesion_severity_score=row['severity']
+    [P]: ).prefix_with('OR IGNORE')
+    [P]: conn.execute(stmt)
+  Shape 8: Name='Rounded Rectangle 8', Type=AUTO_SHAPE (1)
+  Shape 9: Name='TextBox 9', Type=TEXT_BOX (17)
+    [P]: VERIFIED ETL EXECUTION AUDIT
+    [P]: • Strict Idempotency (100%): 1st Run: 36 facts loaded into warehouse. 2nd Run: 0 inserted, 36 duplicates skipped cleanly.
+    [P]: • Dimension-First Loading: Prevents foreign key orphan insertion errors by populating reference dimensions prior to fact records.
+    [P]: • Transaction Atomicity: Utilizes SQLAlchemy context managers (engine.begin()) ensuring complete rollback upon any parsing error.
+    [P]: • Zero Referential Drift: Verified that 100% of fact foreign keys resolve to valid dimension primary keys.
+
+======================================================================
+SLIDE 13 (Shapes: 14)
+======================================================================
+  Shape 1: Name='TextBox 1', Type=TEXT_BOX (17)
+    [P]: CSI3010: DATA WAREHOUSING & DATA MINING
+  Shape 2: Name='TextBox 2', Type=TEXT_BOX (17)
+    [P]: Data Governance & Integrity Verification
+  Shape 3: Name='Rectangle 3', Type=AUTO_SHAPE (1)
+  Shape 4: Name='TextBox 4', Type=TEXT_BOX (17)
+    [P]: AgroVision-Mine: Multimodal Data Warehouse & Visual Pattern Mining Framework
+  Shape 5: Name='TextBox 5', Type=TEXT_BOX (17)
+    [P]: 13 / 24
+  Shape 6: Name='Rounded Rectangle 6', Type=AUTO_SHAPE (1)
+  Shape 7: Name='TextBox 7', Type=TEXT_BOX (17)
+    [P]: 0.00% NULLS
+    [P]: Zero null values across all primary keys, foreign keys, and 32 continuous descriptors.
+  Shape 8: Name='Rounded Rectangle 8', Type=AUTO_SHAPE (1)
+  Shape 9: Name='TextBox 9', Type=TEXT_BOX (17)
+    [P]: 0 DUPLICATES
+    [P]: 100% deduplication via composite natural key and MD5 image content hashing.
+  Shape 10: Name='Rounded Rectangle 10', Type=AUTO_SHAPE (1)
+  Shape 11: Name='TextBox 11', Type=TEXT_BOX (17)
+    [P]: 100% FK INTEGRITY
+    [P]: PRAGMA foreign_keys = 1 enforced. Zero orphan fact rows detected.
+  Shape 12: Name='Rounded Rectangle 12', Type=AUTO_SHAPE (1)
+  Shape 13: Name='TextBox 13', Type=TEXT_BOX (17)
+    [P]: 100% HASH INVARIANT
+    [P]: Canonical manifest & feature store SHA-256 digests perfectly preserved.
+  Shape 14: Name='Table 14', Type=TABLE (19)
+    [TABLE 5x4]:
+      R1: Audit Check | Expected Threshold | Measured Result | Status & Evidence
+      R2: SQLite Foreign Key Constraints | 100% Enforced (PRAGMA=1) | 0 Violations | PASS (Verified via SQLAlchemy listeners)
+      R3: Fact Table Primary Key Uniqueness | 100% Unique observation_key | 36 Unique PKs | PASS (Zero orphan or duplicate rows)
+      R4: Feature Store Column Completeness | 44 Required Columns | 44 Columns Present | PASS (Zero missing feature fields)
+      R5: Cryptographic Dataset Immutability | Exact SHA-256 match | c7fd...1cb8 & f6ca...093c1 | PASS (Zero post-run file mutations)
+
+======================================================================
+SLIDE 14 (Shapes: 15)
+======================================================================
+  Shape 1: Name='TextBox 1', Type=TEXT_BOX (17)
+    [P]: CSI3010: DATA WAREHOUSING & DATA MINING
+  Shape 2: Name='TextBox 2', Type=TEXT_BOX (17)
+    [P]: SQL-Backed OLAP Operations Engine
+  Shape 3: Name='Rectangle 3', Type=AUTO_SHAPE (1)
+  Shape 4: Name='TextBox 4', Type=TEXT_BOX (17)
+    [P]: AgroVision-Mine: Multimodal Data Warehouse & Visual Pattern Mining Framework
+  Shape 5: Name='TextBox 5', Type=TEXT_BOX (17)
+    [P]: 14 / 24
+  Shape 6: Name='Rounded Rectangle 6', Type=AUTO_SHAPE (1)
+  Shape 7: Name='TextBox 7', Type=TEXT_BOX (17)
+    [P]: 1. ROLL-UP (Hierarchical Aggregation)
+    [P]: Ascends hierarchy: Observation -> Crop -> Crop Category.SQL: SELECT c.crop_category, COUNT(f.observation_key) AS obs, ROUND(AVG(f.lesion_severity_score),2) AS avg_sev     FROM disease_observation_fact f JOIN dim_crop c USING(crop_key) GROUP BY c.crop_category;Agronomic Insight: Aggregates disease severity to macroeconomic host crop categories.
+  Shape 8: Name='Rounded Rectangle 8', Type=AUTO_SHAPE (1)
+  Shape 9: Name='TextBox 9', Type=TEXT_BOX (17)
+    [P]: 2. DRILL-DOWN (Hierarchical Decomposition)
+    [P]: Descends hierarchy: Crop Category -> Pathology Diagnosis -> Specific Pathogen.SQL: SELECT d.disease_name, d.pathogen_type, COUNT(f.observation_key) AS obs, ROUND(AVG(f.lesion_severity_score),2) AS avg_sev     FROM disease_observation_fact f JOIN dim_disease d USING(disease_key) GROUP BY d.disease_name;Agronomic Insight: Decomposes broad foliar symptoms into specific bacterial and fungal agents.
+  Shape 10: Name='Rounded Rectangle 10', Type=AUTO_SHAPE (1)
+  Shape 11: Name='TextBox 11', Type=TEXT_BOX (17)
+    [P]: 3A. SLICE (Single Dimension)
+    [P]: Filters strictly on 1 dimension: WHERE crop_name = 'Rice'.SQL: SELECT c.crop_name, COUNT(f.observation_key) AS obs, ROUND(AVG(f.lesion_severity_score),2) AS avg_sev FROM disease_observation_fact f JOIN dim_crop c USING(crop_key) WHERE c.crop_name = 'Rice';Agronomic Value: Isolates host-specific baseline specimens for staple cereal disease analysis.
+  Shape 12: Name='Rounded Rectangle 12', Type=AUTO_SHAPE (1)
+  Shape 13: Name='TextBox 13', Type=TEXT_BOX (17)
+    [P]: 3B. DICE (Multi-Dimension Sub-Cube)
+    [P]: Filters across 2+ dimensions: WHERE crop IN ('Tomato','Corn') AND pathogen = 'Fungal'.SQL: SELECT c.crop_name, d.disease_name, ROUND(AVG(f.lesion_severity_score),2) FROM disease_observation_fact f JOIN dim_crop c USING(crop_key) JOIN dim_disease d USING(disease_key) WHERE c.crop_name IN ('Tomato','Corn') AND d.pathogen_type = 'Fungal';Agronomic Value: Compares cross-crop fungal vulnerability in commercial row crops.
+  Shape 14: Name='Rounded Rectangle 14', Type=AUTO_SHAPE (1)
+  Shape 15: Name='TextBox 15', Type=TEXT_BOX (17)
+    [P]: 4. PIVOT (Cross-Tabulation Rotation)
+    [P]: Cross-tabulates Crop Species (rows) vs Severity Tiers (columns).Matrix: Low Severity (<0.30), Moderate (0.30–0.60), Severe (>0.60).Agronomic Value: Exposes structural damage distribution across distinct host plant taxa in a compact 2D reporting matrix.
+
+======================================================================
+SLIDE 15 (Shapes: 12)
+======================================================================
+  Shape 1: Name='TextBox 1', Type=TEXT_BOX (17)
+    [P]: CSI3010: DATA WAREHOUSING & DATA MINING
+  Shape 2: Name='TextBox 2', Type=TEXT_BOX (17)
+    [P]: Physical Warehouse: Actual OLAP Query Outputs
+  Shape 3: Name='Rectangle 3', Type=AUTO_SHAPE (1)
+  Shape 4: Name='TextBox 4', Type=TEXT_BOX (17)
+    [P]: AgroVision-Mine: Multimodal Data Warehouse & Visual Pattern Mining Framework
+  Shape 5: Name='TextBox 5', Type=TEXT_BOX (17)
+    [P]: 15 / 24
+  Shape 6: Name='Rounded Rectangle 6', Type=AUTO_SHAPE (1)
+  Shape 7: Name='Picture 7', Type=PICTURE (13)
+    [PICTURE]: left=822960, top=2378977, width=5303520, height=1648994
+  Shape 8: Name='Rounded Rectangle 8', Type=AUTO_SHAPE (1)
+  Shape 9: Name='TextBox 9', Type=TEXT_BOX (17)
+    [P]: ACTUAL QUERY OUTPUTS & DRILL-DOWN BREAKDOWN
+  Shape 10: Name='Table 10', Type=TABLE (19)
+    [TABLE 6x4]:
+      R1: Disease Name | Pathogen | Obs Count | Avg Sev
+      R2: Bacterial Leaf Blight | Bacterial | 12 | 0.41
+      R3: Brown Spot | Fungal | 12 | 0.33
+      R4: Leaf Smut | Fungal | 12 | 0.27
+      R5: Healthy Baseline* | Unknown | 0* | 0.00
+      R6: Overall Rice Cohort | Total | 36 | 0.34
+  Shape 11: Name='Rounded Rectangle 11', Type=AUTO_SHAPE (1)
+  Shape 12: Name='TextBox 12', Type=TEXT_BOX (17)
+    [P]: *Agronomic Note on Baseline: Healthy=0 in the physical ICAR baseline is intentional, as the original repository collection comprises verified pathological specimens exclusively. HEALTHY is modeled as an active dimension member to ensure zero-schema-change extensibility.
+
+======================================================================
+SLIDE 16 (Shapes: 11)
+======================================================================
+  Shape 1: Name='TextBox 1', Type=TEXT_BOX (17)
+    [P]: CSI3010: DATA WAREHOUSING & DATA MINING
+  Shape 2: Name='TextBox 2', Type=TEXT_BOX (17)
+    [P]: Visual Pattern Mining: Dual-K Clustering Evaluation
+  Shape 3: Name='Rectangle 3', Type=AUTO_SHAPE (1)
+  Shape 4: Name='TextBox 4', Type=TEXT_BOX (17)
+    [P]: AgroVision-Mine: Multimodal Data Warehouse & Visual Pattern Mining Framework
+  Shape 5: Name='TextBox 5', Type=TEXT_BOX (17)
+    [P]: 16 / 24
+  Shape 6: Name='Rounded Rectangle 6', Type=AUTO_SHAPE (1)
+  Shape 7: Name='TextBox 7', Type=TEXT_BOX (17)
+    [P]: MULTI-K EVALUATION ON 32 STANDARDIZED FEATURES
+  Shape 8: Name='Table 8', Type=TABLE (19)
+    [TABLE 6x4]:
+      R1: K Value | Silhouette (↑) | Davies-Bouldin (↓) | Calinski-Harabasz (↑)
+      R2: K = 2 (Best) | 0.4060 | 1.0990 | 1,154.38
+      R3: K = 3 | 0.1821 | 1.7629 | 820.65
+      R4: K = 4 (Subpart) | 0.1651 | 1.8339 / 1.6210* | 674.33
+      R5: K = 5 | 0.1623 | 1.7326 | 589.29
+      R6: K = 6 | 0.1648 | 1.6312 | 529.40
+  Shape 9: Name='TextBox 9', Type=TEXT_BOX (17)
+    [P]: • K=2 Supported Solution: Cluster 0 (2,150 images, 82.8%) vs Cluster 1 (446 images, 17.2%). Distinguishes dark, dense foliage from high-luminance, pale backgrounds.
+    [P]: • Reconciling K=4 DB Index: *Authoritative multi-K evaluation calculates DB=1.8339 on the full 32-feature matrix; 1.6210 was recorded in an exploratory subpartition report.
+    [P]: • Multi-Seed Stability: Pairwise Adjusted Rand Index ARI = 1.0000 across seeds [0, 1, 42, 100, 999].
+  Shape 10: Name='Rounded Rectangle 10', Type=AUTO_SHAPE (1)
+  Shape 11: Name='Picture 15', Type=PICTURE (13)
+    [PICTURE]: left=6492240, top=2432304, width=4941824, height=2779776
+
+======================================================================
+SLIDE 17 (Shapes: 12)
+======================================================================
+  Shape 1: Name='TextBox 1', Type=TEXT_BOX (17)
+    [P]: CSI3010: DATA WAREHOUSING & DATA MINING
+  Shape 2: Name='TextBox 2', Type=TEXT_BOX (17)
+    [P]: Dimensionality Reduction: 2D PCA Loadings Analysis
+  Shape 3: Name='Rectangle 3', Type=AUTO_SHAPE (1)
+  Shape 4: Name='TextBox 4', Type=TEXT_BOX (17)
+    [P]: AgroVision-Mine: Multimodal Data Warehouse & Visual Pattern Mining Framework
+  Shape 5: Name='TextBox 5', Type=TEXT_BOX (17)
+    [P]: 17 / 24
+  Shape 6: Name='Rounded Rectangle 6', Type=AUTO_SHAPE (1)
+  Shape 7: Name='TextBox 7', Type=TEXT_BOX (17)
+    [P]: 2D PCA PROJECTION LOADINGS & VARIANCE
+    [P]: • Cumulative Explained Variance: 52.11% across 2 principal components (PC1 = 38.56%, PC2 = 13.55%). Sufficient to visualize global cluster geometry.
+    [P]: • Physical Interpretation of PC1 (38.56%): Strongly positive on foliar luminance (rgb_r_mean, rgb_g_mean, hsv_v_mean) and strongly negative on contour perimeter and greenness. Distinguishes pale chlorotic/scanner images from dense green leaves.
+    [P]: • Physical Interpretation of PC2 (13.55%): Strongly positive on GLCM contrast and dissimilarity, strongly negative on GLCM homogeneity and energy. Captures surface mottling, necrotic lesions, and texture roughness.
+    [P]: • Epistemological Boundary: PCA is an unsupervised orthogonal linear transformation. It illustrates macroscopic geometric separation but cannot establish biological pathology.
+  Shape 8: Name='Rounded Rectangle 8', Type=AUTO_SHAPE (1)
+  Shape 9: Name='TextBox 9', Type=TEXT_BOX (17)
+    [P]: EMPIRICAL COMPONENT LOADINGS TABLE
+  Shape 10: Name='Table 10', Type=TABLE (19)
+    [TABLE 4x4]:
+      R1: Component | Variance | Top Positive Loading | Top Negative Loading
+      R2: PC1 | 38.56% | rgb_r_mean (+0.252)glcm_asm (+0.248) | perimeter (-0.231)hsv_s_mean (-0.219)
+      R3: PC2 | 13.55% | glcm_contrast (+0.384)dissimilarity (+0.379) | homogeneity (-0.362)glcm_energy (-0.315)
+      R4: Total 2D | 52.11% | Covers 16.6x of single-feature baseline | Orthogonal 2D Space
+  Shape 11: Name='Rounded Rectangle 11', Type=AUTO_SHAPE (1)
+  Shape 12: Name='TextBox 12', Type=TEXT_BOX (17)
+    [P]: CLUSTER DISTRIBUTIONS & SOURCE DOMAIN SHIFT• Cluster 0 (N=2,150): Centered around negative PC1 / moderate PC2 (dense in-field PlantDoc foliar imagery).• Cluster 1 (N=446): High positive PC1 space. 32 of 36 ICAR Rice scans map here due to white scanner background reflection.
+
+======================================================================
+SLIDE 18 (Shapes: 9)
+======================================================================
+  Shape 1: Name='TextBox 1', Type=TEXT_BOX (17)
+    [P]: CSI3010: DATA WAREHOUSING & DATA MINING
+  Shape 2: Name='TextBox 2', Type=TEXT_BOX (17)
+    [P]: Association Rule Mining: Mode A vs Mode B
+  Shape 3: Name='Rectangle 3', Type=AUTO_SHAPE (1)
+  Shape 4: Name='TextBox 4', Type=TEXT_BOX (17)
+    [P]: AgroVision-Mine: Multimodal Data Warehouse & Visual Pattern Mining Framework
+  Shape 5: Name='TextBox 5', Type=TEXT_BOX (17)
+    [P]: 18 / 24
+  Shape 6: Name='Rounded Rectangle 6', Type=AUTO_SHAPE (1)
+  Shape 7: Name='TextBox 7', Type=TEXT_BOX (17)
+    [P]: MODE A: VISUAL-ONLY UNSUPERVISED MINING
+    [P]: • Input Discretization: Equal-frequency tertile binning (Low, Medium, High) across 12 explainable visual descriptors.
+    [P]: • Declared Baseline Thresholds: Min Support = 0.15 (15.0%), Min Confidence = 0.60 (60.0%), Min Lift = 1.0.
+    [P]: • Algorithmic Parity (FP-Growth vs Apriori): Both algorithms produce exactly 223 frequent itemsets and 880 rules. Maximum absolute metric difference Δ = 0.00000000.
+    [P]: • Representative Rule 1: glcm_contrast_High AND contour_perimeter_High → glcm_energy_Low
+(Support = 0.1506, Confidence = 0.8728, Lift = 4.2429).
+    [P]: • Representative Rule 2: contour_perimeter_High AND glcm_energy_Low → glcm_contrast_High
+(Support = 0.1506, Confidence = 0.8907, Lift = 4.2270).
+  Shape 8: Name='Rounded Rectangle 8', Type=AUTO_SHAPE (1)
+  Shape 9: Name='TextBox 9', Type=TEXT_BOX (17)
+    [P]: MODE B: LABEL-CONDITIONED EXPLORATORY MINING
+    [P]: • Purpose & Transaction Matrix: Appends condition status (Healthy, Diseased) and pathogen type to visual items for exploratory pattern inspection.
+    [P]: • Reconciling Rule Counts (285 vs 276 vs 272): At 0.15 support / 0.60 confidence, Mode B generates 285 total rules. The default dashboard filter (lift ≥ 1.0) displays 276 rules. The historical 272 count was an earlier draft subset omitting condition-only rules.
+    [P]: • Representative Rule: condition_Healthy AND contour_perimeter_Low → contour_circularity_High AND pathogen_Unknown
+(Support = 0.1529, Confidence = 0.9636, Lift = 6.0132).
+    [P]: • Critical Causality Disclaimer: Association rules capture statistical co-occurrences in the current labeled collection. They do NOT establish biological or pathological causation.
+
+======================================================================
+SLIDE 19 (Shapes: 9)
+======================================================================
+  Shape 1: Name='TextBox 1', Type=TEXT_BOX (17)
+    [P]: CSI3010: DATA WAREHOUSING & DATA MINING
+  Shape 2: Name='TextBox 2', Type=TEXT_BOX (17)
+    [P]: Image Analysis & Inference Workbench
+  Shape 3: Name='Rectangle 3', Type=AUTO_SHAPE (1)
+  Shape 4: Name='TextBox 4', Type=TEXT_BOX (17)
+    [P]: AgroVision-Mine: Multimodal Data Warehouse & Visual Pattern Mining Framework
+  Shape 5: Name='TextBox 5', Type=TEXT_BOX (17)
+    [P]: 19 / 24
+  Shape 6: Name='Rounded Rectangle 6', Type=AUTO_SHAPE (1)
+  Shape 7: Name='Rounded Rectangle 8', Type=AUTO_SHAPE (1)
+  Shape 8: Name='TextBox 9', Type=TEXT_BOX (17)
+    [P]: WORKBENCH INGESTION & INFERENCE FLOW
+    [P]: 1. In-Memory Ingestion: Uploaded images (JPG/PNG) are validated, EXIF-transposed, and resized to 256x256 without persisting to frozen dataset files.
+    [P]: 2. Real-Time Feature Extraction: Extracts 32 continuous descriptors in <150ms. Supports interactive toggling between Raw and Standardized values.
+    [P]: 3. Fitted Cluster Projection: Assigns specimen into fitted K=2 and K=4 models using saved reference scalers and centroids.
+    [P]: 4. Nearest Reference Retrieval: Calculates 32D standardized Euclidean distance against all 2,596 authentic reference specimens.
+    [P]: 5. Strict Diagnostic Disclaimer: Prominent UI warning: Visual similarity does NOT constitute disease diagnosis. Proximity index 1/(1+d) is an uncalibrated geometric heuristic.
+  Shape 9: Name='Picture 11', Type=PICTURE (13)
+    [PICTURE]: left=731520, top=2015109, width=5943599, height=3343275
+
+======================================================================
+SLIDE 20 (Shapes: 17)
+======================================================================
+  Shape 1: Name='TextBox 1', Type=TEXT_BOX (17)
+    [P]: CSI3010: DATA WAREHOUSING & DATA MINING
+  Shape 2: Name='TextBox 2', Type=TEXT_BOX (17)
+    [P]: Interactive Dashboard: React 18 + TypeScript GUI
+  Shape 3: Name='Rectangle 3', Type=AUTO_SHAPE (1)
+  Shape 4: Name='TextBox 4', Type=TEXT_BOX (17)
+    [P]: AgroVision-Mine: Multimodal Data Warehouse & Visual Pattern Mining Framework
+  Shape 5: Name='TextBox 5', Type=TEXT_BOX (17)
+    [P]: 20 / 24
+  Shape 6: Name='Rounded Rectangle 6', Type=AUTO_SHAPE (1)
+  Shape 7: Name='Picture 7', Type=PICTURE (13)
+    [PICTURE]: left=868680, top=1737360, width=2743200, height=1714500
+  Shape 8: Name='TextBox 8', Type=TEXT_BOX (17)
+    [P]: DATASET EXPLORER (/dataset)
+    [P]: Card Grid and Table views; case-insensitive crop filters (Tomato = 743); modal specimen detail inspection.
+  Shape 9: Name='Rounded Rectangle 9', Type=AUTO_SHAPE (1)
+  Shape 10: Name='Picture 10', Type=PICTURE (13)
+    [PICTURE]: left=6355080, top=1737360, width=2743200, height=1714500
+  Shape 11: Name='TextBox 11', Type=TEXT_BOX (17)
+    [P]: DATA WAREHOUSE SCHEMA (/warehouse)
+    [P]: Star schema topology; Central Observation Fact Table badge; relational foreign key integrity cards.
+  Shape 12: Name='Rounded Rectangle 12', Type=AUTO_SHAPE (1)
+  Shape 13: Name='Picture 13', Type=PICTURE (13)
+    [PICTURE]: left=868680, top=4206240, width=2743200, height=1714500
+  Shape 14: Name='TextBox 14', Type=TEXT_BOX (17)
+    [P]: OLAP ANALYTICS CONSOLE (/olap)
+    [P]: Interactive SQL execution for Roll-up, Drill-down, Slice (Crop), Dice (Crop x Pathogen), Pivot (Crop x Severity).
+  Shape 15: Name='Rounded Rectangle 15', Type=AUTO_SHAPE (1)
+  Shape 16: Name='Picture 16', Type=PICTURE (13)
+    [PICTURE]: left=6355080, top=4206240, width=2743200, height=1714500
+  Shape 17: Name='TextBox 17', Type=TEXT_BOX (17)
+    [P]: ASSOCIATION RULES (/association-rules)
+    [P]: Mode A (880 rules) and Mode B (276 filtered rules) with interactive support/confidence slider adjustments.
+
+======================================================================
+SLIDE 21 (Shapes: 8)
+======================================================================
+  Shape 1: Name='TextBox 1', Type=TEXT_BOX (17)
+    [P]: CSI3010: DATA WAREHOUSING & DATA MINING
+  Shape 2: Name='TextBox 2', Type=TEXT_BOX (17)
+    [P]: Testing & Validation: Multi-Tier Verification
+  Shape 3: Name='Rectangle 3', Type=AUTO_SHAPE (1)
+  Shape 4: Name='TextBox 4', Type=TEXT_BOX (17)
+    [P]: AgroVision-Mine: Multimodal Data Warehouse & Visual Pattern Mining Framework
+  Shape 5: Name='TextBox 5', Type=TEXT_BOX (17)
+    [P]: 21 / 24
+  Shape 6: Name='Rounded Rectangle 6', Type=AUTO_SHAPE (1)
+  Shape 7: Name='TextBox 7', Type=TEXT_BOX (17)
+    [P]: 104 AUTOMATED TESTS PASSED (100% SUCCESS RATE, 0 FAILURES, 1 DEPRECATION WARNING)Rigorous separation into 4 distinct verification tiers ensures end-to-end reproducibility.
+  Shape 8: Name='Table 8', Type=TABLE (19)
+    [TABLE 5x4]:
+      R1: Verification Tier | Test Count / Scope | Key Behaviors Tested | Observed Outcome & Evidence
+      R2: Automated Unit & Integration | 94 Tests (pytest) | ETL idempotency, GLCM textures, SQLite FK constraints, clustering reproducibility | 94 / 94 Passed in 34.12s(Starlette httpx warning)
+      R3: Real Browser Testing (Playwright) | 10 Tests (Playwright) | Drove local Google Chrome across all 9 pages; filters, modal inspect, image upload/replace | 10 / 10 Passed in 31.70s;9 screenshots captured
+      R4: API Smoke & Contract Tests | 9 Endpoints (FastAPI) | Health, overview, dataset (Tomato=743), schema, OLAP SQL, clustering, rules, analyze | 9 / 9 Live Endpoints 200 OK;Zero HTTP 500 exceptions
+      R5: Production Build Compilation | Vite + TypeScript | Full production bundle compilation (tsc -b && vite build) of 31 modules | Built in 677ms (0 errors);Assets: CSS (39kB), JS (354kB)
+
+======================================================================
+SLIDE 22 (Shapes: 6)
+======================================================================
+  Shape 1: Name='TextBox 1', Type=TEXT_BOX (17)
+    [P]: CSI3010: DATA WAREHOUSING & DATA MINING
+  Shape 2: Name='TextBox 2', Type=TEXT_BOX (17)
+    [P]: System Performance: Software & Mining Telemetry
+  Shape 3: Name='Rectangle 3', Type=AUTO_SHAPE (1)
+  Shape 4: Name='TextBox 4', Type=TEXT_BOX (17)
+    [P]: AgroVision-Mine: Multimodal Data Warehouse & Visual Pattern Mining Framework
+  Shape 5: Name='TextBox 5', Type=TEXT_BOX (17)
+    [P]: 22 / 24
+  Shape 6: Name='Table 6', Type=TABLE (19)
+    [TABLE 7x4]:
+      R1: Performance Benchmark | Measured Telemetry | Measurement Environment & Scope | Evaluation Assessment
+      R2: OLAP Analytical Query Latency | < 10 ms per query | SQLite relational warehouse, parameterized SQL aggregation across 2,596 rows | Real-time interactive dashboard responsiveness
+      R3: Single-Image Extraction Latency | ~120 ms per image | In-memory decoding, 256x256 resizing, 32 continuous descriptors extracted | Rapid feedback loop for live specimen workbench
+      R4: K-Means Clustering Runtime | 0.18 seconds | Scikit-learn K-Means on 2,596 x 32 standardized matrix (K=2 to 8) | Fast retrainability and parameter tuning
+      R5: Frequent Pattern Mining Runtime | FP-Growth: 0.066sApriori: 0.012s | 12 discretized features, min_support=0.15, min_confidence=0.60 (880 rules) | Sub-second execution; exact metric parity
+      R6: Complete Test Suite Execution | 65.82 seconds | 104 automated tests (94 pytest unit/integration + 10 Playwright browser tests) | CI/CD-ready rapid verification cycle
+      R7: Supervised Classification Accuracy | NOT REPORTED(Scientifically Unsupported) | Formal feasibility audit: dataset exhibits severe taxonomic confounding and imbalance | Honest academic stance: visual pattern mining retained
+
+======================================================================
+SLIDE 23 (Shapes: 9)
+======================================================================
+  Shape 1: Name='TextBox 1', Type=TEXT_BOX (17)
+    [P]: CSI3010: DATA WAREHOUSING & DATA MINING
+  Shape 2: Name='TextBox 2', Type=TEXT_BOX (17)
+    [P]: Impact, Feasibility Evaluation & Scientific Scope
+  Shape 3: Name='Rectangle 3', Type=AUTO_SHAPE (1)
+  Shape 4: Name='TextBox 4', Type=TEXT_BOX (17)
+    [P]: AgroVision-Mine: Multimodal Data Warehouse & Visual Pattern Mining Framework
+  Shape 5: Name='TextBox 5', Type=TEXT_BOX (17)
+    [P]: 23 / 24
+  Shape 6: Name='Rounded Rectangle 6', Type=AUTO_SHAPE (1)
+  Shape 7: Name='TextBox 7', Type=TEXT_BOX (17)
+    [P]: PRACTICAL VALUE & USE CASES
+    [P]: • Research Image Cataloging: Provides agricultural extension services and universities with a structured Kimball warehouse for multimodal image collections.
+    [P]: • Quality Assurance for Agronomic Datasets: Automated quality gates prevent corrupt, distorted, or duplicate images from contaminating research archives.
+    [P]: • Multi-Angle OLAP Slicing: Allows researchers to query foliar severity distributions across botanical families, pathogen types, and acquisition settings.
+    [P]: • Reference Specimen Retrieval: Enables field workers to retrieve visually similar historical specimens with transparent 32D distance metrics.
+  Shape 8: Name='Rounded Rectangle 8', Type=AUTO_SHAPE (1)
+  Shape 9: Name='TextBox 9', Type=TEXT_BOX (17)
+    [P]: WHY SUPERVISED CLASSIFICATION IS UNSUPPORTED
+    [P]: 1. Taxonomic Shortcut Confounding: 7 crops are 100% healthy-only (Blueberry, Raspberry, Peach, Strawberry, Soybean, Cherry) and 1 crop is 100% diseased-only (Squash). Classifiers learn leaf morphology, NOT disease.
+    [P]: 2. Extreme Class Imbalance: Support ranges from N=190 (Corn Blight) down to N=2 (Tomato Spider Mite). 8 classes have <20 specimens, making stratified 3-way train/val/test splits statistically unviable.
+    [P]: 3. Cross-Source Domain Shift: Rice (N=36) is from studio flatbed scanners (ICAR), while 2,560 images are in-field smartphone photos (PlantDoc). Sensor artifacts dominate visual features.
+    [P]: 4. Representational Limits: Global color/texture moments lack localized spatial attention required for clinical pathology diagnosis.
+
+======================================================================
+SLIDE 24 (Shapes: 9)
+======================================================================
+  Shape 1: Name='TextBox 1', Type=TEXT_BOX (17)
+    [P]: CSI3010: DATA WAREHOUSING & DATA MINING
+  Shape 2: Name='TextBox 2', Type=TEXT_BOX (17)
+    [P]: Conclusion & Live Demonstration Plan
+  Shape 3: Name='Rectangle 3', Type=AUTO_SHAPE (1)
+  Shape 4: Name='TextBox 4', Type=TEXT_BOX (17)
+    [P]: AgroVision-Mine: Multimodal Data Warehouse & Visual Pattern Mining Framework
+  Shape 5: Name='TextBox 5', Type=TEXT_BOX (17)
+    [P]: 24 / 24
+  Shape 6: Name='Rounded Rectangle 6', Type=AUTO_SHAPE (1)
+  Shape 7: Name='TextBox 7', Type=TEXT_BOX (17)
+    [P]: PROJECT CONTRIBUTIONS & KEY TAKEAWAYS
+    [P]: • Transformed Unstructured Images into Relational Warehouse: Successfully integrated 2,596 multimodal observations into a Kimball Star Schema with ACID referential integrity.
+    [P]: • Explainable Feature Engineering: Replaced black-box embeddings with 32 transparent morphological, textural (GLCM), and color moment descriptors.
+    [P]: • Dual-K Clustering & Parity-Validated Rules: Discovered robust visual clusters (K=2 Silhouette=0.4060) and 880 exact-parity association rules across FP-Growth and Apriori.
+    [P]: • Methodological Honesty: Transparently disclosed data sparsity and rejected unsupported disease classification claims in favor of verified pattern mining.
+  Shape 8: Name='Rounded Rectangle 8', Type=AUTO_SHAPE (1)
+  Shape 9: Name='TextBox 9', Type=TEXT_BOX (17)
+    [P]: LIVE DEMONSTRATION WORKFLOW (VIVA ROADMAP)
+    [P]: Step 1 — Overview & Data Quality Gates: Showcase live KPIs (2,596 specimens, 14 crops) and 5 automated quality gates (/overview, /data-quality).
+    [P]: Step 2 — Dataset Explorer & Filtering: Demonstrate card grid / table views, search queries, and crop filter (Tomato = 743 items) (/dataset).
+    [P]: Step 3 — Warehouse Schema & OLAP Console: Inspect relational tables and execute parameterized Roll-up, Drill-down, Slice, Dice, Pivot (/warehouse, /olap).
+    [P]: Step 4 — Visual Mining & PCA Scatter: Showcase dual-K clustering metrics, PCA 2D projections, and cluster profiles (/visual-mining).
+    [P]: Step 5 — Association Rule Controls: Demonstrate Mode A (880 rules) and Mode B (276 filtered rules) with interactive slider tuning (/association-rules).
+    [P]: Step 6 — Live Specimen Analysis: Upload authentic leaf image; demonstrate 32-feature extraction, cluster assignment, and nearest neighbor retrieval (/image-analysis).

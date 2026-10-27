@@ -1,5 +1,6 @@
 import React from 'react'
 import type { PageId } from './Sidebar'
+import { AppIcon } from '../common/AppIcon'
 
 interface HeaderProps {
   activePage: PageId
@@ -40,13 +41,13 @@ export const Header: React.FC<HeaderProps> = ({
             className="lg:hidden p-1.5 rounded-lg text-[#26362F] hover:bg-[#E0F2E8] transition-colors"
             aria-label="Toggle Navigation"
           >
-            <span className="material-symbols-outlined text-[22px]">menu</span>
+            <AppIcon name="menu" className="w-5 h-5" />
           </button>
 
           <div className="flex items-center gap-1.5 text-xs text-[#404943]">
             <span className="font-semibold text-[#0F1F18] hidden sm:inline">AgroVision-Mine</span>
-            <span className="material-symbols-outlined text-[14px] text-[#707973] hidden sm:inline">
-              chevron_right
+            <span className="hidden sm:inline">
+              <AppIcon name="chevron_right" className="w-3.5 h-3.5 text-[#707973]" />
             </span>
             <span className="text-[#175D44] font-medium">{PAGE_TITLES[activePage]}</span>
           </div>
@@ -60,9 +61,9 @@ export const Header: React.FC<HeaderProps> = ({
         {/* Right: Search + Specimen Node metadata */}
         <div className="flex items-center gap-3">
           <div className="relative w-44 sm:w-64 md:w-72">
-            <span className="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-[#707973] text-[18px]">
-              search
-            </span>
+            <div className="absolute left-2.5 top-1/2 -translate-y-1/2 text-[#707973]">
+              <AppIcon name="search" className="w-4 h-4" />
+            </div>
             <input
               type="text"
               value={searchQuery}
@@ -83,7 +84,7 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
 
           <div className="w-8 h-8 rounded-full bg-[#34765B]/15 border border-[#34765B]/30 flex items-center justify-center text-[#175D44]">
-            <span className="material-symbols-outlined text-[18px]">eco</span>
+            <AppIcon name="eco" className="w-4 h-4" />
           </div>
         </div>
       </div>

@@ -3,6 +3,7 @@ import { api } from '../services/api'
 import type { ClusteringResponse, PCAPoint } from '../types/api'
 import { SectionCard } from '../components/common/SectionCard'
 import { KPICard } from '../components/common/KPICard'
+import { AppIcon } from '../components/common/AppIcon'
 
 export const VisualPatternMiningPage: React.FC = () => {
   const [selectedK, setSelectedK] = useState<number>(2)
@@ -27,9 +28,7 @@ export const VisualPatternMiningPage: React.FC = () => {
   if (loading && !data) {
     return (
       <div className="flex flex-col items-center justify-center py-24 gap-3 text-[#404943]">
-        <span className="material-symbols-outlined text-4xl animate-spin text-[#175D44]">
-          progress_activity
-        </span>
+        <AppIcon name="progress_activity" className="text-4xl animate-spin text-[#175D44]" />
         <span className="text-sm font-mono">Computing latent visual space projections...</span>
       </div>
     )
@@ -101,9 +100,7 @@ export const VisualPatternMiningPage: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#E5F8ED] text-[#404943] text-xs">
-            <span className="material-symbols-outlined text-[16px] text-[#6C4C00] shrink-0">
-              info
-            </span>
+            <AppIcon name="info" className="text-[16px] text-[#6C4C00] shrink-0" />
             <span className="text-[11px]">
               Mathematical groupings; does not constitute automated diagnosis.
             </span>

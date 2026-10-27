@@ -1,0 +1,116 @@
+graph TB
+    %% -------------------------------------------------------------
+    %% STYLING AND THEME SETUP (Restrained, high-contrast IEEE palette)
+    %% -------------------------------------------------------------
+    classDef sourceStyle fill:#EBF3FB,stroke:#1E5B99,stroke-width:1.5px,color:#0B2545,font-size:10pt,font-weight:600;
+    classDef gateStyle fill:#F5EBE6,stroke:#A33B20,stroke-width:1.5px,color:#4A1507,font-size:10pt,font-weight:600;
+    classDef canonStyle fill:#EBF6ED,stroke:#26733E,stroke-width:1.5px,color:#0D3818,font-size:10pt,font-weight:600;
+    classDef whStyle fill:#F0EEF8,stroke:#5A429E,stroke-width:1.5px,color:#25154E,font-size:10pt,font-weight:600;
+    classDef olapStyle fill:#E6F7F7,stroke:#177E89,stroke-width:1.5px,color:#083A3F,font-size:10pt,font-weight:600;
+    classDef cnnStyle fill:#FEF3E2,stroke:#C67D0A,stroke-width:1.5px,color:#593402,font-size:10pt,font-weight:600;
+    classDef appStyle fill:#F2F4F7,stroke:#344054,stroke-width:1.5px,color:#101828,font-size:10pt,font-weight:600;
+
+    %% -------------------------------------------------------------
+    %% 1. DATA SOURCES
+    %% -------------------------------------------------------------
+    subgraph S1 ["1. HETEROGENEOUS DATA SOURCES"]
+        direction LR
+        SRC_A["PlantDoc In-Field Images<br/>(2,560 RGB / 13 Crops / 27 Classes)"]:::sourceStyle
+        SRC_B["ICAR / OGD Flatbed Scans<br/>(36 Images / Rice OOD Baseline)"]:::sourceStyle
+    end
+
+    %% -------------------------------------------------------------
+    %% 2. INGESTION AND QUALITY GATES
+    %% -------------------------------------------------------------
+    subgraph S2 ["2. INGESTION AND QUALITY ASSURANCE GATES"]
+        direction LR
+        G1["G1: MIME & Header"]:::gateStyle --> G2["G2: Res & Payload"]:::gateStyle
+        G2 --> G3["G3: 64-bit dHash Dedup"]:::gateStyle
+        G3 --> G4["G4: EXIF & Orientation"]:::gateStyle
+        G4 --> G5["G5: Quarantine / Audit Log"]:::gateStyle
+    end
+
+    SRC_A --> G1
+    SRC_B --> G1
+
+    %% -------------------------------------------------------------
+    %% 3. CANONICAL MANIFEST AND DESCRIPTOR EXTRACTION
+    %% -------------------------------------------------------------
+    subgraph S3 ["3. CANONICAL STORE & FEATURE EXTRACTION"]
+        direction TB
+        CANON["Canonical Dataset (N = 2,596)<br/>SHA-256: c7fd16dc...1cb8"]:::canonStyle
+        FEXT["Classical Feature Engine<br/>(32 Handcrafted Descriptors)"]:::canonStyle
+        FSTORE["Feature Store (44 Columns / 32 Descriptors)<br/>19 Color HSV/RGB + 7 GLCM Texture + 6 Morphology<br/>SHA-256: f6caf70b...93c1"]:::canonStyle
+        
+        CANON --> FEXT
+        FEXT --> FSTORE
+    end
+
+    G4 --> CANON
+
+    %% -------------------------------------------------------------
+    %% 4. RELATIONAL DATA WAREHOUSE (STAR SCHEMA)
+    %% -------------------------------------------------------------
+    subgraph S4 ["4. RELATIONAL DATA WAREHOUSE (SQLite Star Schema)"]
+        direction TB
+        DIM_CROP["Dim_Crop<br/>(crop_id, name, type)"]:::whStyle
+        DIM_DIS["Dim_Disease<br/>(disease_id, name, path_type)"]:::whStyle
+        FACT["Fact_Image_Observation<br/>(image_id, crop_id, disease_id, feat_id, split)"]:::whStyle
+        DIM_IMG["Dim_Image<br/>(dims, dhash, path)"]:::whStyle
+        DIM_FEAT["Dim_Visual_Features<br/>(32 continuous metrics)"]:::whStyle
+
+        DIM_CROP --- FACT
+        DIM_DIS --- FACT
+        DIM_IMG --- FACT
+        DIM_FEAT --- FACT
+    end
+
+    CANON --> FACT
+    FSTORE --> DIM_FEAT
+
+    %% -------------------------------------------------------------
+    %% 5. DUAL-PATH ANALYTICAL PIPELINE (DECOUPLED)
+    %% -------------------------------------------------------------
+    subgraph S5 ["5. DUAL-PATH ANALYTICAL ENGINE"]
+        direction LR
+
+        subgraph P1 ["Path A: Warehouse OLAP & Unsupervised Mining"]
+            direction TB
+            OLAP["SQL OLAP Engine<br/>(Rollup, Drilldown, Slicing)"]:::olapStyle
+            MINING["Unsupervised Pattern Mining<br/>• K-Means (k=5, Sil=0.218)<br/>• PCA (2D 48.6%, 5D 70.3%)<br/>• FP-Growth / Apriori (32 Rules)"]:::olapStyle
+            RETRIEVAL["Descriptor k-NN Retrieval<br/>(Normalized L2 Distance)"]:::olapStyle
+            OLAP --> MINING
+            MINING --> RETRIEVAL
+        end
+
+        subgraph P2 ["Path B: Supervised Deep Learning & Domain Screening"]
+            direction TB
+            SPLIT["Perceptual Group Split<br/>(25 Classes / 2,447 Images)"]:::cnnStyle
+            CNN["Fine-Tuned EfficientNet-B0<br/>(Pretrained ImageNet / 224x224 RGB)"]:::cnnStyle
+            EVAL["Inference & Softmax Probabilities<br/>(Test Acc: 61.84% / Macro-F1: 60.84%)"]:::cnnStyle
+            SCREEN["Cross-Modal Domain Screener<br/>• Top Reference Source / Crop Check<br/>• Standalone CNN: Overconfident on Rice<br/>• Hybrid Screener: Flags Unsupported OOD"]:::cnnStyle
+            
+            SPLIT --> CNN
+            CNN --> EVAL
+            EVAL --> SCREEN
+        end
+    end
+
+    FACT --> OLAP
+    DIM_FEAT --> RETRIEVAL
+    CANON --> SPLIT
+    RETRIEVAL -.->|"Context Reference Anchor (Source & Crop)"| SCREEN
+
+    %% -------------------------------------------------------------
+    %% 6. PRESENTATION & WORKBENCH
+    %% -------------------------------------------------------------
+    subgraph S6 ["6. SERVING & PRESENTATION TIERS"]
+        direction LR
+        API["FastAPI REST Backend (12 Endpoints)"]:::appStyle
+        UI["React 19 + TypeScript Analytical Workbench"]:::appStyle
+        API --> UI
+    end
+
+    RETRIEVAL --> API
+    OLAP --> API
+    SCREEN --> API

@@ -4,6 +4,7 @@ import type { OverviewResponse } from '../types/api'
 import { KPICard } from '../components/common/KPICard'
 import { SectionCard } from '../components/common/SectionCard'
 import type { PageId } from '../components/layout/Sidebar'
+import { AppIcon } from '../components/common/AppIcon'
 
 interface OverviewPageProps {
   onNavigate: (page: PageId) => void
@@ -29,9 +30,7 @@ export const OverviewPage: React.FC<OverviewPageProps> = ({ onNavigate }) => {
   if (loading || !data) {
     return (
       <div className="flex flex-col items-center justify-center py-24 gap-3 text-[#404943]">
-        <span className="material-symbols-outlined text-4xl animate-spin text-[#175D44]">
-          progress_activity
-        </span>
+        <AppIcon name="progress_activity" className="text-4xl animate-spin text-[#175D44]" />
         <span className="text-sm font-mono">Loading AgroVision-Mine Overview telemetry...</span>
       </div>
     )
@@ -68,14 +67,14 @@ export const OverviewPage: React.FC<OverviewPageProps> = ({ onNavigate }) => {
               onClick={() => onNavigate('olap-analytics')}
               className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#175D44] text-white font-semibold text-xs hover:bg-[#34765B] transition-all shadow-sm"
             >
-              <span className="material-symbols-outlined text-[18px]">view_in_ar</span>
+              <AppIcon name="view_in_ar" className="text-[18px]" />
               <span>Launch OLAP Workbench</span>
             </button>
             <button
               onClick={() => onNavigate('dataset-explorer')}
               className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-white text-[#0F1F18] border border-[#BFC9C2]/60 font-semibold text-xs hover:bg-[#F7F6EF] transition-all shadow-sm"
             >
-              <span className="material-symbols-outlined text-[18px]">travel_explore</span>
+              <AppIcon name="travel_explore" className="text-[18px]" />
               <span>Explore 2,596 Records</span>
             </button>
           </div>
@@ -283,9 +282,7 @@ export const OverviewPage: React.FC<OverviewPageProps> = ({ onNavigate }) => {
 
               {/* Scientific Caveats Alert */}
               <div className="p-3 rounded-lg bg-[#FFDEA7]/30 border border-[#FFDEA7] text-[11px] text-[#6C4C00] flex items-start gap-2">
-                <span className="material-symbols-outlined text-[16px] shrink-0 mt-0.5">
-                  info
-                </span>
+                <AppIcon name="info" className="text-[16px] shrink-0 mt-0.5" />
                 <p className="leading-relaxed">
                   <strong>Scientific Disclosure:</strong> Dataset dominance belongs to PlantDoc. Rice is exclusively represented via ICAR. Pest symptoms represent an underrepresented minority class (2 specimens).
                 </p>
@@ -307,7 +304,7 @@ export const OverviewPage: React.FC<OverviewPageProps> = ({ onNavigate }) => {
               className="text-xs text-[#175D44] hover:underline font-semibold flex items-center gap-1"
             >
               <span>Explore Workspace</span>
-              <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
+              <AppIcon name="arrow_forward" className="text-[14px]" />
             </button>
           }
         >
@@ -345,7 +342,7 @@ export const OverviewPage: React.FC<OverviewPageProps> = ({ onNavigate }) => {
               className="text-xs text-[#175D44] hover:underline font-semibold flex items-center gap-1"
             >
               <span>Explore Rules</span>
-              <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
+              <AppIcon name="arrow_forward" className="text-[14px]" />
             </button>
           }
         >
@@ -393,7 +390,7 @@ export const OverviewPage: React.FC<OverviewPageProps> = ({ onNavigate }) => {
             {
               step: '03',
               title: 'Visual Feature Store',
-              detail: '32 continuous features (Color Moments, GLCM Haralick, Hu Contours). Standardized z-score.',
+              detail: '32 continuous features: Color & foliar index (19), GLCM texture (7), Morphometry & coverage (6). Standardized z-score.',
               icon: 'auto_awesome_motion',
             },
             {
@@ -415,9 +412,7 @@ export const OverviewPage: React.FC<OverviewPageProps> = ({ onNavigate }) => {
             >
               <div className="flex items-center justify-between">
                 <span className="font-mono text-xs font-bold text-[#175D44]">{s.step}</span>
-                <span className="material-symbols-outlined text-[#175D44] text-[18px]">
-                  {s.icon}
-                </span>
+                <AppIcon name={s.icon} className="text-[#175D44] text-[18px]" />
               </div>
               <div>
                 <h4 className="font-headline font-semibold text-xs text-[#0F1F18] mb-1">

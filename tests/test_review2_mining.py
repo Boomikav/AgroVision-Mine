@@ -112,11 +112,55 @@ def test_association_rules_output_equivalence(project_root):
     """Verifies that FP-Growth and Apriori produce identical rule counts on the same transactions."""
     miner = VisualAssociationMiner(min_support=0.15, min_confidence=0.60)
     miner.load_and_discretize()
-    comp = miner.compare_algorithms()
+    
+    # Mode A benchmark
+    comp_a = miner.compare_algorithms(mode="visual_only", num_runs=3)
+    assert comp_a["output_equivalence"] is True, "FP-Growth and Apriori must generate equivalent rule counts for Mode A"
+    assert comp_a["fpgrowth"]["rules_count"] == comp_a["apriori"]["rules_count"] == 880
+    assert comp_a["fpgrowth"]["frequent_itemsets_count"] == comp_a["apriori"]["frequent_itemsets_count"] == 223
+    assert comp_a["unique_items_count"] == 36
 
-    assert comp["output_equivalence"] is True, "FP-Growth and Apriori must generate equivalent rule counts"
-    assert comp["fpgrowth"]["rules_count"] == comp["apriori"]["rules_count"]
-    assert comp["fpgrowth"]["rules_count"] > 0, "Must discover positive rule count"
+    # Mode B benchmark
+    comp_b = miner.compare_algorithms(mode="labeled", num_runs=3)
+    assert comp_b["output_equivalence"] is True, "FP-Growth and Apriori must generate equivalent rule counts for Mode B"
+    assert comp_b["fpgrowth"]["rules_count"] == comp_b["apriori"]["rules_count"] == 1165
+    assert comp_b["fpgrowth"]["frequent_itemsets_count"] == comp_b["apriori"]["frequent_itemsets_count"] == 387
+    assert comp_b["unique_items_count"] == 57
+    assert comp_b["fpgrowth"]["label_conditioned_rules_count"] == 285
+    assert comp_b["fpgrowth"]["filtered_label_rules_count"] == 276
+
+
+def test_mode_a_and_mode_b_transaction_matrix_separation(project_root):
+    """Verifies that Mode A excludes labels and Mode B contains strictly authentic schema labels."""
+    miner = VisualAssociationMiner(min_support=0.15, min_confidence=0.60)
+    miner.load_and_discretize()
+
+    # Mode A matrix checks
+    assert miner.df_transactions_visual is not None
+    assert miner.df_transactions_visual.shape == (2596, 36)
+    for col in miner.df_transactions_visual.columns:
+        assert not col.startswith(("condition_status_", "crop_name_", "pathogen_type_", "crop_label_", "condition_label_"))
+
+    # Mode B matrix checks
+    assert miner.df_transactions_labeled is not None
+    assert miner.df_transactions_labeled.shape == (2596, 57)
+    cols_b = set(miner.df_transactions_labeled.columns)
+    
+    # Must have condition_status
+    assert "condition_status_Healthy" in cols_b
+    assert "condition_status_Diseased" in cols_b
+    
+    # Must have authentic pathogen_type
+    assert "pathogen_type_None" in cols_b
+    assert "pathogen_type_Fungal" in cols_b
+    assert "pathogen_type_Bacterial" in cols_b
+    assert "pathogen_type_Viral" in cols_b
+    assert "pathogen_type_Pest" in cols_b
+    
+    # Must NOT have phantom/alias tokens
+    assert not any("crop_label" in c for c in cols_b)
+    assert not any("condition_label" in c for c in cols_b)
+    assert not any("pathogen_type_Unknown" in c for c in cols_b)
 
 
 def test_association_rule_metrics_validity(project_root):

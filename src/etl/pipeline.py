@@ -1,9 +1,9 @@
 """
-End-to-End Production ETL Pipeline Orchestrator for AgroVision-Mine (Phase 5).
+End-to-End Production ETL Pipeline Orchestrator for AgroVision-Mine.
 Coordinates:
-1. Extraction: Raw metadata, processed image information, visual features
-2. Transformation: Cleaning, standardizing, validating, assembling dimensions and facts
-3. Loading: Dimension-first transactional loading with referential integrity
+1. Extraction: Canonical manifest & 32-feature store with SHA-256 validation (2,596 records)
+2. Transformation: Cleaning, standardizing taxonomies, staging dimensions & facts
+3. Loading: Dimension-first transactional loading with strict referential integrity
 4. Auditing: Health inspection, verification metrics, and Markdown/JSON report generation
 """
 import time
@@ -24,16 +24,20 @@ logger = setup_logger("etl_pipeline")
 
 class ETLPipeline:
     """
-    Coordinates the production multimodal agricultural ETL workflow.
+    Coordinates the production multimodal agricultural ETL workflow across all 2,596 observations.
     """
 
-    def __init__(self, raw_data_dir: Optional[str] = None):
+    def __init__(
+        self,
+        manifest_path: Optional[str] = None,
+        features_path: Optional[str] = None
+    ):
         self.cfg = get_config()
         self.schema_manager = SchemaManager()
-        self.extractor = Extractor(raw_data_dir)
+        self.extractor = Extractor(manifest_path, features_path)
         self.transformer = Transformer()
         self.loader = Loader()
-        self.reports_dir = Path(self.cfg["paths"]["reports_dir"]).resolve()
+        self.reports_dir = Path(self.cfg.get("paths", {}).get("reports_dir", "data/reports")).resolve()
         self.reports_dir.mkdir(parents=True, exist_ok=True)
 
     def _generate_markdown_report(self, summary: Dict[str, Any]) -> str:
@@ -45,7 +49,7 @@ class ETLPipeline:
         counts = health.get("table_counts", {})
         rej = summary.get("rejected_records", [])
 
-        md = f"""# AgroVision-Mine: Production ETL Pipeline Execution Report
+        md = f"""# AgroVision-Mine: Unified Production ETL Pipeline Execution Report
 
 **Batch Identifier:** `{summary['batch_id']}`  
 **Execution Timestamp:** `{summary['timestamp']}`  
@@ -57,41 +61,41 @@ class ETLPipeline:
 ## 1. Executive Summary & Flow
 
 ```
-RAW DATA INVENTORY ({summary['extracted_records']} items)
+CANONICAL DATASET MANIFEST (2,596 records) + FEATURE STORE (2,596 rows, 32 continuous features)
        ↓
-PREPROCESSED METADATA ({summary['processed_records']} images)
+EXTRACTION & SHA-256 INTEGRITY VALIDATION (PlantDoc: 2,560 | ICAR/OGD Rice: 36)
        ↓
-VISUAL FEATURES ({summary['feature_records']} feature vectors)
+TRANSFORMATION & TAXONOMIC HARMONIZATION (14 Crops, 19 Diseases/Conditions)
        ↓
-TRANSFORMATION & QUALITY VALIDATION ({summary['transformed_records']} valid facts, {len(rej)} rejected)
+TRANSACTIONAL LOAD (Dimensions First → Observation Facts Second)
        ↓
-TRANSACTIONAL LOAD (Dimensions First → Facts Second)
-       ↓
-MULTIMODAL DATA WAREHOUSE ({counts.get('disease_observation_fact', 0)} loaded facts)
+UNIFIED PHYSICAL DATA WAREHOUSE (disease_observation_fact: {counts.get('disease_observation_fact', 0)} loaded facts)
 ```
 
 ---
 
 ## 2. Extraction Statistics
-- **Raw Discovered Images:** {summary['extracted_records']}
-- **Preprocessed Records Extracted:** {summary['processed_records']}
-- **Visual Feature Records Extracted:** {summary['feature_records']}
+- **Total Discovered Records:** {summary['extracted_records']}
+- **PlantDoc Field Observations:** {summary.get('extraction_stats', {}).get('plantdoc_records', 0)}
+- **ICAR/OGD Rice Observations:** {summary.get('extraction_stats', {}).get('rice_records', 0)}
+- **Canonical Manifest SHA-256 Validated:** `{summary.get('extraction_stats', {}).get('manifest_sha256_verified', False)}`
+- **Canonical Feature Store SHA-256 Validated:** `{summary.get('extraction_stats', {}).get('features_sha256_verified', False)}`
 
 ---
 
 ## 3. Transformation & Quality Gates
 - **Successfully Staged Facts:** {summary['transformed_records']}
+- **Unique Crops Identified:** {summary.get('transformation_stats', {}).get('unique_crops', 0)}
+- **Unique Diseases/Conditions Identified:** {summary.get('transformation_stats', {}).get('unique_diseases', 0)}
 - **Rejected Records:** {len(rej)}
 
 """
         if rej:
             md += "### Rejected / Skipped Item Log\n\n"
-            md += "| Filename | Pipeline Stage | Reason |\n"
+            md += "| Image ID | Pipeline Stage | Reason |\n"
             md += "|---|---|---|\n"
             for r in rej[:15]:
-                md += f"| `{r.get('filename')}` | `{r.get('stage')}` | {r.get('reason')} |\n"
-            if len(rej) > 15:
-                md += f"\n*... and {len(rej) - 15} additional rejected records.*"
+                md += f"| `{r.get('image_id')}` | `{r.get('stage')}` | {r.get('reason')} |\n"
             md += "\n\n"
         else:
             md += "*Zero records rejected during transformation quality gates.*\n\n"
@@ -99,11 +103,12 @@ MULTIMODAL DATA WAREHOUSE ({counts.get('disease_observation_fact', 0)} loaded fa
         md += f"""---
 
 ## 4. Transactional Load Statistics
-- **DimCrop:** {stats.get('crops_inserted', 0)} inserted, {stats.get('crops_existing', 0)} existing
-- **DimDisease:** {stats.get('diseases_inserted', 0)} inserted, {stats.get('diseases_existing', 0)} existing
-- **DimImage:** {stats.get('images_inserted', 0)} inserted, {stats.get('images_existing', 0)} existing
-- **DimVisualFeature:** {stats.get('features_inserted', 0)} inserted, {stats.get('features_existing', 0)} existing
-- **DiseaseObservationFact:** {stats.get('facts_inserted', 0)} inserted, {stats.get('facts_skipped_duplicate', 0)} skipped duplicates
+- **DimCrop:** {stats.get('crops_loaded', 0)} total crops in database
+- **DimDisease:** {stats.get('diseases_loaded', 0)} total disease categories in database
+- **DimImage:** {stats.get('images_loaded', 0)} physical images in database
+- **DimVisualFeature:** {stats.get('features_loaded', 0)} complete 32-feature vectors in database
+- **DiseaseObservationFact:** {stats.get('facts_loaded', 0)} loaded observation facts
+- **Facts Skipped Duplicates (Idempotency):** {stats.get('facts_skipped_duplicate', 0)}
 - **Orphan Foreign Keys:** {stats.get('orphan_foreign_keys', 0)}
 - **Load Execution Duration:** {stats.get('load_duration_ms', 0.0)} ms
 
@@ -121,26 +126,26 @@ MULTIMODAL DATA WAREHOUSE ({counts.get('disease_observation_fact', 0)} loaded fa
 """
         return md
 
-    def run(self, initialize_schema: bool = True) -> Dict[str, Any]:
+    def run(self, initialize_schema: bool = True, drop_existing: bool = False) -> Dict[str, Any]:
         """
-        Executes the end-to-end production ETL workflow.
+        Executes the end-to-end production ETL workflow across all 2,596 observations.
         """
         start_time = time.perf_counter()
         batch_id = f"BATCH_{datetime.utcnow().strftime('%Y%m%d_%H%M%S')}"
         logger.info(f"========== Starting Production ETL Pipeline [Batch: {batch_id}] ==========")
 
         if initialize_schema:
-            self.schema_manager.initialize_schema(drop_existing=False)
+            self.schema_manager.initialize_schema(drop_existing=drop_existing)
 
-        # 1. EXTRACT: raw metadata, processed image info, extracted visual features
+        # 1. EXTRACT
         logger.info(">>> Stage 1: EXTRACT")
         extraction_bundle = self.extractor.extract_all()
 
-        # 2. TRANSFORM: clean, standardize, validate, construct dimensions & facts
+        # 2. TRANSFORM
         logger.info(">>> Stage 2: TRANSFORM")
         staged_data = self.transformer.transform(extraction_bundle)
 
-        # 3. LOAD: dimension tables first, fact table second, referential integrity
+        # 3. LOAD
         logger.info(">>> Stage 3: LOAD")
         load_stats = self.loader.load_dimensions_and_facts(staged_data, batch_id)
 
@@ -148,31 +153,33 @@ MULTIMODAL DATA WAREHOUSE ({counts.get('disease_observation_fact', 0)} loaded fa
         logger.info(">>> Stage 4: WAREHOUSE AUDIT")
         health = self.schema_manager.get_warehouse_health()
 
-        total_latency_sec = round(time.perf_counter() - start_time, 2)
+        execution_duration = round(time.perf_counter() - start_time, 2)
+
         summary = {
             "batch_id": batch_id,
             "timestamp": datetime.utcnow().isoformat(),
-            "execution_time_seconds": total_latency_sec,
-            "extracted_records": extraction_bundle["stats"]["raw_count"],
-            "processed_records": extraction_bundle["stats"]["processed_count"],
-            "feature_records": extraction_bundle["stats"]["feature_count"],
-            "transformed_records": len(staged_data.get("fact_records", [])),
-            "rejected_records": staged_data.get("rejected_records", []),
+            "execution_time_seconds": execution_duration,
+            "extracted_records": extraction_bundle["stats"]["total_records"],
+            "extraction_stats": extraction_bundle["stats"],
+            "transformed_records": staged_data["stats"]["transformed_facts"],
+            "transformation_stats": staged_data["stats"],
+            "rejected_records": staged_data["rejected_records"],
             "load_statistics": load_stats,
             "warehouse_health": health
         }
 
-        # Save JSON Summary
-        summary_file = self.reports_dir / "etl_report.json"
-        save_json(summary, summary_file)
+        # Save Reports
+        json_report_path = self.reports_dir / "etl_report.json"
+        save_json(summary, str(json_report_path))
+        logger.info(f"Saved ETL JSON report to {json_report_path}")
 
-        # Save Markdown Report
         md_content = self._generate_markdown_report(summary)
-        md_file = self.reports_dir / "etl_report.md"
-        with open(md_file, "w", encoding="utf-8") as f:
+        md_report_path = self.reports_dir / "etl_execution_report.md"
+        with open(md_report_path, "w", encoding="utf-8") as f:
             f.write(md_content)
+        logger.info(f"Saved ETL Markdown audit report to {md_report_path}")
 
-        logger.info(f"ETL reports generated: {summary_file} & {md_file}")
-        logger.info(f"========== ETL Finished in {total_latency_sec}s [Loaded Facts: {load_stats['facts_inserted']}] ==========")
-
+        logger.info(
+            f"========== ETL Pipeline Finished in {execution_duration}s [Status: {health.get('status')}] =========="
+        )
         return summary

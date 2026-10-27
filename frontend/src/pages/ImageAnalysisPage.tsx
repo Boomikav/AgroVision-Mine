@@ -3,6 +3,7 @@ import { api } from '../services/api'
 import type { ImageAnalysisResponse, NearestSpecimen } from '../types/api'
 import { SectionCard } from '../components/common/SectionCard'
 import { SpecimenModal } from '../components/common/SpecimenModal'
+import { AppIcon } from '../components/common/AppIcon'
 
 interface ImageAnalysisPageProps {
   onNavigateToSpecimen?: (imageId: string) => void
@@ -118,9 +119,7 @@ export const ImageAnalysisPage: React.FC<ImageAnalysisPageProps> = ({ onNavigate
 
       {/* Mandatory Scientific Boundary & Ethics Disclosure Alert */}
       <div className="p-4 rounded-xl bg-[#FFF8E1] border border-[#FFE082] text-[#5D4037] flex items-start gap-3 shadow-xs">
-        <span className="material-symbols-outlined text-[#F57F17] text-[24px] shrink-0 mt-0.5">
-          verified_user
-        </span>
+        <AppIcon name="verified_user" className="text-[#F57F17] text-[24px] shrink-0 mt-0.5" />
         <div className="flex flex-col text-xs">
           <span className="font-mono text-[10px] font-bold tracking-wider uppercase text-[#E65100]">
             ACADEMIC BOUNDARIES & EPISTEMOLOGICAL NOTICE
@@ -171,7 +170,7 @@ export const ImageAnalysisPage: React.FC<ImageAnalysisPageProps> = ({ onNavigate
                 ) : (
                   <div className="flex flex-col items-center justify-center py-8 text-center text-[#404943] gap-2">
                     <div className="w-12 h-12 rounded-xl bg-[#E0F2E8] text-[#175D44] flex items-center justify-center mb-1">
-                      <span className="material-symbols-outlined text-[28px]">add_photo_alternate</span>
+                      <AppIcon name="add_photo_alternate" className="text-[28px]" />
                     </div>
                     <span className="font-semibold text-sm text-[#0F1F18]">
                       Click to browse or drop specimen image
@@ -187,9 +186,7 @@ export const ImageAnalysisPage: React.FC<ImageAnalysisPageProps> = ({ onNavigate
               {selectedFile && (
                 <div className="p-3 bg-[#F7F6EF] rounded-xl border border-[#E2E7DF] flex items-center justify-between text-xs font-mono">
                   <div className="flex items-center gap-2 truncate pr-2">
-                    <span className="material-symbols-outlined text-[#175D44] text-[18px]">
-                      description
-                    </span>
+                    <AppIcon name="description" className="text-[#175D44] text-[18px]" />
                     <span className="truncate text-[#0F1F18] font-medium">{selectedFile.name}</span>
                   </div>
                   <span className="text-[#707973] shrink-0">
@@ -201,7 +198,7 @@ export const ImageAnalysisPage: React.FC<ImageAnalysisPageProps> = ({ onNavigate
               {/* Error Alert */}
               {error && (
                 <div className="p-3.5 rounded-xl bg-[#FFDAD6] border border-[#FFDAD6] text-[#93000A] text-xs flex items-center gap-2.5">
-                  <span className="material-symbols-outlined text-[18px]">error</span>
+                  <AppIcon name="error" className="text-[18px]" />
                   <span className="leading-snug">{error}</span>
                 </div>
               )}
@@ -219,14 +216,12 @@ export const ImageAnalysisPage: React.FC<ImageAnalysisPageProps> = ({ onNavigate
                 >
                   {loading ? (
                     <>
-                      <span className="material-symbols-outlined text-[18px] animate-spin">
-                        progress_activity
-                      </span>
+                      <AppIcon name="progress_activity" className="text-[18px] animate-spin" />
                       <span>Extracting 32D Features...</span>
                     </>
                   ) : (
                     <>
-                      <span className="material-symbols-outlined text-[18px]">biotech</span>
+                      <AppIcon name="biotech" className="text-[18px]" />
                       <span>Analyze Specimen</span>
                     </>
                   )}
@@ -347,9 +342,7 @@ export const ImageAnalysisPage: React.FC<ImageAnalysisPageProps> = ({ onNavigate
                 {/* PCA Latent 2D Projection Banner */}
                 <div className="mt-4 p-3 bg-white rounded-xl border border-[#E2E7DF] flex items-center justify-between text-xs font-mono">
                   <div className="flex items-center gap-2">
-                    <span className="material-symbols-outlined text-[#175D44] text-[18px]">
-                      scatter_plot
-                    </span>
+                    <AppIcon name="scatter_plot" className="text-[#175D44] text-[18px]" />
                     <span className="text-[#0F1F18] font-semibold">PCA 2D Coordinates:</span>
                     <span className="text-[#175D44]">
                       PC1 (38.6%) = <strong>{analysisResult.pca_projection.x.toFixed(3)}</strong>
@@ -367,9 +360,7 @@ export const ImageAnalysisPage: React.FC<ImageAnalysisPageProps> = ({ onNavigate
             </>
           ) : (
             <div className="h-full min-h-[320px] bg-[#F7F6EF] rounded-2xl border border-dashed border-[#BFC9C2] flex flex-col items-center justify-center p-8 text-center text-[#707973]">
-              <span className="material-symbols-outlined text-4xl mb-2 text-[#BFC9C2]">
-                analytics
-              </span>
+              <AppIcon name="analytics" className="text-4xl mb-2 text-[#BFC9C2]" />
               <h3 className="font-headline font-semibold text-sm text-[#0F1F18]">
                 Awaiting Specimen Upload
               </h3>
@@ -384,13 +375,177 @@ export const ImageAnalysisPage: React.FC<ImageAnalysisPageProps> = ({ onNavigate
       {/* Analysis Output Section: Nearest Specimens & Feature Tensor */}
       {analysisResult && (
         <div className="flex flex-col gap-6">
+          {/* Prominent Non-Diagnostic Neutral Guidance Alert */}
+          <div className="p-4 rounded-xl bg-[#E8F5E9] border border-[#A5D6A7] text-[#1B5E20] flex items-start gap-3 shadow-xs">
+            <AppIcon name="verified_user" className="text-[#2E7D32] text-[24px] shrink-0 mt-0.5" />
+            <div className="flex flex-col text-xs">
+              <span className="font-mono text-[10px] font-bold tracking-wider uppercase text-[#1B5E20]">
+                NON-DIAGNOSTIC VISUAL SIMILARITY NOTICE
+              </span>
+              <p className="mt-1 font-semibold text-[#1B5E20] text-sm">
+                Visual similarity analysis complete — inspect the reference examples; disease status has not been determined.
+              </p>
+              <p className="mt-1 leading-relaxed text-[#2E7D32]">
+                Nearest specimens are archived reference examples retrieved purely by mathematical Euclidean distance across 32 visual descriptors. <strong>They represent visual similarity context, not an infection determination.</strong> A healthy-looking uploaded leaf must not be declared diseased merely because retrieved references carry diseased labels in the repository. A dedicated supervised neural prediction model (EfficientNet-B0) is evaluated below to provide calibrated class probabilities and uncertainty diagnostics.
+              </p>
+            </div>
+          </div>
+
+          {/* Dedicated Supervised Crop-Disease Prediction Card */}
+          {analysisResult.prediction && (
+            <SectionCard
+              moduleNumber="Stage 02 • Supervised Prediction"
+              title="Supervised Crop-Disease Classification"
+              subtitle="Fine-tuned EfficientNet-B0 (ImageNet-1K pretrained) evaluated across 25 supported PlantDoc foliar classes (N=2,447, Test Accuracy: 61.8%, 95% CI: [57.5%, 66.0%])"
+              badge={analysisResult.prediction.is_uncertain ? 'Uncertain Specimen' : 'Calibrated Classifier'}
+            >
+              <div className="flex flex-col gap-4 pt-1">
+                {/* Uncertainty Warning if Applicable */}
+                {analysisResult.prediction.is_uncertain && (
+                  <div className="p-3.5 rounded-xl bg-[#FFF8E1] border border-[#FFE082] text-[#8D6E63] text-xs flex items-start gap-3">
+                    <AppIcon name="warning" className="text-[#FF8F00] text-[22px] shrink-0 mt-0.5" />
+                    <div className="flex flex-col gap-1">
+                      <span className="font-bold text-[#E65100] uppercase text-[10px] tracking-wider font-mono">
+                        Statistical Uncertainty / Out-of-Distribution Warning
+                      </span>
+                      <p className="text-[#5D4037] leading-relaxed">
+                        {analysisResult.prediction.uncertainty_reason ||
+                          'The model confidence is below the predeclared threshold (35.0%) or entropy is high. The visual patterns do not confidently match any of the 25 benchmark classes.'}
+                      </p>
+                    </div>
+                  </div>
+                )}
+
+                {/* Primary Prediction Hero & Candidates Grid */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
+                  {/* Primary Prediction Box (6 cols) */}
+                  <div className={`lg:col-span-6 p-4 rounded-xl border flex flex-col justify-between ${
+                    analysisResult.prediction.is_uncertain
+                      ? 'bg-[#FDFBF7] border-[#FFE082]'
+                      : 'bg-[#F7F6EF] border-[#E2E7DF]'
+                  }`}>
+                    <div className="flex flex-col gap-2">
+                      <div className="flex items-center justify-between">
+                        <span className="font-mono text-[10px] font-bold text-[#707973] uppercase tracking-wider">
+                          Primary Class Prediction
+                        </span>
+                        <div className="flex items-center gap-2">
+                          <span
+                            className={`px-2 py-0.5 rounded font-mono text-[10px] font-bold ${
+                              analysisResult.prediction.condition_status.toLowerCase() === 'healthy'
+                                ? 'bg-[#C3EFAA] text-[#2B4F1C]'
+                                : 'bg-[#FFDAD6] text-[#93000A]'
+                            }`}
+                          >
+                            {analysisResult.prediction.condition_status}
+                          </span>
+                          <span className="px-2 py-0.5 rounded font-mono text-[10px] bg-[#E0F2E8] text-[#175D44] font-semibold">
+                            {analysisResult.prediction.crop_name}
+                          </span>
+                        </div>
+                      </div>
+
+                      <h3 className="text-xl font-bold font-headline text-[#0F1F18] mt-1">
+                        {analysisResult.prediction.predicted_label}
+                      </h3>
+
+                      <p className="text-xs text-[#707973] leading-relaxed">
+                        Predicted pathogen/condition: <strong className="text-[#0F1F18]">{analysisResult.prediction.disease_name}</strong> on host crop <strong className="text-[#0F1F18]">{analysisResult.prediction.crop_name}</strong>.
+                      </p>
+                    </div>
+
+                    <div className="mt-4 pt-3 border-t border-[#E2E7DF]/80 flex flex-col gap-2">
+                      <div className="flex items-center justify-between text-xs">
+                        <span className="text-[#404943] font-medium">Calibrated Model Probability:</span>
+                        <strong className="text-base text-[#175D44] font-mono">
+                          {analysisResult.prediction.confidence_percent.toFixed(1)}%
+                        </strong>
+                      </div>
+
+                      {/* Progress Bar */}
+                      <div className="w-full h-2 rounded-full bg-[#E2E7DF] overflow-hidden">
+                        <div
+                          className={`h-full rounded-full transition-all duration-500 ${
+                            analysisResult.prediction.is_uncertain ? 'bg-[#FFA000]' : 'bg-[#175D44]'
+                          }`}
+                          style={{ width: `${Math.min(100, Math.max(5, analysisResult.prediction.confidence_percent))}%` }}
+                        />
+                      </div>
+
+                      <div className="flex items-center justify-between text-[10px] font-mono text-[#707973] mt-1">
+                        <span>Logit: {analysisResult.prediction.raw_logit.toFixed(3)}</span>
+                        <span>Norm. Entropy: {(analysisResult.prediction.normalized_entropy * 100).toFixed(1)}%</span>
+                        <span>Threshold: 35.0%</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Top-3 Candidates Distribution (6 cols) */}
+                  <div className="lg:col-span-6 p-4 rounded-xl bg-[#F7F6EF] border border-[#E2E7DF] flex flex-col justify-between">
+                    <div>
+                      <span className="font-mono text-[10px] font-bold text-[#707973] uppercase tracking-wider block mb-2">
+                        Top Candidate Probabilities (Softmax Distribution)
+                      </span>
+                      <div className="flex flex-col gap-2.5">
+                        {analysisResult.prediction.top_candidates.map((cand) => (
+                          <div key={cand.rank} className="flex flex-col gap-1 text-xs">
+                            <div className="flex items-center justify-between">
+                              <span className="font-medium text-[#0F1F18] truncate pr-2">
+                                #{cand.rank} {cand.label}
+                              </span>
+                              <div className="flex items-center gap-1.5 shrink-0 font-mono text-[11px]">
+                                <span className={cand.condition_status === 'Healthy' ? 'text-[#2B4F1C]' : 'text-[#93000A]'}>
+                                  [{cand.condition_status}]
+                                </span>
+                                <strong className="text-[#175D44]">{cand.probability_percent.toFixed(1)}%</strong>
+                              </div>
+                            </div>
+                            <div className="w-full h-1.5 rounded-full bg-[#E2E7DF] overflow-hidden">
+                              <div
+                                className="h-full rounded-full bg-[#175D44]/80"
+                                style={{ width: `${cand.probability_percent}%` }}
+                              />
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="mt-3 pt-2 border-t border-[#E2E7DF]/80 flex items-center justify-between text-[10px] text-[#707973]">
+                      <span>Model: EfficientNet-B0 (ImageNet Transfer)</span>
+                      <span>25 Supported Classes (N=2,447)</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Non-Diagnostic Advisory Banner */}
+                <div className="p-3 rounded-lg bg-[#E0F2E8]/40 border border-[#BFC9C2]/40 text-xs text-[#2E7D32] flex items-center gap-2">
+                  <AppIcon name="info" className="text-[#175D44] text-[16px] shrink-0" />
+                  <span>
+                    <strong>Scientific Notice:</strong> Supervised model outputs provide probabilistic decision support based on 25 benchmark foliar classes. They do <em>not</em> constitute a verified biological or phytopathological diagnosis. Reference specimens below are separate geometric exemplars.
+                  </span>
+                </div>
+              </div>
+            </SectionCard>
+          )}
+
           {/* Nearest Reference Specimens in Standardized 32D Descriptor Space */}
           <SectionCard
             moduleNumber="Stage 03 • Proximity Retrieval"
             title="Nearest Reference Specimens in Frozen Repository"
-            subtitle="Ranked by Euclidean distance across 32 standardized descriptors (z = (x - μ)/σ). Proximity index 1/(1+d) is an uncalibrated geometric score, NOT a biological diagnosis."
+            subtitle="Ranked by Euclidean distance across 32 standardized descriptors (z = (x - μ)/σ). Proximity index 1/(1+d) is an uncalibrated geometric distance score, NOT an infection probability or diagnosis."
             badge="2,596 Reference Images"
           >
+            {/* Context callout explaining reference dataset distribution */}
+            <div className="p-3 mb-4 rounded-lg bg-[#F7F6EF] border border-[#E2E7DF] text-xs text-[#404943] flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <AppIcon name="info" className="text-[#175D44] text-[16px] shrink-0" />
+                <span>
+                  <strong>Reference Manifold Note:</strong> The archive contains 1,750 diseased specimens (67.4%) and 846 healthy specimens (32.6%). Many diseased specimens retain predominantly green foliage, so geometric neighbors in 32D space frequently include diseased reference exemplars regardless of specimen health.
+                </span>
+              </div>
+            </div>
+
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4 pt-1">
               {analysisResult.nearest_specimens.map((specimen: NearestSpecimen) => (
                 <div
@@ -407,8 +562,13 @@ export const ImageAnalysisPage: React.FC<ImageAnalysisPageProps> = ({ onNavigate
                         ;(e.target as HTMLElement).style.display = 'none'
                       }}
                     />
-                    <div className="absolute top-2 left-2 px-1.5 py-0.5 rounded font-mono text-[9px] bg-black/60 text-white backdrop-blur-xs">
-                      #{specimen.rank}
+                    <div className="absolute top-2 left-2 px-1.5 py-0.5 rounded font-mono text-[9px] bg-black/60 text-white backdrop-blur-xs flex items-center gap-1">
+                      <span>#{specimen.rank}</span>
+                      {specimen.is_self_match && (
+                        <span className="px-1 py-0.2 rounded font-mono text-[8px] bg-[#175D44] text-white">
+                          Self-Match
+                        </span>
+                      )}
                     </div>
                     <div
                       className={`absolute top-2 right-2 px-1.5 py-0.5 rounded font-mono text-[9px] font-bold ${
@@ -416,8 +576,9 @@ export const ImageAnalysisPage: React.FC<ImageAnalysisPageProps> = ({ onNavigate
                           ? 'bg-[#C3EFAA] text-[#2B4F1C]'
                           : 'bg-[#FFDAD6] text-[#93000A]'
                       }`}
+                      title="Archived condition label in reference dataset"
                     >
-                      {specimen.condition_status}
+                      Ref: {specimen.condition_status}
                     </div>
                   </div>
 
@@ -453,6 +614,9 @@ export const ImageAnalysisPage: React.FC<ImageAnalysisPageProps> = ({ onNavigate
                           {(specimen.visual_similarity_score * 100).toFixed(1)}%
                         </strong>
                       </div>
+                      <span className="text-[8px] text-[#707973] italic">
+                        Geometric index • Not diagnosis
+                      </span>
                     </div>
 
                     {/* Action Button */}
@@ -466,7 +630,7 @@ export const ImageAnalysisPage: React.FC<ImageAnalysisPageProps> = ({ onNavigate
                       }}
                       className="mt-2 w-full py-1.5 px-2 rounded-lg bg-white border border-[#BFC9C2]/50 hover:bg-[#E0F2E8] hover:text-[#175D44] text-[11px] font-semibold text-[#0F1F18] transition-colors flex items-center justify-center gap-1"
                     >
-                      <span className="material-symbols-outlined text-[14px]">visibility</span>
+                      <AppIcon name="visibility" className="text-[14px]" />
                       <span>Inspect Details</span>
                     </button>
                   </div>

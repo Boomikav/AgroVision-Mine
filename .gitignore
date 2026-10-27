@@ -22,16 +22,36 @@ venv.bak/
 # Frontend / Node
 frontend/node_modules/
 node_modules/
-frontend/dist/
 dist/
 dist-ssr/
 *.local
 
 # Logs and temporary files
 *.log
+server_temp.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+~$*
+*.tmp
+scripts/temp_render.html
+scripts/template_normalized.docx
+Paper_template-a4*.docx
+paper (*).pdf
+
+# Local Backups & Unrelated Project Scratch
+backups/
+TermiteSense-IoT_Faculty_Review_Refined.pptx
+*(2).pptx
+DWDM_Project_Report_Styled*.docx
+DWDM_Project_Report_Styled*.pdf
+research_paper - Copy/
+research_paper/backup_*/
+slide_analysis.txt
+data/reports/presentation_inspection/
+data/reports/presentation_slides/
+data/reports/pptx_extracted_assets/
+data/reports/updated_presentation_qa/
 
 # Large raw & processed image assets (reproducibility guaranteed by canonical manifests, feature store, and reports)
 data/external_raw/

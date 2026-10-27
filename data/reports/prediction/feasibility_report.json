@@ -1,0 +1,470 @@
+{
+  "canonical_verification": {
+    "manifest_sha256": "c7fd16dcd6c1f8623f3e25a48b572387cba2b42855e4b5ddc482095d40f11cb8",
+    "features_sha256": "f6caf70bd07eeda335e471705e3763d3dd3ef543c0ae406e902a5741ec4093c1",
+    "verified": true,
+    "total_records": 2596
+  },
+  "dataset_composition": {
+    "sources": {
+      "plantdoc": 2560,
+      "icar_ogd": 36
+    },
+    "condition_distribution": {
+      "Diseased": 1750,
+      "Healthy": 846
+    },
+    "total_crops": 14,
+    "total_diseases": 19,
+    "total_composite_classes": 31
+  },
+  "confounding_audit": {
+    "crop_predicts_healthy_accuracy": 0.8925,
+    "single_condition_crops": [
+      {
+        "crop": "Blueberry",
+        "status": "100% Healthy",
+        "count": 114
+      },
+      {
+        "crop": "Cherry",
+        "status": "100% Healthy",
+        "count": 57
+      },
+      {
+        "crop": "Corn",
+        "status": "100% Diseased",
+        "count": 372
+      },
+      {
+        "crop": "Peach",
+        "status": "100% Healthy",
+        "count": 111
+      },
+      {
+        "crop": "Potato",
+        "status": "100% Diseased",
+        "count": 216
+      },
+      {
+        "crop": "Raspberry",
+        "status": "100% Healthy",
+        "count": 119
+      },
+      {
+        "crop": "Rice",
+        "status": "100% Diseased",
+        "count": 36
+      },
+      {
+        "crop": "Soybean",
+        "status": "100% Healthy",
+        "count": 65
+      },
+      {
+        "crop": "Squash",
+        "status": "100% Diseased",
+        "count": 130
+      },
+      {
+        "crop": "Strawberry",
+        "status": "100% Healthy",
+        "count": 96
+      }
+    ],
+    "conclusion": "Binary Healthy/Diseased target is severely confounded by host crop species (89.3% accuracy achievable purely from species identity). Multi-class Crop-Condition classification on well-supported PlantDoc classes was selected to ensure meaningful disease and pathology discrimination."
+  },
+  "deduplication_audit": {
+    "exact_md5_duplicates": 0,
+    "perceptual_dhash_groups": 31,
+    "affected_images": 63,
+    "split_guarantee": "Strict Grouped Stratified Splitting (StratifiedGroupKFold on dHash) ensures 0 duplicate records cross split boundaries."
+  },
+  "predeclared_criteria": {
+    "min_class_support": 60,
+    "supported_classes_count": 25,
+    "benchmark_dataset_size": 2447,
+    "split_distribution": {
+      "train_count": 1468,
+      "train_pct": 60.0,
+      "val_count": 489,
+      "val_pct": 20.0,
+      "test_count": 490,
+      "test_pct": 20.0
+    }
+  },
+  "class_support_table": [
+    {
+      "composite_class": "Corn___Northern Leaf Blight",
+      "readable_label": "Corn - Northern Leaf Blight",
+      "crop_name": "Corn",
+      "disease_name": "Northern Leaf Blight",
+      "condition_status": "Diseased",
+      "dataset_source": "plantdoc",
+      "sample_count": 190,
+      "duplicate_records": 4,
+      "unique_groups": 188,
+      "meets_support_threshold": true
+    },
+    {
+      "composite_class": "Tomato___Septoria Leaf Spot",
+      "readable_label": "Tomato - Septoria Leaf Spot",
+      "crop_name": "Tomato",
+      "disease_name": "Septoria Leaf Spot",
+      "condition_status": "Diseased",
+      "dataset_source": "plantdoc",
+      "sample_count": 149,
+      "duplicate_records": 8,
+      "unique_groups": 147,
+      "meets_support_threshold": true
+    },
+    {
+      "composite_class": "Squash___Powdery Mildew",
+      "readable_label": "Squash - Powdery Mildew",
+      "crop_name": "Squash",
+      "disease_name": "Powdery Mildew",
+      "condition_status": "Diseased",
+      "dataset_source": "plantdoc",
+      "sample_count": 130,
+      "duplicate_records": 2,
+      "unique_groups": 129,
+      "meets_support_threshold": true
+    },
+    {
+      "composite_class": "Raspberry___Healthy",
+      "readable_label": "Raspberry - Healthy",
+      "crop_name": "Raspberry",
+      "disease_name": "Healthy",
+      "condition_status": "Healthy",
+      "dataset_source": "plantdoc",
+      "sample_count": 119,
+      "duplicate_records": 2,
+      "unique_groups": 118,
+      "meets_support_threshold": true
+    },
+    {
+      "composite_class": "Corn___Common Rust",
+      "readable_label": "Corn - Common Rust",
+      "crop_name": "Corn",
+      "disease_name": "Common Rust",
+      "condition_status": "Diseased",
+      "dataset_source": "plantdoc",
+      "sample_count": 116,
+      "duplicate_records": 0,
+      "unique_groups": 116,
+      "meets_support_threshold": true
+    },
+    {
+      "composite_class": "Blueberry___Healthy",
+      "readable_label": "Blueberry - Healthy",
+      "crop_name": "Blueberry",
+      "disease_name": "Healthy",
+      "condition_status": "Healthy",
+      "dataset_source": "plantdoc",
+      "sample_count": 114,
+      "duplicate_records": 0,
+      "unique_groups": 114,
+      "meets_support_threshold": true
+    },
+    {
+      "composite_class": "Potato___Early Blight",
+      "readable_label": "Potato - Early Blight",
+      "crop_name": "Potato",
+      "disease_name": "Early Blight",
+      "condition_status": "Diseased",
+      "dataset_source": "plantdoc",
+      "sample_count": 113,
+      "duplicate_records": 7,
+      "unique_groups": 113,
+      "meets_support_threshold": true
+    },
+    {
+      "composite_class": "Tomato___Late Blight",
+      "readable_label": "Tomato - Late Blight",
+      "crop_name": "Tomato",
+      "disease_name": "Late Blight",
+      "condition_status": "Diseased",
+      "dataset_source": "plantdoc",
+      "sample_count": 111,
+      "duplicate_records": 13,
+      "unique_groups": 107,
+      "meets_support_threshold": true
+    },
+    {
+      "composite_class": "Peach___Healthy",
+      "readable_label": "Peach - Healthy",
+      "crop_name": "Peach",
+      "disease_name": "Healthy",
+      "condition_status": "Healthy",
+      "dataset_source": "plantdoc",
+      "sample_count": 111,
+      "duplicate_records": 0,
+      "unique_groups": 111,
+      "meets_support_threshold": true
+    },
+    {
+      "composite_class": "Tomato___Bacterial Spot",
+      "readable_label": "Tomato - Bacterial Spot",
+      "crop_name": "Tomato",
+      "disease_name": "Bacterial Spot",
+      "condition_status": "Diseased",
+      "dataset_source": "plantdoc",
+      "sample_count": 110,
+      "duplicate_records": 3,
+      "unique_groups": 109,
+      "meets_support_threshold": true
+    },
+    {
+      "composite_class": "Potato___Late Blight",
+      "readable_label": "Potato - Late Blight",
+      "crop_name": "Potato",
+      "disease_name": "Late Blight",
+      "condition_status": "Diseased",
+      "dataset_source": "plantdoc",
+      "sample_count": 103,
+      "duplicate_records": 8,
+      "unique_groups": 101,
+      "meets_support_threshold": true
+    },
+    {
+      "composite_class": "Strawberry___Healthy",
+      "readable_label": "Strawberry - Healthy",
+      "crop_name": "Strawberry",
+      "disease_name": "Healthy",
+      "condition_status": "Healthy",
+      "dataset_source": "plantdoc",
+      "sample_count": 96,
+      "duplicate_records": 0,
+      "unique_groups": 96,
+      "meets_support_threshold": true
+    },
+    {
+      "composite_class": "Apple___Apple Scab",
+      "readable_label": "Apple - Apple Scab",
+      "crop_name": "Apple",
+      "disease_name": "Apple Scab",
+      "condition_status": "Diseased",
+      "dataset_source": "plantdoc",
+      "sample_count": 93,
+      "duplicate_records": 2,
+      "unique_groups": 92,
+      "meets_support_threshold": true
+    },
+    {
+      "composite_class": "Apple___Healthy",
+      "readable_label": "Apple - Healthy",
+      "crop_name": "Apple",
+      "disease_name": "Healthy",
+      "condition_status": "Healthy",
+      "dataset_source": "plantdoc",
+      "sample_count": 91,
+      "duplicate_records": 0,
+      "unique_groups": 91,
+      "meets_support_threshold": true
+    },
+    {
+      "composite_class": "Tomato___Leaf Mold",
+      "readable_label": "Tomato - Leaf Mold",
+      "crop_name": "Tomato",
+      "disease_name": "Leaf Mold",
+      "condition_status": "Diseased",
+      "dataset_source": "plantdoc",
+      "sample_count": 91,
+      "duplicate_records": 1,
+      "unique_groups": 91,
+      "meets_support_threshold": true
+    },
+    {
+      "composite_class": "Apple___Cedar Apple Rust",
+      "readable_label": "Apple - Cedar Apple Rust",
+      "crop_name": "Apple",
+      "disease_name": "Cedar Apple Rust",
+      "condition_status": "Diseased",
+      "dataset_source": "plantdoc",
+      "sample_count": 88,
+      "duplicate_records": 0,
+      "unique_groups": 88,
+      "meets_support_threshold": true
+    },
+    {
+      "composite_class": "Tomato___Early Blight",
+      "readable_label": "Tomato - Early Blight",
+      "crop_name": "Tomato",
+      "disease_name": "Early Blight",
+      "condition_status": "Diseased",
+      "dataset_source": "plantdoc",
+      "sample_count": 88,
+      "duplicate_records": 8,
+      "unique_groups": 87,
+      "meets_support_threshold": true
+    },
+    {
+      "composite_class": "Tomato___Yellow Leaf Curl Virus",
+      "readable_label": "Tomato - Yellow Leaf Curl Virus",
+      "crop_name": "Tomato",
+      "disease_name": "Yellow Leaf Curl Virus",
+      "condition_status": "Diseased",
+      "dataset_source": "plantdoc",
+      "sample_count": 75,
+      "duplicate_records": 1,
+      "unique_groups": 75,
+      "meets_support_threshold": true
+    },
+    {
+      "composite_class": "Bell Pepper___Bacterial Spot",
+      "readable_label": "Bell Pepper - Bacterial Spot",
+      "crop_name": "Bell Pepper",
+      "disease_name": "Bacterial Spot",
+      "condition_status": "Diseased",
+      "dataset_source": "plantdoc",
+      "sample_count": 71,
+      "duplicate_records": 4,
+      "unique_groups": 69,
+      "meets_support_threshold": true
+    },
+    {
+      "composite_class": "Grape___Healthy",
+      "readable_label": "Grape - Healthy",
+      "crop_name": "Grape",
+      "disease_name": "Healthy",
+      "condition_status": "Healthy",
+      "dataset_source": "plantdoc",
+      "sample_count": 69,
+      "duplicate_records": 0,
+      "unique_groups": 69,
+      "meets_support_threshold": true
+    },
+    {
+      "composite_class": "Corn___Gray Leaf Spot",
+      "readable_label": "Corn - Gray Leaf Spot",
+      "crop_name": "Corn",
+      "disease_name": "Gray Leaf Spot",
+      "condition_status": "Diseased",
+      "dataset_source": "plantdoc",
+      "sample_count": 66,
+      "duplicate_records": 0,
+      "unique_groups": 66,
+      "meets_support_threshold": true
+    },
+    {
+      "composite_class": "Soybean___Healthy",
+      "readable_label": "Soybean - Healthy",
+      "crop_name": "Soybean",
+      "disease_name": "Healthy",
+      "condition_status": "Healthy",
+      "dataset_source": "plantdoc",
+      "sample_count": 65,
+      "duplicate_records": 0,
+      "unique_groups": 65,
+      "meets_support_threshold": true
+    },
+    {
+      "composite_class": "Grape___Black Rot",
+      "readable_label": "Grape - Black Rot",
+      "crop_name": "Grape",
+      "disease_name": "Black Rot",
+      "condition_status": "Diseased",
+      "dataset_source": "plantdoc",
+      "sample_count": 64,
+      "duplicate_records": 0,
+      "unique_groups": 64,
+      "meets_support_threshold": true
+    },
+    {
+      "composite_class": "Tomato___Healthy",
+      "readable_label": "Tomato - Healthy",
+      "crop_name": "Tomato",
+      "disease_name": "Healthy",
+      "condition_status": "Healthy",
+      "dataset_source": "plantdoc",
+      "sample_count": 63,
+      "duplicate_records": 0,
+      "unique_groups": 63,
+      "meets_support_threshold": true
+    },
+    {
+      "composite_class": "Bell Pepper___Healthy",
+      "readable_label": "Bell Pepper - Healthy",
+      "crop_name": "Bell Pepper",
+      "disease_name": "Healthy",
+      "condition_status": "Healthy",
+      "dataset_source": "plantdoc",
+      "sample_count": 61,
+      "duplicate_records": 0,
+      "unique_groups": 61,
+      "meets_support_threshold": true
+    },
+    {
+      "composite_class": "Cherry___Healthy",
+      "readable_label": "Cherry - Healthy",
+      "crop_name": "Cherry",
+      "disease_name": "Healthy",
+      "condition_status": "Healthy",
+      "dataset_source": "plantdoc",
+      "sample_count": 57,
+      "duplicate_records": 0,
+      "unique_groups": 57,
+      "meets_support_threshold": false
+    },
+    {
+      "composite_class": "Tomato___Mosaic Virus",
+      "readable_label": "Tomato - Mosaic Virus",
+      "crop_name": "Tomato",
+      "disease_name": "Mosaic Virus",
+      "condition_status": "Diseased",
+      "dataset_source": "plantdoc",
+      "sample_count": 54,
+      "duplicate_records": 0,
+      "unique_groups": 54,
+      "meets_support_threshold": false
+    },
+    {
+      "composite_class": "Rice___Brown Spot",
+      "readable_label": "Rice - Brown Spot",
+      "crop_name": "Rice",
+      "disease_name": "Brown Spot",
+      "condition_status": "Diseased",
+      "dataset_source": "icar_ogd",
+      "sample_count": 12,
+      "duplicate_records": 0,
+      "unique_groups": 12,
+      "meets_support_threshold": false
+    },
+    {
+      "composite_class": "Rice___Bacterial Leaf Blight",
+      "readable_label": "Rice - Bacterial Leaf Blight",
+      "crop_name": "Rice",
+      "disease_name": "Bacterial Leaf Blight",
+      "condition_status": "Diseased",
+      "dataset_source": "icar_ogd",
+      "sample_count": 12,
+      "duplicate_records": 0,
+      "unique_groups": 12,
+      "meets_support_threshold": false
+    },
+    {
+      "composite_class": "Rice___Leaf Smut",
+      "readable_label": "Rice - Leaf Smut",
+      "crop_name": "Rice",
+      "disease_name": "Leaf Smut",
+      "condition_status": "Diseased",
+      "dataset_source": "icar_ogd",
+      "sample_count": 12,
+      "duplicate_records": 0,
+      "unique_groups": 12,
+      "meets_support_threshold": false
+    },
+    {
+      "composite_class": "Tomato___Two-Spotted Spider Mite",
+      "readable_label": "Tomato - Two-Spotted Spider Mite",
+      "crop_name": "Tomato",
+      "disease_name": "Two-Spotted Spider Mite",
+      "condition_status": "Diseased",
+      "dataset_source": "plantdoc",
+      "sample_count": 2,
+      "duplicate_records": 0,
+      "unique_groups": 2,
+      "meets_support_threshold": false
+    }
+  ]
+}

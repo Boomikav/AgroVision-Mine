@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { api } from '../services/api'
 import { SectionCard } from '../components/common/SectionCard'
 import { KPICard } from '../components/common/KPICard'
+import { AppIcon } from '../components/common/AppIcon'
 
 export const DataQualityPage: React.FC = () => {
   const [data, setData] = useState<any | null>(null)
@@ -23,9 +24,7 @@ export const DataQualityPage: React.FC = () => {
   if (loading || !data) {
     return (
       <div className="flex flex-col items-center justify-center py-24 gap-3 text-[#404943]">
-        <span className="material-symbols-outlined text-4xl animate-spin text-[#175D44]">
-          progress_activity
-        </span>
+        <AppIcon name="progress_activity" className="text-4xl animate-spin text-[#175D44]" />
         <span className="text-sm font-mono">Loading data quality audit...</span>
       </div>
     )
@@ -41,7 +40,7 @@ export const DataQualityPage: React.FC = () => {
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-[#C3EFAA]/40 text-[#2B4F1C] flex items-center justify-center">
-              <span className="material-symbols-outlined text-[24px]">verified_user</span>
+              <AppIcon name="verified_user" className="text-[24px]" />
             </div>
             <div>
               <div className="flex items-center gap-2">
@@ -70,7 +69,7 @@ export const DataQualityPage: React.FC = () => {
           <div className="p-4 rounded-xl bg-[#F7F6EF] border border-[#E2E7DF] flex flex-col gap-2">
             <div className="flex items-center justify-between">
               <span className="text-xs font-semibold text-[#0F1F18] flex items-center gap-1.5">
-                <span className="material-symbols-outlined text-[16px] text-[#175D44]">description</span>
+                <AppIcon name="description" className="text-[16px] text-[#175D44]" />
                 Canonical Manifest CSV
               </span>
               <span className="px-2 py-0.5 rounded font-mono text-[10px] bg-[#C3EFAA] text-[#2B4F1C] font-bold">
@@ -90,7 +89,7 @@ export const DataQualityPage: React.FC = () => {
           <div className="p-4 rounded-xl bg-[#F7F6EF] border border-[#E2E7DF] flex flex-col gap-2">
             <div className="flex items-center justify-between">
               <span className="text-xs font-semibold text-[#0F1F18] flex items-center gap-1.5">
-                <span className="material-symbols-outlined text-[16px] text-[#175D44]">hub</span>
+                <AppIcon name="hub" className="text-[16px] text-[#175D44]" />
                 Visual Feature Store CSV
               </span>
               <span className="px-2 py-0.5 rounded font-mono text-[10px] bg-[#C3EFAA] text-[#2B4F1C] font-bold">
@@ -248,7 +247,7 @@ export const DataQualityPage: React.FC = () => {
               </div>
 
               <div className="p-3 rounded-lg bg-[#FFDEA7]/30 border border-[#FFDEA7] text-[11px] text-[#6C4C00] flex items-start gap-2">
-                <span className="material-symbols-outlined text-[16px] shrink-0 mt-0.5">verified</span>
+                <AppIcon name="verified" className="text-[16px] shrink-0 mt-0.5" />
                 <span>Zero records rejected. Frozen canonical dataset remains 100% reproducible.</span>
               </div>
             </div>

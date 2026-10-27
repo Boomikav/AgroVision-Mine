@@ -4,13 +4,13 @@
   "rules": [
     {
       "antecedents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low"
       ],
       "consequents": [
-        "contour_perimeter_High",
         "glcm_contrast_High",
+        "contour_perimeter_High",
         "glcm_homogeneity_Low"
       ],
       "support": 0.1506,
@@ -19,14 +19,14 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
         "glcm_contrast_High",
+        "contour_perimeter_High",
         "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low"
       ],
       "support": 0.1506,
       "confidence": 0.7899,
@@ -39,8 +39,8 @@
         "contour_perimeter_High"
       ],
       "consequents": [
-        "contour_circularity_Low",
         "glcm_contrast_High",
+        "contour_circularity_Low",
         "glcm_homogeneity_Low"
       ],
       "support": 0.1506,
@@ -49,8 +49,8 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
         "glcm_contrast_High",
+        "contour_circularity_Low",
         "glcm_homogeneity_Low"
       ],
       "consequents": [
@@ -64,9 +64,9 @@
     },
     {
       "antecedents": [
+        "glcm_contrast_High",
         "contour_circularity_Low",
         "contour_perimeter_High",
-        "glcm_contrast_High",
         "glcm_homogeneity_Low"
       ],
       "consequents": [
@@ -83,9 +83,9 @@
         "glcm_energy_Low"
       ],
       "consequents": [
+        "glcm_contrast_High",
         "contour_circularity_Low",
         "contour_perimeter_High",
-        "glcm_contrast_High",
         "glcm_homogeneity_Low"
       ],
       "support": 0.1506,
@@ -94,14 +94,14 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "contour_perimeter_High",
-        "glcm_contrast_High"
+        "glcm_contrast_High",
+        "contour_perimeter_High"
       ],
       "support": 0.1506,
       "confidence": 0.8747,
@@ -109,14 +109,14 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
-        "glcm_contrast_High"
+        "glcm_contrast_High",
+        "contour_perimeter_High"
       ],
       "consequents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low",
+        "glcm_homogeneity_Low"
       ],
       "support": 0.1506,
       "confidence": 0.749,
@@ -124,13 +124,13 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low"
       ],
       "consequents": [
-        "contour_perimeter_High",
-        "glcm_contrast_High"
+        "glcm_contrast_High",
+        "contour_perimeter_High"
       ],
       "support": 0.1506,
       "confidence": 0.8708,
@@ -138,13 +138,13 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
-        "glcm_contrast_High"
+        "glcm_contrast_High",
+        "contour_perimeter_High"
       ],
       "consequents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low"
       ],
       "support": 0.1506,
       "confidence": 0.749,
@@ -156,8 +156,8 @@
         "glcm_energy_Low"
       ],
       "consequents": [
-        "contour_perimeter_High",
         "glcm_contrast_High",
+        "contour_perimeter_High",
         "glcm_homogeneity_Low"
       ],
       "support": 0.1537,
@@ -166,8 +166,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
         "glcm_contrast_High",
+        "contour_perimeter_High",
         "glcm_homogeneity_Low"
       ],
       "consequents": [
@@ -180,8 +180,8 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
         "glcm_contrast_High",
+        "contour_circularity_Low",
         "glcm_homogeneity_Low"
       ],
       "consequents": [
@@ -198,8 +198,8 @@
         "glcm_energy_Low"
       ],
       "consequents": [
-        "contour_circularity_Low",
         "glcm_contrast_High",
+        "contour_circularity_Low",
         "glcm_homogeneity_Low"
       ],
       "support": 0.1576,
@@ -209,9 +209,9 @@
     {
       "antecedents": [
         "glcm_correlation_Low",
-        "glcm_homogeneity_Low",
         "glcm_energy_Low",
-        "contour_perimeter_High"
+        "contour_perimeter_High",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "contour_circularity_Low",
@@ -228,9 +228,9 @@
       ],
       "consequents": [
         "glcm_correlation_Low",
-        "glcm_homogeneity_Low",
         "glcm_energy_Low",
-        "contour_perimeter_High"
+        "contour_perimeter_High",
+        "glcm_homogeneity_Low"
       ],
       "support": 0.1506,
       "confidence": 0.7148,
@@ -240,12 +240,12 @@
       "antecedents": [
         "glcm_correlation_Low",
         "glcm_contrast_High",
-        "glcm_homogeneity_Low",
-        "contour_perimeter_High"
+        "contour_perimeter_High",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "contour_circularity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low"
       ],
       "support": 0.1506,
       "confidence": 0.8728,
@@ -253,14 +253,14 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low"
       ],
       "consequents": [
         "glcm_correlation_Low",
         "glcm_contrast_High",
-        "glcm_homogeneity_Low",
-        "contour_perimeter_High"
+        "contour_perimeter_High",
+        "glcm_homogeneity_Low"
       ],
       "support": 0.1506,
       "confidence": 0.7322,
@@ -296,14 +296,14 @@
     },
     {
       "antecedents": [
+        "glcm_energy_Low",
         "contour_circularity_Low",
-        "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_contrast_High"
       ],
       "consequents": [
         "glcm_correlation_Low",
-        "glcm_homogeneity_Low",
-        "contour_perimeter_High"
+        "contour_perimeter_High",
+        "glcm_homogeneity_Low"
       ],
       "support": 0.1506,
       "confidence": 0.867,
@@ -312,13 +312,13 @@
     {
       "antecedents": [
         "glcm_correlation_Low",
-        "glcm_homogeneity_Low",
-        "contour_perimeter_High"
+        "contour_perimeter_High",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
+        "glcm_energy_Low",
         "contour_circularity_Low",
-        "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_contrast_High"
       ],
       "support": 0.1506,
       "confidence": 0.7336,
@@ -327,13 +327,13 @@
     {
       "antecedents": [
         "glcm_correlation_Low",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
+        "glcm_contrast_High",
         "contour_circularity_Low",
-        "contour_perimeter_High",
-        "glcm_contrast_High"
+        "contour_perimeter_High"
       ],
       "support": 0.1506,
       "confidence": 0.8095,
@@ -341,14 +341,14 @@
     },
     {
       "antecedents": [
+        "glcm_contrast_High",
         "contour_circularity_Low",
-        "contour_perimeter_High",
-        "glcm_contrast_High"
+        "contour_perimeter_High"
       ],
       "consequents": [
         "glcm_correlation_Low",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_homogeneity_Low"
       ],
       "support": 0.1506,
       "confidence": 0.7836,
@@ -361,9 +361,9 @@
         "contour_perimeter_High"
       ],
       "consequents": [
+        "glcm_energy_Low",
         "contour_circularity_Low",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_homogeneity_Low"
       ],
       "support": 0.1506,
       "confidence": 0.8337,
@@ -371,9 +371,9 @@
     },
     {
       "antecedents": [
+        "glcm_energy_Low",
         "contour_circularity_Low",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "glcm_correlation_Low",
@@ -390,9 +390,9 @@
         "glcm_energy_Low"
       ],
       "consequents": [
+        "glcm_contrast_High",
         "contour_circularity_Low",
-        "contour_perimeter_High",
-        "glcm_contrast_High"
+        "contour_perimeter_High"
       ],
       "support": 0.1506,
       "confidence": 0.8029,
@@ -400,9 +400,9 @@
     },
     {
       "antecedents": [
+        "glcm_contrast_High",
         "contour_circularity_Low",
-        "contour_perimeter_High",
-        "glcm_contrast_High"
+        "contour_perimeter_High"
       ],
       "consequents": [
         "glcm_correlation_Low",
@@ -414,13 +414,13 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
         "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_perimeter_High"
       ],
       "consequents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
+        "contour_circularity_Low",
         "glcm_homogeneity_Low"
       ],
       "support": 0.1506,
@@ -429,14 +429,14 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
+        "contour_circularity_Low",
         "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "contour_perimeter_High",
         "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_perimeter_High"
       ],
       "support": 0.1506,
       "confidence": 0.7096,
@@ -444,8 +444,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_Low",
         "hsv_v_mean_High",
+        "contour_perimeter_Low",
         "glcm_homogeneity_High"
       ],
       "consequents": [
@@ -462,8 +462,8 @@
         "glcm_energy_High"
       ],
       "consequents": [
-        "contour_perimeter_Low",
         "hsv_v_mean_High",
+        "contour_perimeter_Low",
         "glcm_homogeneity_High"
       ],
       "support": 0.1572,
@@ -472,13 +472,13 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
         "glcm_contrast_High",
+        "contour_perimeter_High",
         "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "contour_circularity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low"
       ],
       "support": 0.1618,
       "confidence": 0.8485,
@@ -486,12 +486,12 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low"
       ],
       "consequents": [
-        "contour_perimeter_High",
         "glcm_contrast_High",
+        "contour_perimeter_High",
         "glcm_homogeneity_Low"
       ],
       "support": 0.1618,
@@ -501,12 +501,12 @@
     {
       "antecedents": [
         "glcm_correlation_Low",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "contour_perimeter_High",
-        "glcm_contrast_High"
+        "glcm_contrast_High",
+        "contour_perimeter_High"
       ],
       "support": 0.1537,
       "confidence": 0.8261,
@@ -514,13 +514,13 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
-        "glcm_contrast_High"
+        "glcm_contrast_High",
+        "contour_perimeter_High"
       ],
       "consequents": [
         "glcm_correlation_Low",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_homogeneity_Low"
       ],
       "support": 0.1537,
       "confidence": 0.7644,
@@ -532,8 +532,8 @@
         "glcm_energy_Low"
       ],
       "consequents": [
-        "contour_perimeter_High",
-        "glcm_contrast_High"
+        "glcm_contrast_High",
+        "contour_perimeter_High"
       ],
       "support": 0.1537,
       "confidence": 0.8193,
@@ -541,8 +541,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
-        "glcm_contrast_High"
+        "glcm_contrast_High",
+        "contour_perimeter_High"
       ],
       "consequents": [
         "glcm_correlation_Low",
@@ -559,8 +559,8 @@
         "contour_perimeter_High"
       ],
       "consequents": [
-        "contour_circularity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low"
       ],
       "support": 0.1506,
       "confidence": 0.8337,
@@ -568,8 +568,8 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low"
       ],
       "consequents": [
         "glcm_correlation_Low",
@@ -582,13 +582,13 @@
     },
     {
       "antecedents": [
+        "glcm_energy_Low",
         "contour_circularity_Low",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "contour_perimeter_High",
-        "glcm_contrast_High"
+        "glcm_contrast_High",
+        "contour_perimeter_High"
       ],
       "support": 0.1618,
       "confidence": 0.814,
@@ -596,13 +596,13 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
-        "glcm_contrast_High"
+        "glcm_contrast_High",
+        "contour_perimeter_High"
       ],
       "consequents": [
+        "glcm_energy_Low",
         "contour_circularity_Low",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_homogeneity_Low"
       ],
       "support": 0.1618,
       "confidence": 0.8046,
@@ -610,14 +610,14 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
         "glcm_contrast_High",
+        "contour_circularity_Low",
         "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "contour_perimeter_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_perimeter_High"
       ],
       "support": 0.1506,
       "confidence": 0.8427,
@@ -625,13 +625,13 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_perimeter_High"
       ],
       "consequents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
         "glcm_contrast_High",
+        "contour_circularity_Low",
         "glcm_homogeneity_Low"
       ],
       "support": 0.1506,
@@ -645,8 +645,8 @@
         "glcm_homogeneity_High"
       ],
       "consequents": [
-        "contour_perimeter_Low",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "contour_perimeter_Low"
       ],
       "support": 0.1572,
       "confidence": 0.9315,
@@ -654,8 +654,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_Low",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "contour_perimeter_Low"
       ],
       "consequents": [
         "contour_circularity_High",
@@ -699,8 +699,8 @@
     {
       "antecedents": [
         "glcm_correlation_Low",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "contour_circularity_Low",
@@ -717,8 +717,8 @@
       ],
       "consequents": [
         "glcm_correlation_Low",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_homogeneity_Low"
       ],
       "support": 0.1576,
       "confidence": 0.7477,
@@ -754,14 +754,14 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
+        "contour_circularity_Low",
         "glcm_contrast_High"
       ],
       "consequents": [
+        "glcm_energy_Low",
         "contour_perimeter_High",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_homogeneity_Low"
       ],
       "support": 0.1506,
       "confidence": 0.7947,
@@ -769,13 +769,13 @@
     },
     {
       "antecedents": [
+        "glcm_energy_Low",
         "contour_perimeter_High",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
+        "contour_circularity_Low",
         "glcm_contrast_High"
       ],
       "support": 0.1506,
@@ -788,10 +788,10 @@
         "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
-        "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low",
+        "glcm_contrast_High"
       ],
       "support": 0.1506,
       "confidence": 0.6296,
@@ -799,10 +799,10 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
-        "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low",
+        "glcm_contrast_High"
       ],
       "consequents": [
         "contour_perimeter_High",
@@ -840,9 +840,9 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low"
       ],
       "consequents": [
         "contour_perimeter_High",
@@ -858,9 +858,9 @@
         "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low"
       ],
       "support": 0.1649,
       "confidence": 0.6892,
@@ -868,12 +868,12 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_Low",
-        "hsv_v_mean_High"
+        "hsv_v_mean_High",
+        "contour_perimeter_Low"
       ],
       "consequents": [
-        "glcm_energy_High",
         "contour_circularity_High",
+        "glcm_energy_High",
         "glcm_homogeneity_High"
       ],
       "support": 0.1572,
@@ -882,13 +882,13 @@
     },
     {
       "antecedents": [
-        "glcm_energy_High",
         "contour_circularity_High",
+        "glcm_energy_High",
         "glcm_homogeneity_High"
       ],
       "consequents": [
-        "contour_perimeter_Low",
-        "hsv_v_mean_High"
+        "hsv_v_mean_High",
+        "contour_perimeter_Low"
       ],
       "support": 0.1572,
       "confidence": 0.7816,
@@ -896,13 +896,13 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
         "glcm_contrast_High",
+        "contour_circularity_Low",
         "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "contour_perimeter_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_perimeter_High"
       ],
       "support": 0.1618,
       "confidence": 0.8251,
@@ -910,12 +910,12 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_perimeter_High"
       ],
       "consequents": [
-        "contour_circularity_Low",
         "glcm_contrast_High",
+        "contour_circularity_Low",
         "glcm_homogeneity_Low"
       ],
       "support": 0.1618,
@@ -924,12 +924,12 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
-        "glcm_contrast_High"
+        "glcm_contrast_High",
+        "contour_perimeter_High"
       ],
       "consequents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
+        "contour_circularity_Low",
         "glcm_homogeneity_Low"
       ],
       "support": 0.1687,
@@ -938,13 +938,13 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
+        "contour_circularity_Low",
         "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "contour_perimeter_High",
-        "glcm_contrast_High"
+        "glcm_contrast_High",
+        "contour_perimeter_High"
       ],
       "support": 0.1687,
       "confidence": 0.7949,
@@ -957,9 +957,9 @@
         "glcm_homogeneity_Low"
       ],
       "consequents": [
+        "glcm_energy_Low",
         "contour_circularity_Low",
-        "contour_perimeter_High",
-        "glcm_energy_Low"
+        "contour_perimeter_High"
       ],
       "support": 0.1506,
       "confidence": 0.7652,
@@ -967,9 +967,9 @@
     },
     {
       "antecedents": [
+        "glcm_energy_Low",
         "contour_circularity_Low",
-        "contour_perimeter_High",
-        "glcm_energy_Low"
+        "contour_perimeter_High"
       ],
       "consequents": [
         "glcm_correlation_Low",
@@ -982,12 +982,12 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
-        "glcm_contrast_High"
+        "glcm_contrast_High",
+        "contour_perimeter_High"
       ],
       "consequents": [
-        "contour_circularity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low"
       ],
       "support": 0.1629,
       "confidence": 0.8103,
@@ -995,12 +995,12 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low"
       ],
       "consequents": [
-        "contour_perimeter_High",
-        "glcm_contrast_High"
+        "glcm_contrast_High",
+        "contour_perimeter_High"
       ],
       "support": 0.1629,
       "confidence": 0.7921,
@@ -1036,10 +1036,10 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
-        "contour_perimeter_High",
         "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low",
+        "contour_perimeter_High"
       ],
       "consequents": [
         "glcm_correlation_Low",
@@ -1055,10 +1055,10 @@
         "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "contour_circularity_Low",
-        "contour_perimeter_High",
         "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low",
+        "contour_perimeter_High"
       ],
       "support": 0.1506,
       "confidence": 0.6368,
@@ -1067,12 +1067,12 @@
     {
       "antecedents": [
         "glcm_correlation_Low",
-        "glcm_homogeneity_Low",
-        "contour_perimeter_High"
+        "contour_perimeter_High",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "contour_circularity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low"
       ],
       "support": 0.1649,
       "confidence": 0.803,
@@ -1080,13 +1080,13 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low"
       ],
       "consequents": [
         "glcm_correlation_Low",
-        "glcm_homogeneity_Low",
-        "contour_perimeter_High"
+        "contour_perimeter_High",
+        "glcm_homogeneity_Low"
       ],
       "support": 0.1649,
       "confidence": 0.8015,
@@ -1094,9 +1094,9 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
         "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_perimeter_High"
       ],
       "consequents": [
         "contour_circularity_Low",
@@ -1112,9 +1112,9 @@
         "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "contour_perimeter_High",
         "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_perimeter_High"
       ],
       "support": 0.1618,
       "confidence": 0.6656,
@@ -1127,8 +1127,8 @@
       ],
       "consequents": [
         "glcm_correlation_Low",
-        "glcm_homogeneity_Low",
-        "contour_perimeter_High"
+        "contour_perimeter_High",
+        "glcm_homogeneity_Low"
       ],
       "support": 0.1687,
       "confidence": 0.8007,
@@ -1137,8 +1137,8 @@
     {
       "antecedents": [
         "glcm_correlation_Low",
-        "glcm_homogeneity_Low",
-        "contour_perimeter_High"
+        "contour_perimeter_High",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "contour_circularity_Low",
@@ -1150,9 +1150,9 @@
     },
     {
       "antecedents": [
+        "glcm_energy_Low",
         "contour_circularity_Low",
-        "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_contrast_High"
       ],
       "consequents": [
         "contour_perimeter_High",
@@ -1168,9 +1168,9 @@
         "glcm_homogeneity_Low"
       ],
       "consequents": [
+        "glcm_energy_Low",
         "contour_circularity_Low",
-        "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_contrast_High"
       ],
       "support": 0.1618,
       "confidence": 0.6763,
@@ -1183,8 +1183,8 @@
         "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "contour_circularity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low"
       ],
       "support": 0.1576,
       "confidence": 0.8004,
@@ -1192,8 +1192,8 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low"
       ],
       "consequents": [
         "glcm_correlation_Low",
@@ -1235,8 +1235,8 @@
     {
       "antecedents": [
         "glcm_correlation_Low",
-        "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_contrast_High"
       ],
       "consequents": [
         "contour_circularity_Low",
@@ -1255,8 +1255,8 @@
       ],
       "consequents": [
         "glcm_correlation_Low",
-        "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_contrast_High"
       ],
       "support": 0.1506,
       "confidence": 0.6638,
@@ -1264,9 +1264,9 @@
     },
     {
       "antecedents": [
+        "glcm_energy_Low",
         "contour_perimeter_High",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "contour_circularity_Low",
@@ -1282,9 +1282,9 @@
         "glcm_contrast_High"
       ],
       "consequents": [
+        "glcm_energy_Low",
         "contour_perimeter_High",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_homogeneity_Low"
       ],
       "support": 0.1618,
       "confidence": 0.7678,
@@ -1320,9 +1320,9 @@
     },
     {
       "antecedents": [
+        "glcm_energy_Low",
         "contour_circularity_Low",
-        "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_contrast_High"
       ],
       "consequents": [
         "glcm_correlation_Low",
@@ -1338,9 +1338,9 @@
         "glcm_homogeneity_Low"
       ],
       "consequents": [
+        "glcm_energy_Low",
         "contour_circularity_Low",
-        "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_contrast_High"
       ],
       "support": 0.1576,
       "confidence": 0.6661,
@@ -1348,8 +1348,8 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low"
       ],
       "consequents": [
         "contour_perimeter_High",
@@ -1365,8 +1365,8 @@
         "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "contour_circularity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low"
       ],
       "support": 0.188,
       "confidence": 0.7858,
@@ -1374,12 +1374,12 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_perimeter_High"
       ],
       "consequents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
+        "contour_circularity_Low",
         "glcm_contrast_High"
       ],
       "support": 0.1506,
@@ -1388,13 +1388,13 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
+        "contour_circularity_Low",
         "glcm_contrast_High"
       ],
       "consequents": [
-        "contour_perimeter_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_perimeter_High"
       ],
       "support": 0.1506,
       "confidence": 0.7947,
@@ -1402,9 +1402,9 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
         "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_perimeter_High"
       ],
       "consequents": [
         "glcm_correlation_Low",
@@ -1420,9 +1420,9 @@
         "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "contour_perimeter_High",
         "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_perimeter_High"
       ],
       "support": 0.1537,
       "confidence": 0.6498,
@@ -1430,8 +1430,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_Low",
-        "hsv_v_mean_High"
+        "hsv_v_mean_High",
+        "contour_perimeter_Low"
       ],
       "consequents": [
         "contour_circularity_High",
@@ -1447,8 +1447,8 @@
         "glcm_energy_High"
       ],
       "consequents": [
-        "contour_perimeter_Low",
-        "hsv_v_mean_High"
+        "hsv_v_mean_High",
+        "contour_perimeter_Low"
       ],
       "support": 0.1676,
       "confidence": 0.75,
@@ -1460,8 +1460,8 @@
         "hsv_v_mean_High"
       ],
       "consequents": [
-        "contour_perimeter_Low",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "contour_perimeter_Low"
       ],
       "support": 0.1676,
       "confidence": 0.8735,
@@ -1469,8 +1469,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_Low",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "contour_perimeter_Low"
       ],
       "consequents": [
         "contour_circularity_High",
@@ -1487,8 +1487,8 @@
       ],
       "consequents": [
         "contour_circularity_High",
-        "hsv_v_mean_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "hsv_v_mean_High"
       ],
       "support": 0.1572,
       "confidence": 0.6395,
@@ -1497,8 +1497,8 @@
     {
       "antecedents": [
         "contour_circularity_High",
-        "hsv_v_mean_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "hsv_v_mean_High"
       ],
       "consequents": [
         "contour_perimeter_Low",
@@ -1511,8 +1511,8 @@
     {
       "antecedents": [
         "glcm_correlation_Low",
-        "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_contrast_High"
       ],
       "consequents": [
         "contour_circularity_Low",
@@ -1529,8 +1529,8 @@
       ],
       "consequents": [
         "glcm_correlation_Low",
-        "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_contrast_High"
       ],
       "support": 0.1576,
       "confidence": 0.6482,
@@ -1543,8 +1543,8 @@
       ],
       "consequents": [
         "glcm_correlation_High",
-        "contour_perimeter_Low",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "contour_perimeter_Low"
       ],
       "support": 0.1757,
       "confidence": 0.7215,
@@ -1553,8 +1553,8 @@
     {
       "antecedents": [
         "glcm_correlation_High",
-        "contour_perimeter_Low",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "contour_perimeter_Low"
       ],
       "consequents": [
         "contour_circularity_High",
@@ -1592,9 +1592,9 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
         "contour_circularity_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "glcm_correlation_High"
       ],
       "consequents": [
         "contour_perimeter_Low",
@@ -1610,9 +1610,9 @@
         "glcm_homogeneity_High"
       ],
       "consequents": [
-        "glcm_correlation_High",
         "contour_circularity_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "glcm_correlation_High"
       ],
       "support": 0.1757,
       "confidence": 0.7147,
@@ -1674,9 +1674,9 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_Low",
         "hsv_v_mean_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "contour_perimeter_Low"
       ],
       "consequents": [
         "contour_circularity_High",
@@ -1692,9 +1692,9 @@
         "glcm_homogeneity_High"
       ],
       "consequents": [
-        "contour_perimeter_Low",
         "hsv_v_mean_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "contour_perimeter_Low"
       ],
       "support": 0.1572,
       "confidence": 0.6456,
@@ -1707,8 +1707,8 @@
       ],
       "consequents": [
         "glcm_correlation_Low",
-        "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_contrast_High"
       ],
       "support": 0.1537,
       "confidence": 0.6425,
@@ -1717,8 +1717,8 @@
     {
       "antecedents": [
         "glcm_correlation_Low",
-        "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_contrast_High"
       ],
       "consequents": [
         "contour_perimeter_High",
@@ -1730,8 +1730,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_perimeter_High"
       ],
       "consequents": [
         "glcm_correlation_Low",
@@ -1749,8 +1749,8 @@
         "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "contour_perimeter_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_perimeter_High"
       ],
       "support": 0.1537,
       "confidence": 0.7808,
@@ -1758,8 +1758,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
-        "glcm_contrast_High"
+        "glcm_contrast_High",
+        "contour_perimeter_High"
       ],
       "consequents": [
         "contour_circularity_Low",
@@ -1775,8 +1775,8 @@
         "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "contour_perimeter_High",
-        "glcm_contrast_High"
+        "glcm_contrast_High",
+        "contour_perimeter_High"
       ],
       "support": 0.1822,
       "confidence": 0.7496,
@@ -1784,12 +1784,12 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_perimeter_High"
       ],
       "consequents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
+        "contour_circularity_Low",
         "glcm_homogeneity_Low"
       ],
       "support": 0.1649,
@@ -1798,13 +1798,13 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
+        "contour_circularity_Low",
         "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "contour_perimeter_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_perimeter_High"
       ],
       "support": 0.1649,
       "confidence": 0.7768,
@@ -1842,8 +1842,8 @@
         "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
+        "contour_circularity_Low",
         "glcm_contrast_High"
       ],
       "support": 0.1687,
@@ -1852,8 +1852,8 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
+        "contour_circularity_Low",
         "glcm_contrast_High"
       ],
       "consequents": [
@@ -1866,9 +1866,9 @@
     },
     {
       "antecedents": [
+        "glcm_contrast_High",
         "contour_circularity_Low",
-        "contour_perimeter_High",
-        "glcm_contrast_High"
+        "contour_perimeter_High"
       ],
       "consequents": [
         "glcm_correlation_Low",
@@ -1884,9 +1884,9 @@
         "glcm_homogeneity_Low"
       ],
       "consequents": [
+        "glcm_contrast_High",
         "contour_circularity_Low",
-        "contour_perimeter_High",
-        "glcm_contrast_High"
+        "contour_perimeter_High"
       ],
       "support": 0.1687,
       "confidence": 0.7134,
@@ -1894,8 +1894,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_perimeter_High"
       ],
       "consequents": [
         "contour_circularity_Low",
@@ -1911,8 +1911,8 @@
         "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "contour_perimeter_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_perimeter_High"
       ],
       "support": 0.188,
       "confidence": 0.7734,
@@ -1920,8 +1920,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_perimeter_High"
       ],
       "consequents": [
         "contour_circularity_Low",
@@ -1937,8 +1937,8 @@
         "glcm_contrast_High"
       ],
       "consequents": [
-        "contour_perimeter_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_perimeter_High"
       ],
       "support": 0.1629,
       "confidence": 0.7733,
@@ -1950,8 +1950,8 @@
         "glcm_energy_High"
       ],
       "consequents": [
-        "hsv_s_mean_Low",
-        "contour_perimeter_Low"
+        "contour_perimeter_Low",
+        "hsv_s_mean_Low"
       ],
       "support": 0.151,
       "confidence": 0.6759,
@@ -1959,8 +1959,8 @@
     },
     {
       "antecedents": [
-        "hsv_s_mean_Low",
-        "contour_perimeter_Low"
+        "contour_perimeter_Low",
+        "hsv_s_mean_Low"
       ],
       "consequents": [
         "contour_circularity_High",
@@ -1972,8 +1972,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
         "contour_circularity_High",
+        "glcm_correlation_High",
         "glcm_homogeneity_High"
       ],
       "consequents": [
@@ -1990,8 +1990,8 @@
         "contour_perimeter_Low"
       ],
       "consequents": [
-        "glcm_correlation_High",
         "contour_circularity_High",
+        "glcm_correlation_High",
         "glcm_homogeneity_High"
       ],
       "support": 0.1537,
@@ -2028,8 +2028,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "glcm_correlation_High"
       ],
       "consequents": [
         "contour_circularity_High",
@@ -2047,8 +2047,8 @@
         "glcm_homogeneity_High"
       ],
       "consequents": [
-        "glcm_correlation_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "glcm_correlation_High"
       ],
       "support": 0.1757,
       "confidence": 0.7451,
@@ -2060,8 +2060,8 @@
         "hsv_s_mean_Low"
       ],
       "consequents": [
-        "contour_perimeter_Low",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "contour_perimeter_Low"
       ],
       "support": 0.151,
       "confidence": 0.8503,
@@ -2069,8 +2069,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_Low",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "contour_perimeter_Low"
       ],
       "consequents": [
         "contour_circularity_High",
@@ -2082,8 +2082,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_Low",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "contour_perimeter_Low"
       ],
       "consequents": [
         "contour_circularity_High",
@@ -2099,8 +2099,8 @@
         "hsv_h_mean_Low"
       ],
       "consequents": [
-        "contour_perimeter_Low",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "contour_perimeter_Low"
       ],
       "support": 0.1529,
       "confidence": 0.8483,
@@ -2113,8 +2113,8 @@
       ],
       "consequents": [
         "contour_circularity_High",
-        "contour_perimeter_Low",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "contour_perimeter_Low"
       ],
       "support": 0.1572,
       "confidence": 0.8079,
@@ -2123,8 +2123,8 @@
     {
       "antecedents": [
         "contour_circularity_High",
-        "contour_perimeter_Low",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "contour_perimeter_Low"
       ],
       "consequents": [
         "hsv_v_mean_High",
@@ -2136,10 +2136,10 @@
     },
     {
       "antecedents": [
+        "glcm_energy_Low",
         "contour_circularity_Low",
         "contour_perimeter_High",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "glcm_correlation_Low",
@@ -2155,10 +2155,10 @@
         "glcm_contrast_High"
       ],
       "consequents": [
+        "glcm_energy_Low",
         "contour_circularity_Low",
         "contour_perimeter_High",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_homogeneity_Low"
       ],
       "support": 0.1506,
       "confidence": 0.6872,
@@ -2166,8 +2166,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
         "glcm_contrast_Low",
+        "glcm_correlation_High",
         "contour_perimeter_Low"
       ],
       "consequents": [
@@ -2184,8 +2184,8 @@
         "glcm_homogeneity_High"
       ],
       "consequents": [
-        "glcm_correlation_High",
         "glcm_contrast_Low",
+        "glcm_correlation_High",
         "contour_perimeter_Low"
       ],
       "support": 0.1537,
@@ -2220,8 +2220,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
-        "glcm_contrast_High"
+        "glcm_contrast_High",
+        "contour_perimeter_High"
       ],
       "consequents": [
         "glcm_correlation_Low",
@@ -2237,8 +2237,8 @@
         "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "contour_perimeter_High",
-        "glcm_contrast_High"
+        "glcm_contrast_High",
+        "contour_perimeter_High"
       ],
       "support": 0.1726,
       "confidence": 0.7296,
@@ -2272,9 +2272,9 @@
     },
     {
       "antecedents": [
+        "glcm_energy_Low",
         "contour_circularity_Low",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "glcm_correlation_Low",
@@ -2290,9 +2290,9 @@
         "glcm_contrast_High"
       ],
       "consequents": [
+        "glcm_energy_Low",
         "contour_circularity_Low",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_homogeneity_Low"
       ],
       "support": 0.1576,
       "confidence": 0.7188,
@@ -2326,8 +2326,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "glcm_correlation_High"
       ],
       "consequents": [
         "contour_circularity_High",
@@ -2343,8 +2343,8 @@
         "glcm_homogeneity_High"
       ],
       "consequents": [
-        "glcm_correlation_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "glcm_correlation_High"
       ],
       "support": 0.1768,
       "confidence": 0.7263,
@@ -2352,9 +2352,9 @@
     },
     {
       "antecedents": [
+        "glcm_energy_Low",
         "contour_circularity_Low",
-        "contour_perimeter_High",
-        "glcm_energy_Low"
+        "contour_perimeter_High"
       ],
       "consequents": [
         "glcm_correlation_Low",
@@ -2370,9 +2370,9 @@
         "glcm_homogeneity_Low"
       ],
       "consequents": [
+        "glcm_energy_Low",
         "contour_circularity_Low",
-        "contour_perimeter_High",
-        "glcm_energy_Low"
+        "contour_perimeter_High"
       ],
       "support": 0.1649,
       "confidence": 0.6971,
@@ -2380,8 +2380,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "glcm_correlation_High"
       ],
       "consequents": [
         "contour_perimeter_Low",
@@ -2397,8 +2397,8 @@
         "glcm_homogeneity_High"
       ],
       "consequents": [
-        "glcm_correlation_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "glcm_correlation_High"
       ],
       "support": 0.178,
       "confidence": 0.7241,
@@ -2432,8 +2432,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_Low",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "contour_perimeter_Low"
       ],
       "consequents": [
         "hsv_v_mean_High",
@@ -2449,8 +2449,8 @@
         "glcm_homogeneity_High"
       ],
       "consequents": [
-        "contour_perimeter_Low",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "contour_perimeter_Low"
       ],
       "support": 0.1606,
       "confidence": 0.8257,
@@ -2486,8 +2486,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_Low",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "contour_perimeter_Low"
       ],
       "consequents": [
         "contour_circularity_High",
@@ -2503,8 +2503,8 @@
         "glcm_homogeneity_High"
       ],
       "consequents": [
-        "contour_perimeter_Low",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "contour_perimeter_Low"
       ],
       "support": 0.1999,
       "confidence": 0.8212,
@@ -2512,9 +2512,9 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
         "contour_circularity_High",
-        "glcm_contrast_Low"
+        "glcm_contrast_Low",
+        "glcm_correlation_High"
       ],
       "consequents": [
         "contour_perimeter_Low",
@@ -2530,9 +2530,9 @@
         "glcm_homogeneity_High"
       ],
       "consequents": [
-        "glcm_correlation_High",
         "contour_circularity_High",
-        "glcm_contrast_Low"
+        "glcm_contrast_Low",
+        "glcm_correlation_High"
       ],
       "support": 0.1537,
       "confidence": 0.6254,
@@ -2540,9 +2540,9 @@
     },
     {
       "antecedents": [
+        "glcm_energy_Low",
         "contour_circularity_Low",
-        "contour_perimeter_High",
-        "glcm_energy_Low"
+        "contour_perimeter_High"
       ],
       "consequents": [
         "glcm_correlation_Low",
@@ -2558,9 +2558,9 @@
         "glcm_contrast_High"
       ],
       "consequents": [
+        "glcm_energy_Low",
         "contour_circularity_Low",
-        "contour_perimeter_High",
-        "glcm_energy_Low"
+        "contour_perimeter_High"
       ],
       "support": 0.1506,
       "confidence": 0.6872,
@@ -2568,8 +2568,8 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low"
       ],
       "consequents": [
         "glcm_correlation_Low",
@@ -2585,8 +2585,8 @@
         "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "contour_circularity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low"
       ],
       "support": 0.1722,
       "confidence": 0.728,
@@ -2620,12 +2620,12 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_Low",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "contour_perimeter_Low"
       ],
       "consequents": [
-        "glcm_correlation_High",
         "contour_circularity_High",
+        "glcm_correlation_High",
         "glcm_homogeneity_High"
       ],
       "support": 0.1757,
@@ -2634,13 +2634,13 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
         "contour_circularity_High",
+        "glcm_correlation_High",
         "glcm_homogeneity_High"
       ],
       "consequents": [
-        "contour_perimeter_Low",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "contour_perimeter_Low"
       ],
       "support": 0.1757,
       "confidence": 0.8157,
@@ -2648,9 +2648,9 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low"
       ],
       "consequents": [
         "glcm_contrast_High",
@@ -2666,9 +2666,9 @@
         "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low"
       ],
       "support": 0.1576,
       "confidence": 0.6114,
@@ -2728,9 +2728,9 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
         "glcm_energy_Low",
+        "contour_circularity_Low",
         "contour_perimeter_High"
       ],
       "consequents": [
@@ -2747,9 +2747,9 @@
         "glcm_contrast_High"
       ],
       "consequents": [
+        "glcm_energy_Low",
         "contour_perimeter_High",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_homogeneity_Low"
       ],
       "support": 0.1537,
       "confidence": 0.7012,
@@ -2757,9 +2757,9 @@
     },
     {
       "antecedents": [
+        "glcm_energy_Low",
         "contour_perimeter_High",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "glcm_correlation_Low",
@@ -2863,8 +2863,8 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low"
       ],
       "consequents": [
         "glcm_correlation_Low",
@@ -2880,8 +2880,8 @@
         "glcm_contrast_High"
       ],
       "consequents": [
-        "contour_circularity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low"
       ],
       "support": 0.1576,
       "confidence": 0.7188,
@@ -2915,8 +2915,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_Low",
-        "hsv_v_mean_High"
+        "hsv_v_mean_High",
+        "contour_perimeter_Low"
       ],
       "consequents": [
         "contour_circularity_High",
@@ -2932,8 +2932,8 @@
         "glcm_homogeneity_High"
       ],
       "consequents": [
-        "contour_perimeter_Low",
-        "hsv_v_mean_High"
+        "hsv_v_mean_High",
+        "contour_perimeter_Low"
       ],
       "support": 0.1668,
       "confidence": 0.6851,
@@ -2997,8 +2997,8 @@
         "glcm_homogeneity_High"
       ],
       "consequents": [
-        "hsv_s_mean_Low",
-        "contour_perimeter_Low"
+        "contour_perimeter_Low",
+        "hsv_s_mean_Low"
       ],
       "support": 0.1522,
       "confidence": 0.625,
@@ -3006,8 +3006,8 @@
     },
     {
       "antecedents": [
-        "hsv_s_mean_Low",
-        "contour_perimeter_Low"
+        "contour_perimeter_Low",
+        "hsv_s_mean_Low"
       ],
       "consequents": [
         "contour_circularity_High",
@@ -3019,8 +3019,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_perimeter_High"
       ],
       "consequents": [
         "glcm_correlation_Low",
@@ -3036,8 +3036,8 @@
         "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "contour_perimeter_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_perimeter_High"
       ],
       "support": 0.1683,
       "confidence": 0.7117,
@@ -3074,8 +3074,8 @@
     {
       "antecedents": [
         "contour_circularity_High",
-        "contour_perimeter_Low",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "contour_perimeter_Low"
       ],
       "consequents": [
         "glcm_correlation_High",
@@ -3092,8 +3092,8 @@
       ],
       "consequents": [
         "contour_circularity_High",
-        "contour_perimeter_Low",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "contour_perimeter_Low"
       ],
       "support": 0.1757,
       "confidence": 0.7427,
@@ -3115,8 +3115,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_perimeter_High"
       ],
       "consequents": [
         "glcm_correlation_Low",
@@ -3132,8 +3132,8 @@
         "glcm_contrast_High"
       ],
       "consequents": [
-        "contour_perimeter_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_perimeter_High"
       ],
       "support": 0.1537,
       "confidence": 0.7012,
@@ -3193,10 +3193,10 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
         "glcm_contrast_High",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "glcm_correlation_Low",
@@ -3208,9 +3208,9 @@
     },
     {
       "antecedents": [
+        "glcm_energy_Low",
         "contour_circularity_Low",
-        "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_contrast_High"
       ],
       "consequents": [
         "glcm_correlation_Low",
@@ -3252,8 +3252,8 @@
         "contour_perimeter_Low"
       ],
       "consequents": [
-        "glcm_energy_High",
         "contour_circularity_High",
+        "glcm_energy_High",
         "glcm_homogeneity_High"
       ],
       "support": 0.1757,
@@ -3262,8 +3262,8 @@
     },
     {
       "antecedents": [
-        "glcm_energy_High",
         "contour_circularity_High",
+        "glcm_energy_High",
         "glcm_homogeneity_High"
       ],
       "consequents": [
@@ -3276,14 +3276,14 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
-        "glcm_homogeneity_Low",
-        "contour_perimeter_High"
+        "contour_circularity_Low",
+        "contour_perimeter_High",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_contrast_High"
       ],
       "support": 0.1506,
       "confidence": 0.7519,
@@ -3291,14 +3291,14 @@
     },
     {
       "antecedents": [
-        "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_contrast_High"
       ],
       "consequents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
-        "glcm_homogeneity_Low",
-        "contour_perimeter_High"
+        "contour_circularity_Low",
+        "contour_perimeter_High",
+        "glcm_homogeneity_Low"
       ],
       "support": 0.1506,
       "confidence": 0.6605,
@@ -3336,8 +3336,8 @@
         "contour_perimeter_High"
       ],
       "consequents": [
-        "contour_circularity_Low",
         "glcm_contrast_High",
+        "contour_circularity_Low",
         "glcm_homogeneity_Low"
       ],
       "support": 0.1687,
@@ -3346,8 +3346,8 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
         "glcm_contrast_High",
+        "contour_circularity_Low",
         "glcm_homogeneity_Low"
       ],
       "consequents": [
@@ -3360,14 +3360,14 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
         "glcm_contrast_High",
+        "contour_circularity_Low",
         "contour_perimeter_High"
       ],
       "consequents": [
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_homogeneity_Low"
       ],
       "support": 0.1506,
       "confidence": 0.8537,
@@ -3376,12 +3376,12 @@
     {
       "antecedents": [
         "glcm_correlation_Low",
-        "glcm_homogeneity_Low",
-        "contour_perimeter_High"
+        "contour_perimeter_High",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_contrast_High"
       ],
       "support": 0.1537,
       "confidence": 0.7486,
@@ -3389,13 +3389,13 @@
     },
     {
       "antecedents": [
-        "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_contrast_High"
       ],
       "consequents": [
         "glcm_correlation_Low",
-        "glcm_homogeneity_Low",
-        "contour_perimeter_High"
+        "contour_perimeter_High",
+        "glcm_homogeneity_Low"
       ],
       "support": 0.1537,
       "confidence": 0.674,
@@ -3408,8 +3408,8 @@
         "contour_perimeter_High"
       ],
       "consequents": [
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_homogeneity_Low"
       ],
       "support": 0.1537,
       "confidence": 0.8507,
@@ -3422,8 +3422,8 @@
         "glcm_homogeneity_High"
       ],
       "consequents": [
-        "glcm_correlation_High",
-        "contour_circularity_High"
+        "contour_circularity_High",
+        "glcm_correlation_High"
       ],
       "support": 0.1537,
       "confidence": 0.8886,
@@ -3431,8 +3431,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_Low",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "contour_perimeter_Low"
       ],
       "consequents": [
         "glcm_correlation_High",
@@ -3448,8 +3448,8 @@
         "glcm_homogeneity_High"
       ],
       "consequents": [
-        "contour_perimeter_Low",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "contour_perimeter_Low"
       ],
       "support": 0.178,
       "confidence": 0.7524,
@@ -3457,13 +3457,13 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
+        "contour_circularity_Low",
         "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_contrast_High"
       ],
       "support": 0.1576,
       "confidence": 0.7423,
@@ -3471,12 +3471,12 @@
     },
     {
       "antecedents": [
-        "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_contrast_High"
       ],
       "consequents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
+        "contour_circularity_Low",
         "glcm_homogeneity_Low"
       ],
       "support": 0.1576,
@@ -3490,8 +3490,8 @@
         "glcm_homogeneity_High"
       ],
       "consequents": [
-        "hsv_v_mean_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "hsv_v_mean_High"
       ],
       "support": 0.1572,
       "confidence": 0.6667,
@@ -3499,8 +3499,8 @@
     },
     {
       "antecedents": [
-        "hsv_v_mean_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "hsv_v_mean_High"
       ],
       "consequents": [
         "contour_circularity_High",
@@ -3513,8 +3513,8 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low"
       ],
       "consequents": [
         "glcm_contrast_High",
@@ -3530,8 +3530,8 @@
         "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "contour_circularity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low"
       ],
       "support": 0.1722,
       "confidence": 0.6682,
@@ -3565,12 +3565,12 @@
     },
     {
       "antecedents": [
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "contour_perimeter_High",
-        "glcm_contrast_High"
+        "glcm_contrast_High",
+        "contour_perimeter_High"
       ],
       "support": 0.1695,
       "confidence": 0.6519,
@@ -3578,12 +3578,12 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
-        "glcm_contrast_High"
+        "glcm_contrast_High",
+        "contour_perimeter_High"
       ],
       "consequents": [
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_homogeneity_Low"
       ],
       "support": 0.1695,
       "confidence": 0.8429,
@@ -3591,13 +3591,13 @@
     },
     {
       "antecedents": [
+        "glcm_contrast_High",
         "contour_circularity_Low",
-        "contour_perimeter_High",
-        "glcm_contrast_High"
+        "contour_perimeter_High"
       ],
       "consequents": [
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_homogeneity_Low"
       ],
       "support": 0.1618,
       "confidence": 0.8417,
@@ -3605,13 +3605,13 @@
     },
     {
       "antecedents": [
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
+        "glcm_contrast_High",
         "contour_circularity_Low",
-        "contour_perimeter_High",
-        "glcm_contrast_High"
+        "contour_perimeter_High"
       ],
       "support": 0.1618,
       "confidence": 0.6222,
@@ -3623,9 +3623,9 @@
         "glcm_homogeneity_Low"
       ],
       "consequents": [
+        "glcm_energy_Low",
         "contour_circularity_Low",
-        "contour_perimeter_High",
-        "glcm_energy_Low"
+        "contour_perimeter_High"
       ],
       "support": 0.1618,
       "confidence": 0.6278,
@@ -3633,9 +3633,9 @@
     },
     {
       "antecedents": [
+        "glcm_energy_Low",
         "contour_circularity_Low",
-        "contour_perimeter_High",
-        "glcm_energy_Low"
+        "contour_perimeter_High"
       ],
       "consequents": [
         "glcm_contrast_High",
@@ -3647,14 +3647,14 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
         "glcm_contrast_High",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_perimeter_High",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "contour_circularity_Low",
-        "glcm_correlation_Low"
+        "glcm_correlation_Low",
+        "contour_circularity_Low"
       ],
       "support": 0.1506,
       "confidence": 0.8886,
@@ -3663,8 +3663,8 @@
     {
       "antecedents": [
         "contour_circularity_High",
-        "contour_perimeter_Low",
-        "hsv_v_mean_High"
+        "hsv_v_mean_High",
+        "contour_perimeter_Low"
       ],
       "consequents": [
         "glcm_energy_High",
@@ -3681,8 +3681,8 @@
       ],
       "consequents": [
         "contour_circularity_High",
-        "contour_perimeter_Low",
-        "hsv_v_mean_High"
+        "hsv_v_mean_High",
+        "contour_perimeter_Low"
       ],
       "support": 0.1572,
       "confidence": 0.6044,
@@ -3690,12 +3690,12 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
-        "glcm_correlation_Low"
+        "glcm_correlation_Low",
+        "contour_circularity_Low"
       ],
       "consequents": [
-        "contour_perimeter_High",
         "glcm_contrast_High",
+        "contour_perimeter_High",
         "glcm_homogeneity_Low"
       ],
       "support": 0.1687,
@@ -3704,13 +3704,13 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
         "glcm_contrast_High",
+        "contour_perimeter_High",
         "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "contour_circularity_Low",
-        "glcm_correlation_Low"
+        "glcm_correlation_Low",
+        "contour_circularity_Low"
       ],
       "support": 0.1687,
       "confidence": 0.8848,
@@ -3718,13 +3718,13 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
         "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_perimeter_High"
       ],
       "consequents": [
-        "contour_circularity_Low",
-        "glcm_correlation_Low"
+        "glcm_correlation_Low",
+        "contour_circularity_Low"
       ],
       "support": 0.1506,
       "confidence": 0.8826,
@@ -3736,8 +3736,8 @@
         "hsv_h_mean_Low"
       ],
       "consequents": [
-        "glcm_correlation_High",
-        "contour_perimeter_Low"
+        "contour_perimeter_Low",
+        "glcm_correlation_High"
       ],
       "support": 0.1525,
       "confidence": 0.8462,
@@ -3749,8 +3749,8 @@
         "contour_perimeter_Low"
       ],
       "consequents": [
-        "glcm_correlation_High",
-        "contour_circularity_High"
+        "contour_circularity_High",
+        "glcm_correlation_High"
       ],
       "support": 0.168,
       "confidence": 0.8703,
@@ -3758,8 +3758,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
-        "contour_circularity_High"
+        "contour_circularity_High",
+        "glcm_correlation_High"
       ],
       "consequents": [
         "glcm_contrast_Low",
@@ -3771,13 +3771,13 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
+        "contour_circularity_Low",
         "glcm_contrast_High"
       ],
       "consequents": [
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_homogeneity_Low"
       ],
       "support": 0.1576,
       "confidence": 0.8313,
@@ -3785,12 +3785,12 @@
     },
     {
       "antecedents": [
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
+        "contour_circularity_Low",
         "glcm_contrast_High"
       ],
       "support": 0.1576,
@@ -3803,8 +3803,8 @@
         "glcm_contrast_High"
       ],
       "consequents": [
-        "contour_perimeter_High",
-        "glcm_correlation_Low"
+        "glcm_correlation_Low",
+        "contour_perimeter_High"
       ],
       "support": 0.1764,
       "confidence": 0.8373,
@@ -3812,8 +3812,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
-        "glcm_correlation_Low"
+        "glcm_correlation_Low",
+        "contour_perimeter_High"
       ],
       "consequents": [
         "contour_circularity_Low",
@@ -3829,8 +3829,8 @@
         "glcm_homogeneity_High"
       ],
       "consequents": [
-        "hsv_v_mean_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "hsv_v_mean_High"
       ],
       "support": 0.1606,
       "confidence": 0.6536,
@@ -3838,8 +3838,8 @@
     },
     {
       "antecedents": [
-        "hsv_v_mean_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "hsv_v_mean_High"
       ],
       "consequents": [
         "contour_perimeter_Low",
@@ -3851,12 +3851,12 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
-        "glcm_contrast_High"
+        "glcm_contrast_High",
+        "contour_perimeter_High"
       ],
       "consequents": [
-        "contour_circularity_Low",
-        "glcm_correlation_Low"
+        "glcm_correlation_Low",
+        "contour_circularity_Low"
       ],
       "support": 0.1764,
       "confidence": 0.8774,
@@ -3864,12 +3864,12 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
-        "glcm_correlation_Low"
+        "glcm_correlation_Low",
+        "contour_circularity_Low"
       ],
       "consequents": [
-        "contour_perimeter_High",
-        "glcm_contrast_High"
+        "glcm_contrast_High",
+        "contour_perimeter_High"
       ],
       "support": 0.1764,
       "confidence": 0.6406,
@@ -3903,8 +3903,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
-        "glcm_contrast_Low"
+        "glcm_contrast_Low",
+        "glcm_correlation_High"
       ],
       "consequents": [
         "contour_circularity_High",
@@ -3920,8 +3920,8 @@
         "glcm_homogeneity_High"
       ],
       "consequents": [
-        "glcm_correlation_High",
-        "glcm_contrast_Low"
+        "glcm_contrast_Low",
+        "glcm_correlation_High"
       ],
       "support": 0.1591,
       "confidence": 0.6535,
@@ -3933,9 +3933,9 @@
         "contour_perimeter_High"
       ],
       "consequents": [
+        "glcm_energy_Low",
         "contour_circularity_Low",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_homogeneity_Low"
       ],
       "support": 0.1649,
       "confidence": 0.6294,
@@ -3943,9 +3943,9 @@
     },
     {
       "antecedents": [
+        "glcm_energy_Low",
         "contour_circularity_Low",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "glcm_correlation_Low",
@@ -3957,8 +3957,8 @@
     },
     {
       "antecedents": [
-        "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_contrast_High"
       ],
       "consequents": [
         "glcm_correlation_Low",
@@ -3974,8 +3974,8 @@
         "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_contrast_High"
       ],
       "support": 0.1706,
       "confidence": 0.7215,
@@ -3983,8 +3983,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
-        "glcm_contrast_Low"
+        "glcm_contrast_Low",
+        "glcm_correlation_High"
       ],
       "consequents": [
         "contour_circularity_High",
@@ -4002,8 +4002,8 @@
         "glcm_homogeneity_High"
       ],
       "consequents": [
-        "glcm_correlation_High",
-        "glcm_contrast_Low"
+        "glcm_contrast_Low",
+        "glcm_correlation_High"
       ],
       "support": 0.1537,
       "confidence": 0.652,
@@ -4015,8 +4015,8 @@
         "hsv_v_mean_High"
       ],
       "consequents": [
-        "glcm_homogeneity_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "glcm_homogeneity_High"
       ],
       "support": 0.1576,
       "confidence": 0.8213,
@@ -4024,8 +4024,8 @@
     },
     {
       "antecedents": [
-        "glcm_homogeneity_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "glcm_homogeneity_High"
       ],
       "consequents": [
         "contour_circularity_High",
@@ -4037,8 +4037,8 @@
     },
     {
       "antecedents": [
-        "hsv_v_mean_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "hsv_v_mean_High"
       ],
       "consequents": [
         "contour_circularity_High",
@@ -4054,8 +4054,8 @@
         "glcm_homogeneity_High"
       ],
       "consequents": [
-        "hsv_v_mean_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "hsv_v_mean_High"
       ],
       "support": 0.1576,
       "confidence": 0.6472,
@@ -4063,8 +4063,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_perimeter_High"
       ],
       "consequents": [
         "glcm_contrast_High",
@@ -4080,8 +4080,8 @@
         "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "contour_perimeter_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_perimeter_High"
       ],
       "support": 0.1695,
       "confidence": 0.6577,
@@ -4119,8 +4119,8 @@
         "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "contour_perimeter_High",
-        "glcm_correlation_Low"
+        "glcm_correlation_Low",
+        "contour_perimeter_High"
       ],
       "support": 0.2003,
       "confidence": 0.8241,
@@ -4128,8 +4128,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
-        "glcm_correlation_Low"
+        "glcm_correlation_Low",
+        "contour_perimeter_High"
       ],
       "consequents": [
         "contour_circularity_Low",
@@ -4145,8 +4145,8 @@
         "glcm_contrast_High"
       ],
       "consequents": [
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_homogeneity_Low"
       ],
       "support": 0.1722,
       "confidence": 0.8172,
@@ -4154,8 +4154,8 @@
     },
     {
       "antecedents": [
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "contour_circularity_Low",
@@ -4167,12 +4167,12 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_Low",
-        "hsv_v_mean_High"
+        "hsv_v_mean_High",
+        "contour_perimeter_Low"
       ],
       "consequents": [
-        "glcm_homogeneity_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "glcm_homogeneity_High"
       ],
       "support": 0.1606,
       "confidence": 0.8145,
@@ -4180,12 +4180,12 @@
     },
     {
       "antecedents": [
-        "glcm_homogeneity_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "glcm_homogeneity_High"
       ],
       "consequents": [
-        "contour_perimeter_Low",
-        "hsv_v_mean_High"
+        "hsv_v_mean_High",
+        "contour_perimeter_Low"
       ],
       "support": 0.1606,
       "confidence": 0.6178,
@@ -4198,8 +4198,8 @@
         "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_contrast_High"
       ],
       "support": 0.1618,
       "confidence": 0.7131,
@@ -4207,8 +4207,8 @@
     },
     {
       "antecedents": [
-        "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_contrast_High"
       ],
       "consequents": [
         "contour_circularity_Low",
@@ -4225,8 +4225,8 @@
         "glcm_homogeneity_High"
       ],
       "consequents": [
-        "glcm_correlation_High",
-        "contour_circularity_High"
+        "contour_circularity_High",
+        "glcm_correlation_High"
       ],
       "support": 0.2088,
       "confidence": 0.8495,
@@ -4234,8 +4234,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
-        "contour_circularity_High"
+        "contour_circularity_High",
+        "glcm_correlation_High"
       ],
       "consequents": [
         "contour_perimeter_Low",
@@ -4247,8 +4247,8 @@
     },
     {
       "antecedents": [
-        "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_contrast_High"
       ],
       "consequents": [
         "contour_perimeter_High",
@@ -4264,8 +4264,8 @@
         "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_contrast_High"
       ],
       "support": 0.1695,
       "confidence": 0.7085,
@@ -4273,8 +4273,8 @@
     },
     {
       "antecedents": [
-        "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_contrast_High"
       ],
       "consequents": [
         "contour_circularity_Low",
@@ -4290,8 +4290,8 @@
         "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_contrast_High"
       ],
       "support": 0.1722,
       "confidence": 0.7084,
@@ -4304,8 +4304,8 @@
         "glcm_homogeneity_High"
       ],
       "consequents": [
-        "glcm_correlation_High",
-        "contour_circularity_High"
+        "contour_circularity_High",
+        "glcm_correlation_High"
       ],
       "support": 0.1757,
       "confidence": 0.8429,
@@ -4313,8 +4313,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
-        "contour_circularity_High"
+        "contour_circularity_High",
+        "glcm_correlation_High"
       ],
       "consequents": [
         "glcm_energy_High",
@@ -4327,8 +4327,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
-        "glcm_contrast_Low"
+        "glcm_contrast_Low",
+        "glcm_correlation_High"
       ],
       "consequents": [
         "contour_perimeter_Low",
@@ -4344,8 +4344,8 @@
         "glcm_homogeneity_High"
       ],
       "consequents": [
-        "glcm_correlation_High",
-        "glcm_contrast_Low"
+        "glcm_contrast_Low",
+        "glcm_correlation_High"
       ],
       "support": 0.1568,
       "confidence": 0.6379,
@@ -4353,8 +4353,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
         "glcm_energy_High",
+        "glcm_correlation_High",
         "glcm_homogeneity_High"
       ],
       "consequents": [
@@ -4367,12 +4367,12 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
-        "glcm_correlation_Low"
+        "glcm_correlation_Low",
+        "contour_perimeter_High"
       ],
       "consequents": [
-        "contour_circularity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low"
       ],
       "support": 0.1656,
       "confidence": 0.6324,
@@ -4380,12 +4380,12 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low"
       ],
       "consequents": [
-        "contour_perimeter_High",
-        "glcm_correlation_Low"
+        "glcm_correlation_Low",
+        "contour_perimeter_High"
       ],
       "support": 0.1656,
       "confidence": 0.8052,
@@ -4397,8 +4397,8 @@
         "contour_perimeter_Low"
       ],
       "consequents": [
-        "glcm_correlation_High",
-        "contour_circularity_High"
+        "contour_circularity_High",
+        "glcm_correlation_High"
       ],
       "support": 0.1525,
       "confidence": 0.8302,
@@ -4406,8 +4406,8 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
-        "glcm_correlation_Low"
+        "glcm_correlation_Low",
+        "contour_circularity_Low"
       ],
       "consequents": [
         "contour_perimeter_High",
@@ -4423,8 +4423,8 @@
         "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "contour_circularity_Low",
-        "glcm_correlation_Low"
+        "glcm_correlation_Low",
+        "contour_circularity_Low"
       ],
       "support": 0.2003,
       "confidence": 0.8374,
@@ -4432,8 +4432,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "glcm_correlation_High"
       ],
       "consequents": [
         "contour_circularity_High",
@@ -4449,8 +4449,8 @@
         "contour_perimeter_Low"
       ],
       "consequents": [
-        "glcm_correlation_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "glcm_correlation_High"
       ],
       "support": 0.1876,
       "confidence": 0.6118,
@@ -4458,13 +4458,13 @@
     },
     {
       "antecedents": [
+        "glcm_energy_Low",
         "contour_perimeter_High",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "contour_circularity_Low",
-        "glcm_correlation_Low"
+        "glcm_correlation_Low",
+        "contour_circularity_Low"
       ],
       "support": 0.1649,
       "confidence": 0.8295,
@@ -4498,11 +4498,11 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_Low",
-        "contour_circularity_Low",
-        "glcm_contrast_High",
         "glcm_energy_Low",
-        "contour_perimeter_High"
+        "contour_circularity_Low",
+        "contour_perimeter_High",
+        "glcm_contrast_High",
+        "glcm_correlation_Low"
       ],
       "consequents": [
         "glcm_homogeneity_Low"
@@ -4513,10 +4513,10 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
-        "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low",
+        "glcm_contrast_High"
       ],
       "consequents": [
         "glcm_homogeneity_Low"
@@ -4527,8 +4527,8 @@
     },
     {
       "antecedents": [
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "glcm_correlation_Low",
@@ -4544,8 +4544,8 @@
         "glcm_contrast_High"
       ],
       "consequents": [
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_homogeneity_Low"
       ],
       "support": 0.1706,
       "confidence": 0.7786,
@@ -4553,8 +4553,8 @@
     },
     {
       "antecedents": [
-        "glcm_energy_High",
         "contour_circularity_High",
+        "glcm_energy_High",
         "hsv_v_mean_High",
         "glcm_homogeneity_High"
       ],
@@ -4567,12 +4567,12 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_Low",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "contour_perimeter_Low"
       ],
       "consequents": [
-        "glcm_correlation_High",
-        "contour_circularity_High"
+        "contour_circularity_High",
+        "glcm_correlation_High"
       ],
       "support": 0.1876,
       "confidence": 0.813,
@@ -4580,12 +4580,12 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
-        "contour_circularity_High"
+        "contour_circularity_High",
+        "glcm_correlation_High"
       ],
       "consequents": [
-        "contour_perimeter_Low",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "contour_perimeter_Low"
       ],
       "support": 0.1876,
       "confidence": 0.6898,
@@ -4593,9 +4593,9 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
+        "contour_perimeter_Low",
         "hsv_h_mean_Low",
-        "contour_perimeter_Low"
+        "glcm_correlation_High"
       ],
       "consequents": [
         "contour_circularity_High"
@@ -4606,9 +4606,9 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low"
       ],
       "consequents": [
         "glcm_homogeneity_Low"
@@ -4620,8 +4620,8 @@
     {
       "antecedents": [
         "glcm_correlation_Low",
-        "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_contrast_High"
       ],
       "consequents": [
         "glcm_homogeneity_Low"
@@ -4632,9 +4632,9 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
         "glcm_correlation_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_perimeter_High"
       ],
       "consequents": [
         "glcm_homogeneity_Low"
@@ -4645,9 +4645,9 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
         "glcm_energy_Low",
+        "contour_circularity_Low",
         "contour_perimeter_High"
       ],
       "consequents": [
@@ -4660,8 +4660,8 @@
     {
       "antecedents": [
         "contour_circularity_High",
-        "hsv_s_mean_Low",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "hsv_s_mean_Low"
       ],
       "consequents": [
         "contour_perimeter_Low"
@@ -4672,9 +4672,9 @@
     },
     {
       "antecedents": [
-        "glcm_homogeneity_High",
         "contour_circularity_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "glcm_homogeneity_High"
       ],
       "consequents": [
         "contour_perimeter_Low"
@@ -4685,12 +4685,12 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_Low",
-        "hsv_v_mean_High"
+        "hsv_v_mean_High",
+        "contour_perimeter_Low"
       ],
       "consequents": [
-        "glcm_correlation_High",
-        "contour_circularity_High"
+        "contour_circularity_High",
+        "glcm_correlation_High"
       ],
       "support": 0.1599,
       "confidence": 0.8105,
@@ -4699,8 +4699,8 @@
     {
       "antecedents": [
         "glcm_correlation_High",
-        "contour_perimeter_Low",
         "glcm_energy_High",
+        "contour_perimeter_Low",
         "glcm_homogeneity_High"
       ],
       "consequents": [
@@ -4712,9 +4712,9 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
         "contour_circularity_High",
         "glcm_energy_High",
+        "glcm_correlation_High",
         "glcm_homogeneity_High"
       ],
       "consequents": [
@@ -4726,9 +4726,9 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
         "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_perimeter_High"
       ],
       "consequents": [
         "glcm_homogeneity_Low"
@@ -4739,10 +4739,10 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
-        "contour_perimeter_High",
         "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low",
+        "contour_perimeter_High"
       ],
       "consequents": [
         "glcm_homogeneity_Low"
@@ -4753,8 +4753,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
-        "hsv_h_mean_Low"
+        "hsv_h_mean_Low",
+        "glcm_correlation_High"
       ],
       "consequents": [
         "contour_circularity_High",
@@ -4767,8 +4767,8 @@
     {
       "antecedents": [
         "contour_circularity_High",
-        "hsv_s_mean_Low",
-        "glcm_homogeneity_High"
+        "glcm_homogeneity_High",
+        "hsv_s_mean_Low"
       ],
       "consequents": [
         "contour_perimeter_Low"
@@ -4791,9 +4791,9 @@
     },
     {
       "antecedents": [
+        "glcm_energy_Low",
         "contour_circularity_Low",
-        "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_contrast_High"
       ],
       "consequents": [
         "glcm_homogeneity_Low"
@@ -4805,8 +4805,8 @@
     {
       "antecedents": [
         "contour_circularity_High",
-        "hsv_v_mean_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "hsv_v_mean_High"
       ],
       "consequents": [
         "contour_perimeter_Low"
@@ -4830,9 +4830,9 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
         "contour_circularity_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "glcm_correlation_High"
       ],
       "consequents": [
         "contour_perimeter_Low"
@@ -4870,8 +4870,8 @@
     {
       "antecedents": [
         "glcm_correlation_High",
-        "contour_perimeter_Low",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "contour_perimeter_Low"
       ],
       "consequents": [
         "contour_circularity_High"
@@ -4908,8 +4908,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
         "glcm_contrast_Low",
+        "glcm_correlation_High",
         "contour_perimeter_Low",
         "glcm_homogeneity_High"
       ],
@@ -4922,8 +4922,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_Low",
         "hsv_v_mean_High",
+        "contour_perimeter_Low",
         "glcm_homogeneity_High"
       ],
       "consequents": [
@@ -4959,9 +4959,9 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
         "contour_circularity_High",
-        "hsv_v_mean_High"
+        "hsv_v_mean_High",
+        "glcm_correlation_High"
       ],
       "consequents": [
         "contour_perimeter_Low"
@@ -4972,9 +4972,9 @@
     },
     {
       "antecedents": [
+        "hsv_v_mean_High",
         "glcm_energy_High",
         "contour_perimeter_Low",
-        "hsv_v_mean_High",
         "glcm_homogeneity_High"
       ],
       "consequents": [
@@ -4986,8 +4986,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
-        "hsv_v_mean_High"
+        "hsv_v_mean_High",
+        "glcm_correlation_High"
       ],
       "consequents": [
         "contour_circularity_High",
@@ -5013,8 +5013,8 @@
     {
       "antecedents": [
         "hsv_h_mean_Low",
-        "contour_perimeter_Low",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "contour_perimeter_Low"
       ],
       "consequents": [
         "contour_circularity_High"
@@ -5025,9 +5025,9 @@
     },
     {
       "antecedents": [
-        "hsv_s_mean_Low",
+        "glcm_homogeneity_High",
         "contour_perimeter_Low",
-        "glcm_homogeneity_High"
+        "hsv_s_mean_Low"
       ],
       "consequents": [
         "contour_circularity_High"
@@ -5038,9 +5038,9 @@
     },
     {
       "antecedents": [
+        "hsv_v_mean_High",
         "glcm_correlation_High",
-        "contour_perimeter_Low",
-        "hsv_v_mean_High"
+        "contour_perimeter_Low"
       ],
       "consequents": [
         "contour_circularity_High"
@@ -5051,9 +5051,9 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
         "contour_circularity_High",
-        "hsv_h_mean_Low"
+        "hsv_h_mean_Low",
+        "glcm_correlation_High"
       ],
       "consequents": [
         "contour_perimeter_Low"
@@ -5064,9 +5064,9 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_Low",
         "hsv_v_mean_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "contour_perimeter_Low"
       ],
       "consequents": [
         "contour_circularity_High"
@@ -5089,8 +5089,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
         "glcm_contrast_Low",
+        "glcm_correlation_High",
         "contour_perimeter_Low"
       ],
       "consequents": [
@@ -5129,8 +5129,8 @@
     {
       "antecedents": [
         "glcm_correlation_Low",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "contour_circularity_Low",
@@ -5142,9 +5142,9 @@
     },
     {
       "antecedents": [
-        "hsv_s_mean_Low",
+        "glcm_energy_High",
         "contour_perimeter_Low",
-        "glcm_energy_High"
+        "hsv_s_mean_Low"
       ],
       "consequents": [
         "contour_circularity_High"
@@ -5182,8 +5182,8 @@
       "antecedents": [
         "glcm_correlation_Low",
         "glcm_contrast_High",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "contour_circularity_Low",
@@ -5219,8 +5219,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
         "contour_circularity_High",
+        "glcm_correlation_High",
         "glcm_homogeneity_High"
       ],
       "consequents": [
@@ -5235,8 +5235,8 @@
         "contour_perimeter_Low"
       ],
       "consequents": [
-        "glcm_correlation_High",
         "contour_circularity_High",
+        "glcm_correlation_High",
         "glcm_homogeneity_High"
       ],
       "support": 0.2088,
@@ -5269,9 +5269,9 @@
     },
     {
       "antecedents": [
+        "glcm_energy_Low",
         "contour_circularity_Low",
-        "contour_perimeter_High",
-        "glcm_energy_Low"
+        "contour_perimeter_High"
       ],
       "consequents": [
         "glcm_homogeneity_Low"
@@ -5283,8 +5283,8 @@
     {
       "antecedents": [
         "glcm_correlation_Low",
-        "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_contrast_High"
       ],
       "consequents": [
         "contour_circularity_Low",
@@ -5309,8 +5309,8 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low"
       ],
       "consequents": [
         "glcm_homogeneity_Low"
@@ -5321,9 +5321,9 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
         "contour_circularity_High",
         "glcm_contrast_Low",
+        "glcm_correlation_High",
         "glcm_homogeneity_High"
       ],
       "consequents": [
@@ -5338,9 +5338,9 @@
         "contour_circularity_High"
       ],
       "consequents": [
-        "glcm_homogeneity_High",
+        "glcm_energy_High",
         "contour_perimeter_Low",
-        "glcm_energy_High"
+        "glcm_homogeneity_High"
       ],
       "support": 0.1999,
       "confidence": 0.6035,
@@ -5348,9 +5348,9 @@
     },
     {
       "antecedents": [
-        "glcm_homogeneity_High",
+        "glcm_energy_High",
         "contour_perimeter_Low",
-        "glcm_energy_High"
+        "glcm_homogeneity_High"
       ],
       "consequents": [
         "contour_circularity_High"
@@ -5411,11 +5411,11 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_Low",
+        "glcm_energy_Low",
+        "contour_perimeter_High",
         "glcm_homogeneity_Low",
         "glcm_contrast_High",
-        "glcm_energy_Low",
-        "contour_perimeter_High"
+        "glcm_correlation_Low"
       ],
       "consequents": [
         "contour_circularity_Low"
@@ -5426,9 +5426,9 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
         "glcm_correlation_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_perimeter_High"
       ],
       "consequents": [
         "contour_circularity_Low"
@@ -5440,9 +5440,9 @@
     {
       "antecedents": [
         "glcm_correlation_Low",
-        "glcm_homogeneity_Low",
         "glcm_energy_Low",
-        "contour_perimeter_High"
+        "contour_perimeter_High",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "contour_circularity_Low"
@@ -5453,12 +5453,12 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_perimeter_High"
       ],
       "consequents": [
-        "contour_circularity_Low",
-        "glcm_correlation_Low"
+        "glcm_correlation_Low",
+        "contour_circularity_Low"
       ],
       "support": 0.1656,
       "confidence": 0.7948,
@@ -5466,12 +5466,12 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
-        "glcm_correlation_Low"
+        "glcm_correlation_Low",
+        "contour_circularity_Low"
       ],
       "consequents": [
-        "contour_perimeter_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_perimeter_High"
       ],
       "support": 0.1656,
       "confidence": 0.6014,
@@ -5492,8 +5492,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_Low",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "contour_perimeter_Low"
       ],
       "consequents": [
         "contour_circularity_High"
@@ -5507,8 +5507,8 @@
         "contour_circularity_High"
       ],
       "consequents": [
-        "contour_perimeter_Low",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "contour_perimeter_Low"
       ],
       "support": 0.2203,
       "confidence": 0.6651,
@@ -5518,8 +5518,8 @@
       "antecedents": [
         "glcm_correlation_Low",
         "glcm_contrast_High",
-        "glcm_homogeneity_Low",
-        "contour_perimeter_High"
+        "contour_perimeter_High",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "contour_circularity_Low"
@@ -5556,9 +5556,9 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
+        "glcm_correlation_Low",
         "glcm_contrast_High",
-        "glcm_correlation_Low"
+        "contour_perimeter_High"
       ],
       "consequents": [
         "contour_circularity_Low"
@@ -5569,8 +5569,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
         "glcm_correlation_Low",
+        "contour_perimeter_High",
         "glcm_homogeneity_Low"
       ],
       "consequents": [
@@ -5582,9 +5582,9 @@
     },
     {
       "antecedents": [
+        "glcm_energy_High",
         "glcm_correlation_High",
-        "glcm_homogeneity_High",
-        "glcm_energy_High"
+        "glcm_homogeneity_High"
       ],
       "consequents": [
         "contour_circularity_High"
@@ -5595,9 +5595,9 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low"
       ],
       "consequents": [
         "contour_perimeter_High"
@@ -5608,10 +5608,10 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "contour_perimeter_High"
@@ -5622,9 +5622,9 @@
     },
     {
       "antecedents": [
+        "glcm_energy_High",
         "glcm_correlation_High",
-        "glcm_homogeneity_High",
-        "glcm_energy_High"
+        "glcm_homogeneity_High"
       ],
       "consequents": [
         "contour_perimeter_Low"
@@ -5635,8 +5635,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_Low",
-        "hsv_v_mean_High"
+        "hsv_v_mean_High",
+        "contour_perimeter_Low"
       ],
       "consequents": [
         "contour_circularity_High"
@@ -5647,10 +5647,10 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
-        "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low",
+        "glcm_contrast_High"
       ],
       "consequents": [
         "contour_perimeter_High"
@@ -5661,11 +5661,11 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_Low",
+        "glcm_energy_Low",
+        "contour_circularity_Low",
         "glcm_homogeneity_Low",
-        "contour_circularity_Low",
         "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_correlation_Low"
       ],
       "consequents": [
         "contour_perimeter_High"
@@ -5676,9 +5676,9 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
         "glcm_contrast_High",
+        "contour_circularity_Low",
         "contour_perimeter_High"
       ],
       "consequents": [
@@ -5690,8 +5690,8 @@
     },
     {
       "antecedents": [
-        "hsv_s_mean_Low",
-        "contour_perimeter_Low"
+        "contour_perimeter_Low",
+        "hsv_s_mean_Low"
       ],
       "consequents": [
         "contour_circularity_High"
@@ -5702,9 +5702,9 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
+        "glcm_correlation_Low",
         "glcm_contrast_High",
-        "glcm_correlation_Low"
+        "contour_perimeter_High"
       ],
       "consequents": [
         "glcm_homogeneity_Low"
@@ -5715,8 +5715,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_perimeter_High"
       ],
       "consequents": [
         "glcm_homogeneity_Low"
@@ -5752,9 +5752,9 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
         "contour_circularity_High",
-        "glcm_contrast_Low"
+        "glcm_contrast_Low",
+        "glcm_correlation_High"
       ],
       "consequents": [
         "contour_perimeter_Low"
@@ -5777,8 +5777,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
-        "glcm_correlation_Low"
+        "glcm_correlation_Low",
+        "contour_perimeter_High"
       ],
       "consequents": [
         "contour_circularity_Low"
@@ -5792,8 +5792,8 @@
         "contour_circularity_Low"
       ],
       "consequents": [
-        "contour_perimeter_High",
-        "glcm_correlation_Low"
+        "glcm_correlation_Low",
+        "contour_perimeter_High"
       ],
       "support": 0.2527,
       "confidence": 0.7446,
@@ -5801,8 +5801,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
-        "glcm_contrast_High"
+        "glcm_contrast_High",
+        "contour_perimeter_High"
       ],
       "consequents": [
         "glcm_homogeneity_Low"
@@ -5813,9 +5813,9 @@
     },
     {
       "antecedents": [
+        "glcm_contrast_High",
         "contour_circularity_Low",
-        "contour_perimeter_High",
-        "glcm_contrast_High"
+        "contour_perimeter_High"
       ],
       "consequents": [
         "glcm_homogeneity_Low"
@@ -5826,9 +5826,9 @@
     },
     {
       "antecedents": [
+        "glcm_energy_Low",
         "contour_circularity_Low",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "contour_perimeter_High"
@@ -5839,8 +5839,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_Low",
         "hsv_v_mean_High",
+        "contour_perimeter_Low",
         "glcm_homogeneity_High"
       ],
       "consequents": [
@@ -5852,8 +5852,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "glcm_correlation_High"
       ],
       "consequents": [
         "contour_perimeter_Low"
@@ -5865,8 +5865,8 @@
     {
       "antecedents": [
         "contour_circularity_High",
-        "contour_perimeter_Low",
         "hsv_v_mean_High",
+        "contour_perimeter_Low",
         "glcm_homogeneity_High"
       ],
       "consequents": [
@@ -5878,8 +5878,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "glcm_correlation_High"
       ],
       "consequents": [
         "contour_circularity_High"
@@ -5890,9 +5890,9 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
         "glcm_contrast_High",
+        "contour_circularity_Low",
         "glcm_homogeneity_Low"
       ],
       "consequents": [
@@ -5904,8 +5904,8 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low"
       ],
       "consequents": [
         "contour_perimeter_High"
@@ -5916,8 +5916,8 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
+        "contour_circularity_Low",
         "glcm_homogeneity_Low"
       ],
       "consequents": [
@@ -5932,8 +5932,8 @@
         "contour_perimeter_High"
       ],
       "consequents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
+        "contour_circularity_Low",
         "glcm_homogeneity_Low"
       ],
       "support": 0.2003,
@@ -5942,8 +5942,8 @@
     },
     {
       "antecedents": [
-        "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_contrast_High"
       ],
       "consequents": [
         "glcm_homogeneity_Low"
@@ -5957,8 +5957,8 @@
         "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_contrast_High"
       ],
       "support": 0.2153,
       "confidence": 0.6455,
@@ -5980,8 +5980,8 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
+        "contour_circularity_Low",
         "glcm_contrast_High"
       ],
       "consequents": [
@@ -5993,8 +5993,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
         "glcm_contrast_Low",
+        "glcm_correlation_High",
         "glcm_homogeneity_High"
       ],
       "consequents": [
@@ -6007,10 +6007,10 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
         "glcm_contrast_High",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "contour_perimeter_High"
@@ -6021,8 +6021,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
-        "glcm_contrast_High"
+        "glcm_contrast_High",
+        "contour_perimeter_High"
       ],
       "consequents": [
         "contour_circularity_Low"
@@ -6033,8 +6033,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
         "glcm_contrast_High",
+        "contour_perimeter_High",
         "glcm_homogeneity_Low"
       ],
       "consequents": [
@@ -6047,9 +6047,9 @@
     {
       "antecedents": [
         "contour_circularity_High",
-        "contour_perimeter_Low",
         "hsv_v_mean_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "contour_perimeter_Low"
       ],
       "consequents": [
         "glcm_homogeneity_High"
@@ -6060,9 +6060,9 @@
     },
     {
       "antecedents": [
+        "glcm_energy_Low",
         "contour_circularity_Low",
-        "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_contrast_High"
       ],
       "consequents": [
         "contour_perimeter_High"
@@ -6073,9 +6073,9 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
         "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_perimeter_High"
       ],
       "consequents": [
         "contour_circularity_Low"
@@ -6086,10 +6086,10 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
         "glcm_contrast_High",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_perimeter_High",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "contour_circularity_Low"
@@ -6100,10 +6100,10 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
         "contour_circularity_High",
-        "contour_perimeter_Low",
-        "glcm_energy_High"
+        "glcm_correlation_High",
+        "glcm_energy_High",
+        "contour_perimeter_Low"
       ],
       "consequents": [
         "glcm_homogeneity_High"
@@ -6114,8 +6114,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
-        "hsv_h_mean_Low"
+        "hsv_h_mean_Low",
+        "glcm_correlation_High"
       ],
       "consequents": [
         "contour_circularity_High"
@@ -6142,8 +6142,8 @@
         "contour_perimeter_Low"
       ],
       "consequents": [
-        "glcm_correlation_High",
-        "contour_circularity_High"
+        "contour_circularity_High",
+        "glcm_correlation_High"
       ],
       "support": 0.2546,
       "confidence": 0.7633,
@@ -6151,8 +6151,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
-        "contour_circularity_High"
+        "contour_circularity_High",
+        "glcm_correlation_High"
       ],
       "consequents": [
         "contour_perimeter_Low"
@@ -6163,8 +6163,8 @@
     },
     {
       "antecedents": [
-        "hsv_s_mean_Low",
-        "glcm_homogeneity_High"
+        "glcm_homogeneity_High",
+        "hsv_s_mean_Low"
       ],
       "consequents": [
         "contour_circularity_High",
@@ -6200,9 +6200,9 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
         "contour_circularity_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "glcm_correlation_High"
       ],
       "consequents": [
         "glcm_homogeneity_High"
@@ -6213,9 +6213,9 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_Low",
         "hsv_v_mean_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "contour_perimeter_Low"
       ],
       "consequents": [
         "glcm_homogeneity_High"
@@ -6240,8 +6240,8 @@
     {
       "antecedents": [
         "contour_circularity_High",
-        "hsv_v_mean_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "hsv_v_mean_High"
       ],
       "consequents": [
         "glcm_homogeneity_High"
@@ -6253,8 +6253,8 @@
     {
       "antecedents": [
         "glcm_correlation_High",
-        "contour_perimeter_Low",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "contour_perimeter_Low"
       ],
       "consequents": [
         "glcm_homogeneity_High"
@@ -6289,8 +6289,8 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
+        "contour_circularity_Low",
         "glcm_contrast_High"
       ],
       "consequents": [
@@ -6353,9 +6353,9 @@
     },
     {
       "antecedents": [
+        "glcm_energy_Low",
         "contour_perimeter_High",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "contour_circularity_Low"
@@ -6366,8 +6366,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
-        "hsv_v_mean_High"
+        "hsv_v_mean_High",
+        "glcm_correlation_High"
       ],
       "consequents": [
         "contour_perimeter_Low"
@@ -6378,11 +6378,11 @@
     },
     {
       "antecedents": [
-        "glcm_homogeneity_Low",
-        "contour_circularity_Low",
-        "glcm_contrast_High",
         "glcm_energy_Low",
-        "contour_perimeter_High"
+        "contour_circularity_Low",
+        "contour_perimeter_High",
+        "glcm_homogeneity_Low",
+        "glcm_contrast_High"
       ],
       "consequents": [
         "glcm_correlation_Low"
@@ -6429,8 +6429,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
-        "hsv_v_mean_High"
+        "hsv_v_mean_High",
+        "glcm_correlation_High"
       ],
       "consequents": [
         "contour_circularity_High"
@@ -6442,12 +6442,12 @@
     {
       "antecedents": [
         "glcm_contrast_High",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
+        "contour_circularity_Low",
         "contour_perimeter_High"
       ],
       "support": 0.1506,
@@ -6469,9 +6469,9 @@
     },
     {
       "antecedents": [
+        "glcm_contrast_High",
         "contour_circularity_Low",
         "contour_perimeter_High",
-        "glcm_contrast_High",
         "glcm_homogeneity_Low"
       ],
       "consequents": [
@@ -6483,8 +6483,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
-        "hsv_h_mean_Low"
+        "hsv_h_mean_Low",
+        "glcm_correlation_High"
       ],
       "consequents": [
         "contour_perimeter_Low"
@@ -6495,10 +6495,10 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
-        "contour_perimeter_High",
         "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low",
+        "contour_perimeter_High"
       ],
       "consequents": [
         "glcm_correlation_Low"
@@ -6509,8 +6509,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "glcm_correlation_High"
       ],
       "consequents": [
         "glcm_homogeneity_High"
@@ -6546,8 +6546,8 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
-        "glcm_correlation_Low"
+        "glcm_correlation_Low",
+        "contour_circularity_Low"
       ],
       "consequents": [
         "contour_perimeter_High"
@@ -6561,8 +6561,8 @@
         "contour_perimeter_High"
       ],
       "consequents": [
-        "contour_circularity_Low",
-        "glcm_correlation_Low"
+        "glcm_correlation_Low",
+        "contour_circularity_Low"
       ],
       "support": 0.2527,
       "confidence": 0.7584,
@@ -6570,9 +6570,9 @@
     },
     {
       "antecedents": [
-        "glcm_homogeneity_High",
+        "glcm_energy_High",
         "hsv_v_mean_High",
-        "glcm_energy_High"
+        "glcm_homogeneity_High"
       ],
       "consequents": [
         "contour_perimeter_Low"
@@ -6584,8 +6584,8 @@
     {
       "antecedents": [
         "glcm_correlation_Low",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "glcm_contrast_High"
@@ -6596,8 +6596,8 @@
     },
     {
       "antecedents": [
-        "hsv_s_mean_Low",
-        "glcm_homogeneity_High"
+        "glcm_homogeneity_High",
+        "hsv_s_mean_Low"
       ],
       "consequents": [
         "glcm_energy_High"
@@ -6632,9 +6632,9 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
         "contour_circularity_High",
         "glcm_contrast_Low",
+        "glcm_correlation_High",
         "contour_perimeter_Low"
       ],
       "consequents": [
@@ -6646,10 +6646,10 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "glcm_contrast_High"
@@ -6660,8 +6660,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_perimeter_High"
       ],
       "consequents": [
         "contour_circularity_Low"
@@ -6696,9 +6696,9 @@
     },
     {
       "antecedents": [
+        "glcm_contrast_High",
         "contour_circularity_Low",
-        "contour_perimeter_High",
-        "glcm_contrast_High"
+        "contour_perimeter_High"
       ],
       "consequents": [
         "glcm_correlation_Low"
@@ -6709,11 +6709,11 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_Low",
-        "glcm_homogeneity_Low",
-        "contour_circularity_Low",
         "glcm_energy_Low",
-        "contour_perimeter_High"
+        "contour_circularity_Low",
+        "contour_perimeter_High",
+        "glcm_homogeneity_Low",
+        "glcm_correlation_Low"
       ],
       "consequents": [
         "glcm_contrast_High"
@@ -6725,9 +6725,9 @@
     {
       "antecedents": [
         "glcm_correlation_Low",
-        "glcm_homogeneity_Low",
         "glcm_energy_Low",
-        "contour_perimeter_High"
+        "contour_perimeter_High",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "glcm_contrast_High"
@@ -6750,9 +6750,9 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low"
       ],
       "consequents": [
         "glcm_contrast_High"
@@ -6763,10 +6763,10 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
         "glcm_contrast_High",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "glcm_correlation_Low"
@@ -6789,9 +6789,9 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
         "glcm_energy_Low",
+        "contour_circularity_Low",
         "contour_perimeter_High"
       ],
       "consequents": [
@@ -6816,9 +6816,9 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
         "glcm_correlation_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_perimeter_High"
       ],
       "consequents": [
         "glcm_contrast_High"
@@ -6830,8 +6830,8 @@
     {
       "antecedents": [
         "glcm_correlation_Low",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "contour_circularity_Low"
@@ -6856,8 +6856,8 @@
     {
       "antecedents": [
         "glcm_contrast_High",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "glcm_correlation_Low",
@@ -6886,8 +6886,8 @@
       ],
       "consequents": [
         "contour_circularity_High",
-        "contour_perimeter_Low",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "contour_perimeter_Low"
       ],
       "support": 0.1999,
       "confidence": 0.6,
@@ -6896,8 +6896,8 @@
     {
       "antecedents": [
         "contour_circularity_High",
-        "contour_perimeter_Low",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "contour_perimeter_Low"
       ],
       "consequents": [
         "glcm_homogeneity_High"
@@ -6910,8 +6910,8 @@
       "antecedents": [
         "glcm_correlation_Low",
         "glcm_contrast_High",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "contour_circularity_Low"
@@ -6922,8 +6922,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
         "glcm_contrast_Low",
+        "glcm_correlation_High",
         "contour_perimeter_Low"
       ],
       "consequents": [
@@ -6948,9 +6948,9 @@
     },
     {
       "antecedents": [
-        "glcm_homogeneity_High",
+        "glcm_energy_High",
         "hsv_v_mean_High",
-        "glcm_energy_High"
+        "glcm_homogeneity_High"
       ],
       "consequents": [
         "contour_circularity_High"
@@ -6974,8 +6974,8 @@
     {
       "antecedents": [
         "glcm_correlation_Low",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "contour_perimeter_High"
@@ -6986,8 +6986,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_Low",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "contour_perimeter_Low"
       ],
       "consequents": [
         "glcm_homogeneity_High"
@@ -7001,8 +7001,8 @@
         "glcm_homogeneity_High"
       ],
       "consequents": [
-        "contour_perimeter_Low",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "contour_perimeter_Low"
       ],
       "support": 0.2084,
       "confidence": 0.6254,
@@ -7010,9 +7010,9 @@
     },
     {
       "antecedents": [
+        "glcm_energy_Low",
         "contour_circularity_Low",
-        "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_contrast_High"
       ],
       "consequents": [
         "glcm_correlation_Low"
@@ -7023,10 +7023,10 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
         "glcm_contrast_High",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_perimeter_High",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "glcm_correlation_Low"
@@ -7038,8 +7038,8 @@
     {
       "antecedents": [
         "glcm_correlation_Low",
-        "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_contrast_High"
       ],
       "consequents": [
         "contour_circularity_Low"
@@ -7050,9 +7050,9 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
         "contour_circularity_High",
-        "glcm_contrast_Low"
+        "glcm_contrast_Low",
+        "glcm_correlation_High"
       ],
       "consequents": [
         "glcm_homogeneity_High"
@@ -7087,8 +7087,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
         "glcm_contrast_Low",
+        "glcm_correlation_High",
         "glcm_homogeneity_High"
       ],
       "consequents": [
@@ -7100,8 +7100,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
         "glcm_contrast_High",
+        "contour_perimeter_High",
         "glcm_homogeneity_Low"
       ],
       "consequents": [
@@ -7115,8 +7115,8 @@
       "antecedents": [
         "glcm_correlation_Low",
         "glcm_contrast_High",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "contour_perimeter_High"
@@ -7224,8 +7224,8 @@
     {
       "antecedents": [
         "glcm_correlation_Low",
-        "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_contrast_High"
       ],
       "consequents": [
         "contour_perimeter_High"
@@ -7236,9 +7236,9 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
         "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_perimeter_High"
       ],
       "consequents": [
         "glcm_correlation_Low"
@@ -7286,8 +7286,8 @@
     {
       "antecedents": [
         "contour_circularity_High",
-        "contour_perimeter_Low",
-        "hsv_v_mean_High"
+        "hsv_v_mean_High",
+        "contour_perimeter_Low"
       ],
       "consequents": [
         "glcm_energy_High"
@@ -7298,8 +7298,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
-        "glcm_contrast_High"
+        "glcm_contrast_High",
+        "contour_perimeter_High"
       ],
       "consequents": [
         "glcm_correlation_Low"
@@ -7358,8 +7358,8 @@
     {
       "antecedents": [
         "contour_circularity_High",
-        "contour_perimeter_Low",
-        "hsv_v_mean_High"
+        "hsv_v_mean_High",
+        "contour_perimeter_Low"
       ],
       "consequents": [
         "glcm_homogeneity_High"
@@ -7370,11 +7370,11 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_Low",
-        "glcm_homogeneity_Low",
         "contour_circularity_Low",
+        "contour_perimeter_High",
+        "glcm_homogeneity_Low",
         "glcm_contrast_High",
-        "contour_perimeter_High"
+        "glcm_correlation_Low"
       ],
       "consequents": [
         "glcm_energy_Low"
@@ -7385,8 +7385,8 @@
     },
     {
       "antecedents": [
-        "hsv_v_mean_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "hsv_v_mean_High"
       ],
       "consequents": [
         "contour_circularity_High",
@@ -7400,8 +7400,8 @@
       "antecedents": [
         "glcm_correlation_Low",
         "glcm_contrast_High",
-        "glcm_homogeneity_Low",
-        "contour_perimeter_High"
+        "contour_perimeter_High",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "glcm_energy_Low"
@@ -7438,8 +7438,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
-        "glcm_contrast_Low"
+        "glcm_contrast_Low",
+        "glcm_correlation_High"
       ],
       "consequents": [
         "contour_circularity_High",
@@ -7452,12 +7452,12 @@
     {
       "antecedents": [
         "glcm_contrast_High",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "contour_circularity_Low",
-        "glcm_correlation_Low"
+        "glcm_correlation_Low",
+        "contour_circularity_Low"
       ],
       "support": 0.1576,
       "confidence": 0.7317,
@@ -7465,8 +7465,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
         "glcm_contrast_High",
+        "contour_perimeter_High",
         "glcm_homogeneity_Low"
       ],
       "consequents": [
@@ -7515,8 +7515,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
         "contour_circularity_High",
+        "glcm_correlation_High",
         "contour_perimeter_Low"
       ],
       "consequents": [
@@ -7533,8 +7533,8 @@
         "glcm_homogeneity_High"
       ],
       "consequents": [
-        "glcm_correlation_High",
         "contour_circularity_High",
+        "glcm_correlation_High",
         "contour_perimeter_Low"
       ],
       "support": 0.1757,
@@ -7543,9 +7543,9 @@
     },
     {
       "antecedents": [
+        "glcm_contrast_High",
         "contour_circularity_Low",
         "contour_perimeter_High",
-        "glcm_contrast_High",
         "glcm_homogeneity_Low"
       ],
       "consequents": [
@@ -7569,8 +7569,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
         "glcm_contrast_Low",
+        "glcm_correlation_High",
         "glcm_homogeneity_High"
       ],
       "consequents": [
@@ -7595,8 +7595,8 @@
     },
     {
       "antecedents": [
-        "hsv_s_mean_Low",
-        "glcm_homogeneity_High"
+        "glcm_homogeneity_High",
+        "hsv_s_mean_Low"
       ],
       "consequents": [
         "contour_perimeter_Low"
@@ -7632,8 +7632,8 @@
     {
       "antecedents": [
         "contour_circularity_High",
-        "hsv_s_mean_Low",
-        "contour_perimeter_Low"
+        "contour_perimeter_Low",
+        "hsv_s_mean_Low"
       ],
       "consequents": [
         "glcm_homogeneity_High"
@@ -7656,9 +7656,9 @@
     },
     {
       "antecedents": [
-        "glcm_homogeneity_High",
         "contour_circularity_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "glcm_homogeneity_High"
       ],
       "consequents": [
         "glcm_correlation_High"
@@ -7682,8 +7682,8 @@
     },
     {
       "antecedents": [
-        "glcm_energy_High",
         "contour_circularity_High",
+        "glcm_energy_High",
         "contour_perimeter_Low",
         "glcm_homogeneity_High"
       ],
@@ -7696,9 +7696,9 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
         "glcm_contrast_High",
+        "contour_circularity_Low",
         "glcm_homogeneity_Low"
       ],
       "consequents": [
@@ -7724,8 +7724,8 @@
     {
       "antecedents": [
         "contour_circularity_High",
-        "hsv_s_mean_Low",
-        "contour_perimeter_Low"
+        "contour_perimeter_Low",
+        "hsv_s_mean_Low"
       ],
       "consequents": [
         "glcm_energy_High"
@@ -7736,8 +7736,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_Low",
-        "hsv_v_mean_High"
+        "hsv_v_mean_High",
+        "contour_perimeter_Low"
       ],
       "consequents": [
         "glcm_energy_High"
@@ -7773,10 +7773,10 @@
     },
     {
       "antecedents": [
+        "glcm_energy_Low",
         "contour_circularity_Low",
         "contour_perimeter_High",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "glcm_correlation_Low"
@@ -7799,8 +7799,8 @@
     },
     {
       "antecedents": [
-        "hsv_s_mean_Low",
-        "glcm_homogeneity_High"
+        "glcm_homogeneity_High",
+        "hsv_s_mean_Low"
       ],
       "consequents": [
         "contour_circularity_High"
@@ -7811,8 +7811,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
-        "hsv_v_mean_High"
+        "hsv_v_mean_High",
+        "glcm_correlation_High"
       ],
       "consequents": [
         "glcm_homogeneity_High"
@@ -7823,12 +7823,12 @@
     },
     {
       "antecedents": [
-        "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_contrast_High"
       ],
       "consequents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
+        "contour_circularity_Low",
         "contour_perimeter_High"
       ],
       "support": 0.1506,
@@ -7862,8 +7862,8 @@
     },
     {
       "antecedents": [
-        "hsv_s_mean_Low",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "hsv_s_mean_Low"
       ],
       "consequents": [
         "contour_circularity_High",
@@ -7948,9 +7948,9 @@
     },
     {
       "antecedents": [
+        "glcm_energy_Low",
         "contour_circularity_Low",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "glcm_contrast_High"
@@ -8009,8 +8009,8 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
+        "contour_circularity_Low",
         "contour_perimeter_High"
       ],
       "consequents": [
@@ -8027,8 +8027,8 @@
         "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
+        "contour_circularity_Low",
         "contour_perimeter_High"
       ],
       "support": 0.1687,
@@ -8037,8 +8037,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_Low",
-        "hsv_v_mean_High"
+        "hsv_v_mean_High",
+        "contour_perimeter_Low"
       ],
       "consequents": [
         "glcm_homogeneity_High"
@@ -8061,8 +8061,8 @@
     },
     {
       "antecedents": [
-        "glcm_homogeneity_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "glcm_homogeneity_High"
       ],
       "consequents": [
         "glcm_correlation_High",
@@ -8078,8 +8078,8 @@
         "contour_perimeter_Low"
       ],
       "consequents": [
-        "glcm_homogeneity_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "glcm_homogeneity_High"
       ],
       "support": 0.178,
       "confidence": 0.6735,
@@ -8100,9 +8100,9 @@
     },
     {
       "antecedents": [
+        "glcm_energy_Low",
         "contour_circularity_Low",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "glcm_correlation_Low"
@@ -8113,8 +8113,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
-        "glcm_contrast_Low"
+        "glcm_contrast_Low",
+        "glcm_correlation_High"
       ],
       "consequents": [
         "glcm_homogeneity_High"
@@ -8137,8 +8137,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
-        "glcm_contrast_Low"
+        "glcm_contrast_Low",
+        "glcm_correlation_High"
       ],
       "consequents": [
         "contour_circularity_High"
@@ -8161,10 +8161,10 @@
     },
     {
       "antecedents": [
+        "glcm_energy_Low",
         "contour_circularity_Low",
         "contour_perimeter_High",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "glcm_contrast_High"
@@ -8197,8 +8197,8 @@
     },
     {
       "antecedents": [
-        "hsv_s_mean_Low",
-        "contour_perimeter_Low"
+        "contour_perimeter_Low",
+        "hsv_s_mean_Low"
       ],
       "consequents": [
         "glcm_energy_High"
@@ -8209,8 +8209,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
-        "hsv_v_mean_High"
+        "hsv_v_mean_High",
+        "glcm_correlation_High"
       ],
       "consequents": [
         "glcm_energy_High"
@@ -8233,12 +8233,12 @@
     },
     {
       "antecedents": [
-        "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_contrast_High"
       ],
       "consequents": [
-        "contour_perimeter_High",
-        "glcm_correlation_Low"
+        "glcm_correlation_Low",
+        "contour_perimeter_High"
       ],
       "support": 0.1537,
       "confidence": 0.674,
@@ -8246,8 +8246,8 @@
     },
     {
       "antecedents": [
-        "hsv_s_mean_Low",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "hsv_s_mean_Low"
       ],
       "consequents": [
         "glcm_homogeneity_High"
@@ -8270,8 +8270,8 @@
     },
     {
       "antecedents": [
-        "hsv_s_mean_Low",
-        "contour_perimeter_Low"
+        "contour_perimeter_Low",
+        "hsv_s_mean_Low"
       ],
       "consequents": [
         "glcm_homogeneity_High"
@@ -8330,9 +8330,9 @@
     },
     {
       "antecedents": [
-        "glcm_homogeneity_High",
+        "glcm_energy_High",
         "contour_perimeter_Low",
-        "glcm_energy_High"
+        "glcm_homogeneity_High"
       ],
       "consequents": [
         "glcm_correlation_High"
@@ -8343,8 +8343,8 @@
     },
     {
       "antecedents": [
-        "hsv_v_mean_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "hsv_v_mean_High"
       ],
       "consequents": [
         "glcm_homogeneity_High"
@@ -8355,9 +8355,9 @@
     },
     {
       "antecedents": [
+        "glcm_energy_Low",
         "contour_perimeter_High",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "glcm_contrast_High"
@@ -8369,8 +8369,8 @@
     {
       "antecedents": [
         "contour_circularity_High",
-        "contour_perimeter_Low",
-        "hsv_v_mean_High"
+        "hsv_v_mean_High",
+        "contour_perimeter_Low"
       ],
       "consequents": [
         "glcm_correlation_High"
@@ -8385,8 +8385,8 @@
         "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "contour_perimeter_High",
-        "glcm_correlation_Low"
+        "glcm_correlation_Low",
+        "contour_perimeter_High"
       ],
       "support": 0.1726,
       "confidence": 0.6697,
@@ -8394,8 +8394,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
-        "glcm_correlation_Low"
+        "glcm_correlation_Low",
+        "contour_perimeter_High"
       ],
       "consequents": [
         "glcm_contrast_High",
@@ -8408,8 +8408,8 @@
     {
       "antecedents": [
         "contour_circularity_High",
-        "contour_perimeter_Low",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "contour_perimeter_Low"
       ],
       "consequents": [
         "glcm_correlation_High"
@@ -8482,9 +8482,9 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
         "glcm_contrast_High",
+        "contour_circularity_Low",
         "contour_perimeter_High"
       ],
       "consequents": [
@@ -8496,9 +8496,9 @@
     },
     {
       "antecedents": [
+        "glcm_energy_Low",
         "contour_circularity_Low",
-        "contour_perimeter_High",
-        "glcm_energy_Low"
+        "contour_perimeter_High"
       ],
       "consequents": [
         "glcm_correlation_Low"
@@ -8533,9 +8533,9 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
+        "glcm_correlation_Low",
         "glcm_contrast_High",
-        "glcm_correlation_Low"
+        "contour_perimeter_High"
       ],
       "consequents": [
         "glcm_energy_Low"
@@ -8570,8 +8570,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
-        "glcm_contrast_High"
+        "glcm_contrast_High",
+        "contour_perimeter_High"
       ],
       "consequents": [
         "glcm_energy_Low"
@@ -8582,8 +8582,8 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low"
       ],
       "consequents": [
         "glcm_contrast_High"
@@ -8594,9 +8594,9 @@
     },
     {
       "antecedents": [
+        "glcm_contrast_High",
         "contour_circularity_Low",
-        "contour_perimeter_High",
-        "glcm_contrast_High"
+        "contour_perimeter_High"
       ],
       "consequents": [
         "glcm_energy_Low"
@@ -8607,8 +8607,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
         "contour_circularity_High",
+        "glcm_correlation_High",
         "contour_perimeter_Low",
         "glcm_homogeneity_High"
       ],
@@ -8621,9 +8621,9 @@
     },
     {
       "antecedents": [
+        "glcm_energy_Low",
         "contour_perimeter_High",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "glcm_correlation_Low"
@@ -8634,10 +8634,10 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
-        "glcm_homogeneity_Low",
-        "contour_perimeter_High"
+        "contour_circularity_Low",
+        "contour_perimeter_High",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "glcm_contrast_High"
@@ -8648,8 +8648,8 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
+        "contour_circularity_Low",
         "glcm_homogeneity_Low"
       ],
       "consequents": [
@@ -8661,8 +8661,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
         "glcm_correlation_Low",
+        "contour_perimeter_High",
         "glcm_homogeneity_Low"
       ],
       "consequents": [
@@ -8674,9 +8674,9 @@
     },
     {
       "antecedents": [
+        "glcm_energy_Low",
         "contour_circularity_Low",
-        "contour_perimeter_High",
-        "glcm_energy_Low"
+        "contour_perimeter_High"
       ],
       "consequents": [
         "glcm_contrast_High"
@@ -8687,8 +8687,8 @@
     },
     {
       "antecedents": [
-        "hsv_v_mean_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "hsv_v_mean_High"
       ],
       "consequents": [
         "contour_perimeter_Low"
@@ -8703,8 +8703,8 @@
         "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "contour_circularity_Low",
-        "glcm_correlation_Low"
+        "glcm_correlation_Low",
+        "contour_circularity_Low"
       ],
       "support": 0.1787,
       "confidence": 0.6936,
@@ -8712,8 +8712,8 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
-        "glcm_correlation_Low"
+        "glcm_correlation_Low",
+        "contour_circularity_Low"
       ],
       "consequents": [
         "glcm_contrast_High",
@@ -8750,8 +8750,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
-        "glcm_contrast_Low"
+        "glcm_contrast_Low",
+        "glcm_correlation_High"
       ],
       "consequents": [
         "contour_perimeter_Low"
@@ -8762,8 +8762,8 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_circularity_Low"
       ],
       "consequents": [
         "glcm_correlation_Low"
@@ -8774,8 +8774,8 @@
     },
     {
       "antecedents": [
-        "hsv_s_mean_Low",
-        "hsv_v_mean_High"
+        "hsv_v_mean_High",
+        "hsv_s_mean_Low"
       ],
       "consequents": [
         "glcm_energy_High"
@@ -8786,13 +8786,13 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
+        "contour_circularity_Low",
         "contour_perimeter_High"
       ],
       "consequents": [
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_homogeneity_Low"
       ],
       "support": 0.1649,
       "confidence": 0.6524,
@@ -8800,12 +8800,12 @@
     },
     {
       "antecedents": [
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
+        "contour_circularity_Low",
         "contour_perimeter_High"
       ],
       "support": 0.1649,
@@ -8814,12 +8814,12 @@
     },
     {
       "antecedents": [
-        "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_contrast_High"
       ],
       "consequents": [
-        "contour_circularity_Low",
-        "glcm_correlation_Low"
+        "glcm_correlation_Low",
+        "contour_circularity_Low"
       ],
       "support": 0.1576,
       "confidence": 0.6909,
@@ -8827,8 +8827,8 @@
     },
     {
       "antecedents": [
-        "glcm_homogeneity_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "glcm_homogeneity_High"
       ],
       "consequents": [
         "contour_circularity_High",
@@ -8844,8 +8844,8 @@
         "contour_perimeter_Low"
       ],
       "consequents": [
-        "glcm_homogeneity_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "glcm_homogeneity_High"
       ],
       "support": 0.1999,
       "confidence": 0.652,
@@ -8853,12 +8853,12 @@
     },
     {
       "antecedents": [
-        "glcm_homogeneity_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "glcm_homogeneity_High"
       ],
       "consequents": [
-        "glcm_correlation_High",
-        "contour_circularity_High"
+        "contour_circularity_High",
+        "glcm_correlation_High"
       ],
       "support": 0.1768,
       "confidence": 0.68,
@@ -8866,12 +8866,12 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
-        "contour_circularity_High"
+        "contour_circularity_High",
+        "glcm_correlation_High"
       ],
       "consequents": [
-        "glcm_homogeneity_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "glcm_homogeneity_High"
       ],
       "support": 0.1768,
       "confidence": 0.6501,
@@ -8891,8 +8891,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_Low",
-        "hsv_v_mean_High"
+        "hsv_v_mean_High",
+        "contour_perimeter_Low"
       ],
       "consequents": [
         "glcm_correlation_High"
@@ -8973,8 +8973,8 @@
     },
     {
       "antecedents": [
-        "hsv_s_mean_Low",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "hsv_s_mean_Low"
       ],
       "consequents": [
         "hsv_v_mean_High"
@@ -8985,8 +8985,8 @@
     },
     {
       "antecedents": [
-        "hsv_v_mean_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "hsv_v_mean_High"
       ],
       "consequents": [
         "contour_circularity_High"
@@ -9021,8 +9021,8 @@
     },
     {
       "antecedents": [
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "glcm_contrast_High"
@@ -9036,8 +9036,8 @@
         "glcm_contrast_High"
       ],
       "consequents": [
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_homogeneity_Low"
       ],
       "support": 0.2153,
       "confidence": 0.6462,
@@ -9067,8 +9067,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_Low",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "contour_perimeter_Low"
       ],
       "consequents": [
         "glcm_correlation_High"
@@ -9103,8 +9103,8 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
+        "contour_circularity_Low",
         "glcm_contrast_High"
       ],
       "consequents": [
@@ -9141,8 +9141,8 @@
     {
       "antecedents": [
         "glcm_contrast_High",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "contour_circularity_Low",
@@ -9154,8 +9154,8 @@
     },
     {
       "antecedents": [
-        "hsv_s_mean_Low",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "hsv_s_mean_Low"
       ],
       "consequents": [
         "contour_perimeter_Low"
@@ -9191,12 +9191,12 @@
     },
     {
       "antecedents": [
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "contour_perimeter_High",
-        "glcm_correlation_Low"
+        "glcm_correlation_Low",
+        "contour_perimeter_High"
       ],
       "support": 0.1683,
       "confidence": 0.6474,
@@ -9204,12 +9204,12 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
-        "glcm_correlation_Low"
+        "glcm_correlation_Low",
+        "contour_perimeter_High"
       ],
       "consequents": [
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_homogeneity_Low"
       ],
       "support": 0.1683,
       "confidence": 0.6426,
@@ -9217,8 +9217,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
         "contour_circularity_High",
+        "glcm_correlation_High",
         "glcm_homogeneity_High"
       ],
       "consequents": [
@@ -9267,8 +9267,8 @@
         "glcm_homogeneity_High"
       ],
       "consequents": [
-        "glcm_correlation_High",
         "contour_circularity_High",
+        "glcm_correlation_High",
         "contour_perimeter_Low"
       ],
       "support": 0.2088,
@@ -9277,8 +9277,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
         "contour_circularity_High",
+        "glcm_correlation_High",
         "contour_perimeter_Low"
       ],
       "consequents": [
@@ -9290,10 +9290,10 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
-        "glcm_homogeneity_Low",
-        "contour_perimeter_High"
+        "contour_circularity_Low",
+        "contour_perimeter_High",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "glcm_energy_Low"
@@ -9304,8 +9304,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_perimeter_High"
       ],
       "consequents": [
         "glcm_contrast_High"
@@ -9320,8 +9320,8 @@
         "glcm_homogeneity_High"
       ],
       "consequents": [
-        "glcm_correlation_High",
         "contour_circularity_High",
+        "glcm_correlation_High",
         "contour_perimeter_Low"
       ],
       "support": 0.1537,
@@ -9330,8 +9330,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
         "contour_circularity_High",
+        "glcm_correlation_High",
         "contour_perimeter_Low"
       ],
       "consequents": [
@@ -9344,8 +9344,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
         "glcm_correlation_Low",
+        "contour_perimeter_High",
         "glcm_homogeneity_Low"
       ],
       "consequents": [
@@ -9369,8 +9369,8 @@
     },
     {
       "antecedents": [
-        "hsv_s_mean_Low",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "hsv_s_mean_Low"
       ],
       "consequents": [
         "contour_circularity_High"
@@ -9403,8 +9403,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "contour_perimeter_High"
       ],
       "consequents": [
         "glcm_correlation_Low"
@@ -9415,8 +9415,8 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
         "glcm_correlation_Low",
+        "contour_circularity_Low",
         "glcm_homogeneity_Low"
       ],
       "consequents": [
@@ -9490,12 +9490,12 @@
     },
     {
       "antecedents": [
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "contour_circularity_Low",
-        "glcm_correlation_Low"
+        "glcm_correlation_Low",
+        "contour_circularity_Low"
       ],
       "support": 0.1722,
       "confidence": 0.6622,
@@ -9503,12 +9503,12 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
-        "glcm_correlation_Low"
+        "glcm_correlation_Low",
+        "contour_circularity_Low"
       ],
       "consequents": [
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_homogeneity_Low"
       ],
       "support": 0.1722,
       "confidence": 0.6252,
@@ -9516,8 +9516,8 @@
     },
     {
       "antecedents": [
-        "glcm_homogeneity_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "glcm_homogeneity_High"
       ],
       "consequents": [
         "contour_perimeter_Low"
@@ -9531,8 +9531,8 @@
         "contour_perimeter_Low"
       ],
       "consequents": [
-        "glcm_homogeneity_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "glcm_homogeneity_High"
       ],
       "support": 0.2084,
       "confidence": 0.6247,
@@ -9556,8 +9556,8 @@
         "contour_perimeter_High"
       ],
       "consequents": [
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_homogeneity_Low"
       ],
       "support": 0.188,
       "confidence": 0.6201,
@@ -9565,8 +9565,8 @@
     },
     {
       "antecedents": [
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "contour_circularity_Low",
@@ -9582,8 +9582,8 @@
         "glcm_homogeneity_High"
       ],
       "consequents": [
-        "glcm_correlation_High",
-        "contour_circularity_High"
+        "contour_circularity_High",
+        "glcm_correlation_High"
       ],
       "support": 0.1591,
       "confidence": 0.6473,
@@ -9625,8 +9625,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
-        "contour_circularity_High"
+        "contour_circularity_High",
+        "glcm_correlation_High"
       ],
       "consequents": [
         "glcm_homogeneity_High"
@@ -9640,8 +9640,8 @@
         "glcm_homogeneity_High"
       ],
       "consequents": [
-        "glcm_correlation_High",
-        "contour_circularity_High"
+        "contour_circularity_High",
+        "glcm_correlation_High"
       ],
       "support": 0.2153,
       "confidence": 0.6462,
@@ -9652,9 +9652,9 @@
         "glcm_homogeneity_Low"
       ],
       "consequents": [
+        "glcm_correlation_Low",
         "contour_circularity_Low",
-        "contour_perimeter_High",
-        "glcm_correlation_Low"
+        "contour_perimeter_High"
       ],
       "support": 0.2003,
       "confidence": 0.6005,
@@ -9662,9 +9662,9 @@
     },
     {
       "antecedents": [
+        "glcm_correlation_Low",
         "contour_circularity_Low",
-        "contour_perimeter_High",
-        "glcm_correlation_Low"
+        "contour_perimeter_High"
       ],
       "consequents": [
         "glcm_homogeneity_Low"
@@ -9675,8 +9675,8 @@
     },
     {
       "antecedents": [
-        "glcm_energy_High",
         "contour_circularity_High",
+        "glcm_energy_High",
         "contour_perimeter_Low",
         "glcm_homogeneity_High"
       ],
@@ -9689,9 +9689,9 @@
     },
     {
       "antecedents": [
-        "glcm_homogeneity_High",
         "contour_circularity_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "glcm_homogeneity_High"
       ],
       "consequents": [
         "hsv_v_mean_High"
@@ -9702,9 +9702,9 @@
     },
     {
       "antecedents": [
+        "glcm_energy_Low",
         "glcm_contrast_High",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "glcm_correlation_Low"
@@ -9715,9 +9715,9 @@
     },
     {
       "antecedents": [
+        "glcm_energy_Low",
         "glcm_contrast_High",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "contour_perimeter_High"
@@ -9740,8 +9740,8 @@
     },
     {
       "antecedents": [
-        "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_contrast_High"
       ],
       "consequents": [
         "contour_circularity_Low",
@@ -9753,9 +9753,9 @@
     },
     {
       "antecedents": [
+        "glcm_energy_Low",
         "glcm_contrast_High",
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "contour_circularity_Low"
@@ -9778,8 +9778,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
-        "glcm_correlation_Low"
+        "glcm_correlation_Low",
+        "contour_perimeter_High"
       ],
       "consequents": [
         "glcm_homogeneity_Low"
@@ -9793,8 +9793,8 @@
         "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "contour_perimeter_High",
-        "glcm_correlation_Low"
+        "glcm_correlation_Low",
+        "contour_perimeter_High"
       ],
       "support": 0.2053,
       "confidence": 0.6155,
@@ -9858,8 +9858,8 @@
     },
     {
       "antecedents": [
-        "glcm_homogeneity_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "glcm_homogeneity_High"
       ],
       "consequents": [
         "contour_circularity_High"
@@ -9873,8 +9873,8 @@
         "contour_circularity_High"
       ],
       "consequents": [
-        "glcm_homogeneity_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "glcm_homogeneity_High"
       ],
       "support": 0.2011,
       "confidence": 0.607,
@@ -9908,9 +9908,9 @@
     },
     {
       "antecedents": [
-        "glcm_homogeneity_High",
+        "glcm_energy_High",
         "contour_perimeter_Low",
-        "glcm_energy_High"
+        "glcm_homogeneity_High"
       ],
       "consequents": [
         "hsv_v_mean_High"
@@ -9965,8 +9965,8 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
-        "glcm_correlation_Low"
+        "glcm_correlation_Low",
+        "contour_circularity_Low"
       ],
       "consequents": [
         "glcm_homogeneity_Low"
@@ -9980,8 +9980,8 @@
         "glcm_homogeneity_Low"
       ],
       "consequents": [
-        "contour_circularity_Low",
-        "glcm_correlation_Low"
+        "glcm_correlation_Low",
+        "contour_circularity_Low"
       ],
       "support": 0.2122,
       "confidence": 0.6363,
@@ -10014,8 +10014,8 @@
     {
       "antecedents": [
         "contour_circularity_High",
-        "contour_perimeter_Low",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "contour_perimeter_Low"
       ],
       "consequents": [
         "hsv_v_mean_High"
@@ -10026,8 +10026,8 @@
     },
     {
       "antecedents": [
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "contour_perimeter_High"
@@ -10084,8 +10084,8 @@
     },
     {
       "antecedents": [
-        "hsv_v_mean_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "hsv_v_mean_High"
       ],
       "consequents": [
         "hsv_s_mean_Low"
@@ -10096,8 +10096,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "glcm_correlation_High"
       ],
       "consequents": [
         "hsv_v_mean_High"
@@ -10108,8 +10108,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_Low",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "contour_perimeter_Low"
       ],
       "consequents": [
         "hsv_v_mean_High"
@@ -10120,8 +10120,8 @@
     },
     {
       "antecedents": [
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "contour_circularity_Low"
@@ -10144,8 +10144,8 @@
     },
     {
       "antecedents": [
-        "hsv_v_mean_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "hsv_v_mean_High"
       ],
       "consequents": [
         "hsv_h_mean_Low"
@@ -10156,8 +10156,8 @@
     },
     {
       "antecedents": [
-        "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_contrast_High"
       ],
       "consequents": [
         "contour_perimeter_High"
@@ -10168,8 +10168,8 @@
     },
     {
       "antecedents": [
-        "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_contrast_High"
       ],
       "consequents": [
         "glcm_correlation_Low"
@@ -10180,8 +10180,8 @@
     },
     {
       "antecedents": [
-        "glcm_contrast_High",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_contrast_High"
       ],
       "consequents": [
         "contour_circularity_Low"
@@ -10240,8 +10240,8 @@
     },
     {
       "antecedents": [
-        "hsv_v_mean_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "hsv_v_mean_High"
       ],
       "consequents": [
         "glcm_correlation_High"
@@ -10252,8 +10252,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
         "contour_circularity_High",
+        "glcm_correlation_High",
         "contour_perimeter_Low"
       ],
       "consequents": [
@@ -10277,8 +10277,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
         "contour_circularity_High",
+        "glcm_correlation_High",
         "glcm_homogeneity_High"
       ],
       "consequents": [
@@ -10347,8 +10347,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
         "contour_circularity_High",
+        "glcm_correlation_High",
         "contour_perimeter_Low",
         "glcm_homogeneity_High"
       ],
@@ -10488,8 +10488,8 @@
     },
     {
       "antecedents": [
-        "glcm_homogeneity_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "glcm_homogeneity_High"
       ],
       "consequents": [
         "glcm_correlation_High"
@@ -10513,8 +10513,8 @@
     },
     {
       "antecedents": [
-        "glcm_homogeneity_Low",
-        "glcm_energy_Low"
+        "glcm_energy_Low",
+        "glcm_homogeneity_Low"
       ],
       "consequents": [
         "glcm_correlation_Low"
@@ -10630,8 +10630,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
-        "contour_circularity_High"
+        "contour_circularity_High",
+        "glcm_correlation_High"
       ],
       "consequents": [
         "glcm_energy_High"
@@ -10642,9 +10642,9 @@
     },
     {
       "antecedents": [
+        "glcm_correlation_Low",
         "contour_circularity_Low",
-        "contour_perimeter_High",
-        "glcm_correlation_Low"
+        "contour_perimeter_High"
       ],
       "consequents": [
         "glcm_contrast_High"
@@ -10679,8 +10679,8 @@
     },
     {
       "antecedents": [
-        "glcm_homogeneity_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "glcm_homogeneity_High"
       ],
       "consequents": [
         "glcm_contrast_Low"
@@ -10714,8 +10714,8 @@
     {
       "antecedents": [
         "contour_circularity_High",
-        "contour_perimeter_Low",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "contour_perimeter_Low"
       ],
       "consequents": [
         "hsv_h_mean_Low"
@@ -10738,8 +10738,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
-        "glcm_correlation_Low"
+        "glcm_correlation_Low",
+        "contour_perimeter_High"
       ],
       "consequents": [
         "glcm_contrast_High"
@@ -10750,8 +10750,8 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
-        "glcm_correlation_Low"
+        "glcm_correlation_Low",
+        "contour_circularity_Low"
       ],
       "consequents": [
         "glcm_contrast_High"
@@ -10763,8 +10763,8 @@
     {
       "antecedents": [
         "contour_circularity_High",
-        "contour_perimeter_Low",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "contour_perimeter_Low"
       ],
       "consequents": [
         "hsv_s_mean_Low"
@@ -10797,8 +10797,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_Low",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "contour_perimeter_Low"
       ],
       "consequents": [
         "hsv_h_mean_Low"
@@ -10833,8 +10833,8 @@
     },
     {
       "antecedents": [
-        "glcm_homogeneity_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "glcm_homogeneity_High"
       ],
       "consequents": [
         "hsv_v_mean_High"
@@ -10889,8 +10889,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_Low",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "contour_perimeter_Low"
       ],
       "consequents": [
         "hsv_s_mean_Low"
@@ -10923,8 +10923,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
         "contour_circularity_High",
+        "glcm_correlation_High",
         "contour_perimeter_Low"
       ],
       "consequents": [
@@ -10995,9 +10995,9 @@
     },
     {
       "antecedents": [
+        "glcm_correlation_Low",
         "contour_circularity_Low",
-        "contour_perimeter_High",
-        "glcm_correlation_Low"
+        "contour_perimeter_High"
       ],
       "consequents": [
         "glcm_energy_Low"
@@ -11030,8 +11030,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
-        "contour_circularity_High"
+        "contour_circularity_High",
+        "glcm_correlation_High"
       ],
       "consequents": [
         "glcm_contrast_Low"
@@ -11079,8 +11079,8 @@
     },
     {
       "antecedents": [
-        "contour_perimeter_High",
-        "glcm_correlation_Low"
+        "glcm_correlation_Low",
+        "contour_perimeter_High"
       ],
       "consequents": [
         "glcm_energy_Low"
@@ -11127,8 +11127,8 @@
     },
     {
       "antecedents": [
-        "glcm_correlation_High",
         "contour_circularity_High",
+        "glcm_correlation_High",
         "contour_perimeter_Low"
       ],
       "consequents": [
@@ -11164,8 +11164,8 @@
     },
     {
       "antecedents": [
-        "contour_circularity_Low",
-        "glcm_correlation_Low"
+        "glcm_correlation_Low",
+        "contour_circularity_Low"
       ],
       "consequents": [
         "glcm_energy_Low"
@@ -11220,8 +11220,8 @@
     },
     {
       "antecedents": [
-        "glcm_homogeneity_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "glcm_homogeneity_High"
       ],
       "consequents": [
         "hsv_s_mean_Low"
@@ -11310,8 +11310,8 @@
     },
     {
       "antecedents": [
-        "glcm_homogeneity_High",
-        "glcm_energy_High"
+        "glcm_energy_High",
+        "glcm_homogeneity_High"
       ],
       "consequents": [
         "hsv_h_mean_Low"

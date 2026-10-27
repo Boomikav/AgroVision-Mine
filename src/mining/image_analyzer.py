@@ -255,6 +255,7 @@ class ImageAnalysisEngine:
                     "dataset_source": ref["dataset_source"],
                     "euclidean_distance": round(dist, 4),
                     "visual_similarity_score": round(sim, 4),
+                    "is_self_match": bool(dist < 1e-4),
                     "image_url": f"/api/dataset/{ref['image_id']}/image",
                 }
             )
@@ -299,9 +300,26 @@ class ImageAnalysisEngine:
                 "description": meta.get("description", ""),
             }
 
+        # Supervised deep transfer learning prediction with cross-modal domain verification
+        prediction_result = None
+        try:
+            from src.mining.predictor import get_crop_disease_predictor
+            predictor = get_crop_disease_predictor()
+            ref_ctx = None
+            if nearest_specimens:
+                ref_ctx = {
+                    "top_ref_crop": nearest_specimens[0]["crop_name"],
+                    "top_ref_source": nearest_specimens[0]["dataset_source"],
+                    "top_ref_distance": nearest_specimens[0]["euclidean_distance"],
+                }
+            prediction_result = predictor.predict(file_bytes, reference_context=ref_ctx)
+        except Exception as pred_err:
+            logger.error(f"Error during supervised prediction inference: {pred_err}")
+
         return {
             "validation": validation_info,
             "dominant_color_tone": dominant_tone,
+            "prediction": prediction_result,
             "feature_counts": {
                 "color_moments": len(color_features_raw),
                 "glcm_texture": len(texture_features_raw),
@@ -333,9 +351,9 @@ class ImageAnalysisEngine:
                     "cluster_id": cluster_k2,
                     "designation": "K=2 Primary Metric-Supported Solution",
                     "characteristics": (
-                        "Textured foliar surfaces with elevated contour perimeter and necrotic contrast"
+                        "High-variance foliar partition representing broad leaf surfaces with natural textural and contour complexity (heterogeneous mathematical cluster spanning both healthy and diseased reference specimens)."
                         if cluster_k2 == 0
-                        else "Smooth, uniform foliar surfaces with low perimeter and high textural homogeneity"
+                        else "Low-variance foliar partition representing smooth, uniform foliar surfaces with low perimeter and high textural homogeneity."
                     ),
                 },
                 "k4": {
@@ -352,6 +370,23 @@ class ImageAnalysisEngine:
                 "total_explained_pct": 52.1,
             },
             "nearest_specimens": nearest_specimens,
+            "diagnostic_interpretation": {
+                "status": "NON_DIAGNOSTIC",
+                "message": "Visual similarity analysis complete — inspect the reference examples; disease status has not been determined.",
+                "notice": "Nearest reference specimens represent unsupervised geometric proximity in 32D descriptor space. Supervised crop-disease prediction is provided separately above.",
+                "majority_label_warning": (
+                    "Majority disease labels among nearest neighbors reflect reference dataset density (67.4% diseased in repository) "
+                    "and visual co-occurrence; they do NOT diagnose the uploaded specimen."
+                ),
+                "supervised_classifier": "IMPLEMENTED (EfficientNet-B0 Transfer Learning, 25 classes)",
+            },
+            "repository_distribution": {
+                "total": len(self.reference_metadata),
+                "diseased": sum(1 for r in self.reference_metadata if r["condition_status"] == "Diseased"),
+                "healthy": sum(1 for r in self.reference_metadata if r["condition_status"] == "Healthy"),
+                "diseased_pct": round(sum(1 for r in self.reference_metadata if r["condition_status"] == "Diseased") / len(self.reference_metadata) * 100, 1),
+                "healthy_pct": round(sum(1 for r in self.reference_metadata if r["condition_status"] == "Healthy") / len(self.reference_metadata) * 100, 1),
+            },
             "distance_metric_documentation": {
                 "metric_name": "Standardized Euclidean Distance in 32D Feature Space",
                 "formula": "d(u, v) = sqrt(sum((u_i - v_i)^2)) across 32 standardized z-scores",

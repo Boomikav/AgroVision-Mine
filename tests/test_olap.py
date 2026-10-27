@@ -31,13 +31,13 @@ def olap_test_engine():
     session.flush()
 
     img1 = DimImage(
-        raw_id="RAW_001", filename="img1.jpg", file_format="JPG",
+        image_id="RAW_001", raw_id="RAW_001", filename="img1.jpg", file_format="JPG",
         raw_width=512, raw_height=512, raw_channels=3, raw_size_kb=100.0,
         processed_width=256, processed_height=256, processed_size_kb=45.0,
         md5_hash="h1", original_path="/raw/1", processed_path="/proc/1"
     )
     img2 = DimImage(
-        raw_id="RAW_002", filename="img2.jpg", file_format="JPG",
+        image_id="RAW_002", raw_id="RAW_002", filename="img2.jpg", file_format="JPG",
         raw_width=512, raw_height=512, raw_channels=3, raw_size_kb=105.0,
         processed_width=256, processed_height=256, processed_size_kb=48.0,
         md5_hash="h2", original_path="/raw/2", processed_path="/proc/2"
@@ -46,6 +46,7 @@ def olap_test_engine():
     session.flush()
 
     vf1 = DimVisualFeature(
+        image_id="RAW_001",
         image_filename="img1.jpg", rgb_r_mean=50.0, rgb_g_mean=120.0, rgb_b_mean=40.0,
         rgb_r_std=10.0, rgb_g_std=15.0, rgb_b_std=8.0, rgb_r_norm=0.24, rgb_g_norm=0.57, rgb_b_norm=0.19,
         hsv_h_mean=80.0, hsv_s_mean=0.6, hsv_v_mean=0.5, hsv_h_norm=0.22, hsv_s_norm=0.6, hsv_v_norm=0.5,
@@ -56,6 +57,7 @@ def olap_test_engine():
         lesion_coverage_ratio=0.08
     )
     vf2 = DimVisualFeature(
+        image_id="RAW_002",
         image_filename="img2.jpg", rgb_r_mean=60.0, rgb_g_mean=110.0, rgb_b_mean=35.0,
         rgb_r_std=12.0, rgb_g_std=14.0, rgb_b_std=9.0, rgb_r_norm=0.29, rgb_g_norm=0.54, rgb_b_norm=0.17,
         hsv_h_mean=75.0, hsv_s_mean=0.55, hsv_v_mean=0.48, hsv_h_norm=0.21, hsv_s_norm=0.55, hsv_v_norm=0.48,
@@ -70,6 +72,7 @@ def olap_test_engine():
 
     # Facts
     f1 = DiseaseObservationFact(
+        image_id="RAW_001",
         crop_key=c_rice.crop_key, disease_key=d_blast.disease_key,
         image_key=img1.image_key, feature_key=vf1.feature_key, observation_count=1,
         lesion_severity_score=6.5, image_sharpness_score=150.0, lesion_coverage_ratio=0.08,
@@ -77,6 +80,7 @@ def olap_test_engine():
         etl_batch_id="TEST_BATCH"
     )
     f2 = DiseaseObservationFact(
+        image_id="RAW_002",
         crop_key=c_rice.crop_key, disease_key=d_blight.disease_key,
         image_key=img2.image_key, feature_key=vf2.feature_key, observation_count=1,
         lesion_severity_score=7.0, image_sharpness_score=145.0, lesion_coverage_ratio=0.12,

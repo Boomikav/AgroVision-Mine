@@ -175,20 +175,29 @@
     }
   },
   "algorithm_comparison": {
+    "mode": "visual_only",
+    "mode_name": "Mode A: Visual-Feature-Only",
+    "transaction_count": 2596,
+    "unique_items_count": 36,
     "min_support": 0.15,
     "min_confidence": 0.6,
-    "benchmark_repetitions": 5,
+    "benchmark_repetitions": 10,
     "numerical_tolerance": 1e-06,
     "fpgrowth": {
-      "median_runtime_sec": 0.3021,
+      "median_runtime_sec": 0.0695,
       "frequent_itemsets_count": 223,
-      "rules_count": 880
+      "rules_count": 880,
+      "label_conditioned_rules_count": 880,
+      "filtered_label_rules_count": 880
     },
     "apriori": {
-      "median_runtime_sec": 0.0615,
+      "median_runtime_sec": 0.0126,
       "frequent_itemsets_count": 223,
-      "rules_count": 880
+      "rules_count": 880,
+      "label_conditioned_rules_count": 880,
+      "filtered_label_rules_count": 880
     },
+    "output_equivalence": true,
     "output_verification": {
       "itemsets_identical_keys": true,
       "rules_identical_keys": true,
@@ -198,7 +207,77 @@
       "max_rule_lift_diff": 0.0,
       "output_equivalence": true
     },
-    "practical_performance_assessment": "Both FP-Growth and Apriori finish in less than 0.15 seconds on this dataset (2,596 transactions, 36 items). Output itemsets and rules are mathematically equivalent (difference = 0.0). Wall-clock differences at this scale are negligible in practice."
+    "practical_performance_assessment": "Both FP-Growth and Apriori finish in sub-second time on this dataset (2596 transactions, 36 items). Output itemsets and rules are mathematically equivalent (difference = 0.0). Wall-clock differences at this scale are negligible in practice."
+  },
+  "algorithm_comparison_mode_a": {
+    "mode": "visual_only",
+    "mode_name": "Mode A: Visual-Feature-Only",
+    "transaction_count": 2596,
+    "unique_items_count": 36,
+    "min_support": 0.15,
+    "min_confidence": 0.6,
+    "benchmark_repetitions": 10,
+    "numerical_tolerance": 1e-06,
+    "fpgrowth": {
+      "median_runtime_sec": 0.0695,
+      "frequent_itemsets_count": 223,
+      "rules_count": 880,
+      "label_conditioned_rules_count": 880,
+      "filtered_label_rules_count": 880
+    },
+    "apriori": {
+      "median_runtime_sec": 0.0126,
+      "frequent_itemsets_count": 223,
+      "rules_count": 880,
+      "label_conditioned_rules_count": 880,
+      "filtered_label_rules_count": 880
+    },
+    "output_equivalence": true,
+    "output_verification": {
+      "itemsets_identical_keys": true,
+      "rules_identical_keys": true,
+      "max_itemset_support_diff": 0.0,
+      "max_rule_support_diff": 0.0,
+      "max_rule_confidence_diff": 0.0,
+      "max_rule_lift_diff": 0.0,
+      "output_equivalence": true
+    },
+    "practical_performance_assessment": "Both FP-Growth and Apriori finish in sub-second time on this dataset (2596 transactions, 36 items). Output itemsets and rules are mathematically equivalent (difference = 0.0). Wall-clock differences at this scale are negligible in practice."
+  },
+  "algorithm_comparison_mode_b": {
+    "mode": "labeled",
+    "mode_name": "Mode B: Label-Conditioned",
+    "transaction_count": 2596,
+    "unique_items_count": 57,
+    "min_support": 0.15,
+    "min_confidence": 0.6,
+    "benchmark_repetitions": 10,
+    "numerical_tolerance": 1e-06,
+    "fpgrowth": {
+      "median_runtime_sec": 0.0942,
+      "frequent_itemsets_count": 387,
+      "rules_count": 1165,
+      "label_conditioned_rules_count": 285,
+      "filtered_label_rules_count": 276
+    },
+    "apriori": {
+      "median_runtime_sec": 0.0142,
+      "frequent_itemsets_count": 387,
+      "rules_count": 1165,
+      "label_conditioned_rules_count": 285,
+      "filtered_label_rules_count": 276
+    },
+    "output_equivalence": true,
+    "output_verification": {
+      "itemsets_identical_keys": true,
+      "rules_identical_keys": true,
+      "max_itemset_support_diff": 0.0,
+      "max_rule_support_diff": 0.0,
+      "max_rule_confidence_diff": 0.0,
+      "max_rule_lift_diff": 0.0,
+      "output_equivalence": true
+    },
+    "practical_performance_assessment": "Both FP-Growth and Apriori finish in sub-second time on this dataset (2596 transactions, 57 items). Output itemsets and rules are mathematically equivalent (difference = 0.0). Wall-clock differences at this scale are negligible in practice."
   },
   "sensitivity_analysis": [
     {
@@ -254,14 +333,14 @@
     "top_rules": [
       {
         "antecedents": [
-          "contour_circularity_Low",
           "glcm_correlation_Low",
-          "glcm_energy_Low"
+          "glcm_energy_Low",
+          "contour_circularity_Low"
         ],
         "consequents": [
           "glcm_contrast_High",
-          "glcm_homogeneity_Low",
-          "contour_perimeter_High"
+          "contour_perimeter_High",
+          "glcm_homogeneity_Low"
         ],
         "support": 0.1506,
         "confidence": 0.8708,
@@ -270,13 +349,13 @@
       {
         "antecedents": [
           "glcm_contrast_High",
-          "glcm_homogeneity_Low",
-          "contour_perimeter_High"
+          "contour_perimeter_High",
+          "glcm_homogeneity_Low"
         ],
         "consequents": [
-          "contour_circularity_Low",
           "glcm_correlation_Low",
-          "glcm_energy_Low"
+          "glcm_energy_Low",
+          "contour_circularity_Low"
         ],
         "support": 0.1506,
         "confidence": 0.7899,
@@ -284,9 +363,9 @@
       },
       {
         "antecedents": [
-          "contour_perimeter_High",
           "glcm_correlation_Low",
-          "glcm_energy_Low"
+          "glcm_energy_Low",
+          "contour_perimeter_High"
         ],
         "consequents": [
           "glcm_contrast_High",
@@ -304,9 +383,9 @@
           "glcm_homogeneity_Low"
         ],
         "consequents": [
-          "contour_perimeter_High",
           "glcm_correlation_Low",
-          "glcm_energy_Low"
+          "glcm_energy_Low",
+          "contour_perimeter_High"
         ],
         "support": 0.1506,
         "confidence": 0.7682,
@@ -316,8 +395,8 @@
         "antecedents": [
           "glcm_contrast_High",
           "contour_circularity_Low",
-          "glcm_homogeneity_Low",
-          "contour_perimeter_High"
+          "contour_perimeter_High",
+          "glcm_homogeneity_Low"
         ],
         "consequents": [
           "glcm_correlation_Low",
@@ -335,8 +414,8 @@
         "consequents": [
           "glcm_contrast_High",
           "contour_circularity_Low",
-          "glcm_homogeneity_Low",
-          "contour_perimeter_High"
+          "contour_perimeter_High",
+          "glcm_homogeneity_Low"
         ],
         "support": 0.1506,
         "confidence": 0.8029,
@@ -344,10 +423,10 @@
       },
       {
         "antecedents": [
-          "contour_circularity_Low",
-          "glcm_homogeneity_Low",
           "glcm_correlation_Low",
-          "glcm_energy_Low"
+          "glcm_energy_Low",
+          "contour_circularity_Low",
+          "glcm_homogeneity_Low"
         ],
         "consequents": [
           "glcm_contrast_High",
@@ -363,10 +442,10 @@
           "contour_perimeter_High"
         ],
         "consequents": [
-          "contour_circularity_Low",
-          "glcm_homogeneity_Low",
           "glcm_correlation_Low",
-          "glcm_energy_Low"
+          "glcm_energy_Low",
+          "contour_circularity_Low",
+          "glcm_homogeneity_Low"
         ],
         "support": 0.1506,
         "confidence": 0.749,
@@ -374,9 +453,9 @@
       },
       {
         "antecedents": [
-          "contour_circularity_Low",
           "glcm_correlation_Low",
-          "glcm_energy_Low"
+          "glcm_energy_Low",
+          "contour_circularity_Low"
         ],
         "consequents": [
           "glcm_contrast_High",
@@ -392,9 +471,9 @@
           "contour_perimeter_High"
         ],
         "consequents": [
-          "contour_circularity_Low",
           "glcm_correlation_Low",
-          "glcm_energy_Low"
+          "glcm_energy_Low",
+          "contour_circularity_Low"
         ],
         "support": 0.1506,
         "confidence": 0.749,
@@ -407,8 +486,8 @@
         ],
         "consequents": [
           "glcm_contrast_High",
-          "glcm_homogeneity_Low",
-          "contour_perimeter_High"
+          "contour_perimeter_High",
+          "glcm_homogeneity_Low"
         ],
         "support": 0.1537,
         "confidence": 0.8193,
@@ -417,8 +496,8 @@
       {
         "antecedents": [
           "glcm_contrast_High",
-          "glcm_homogeneity_Low",
-          "contour_perimeter_High"
+          "contour_perimeter_High",
+          "glcm_homogeneity_Low"
         ],
         "consequents": [
           "glcm_correlation_Low",
@@ -458,14 +537,14 @@
       },
       {
         "antecedents": [
-          "contour_perimeter_High",
-          "glcm_homogeneity_Low",
           "glcm_correlation_Low",
-          "glcm_energy_Low"
+          "glcm_energy_Low",
+          "contour_perimeter_High",
+          "glcm_homogeneity_Low"
         ],
         "consequents": [
-          "glcm_contrast_High",
-          "contour_circularity_Low"
+          "contour_circularity_Low",
+          "glcm_contrast_High"
         ],
         "support": 0.1506,
         "confidence": 0.8947,
@@ -473,14 +552,14 @@
       },
       {
         "antecedents": [
-          "glcm_contrast_High",
-          "contour_circularity_Low"
+          "contour_circularity_Low",
+          "glcm_contrast_High"
         ],
         "consequents": [
-          "contour_perimeter_High",
-          "glcm_homogeneity_Low",
           "glcm_correlation_Low",
-          "glcm_energy_Low"
+          "glcm_energy_Low",
+          "contour_perimeter_High",
+          "glcm_homogeneity_Low"
         ],
         "support": 0.1506,
         "confidence": 0.7148,
@@ -488,14 +567,14 @@
       },
       {
         "antecedents": [
+          "glcm_correlation_Low",
           "glcm_contrast_High",
           "contour_perimeter_High",
-          "glcm_homogeneity_Low",
-          "glcm_correlation_Low"
+          "glcm_homogeneity_Low"
         ],
         "consequents": [
-          "contour_circularity_Low",
-          "glcm_energy_Low"
+          "glcm_energy_Low",
+          "contour_circularity_Low"
         ],
         "support": 0.1506,
         "confidence": 0.8728,
@@ -503,14 +582,14 @@
       },
       {
         "antecedents": [
-          "contour_circularity_Low",
-          "glcm_energy_Low"
+          "glcm_energy_Low",
+          "contour_circularity_Low"
         ],
         "consequents": [
+          "glcm_correlation_Low",
           "glcm_contrast_High",
           "contour_perimeter_High",
-          "glcm_homogeneity_Low",
-          "glcm_correlation_Low"
+          "glcm_homogeneity_Low"
         ],
         "support": 0.1506,
         "confidence": 0.7322,
@@ -518,13 +597,13 @@
       },
       {
         "antecedents": [
-          "contour_perimeter_High",
           "glcm_correlation_Low",
-          "glcm_energy_Low"
+          "glcm_energy_Low",
+          "contour_perimeter_High"
         ],
         "consequents": [
-          "glcm_contrast_High",
-          "contour_circularity_Low"
+          "contour_circularity_Low",
+          "glcm_contrast_High"
         ],
         "support": 0.1506,
         "confidence": 0.8907,
@@ -532,13 +611,13 @@
       },
       {
         "antecedents": [
-          "glcm_contrast_High",
-          "contour_circularity_Low"
+          "contour_circularity_Low",
+          "glcm_contrast_High"
         ],
         "consequents": [
-          "contour_perimeter_High",
           "glcm_correlation_Low",
-          "glcm_energy_Low"
+          "glcm_energy_Low",
+          "contour_perimeter_High"
         ],
         "support": 0.1506,
         "confidence": 0.7148,
@@ -549,16 +628,16 @@
   "label_conditioned_rules_summary": {
     "min_support": 0.15,
     "min_confidence": 0.6,
-    "total_label_rules": 272,
+    "total_label_rules": 285,
     "top_rules": [
       {
         "antecedents": [
-          "condition_label_Healthy",
+          "condition_status_Healthy",
           "contour_perimeter_Low"
         ],
         "consequents": [
           "contour_circularity_High",
-          "pathogen_type_Unknown"
+          "pathogen_type_None"
         ],
         "support": 0.1529,
         "confidence": 0.9636,
@@ -566,20 +645,7 @@
       },
       {
         "antecedents": [
-          "pathogen_type_Unknown",
-          "contour_perimeter_Low"
-        ],
-        "consequents": [
-          "condition_label_Healthy",
-          "contour_circularity_High"
-        ],
-        "support": 0.1529,
-        "confidence": 0.9636,
-        "lift": 6.0132
-      },
-      {
-        "antecedents": [
-          "pathogen_type_Unknown",
+          "pathogen_type_None",
           "contour_perimeter_Low"
         ],
         "consequents": [
@@ -592,108 +658,11 @@
       },
       {
         "antecedents": [
-          "contour_perimeter_Low",
-          "condition_status_Healthy"
-        ],
-        "consequents": [
-          "pathogen_type_Unknown",
-          "contour_circularity_High"
-        ],
-        "support": 0.1529,
-        "confidence": 0.9636,
-        "lift": 6.0132
-      },
-      {
-        "antecedents": [
-          "pathogen_type_Unknown",
-          "contour_perimeter_Low",
-          "condition_status_Healthy"
-        ],
-        "consequents": [
-          "condition_label_Healthy",
-          "contour_circularity_High"
-        ],
-        "support": 0.1529,
-        "confidence": 0.9636,
-        "lift": 6.0132
-      },
-      {
-        "antecedents": [
-          "condition_label_Healthy",
-          "pathogen_type_Unknown",
-          "contour_perimeter_Low"
-        ],
-        "consequents": [
           "contour_circularity_High",
           "condition_status_Healthy"
         ],
-        "support": 0.1529,
-        "confidence": 0.9636,
-        "lift": 6.0132
-      },
-      {
-        "antecedents": [
-          "condition_label_Healthy",
-          "contour_perimeter_Low",
-          "condition_status_Healthy"
-        ],
         "consequents": [
-          "pathogen_type_Unknown",
-          "contour_circularity_High"
-        ],
-        "support": 0.1529,
-        "confidence": 0.9636,
-        "lift": 6.0132
-      },
-      {
-        "antecedents": [
-          "pathogen_type_Unknown",
-          "contour_perimeter_Low"
-        ],
-        "consequents": [
-          "condition_label_Healthy",
-          "contour_circularity_High",
-          "condition_status_Healthy"
-        ],
-        "support": 0.1529,
-        "confidence": 0.9636,
-        "lift": 6.0132
-      },
-      {
-        "antecedents": [
-          "contour_perimeter_Low",
-          "condition_status_Healthy"
-        ],
-        "consequents": [
-          "pathogen_type_Unknown",
-          "condition_label_Healthy",
-          "contour_circularity_High"
-        ],
-        "support": 0.1529,
-        "confidence": 0.9636,
-        "lift": 6.0132
-      },
-      {
-        "antecedents": [
-          "condition_label_Healthy",
-          "contour_perimeter_Low"
-        ],
-        "consequents": [
-          "pathogen_type_Unknown",
-          "contour_circularity_High",
-          "condition_status_Healthy"
-        ],
-        "support": 0.1529,
-        "confidence": 0.9636,
-        "lift": 6.0132
-      },
-      {
-        "antecedents": [
-          "condition_label_Healthy",
-          "contour_circularity_High"
-        ],
-        "consequents": [
-          "pathogen_type_Unknown",
+          "pathogen_type_None",
           "contour_perimeter_Low"
         ],
         "support": 0.1529,
@@ -703,10 +672,10 @@
       {
         "antecedents": [
           "contour_circularity_High",
-          "pathogen_type_Unknown"
+          "pathogen_type_None"
         ],
         "consequents": [
-          "condition_label_Healthy",
+          "condition_status_Healthy",
           "contour_perimeter_Low"
         ],
         "support": 0.1529,
@@ -715,119 +684,217 @@
       },
       {
         "antecedents": [
-          "pathogen_type_Unknown",
-          "contour_circularity_High"
+          "lesion_coverage_ratio_Low",
+          "pathogen_type_Fungal"
         ],
         "consequents": [
-          "contour_perimeter_Low",
-          "condition_status_Healthy"
+          "contour_solidity_Low",
+          "condition_status_Diseased"
         ],
-        "support": 0.1529,
-        "confidence": 0.9543,
-        "lift": 6.0132
+        "support": 0.1683,
+        "confidence": 0.9298,
+        "lift": 4.0162
       },
       {
         "antecedents": [
-          "contour_circularity_High",
-          "condition_status_Healthy"
+          "contour_solidity_Low",
+          "condition_status_Diseased"
         ],
         "consequents": [
-          "pathogen_type_Unknown",
-          "contour_perimeter_Low"
+          "lesion_coverage_ratio_Low",
+          "pathogen_type_Fungal"
         ],
-        "support": 0.1529,
-        "confidence": 0.9543,
-        "lift": 6.0132
+        "support": 0.1683,
+        "confidence": 0.7271,
+        "lift": 4.0162
       },
       {
         "antecedents": [
-          "pathogen_type_Unknown",
-          "contour_circularity_High",
-          "condition_status_Healthy"
+          "contour_solidity_Low",
+          "pathogen_type_Fungal"
         ],
         "consequents": [
-          "condition_label_Healthy",
-          "contour_perimeter_Low"
+          "condition_status_Diseased",
+          "lesion_coverage_ratio_Low"
         ],
-        "support": 0.1529,
-        "confidence": 0.9543,
-        "lift": 6.0132
+        "support": 0.1683,
+        "confidence": 0.8552,
+        "lift": 3.9573
       },
       {
         "antecedents": [
-          "pathogen_type_Unknown",
-          "condition_label_Healthy",
-          "contour_circularity_High"
+          "condition_status_Diseased",
+          "lesion_coverage_ratio_Low"
         ],
         "consequents": [
-          "contour_perimeter_Low",
-          "condition_status_Healthy"
+          "contour_solidity_Low",
+          "pathogen_type_Fungal"
         ],
-        "support": 0.1529,
-        "confidence": 0.9543,
-        "lift": 6.0132
+        "support": 0.1683,
+        "confidence": 0.779,
+        "lift": 3.9573
       },
       {
         "antecedents": [
-          "condition_label_Healthy",
-          "contour_circularity_High",
-          "condition_status_Healthy"
+          "lesion_coverage_ratio_High",
+          "pathogen_type_Fungal"
         ],
         "consequents": [
-          "pathogen_type_Unknown",
-          "contour_perimeter_Low"
+          "condition_status_Diseased",
+          "contour_solidity_High"
         ],
-        "support": 0.1529,
-        "confidence": 0.9543,
-        "lift": 6.0132
+        "support": 0.1579,
+        "confidence": 0.8333,
+        "lift": 3.802
       },
       {
         "antecedents": [
-          "pathogen_type_Unknown",
-          "contour_circularity_High"
+          "condition_status_Diseased",
+          "contour_solidity_High"
         ],
         "consequents": [
-          "condition_label_Healthy",
-          "contour_perimeter_Low",
-          "condition_status_Healthy"
+          "lesion_coverage_ratio_High",
+          "pathogen_type_Fungal"
         ],
-        "support": 0.1529,
-        "confidence": 0.9543,
-        "lift": 6.0132
+        "support": 0.1579,
+        "confidence": 0.7206,
+        "lift": 3.802
       },
       {
         "antecedents": [
-          "contour_circularity_High",
-          "condition_status_Healthy"
+          "contour_solidity_High",
+          "pathogen_type_Fungal"
         ],
         "consequents": [
-          "condition_label_Healthy",
-          "pathogen_type_Unknown",
-          "contour_perimeter_Low"
+          "condition_status_Diseased",
+          "lesion_coverage_ratio_High"
         ],
-        "support": 0.1529,
-        "confidence": 0.9543,
-        "lift": 6.0132
+        "support": 0.1579,
+        "confidence": 0.9011,
+        "lift": 3.7548
       },
       {
         "antecedents": [
-          "condition_label_Healthy",
-          "contour_circularity_High"
+          "condition_status_Diseased",
+          "lesion_coverage_ratio_High"
         ],
         "consequents": [
-          "pathogen_type_Unknown",
-          "contour_perimeter_Low",
-          "condition_status_Healthy"
+          "contour_solidity_High",
+          "pathogen_type_Fungal"
         ],
-        "support": 0.1529,
-        "confidence": 0.9543,
-        "lift": 6.0132
+        "support": 0.1579,
+        "confidence": 0.6581,
+        "lift": 3.7548
+      },
+      {
+        "antecedents": [
+          "contour_perimeter_High",
+          "pathogen_type_Fungal"
+        ],
+        "consequents": [
+          "condition_status_Diseased",
+          "contour_circularity_Low"
+        ],
+        "support": 0.1768,
+        "confidence": 0.8965,
+        "lift": 3.4124
+      },
+      {
+        "antecedents": [
+          "condition_status_Diseased",
+          "contour_circularity_Low"
+        ],
+        "consequents": [
+          "contour_perimeter_High",
+          "pathogen_type_Fungal"
+        ],
+        "support": 0.1768,
+        "confidence": 0.673,
+        "lift": 3.4124
+      },
+      {
+        "antecedents": [
+          "condition_status_Diseased",
+          "contour_perimeter_High"
+        ],
+        "consequents": [
+          "contour_circularity_Low",
+          "pathogen_type_Fungal"
+        ],
+        "support": 0.1768,
+        "confidence": 0.6871,
+        "lift": 3.3977
+      },
+      {
+        "antecedents": [
+          "contour_circularity_Low",
+          "pathogen_type_Fungal"
+        ],
+        "consequents": [
+          "condition_status_Diseased",
+          "contour_perimeter_High"
+        ],
+        "support": 0.1768,
+        "confidence": 0.8743,
+        "lift": 3.3977
+      },
+      {
+        "antecedents": [
+          "condition_status_Diseased",
+          "contour_perimeter_Medium"
+        ],
+        "consequents": [
+          "contour_circularity_Medium",
+          "pathogen_type_Fungal"
+        ],
+        "support": 0.1653,
+        "confidence": 0.6831,
+        "lift": 3.3779
+      },
+      {
+        "antecedents": [
+          "contour_circularity_Medium",
+          "pathogen_type_Fungal"
+        ],
+        "consequents": [
+          "condition_status_Diseased",
+          "contour_perimeter_Medium"
+        ],
+        "support": 0.1653,
+        "confidence": 0.8171,
+        "lift": 3.3779
+      },
+      {
+        "antecedents": [
+          "pathogen_type_Fungal",
+          "contour_perimeter_Medium"
+        ],
+        "consequents": [
+          "condition_status_Diseased",
+          "contour_circularity_Medium"
+        ],
+        "support": 0.1653,
+        "confidence": 0.8049,
+        "lift": 3.3485
+      },
+      {
+        "antecedents": [
+          "condition_status_Diseased",
+          "contour_circularity_Medium"
+        ],
+        "consequents": [
+          "pathogen_type_Fungal",
+          "contour_perimeter_Medium"
+        ],
+        "support": 0.1653,
+        "confidence": 0.6875,
+        "lift": 3.3485
       }
     ]
   },
   "research_findings": {
     "rq3_frequent_cooccurrence": "High GLCM contrast strongly co-occurs with high edge density and low GLCM homogeneity (lift > 1.8), representing heavily necrotic and textured lesion zones.",
-    "rq4_label_associations": "Exploratory label-conditioned associations show that 'health_status_Healthy' associates with high GLCM energy and high homogeneity, whereas 'health_status_Diseased' associates with elevated color variance and high edge density.",
+    "rq4_label_associations": "Exploratory label-conditioned associations show that 'condition_status_Healthy' associates with high GLCM energy and high homogeneity, whereas 'condition_status_Diseased' associates with elevated color variance and high edge density.",
     "causality_disclaimer": "Association rules identify empirical co-occurrence patterns within the transactional feature space and do not imply biological causality."
   }
 }

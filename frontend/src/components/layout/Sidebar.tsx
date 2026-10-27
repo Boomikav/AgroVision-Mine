@@ -1,4 +1,5 @@
 import React from 'react'
+import { AppIcon } from '../common/AppIcon'
 
 export type PageId =
   | 'overview'
@@ -56,9 +57,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
           <div className="px-4 pt-6 pb-4 border-b border-[#D4E7DC]/10">
             <div className="flex items-center gap-2 mb-1">
               <div className="w-8 h-8 rounded-lg bg-[#34765B] flex items-center justify-center shrink-0 shadow-inner">
-                <span className="material-symbols-outlined text-white text-[20px]">
-                  potted_plant
-                </span>
+                <AppIcon name="potted_plant" className="text-white w-5 h-5" />
               </div>
               <div>
                 <h1 className="font-headline text-lg font-semibold tracking-tight text-white leading-none">
@@ -97,13 +96,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
                       : 'text-[#E2F5EB]/80 hover:bg-[#34765B]/30 hover:text-white'
                   }`}
                 >
-                  <span
-                    className={`material-symbols-outlined text-[18px] ${
-                      isActive ? 'text-white' : 'text-[#ADF1D0]/70'
+                  <AppIcon
+                    name={item.icon}
+                    className={`w-4 h-4 shrink-0 ${
+                      isActive ? 'text-white' : 'text-[#ADF1D0]/80'
                     }`}
-                  >
-                    {item.icon}
-                  </span>
+                  />
                   <span>{item.label}</span>
                 </button>
               )
@@ -123,9 +121,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
               </span>
             </div>
             <div className="flex items-center gap-1.5 text-[#E2F5EB]/80 text-[11px]">
-              <span className="material-symbols-outlined text-[#C3EFAA] text-[14px]">
-                verified
-              </span>
+              <AppIcon name="verified" className="text-[#C3EFAA] w-3.5 h-3.5 shrink-0" />
               <span className="font-mono text-[10px]">SHA-256 verified</span>
             </div>
             <div className="font-mono text-[9px] text-[#E2F5EB]/50 truncate">

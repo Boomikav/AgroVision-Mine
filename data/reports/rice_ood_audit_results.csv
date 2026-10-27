@@ -1,0 +1,37 @@
+image_id,filename,ground_truth_disease,top_ref_id,top_ref_crop,top_ref_source,top_ref_distance,full_status,full_is_uncertain,full_predicted_class,full_confidence,raw_status,raw_is_uncertain,raw_predicted_class,raw_confidence
+AGRO_V2_00001,DSC_0365.JPG,Bacterial Leaf Blight,AGRO_V2_00001,Rice,icar_ogd,0.0,unsupported_domain,True,Corn___Common Rust,0.6406,confident,False,Corn___Common Rust,0.6406
+AGRO_V2_00002,DSC_0366.jpg,Bacterial Leaf Blight,AGRO_V2_00002,Rice,icar_ogd,0.0,unsupported_domain,True,Corn___Northern Leaf Blight,0.4929,confident,False,Corn___Northern Leaf Blight,0.4929
+AGRO_V2_00003,DSC_0367.JPG,Bacterial Leaf Blight,AGRO_V2_00003,Rice,icar_ogd,0.0,unsupported_domain,True,Corn___Gray Leaf Spot,0.5034,confident,False,Corn___Gray Leaf Spot,0.5034
+AGRO_V2_00004,DSC_0370.jpg,Bacterial Leaf Blight,AGRO_V2_00004,Rice,icar_ogd,0.0,unsupported_domain,True,Corn___Common Rust,0.6414,confident,False,Corn___Common Rust,0.6414
+AGRO_V2_00005,DSC_0372.JPG,Bacterial Leaf Blight,AGRO_V2_00005,Rice,icar_ogd,0.0,unsupported_domain,True,Corn___Northern Leaf Blight,0.7341,confident,False,Corn___Northern Leaf Blight,0.7341
+AGRO_V2_00006,DSC_0373.JPG,Bacterial Leaf Blight,AGRO_V2_00006,Rice,icar_ogd,0.0,unsupported_domain,True,Corn___Common Rust,0.6935,confident,False,Corn___Common Rust,0.6935
+AGRO_V2_00007,DSC_0374.JPG,Bacterial Leaf Blight,AGRO_V2_00007,Rice,icar_ogd,0.0,unsupported_domain,True,Corn___Northern Leaf Blight,0.4134,confident,False,Corn___Northern Leaf Blight,0.4134
+AGRO_V2_00008,DSC_0375.JPG,Bacterial Leaf Blight,AGRO_V2_00008,Rice,icar_ogd,0.0,unsupported_domain,True,Corn___Northern Leaf Blight,0.5391,confident,False,Corn___Northern Leaf Blight,0.5391
+AGRO_V2_00009,DSC_0376.JPG,Bacterial Leaf Blight,AGRO_V2_00009,Rice,icar_ogd,0.0,unsupported_domain,True,Corn___Northern Leaf Blight,0.7,confident,False,Corn___Northern Leaf Blight,0.7
+AGRO_V2_00010,DSC_0377.JPG,Bacterial Leaf Blight,AGRO_V2_00010,Rice,icar_ogd,0.0,unsupported_domain,True,Corn___Common Rust,0.3506,confident,False,Corn___Common Rust,0.3506
+AGRO_V2_00011,DSC_0378.JPG,Bacterial Leaf Blight,AGRO_V2_00011,Rice,icar_ogd,0.0,unsupported_domain,True,Corn___Gray Leaf Spot,0.5832,confident,False,Corn___Gray Leaf Spot,0.5832
+AGRO_V2_00012,DSC_0379.JPG,Bacterial Leaf Blight,AGRO_V2_00012,Rice,icar_ogd,0.0,unsupported_domain,True,Corn___Common Rust,0.5857,confident,False,Corn___Common Rust,0.5857
+AGRO_V2_00013,DSC_0100.jpg,Brown Spot,AGRO_V2_00013,Rice,icar_ogd,0.0,unsupported_domain,True,Corn___Common Rust,0.4144,confident,False,Corn___Common Rust,0.4144
+AGRO_V2_00014,DSC_0101.jpg,Brown Spot,AGRO_V2_00014,Rice,icar_ogd,0.0,unsupported_domain,True,Corn___Common Rust,0.6069,confident,False,Corn___Common Rust,0.6069
+AGRO_V2_00015,DSC_0104.jpg,Brown Spot,AGRO_V2_00015,Rice,icar_ogd,0.0,unsupported_domain,True,Corn___Gray Leaf Spot,0.4854,confident,False,Corn___Gray Leaf Spot,0.4854
+AGRO_V2_00016,DSC_0105.jpg,Brown Spot,AGRO_V2_00016,Rice,icar_ogd,0.0,unsupported_domain,True,Corn___Gray Leaf Spot,0.5209,confident,False,Corn___Gray Leaf Spot,0.5209
+AGRO_V2_00017,DSC_0106.jpg,Brown Spot,AGRO_V2_00017,Rice,icar_ogd,0.0,unsupported_domain,True,Corn___Northern Leaf Blight,0.4985,confident,False,Corn___Northern Leaf Blight,0.4985
+AGRO_V2_00018,DSC_0107.jpg,Brown Spot,AGRO_V2_00018,Rice,icar_ogd,0.0,unsupported_domain,True,Corn___Common Rust,0.3937,confident,False,Corn___Common Rust,0.3937
+AGRO_V2_00019,DSC_0108.jpg,Brown Spot,AGRO_V2_00019,Rice,icar_ogd,0.0,unsupported_domain,True,Corn___Gray Leaf Spot,0.5259,confident,False,Corn___Gray Leaf Spot,0.5259
+AGRO_V2_00020,DSC_0109.jpg,Brown Spot,AGRO_V2_00020,Rice,icar_ogd,0.0,unsupported_domain,True,Corn___Common Rust,0.7455,confident,False,Corn___Common Rust,0.7455
+AGRO_V2_00021,DSC_0110.jpg,Brown Spot,AGRO_V2_00021,Rice,icar_ogd,0.0,unsupported_domain,True,Corn___Gray Leaf Spot,0.6773,confident,False,Corn___Gray Leaf Spot,0.6773
+AGRO_V2_00022,DSC_0111.jpg,Brown Spot,AGRO_V2_00022,Rice,icar_ogd,0.0,unsupported_domain,True,Corn___Gray Leaf Spot,0.7732,confident,False,Corn___Gray Leaf Spot,0.7732
+AGRO_V2_00023,DSC_0112.jpg,Brown Spot,AGRO_V2_00023,Rice,icar_ogd,0.0,unsupported_domain,True,Corn___Northern Leaf Blight,0.7177,confident,False,Corn___Northern Leaf Blight,0.7177
+AGRO_V2_00024,DSC_0113.jpg,Brown Spot,AGRO_V2_00024,Rice,icar_ogd,0.0,unsupported_domain,True,Corn___Gray Leaf Spot,0.4891,confident,False,Corn___Gray Leaf Spot,0.4891
+AGRO_V2_00025,DSC_0293.JPG,Leaf Smut,AGRO_V2_00025,Rice,icar_ogd,0.0,unsupported_domain,True,Corn___Northern Leaf Blight,0.2923,uncertain,True,Corn___Northern Leaf Blight,0.2923
+AGRO_V2_00026,DSC_0308.JPG,Leaf Smut,AGRO_V2_00026,Rice,icar_ogd,0.0,unsupported_domain,True,Corn___Common Rust,0.5075,confident,False,Corn___Common Rust,0.5075
+AGRO_V2_00027,DSC_0309.JPG,Leaf Smut,AGRO_V2_00027,Rice,icar_ogd,0.0,unsupported_domain,True,Corn___Common Rust,0.7263,confident,False,Corn___Common Rust,0.7263
+AGRO_V2_00028,DSC_0310.JPG,Leaf Smut,AGRO_V2_00028,Rice,icar_ogd,0.0,unsupported_domain,True,Corn___Common Rust,0.8922,confident,False,Corn___Common Rust,0.8922
+AGRO_V2_00029,DSC_0312.JPG,Leaf Smut,AGRO_V2_00029,Rice,icar_ogd,0.0,unsupported_domain,True,Corn___Common Rust,0.8364,confident,False,Corn___Common Rust,0.8364
+AGRO_V2_00030,DSC_0313.JPG,Leaf Smut,AGRO_V2_00030,Rice,icar_ogd,0.0,unsupported_domain,True,Corn___Common Rust,0.7252,confident,False,Corn___Common Rust,0.7252
+AGRO_V2_00031,DSC_0314.JPG,Leaf Smut,AGRO_V2_00031,Rice,icar_ogd,0.0,unsupported_domain,True,Corn___Northern Leaf Blight,0.3645,confident,False,Corn___Northern Leaf Blight,0.3645
+AGRO_V2_00032,DSC_0315.jpg,Leaf Smut,AGRO_V2_00032,Rice,icar_ogd,0.0,unsupported_domain,True,Corn___Northern Leaf Blight,0.4304,confident,False,Corn___Northern Leaf Blight,0.4304
+AGRO_V2_00033,DSC_0316.JPG,Leaf Smut,AGRO_V2_00033,Rice,icar_ogd,0.0,unsupported_domain,True,Corn___Common Rust,0.8385,confident,False,Corn___Common Rust,0.8385
+AGRO_V2_00034,DSC_0317.JPG,Leaf Smut,AGRO_V2_00034,Rice,icar_ogd,0.0,unsupported_domain,True,Corn___Common Rust,0.3569,confident,False,Corn___Common Rust,0.3569
+AGRO_V2_00035,DSC_0318.JPG,Leaf Smut,AGRO_V2_00035,Rice,icar_ogd,0.0,unsupported_domain,True,Corn___Common Rust,0.7724,confident,False,Corn___Common Rust,0.7724
+AGRO_V2_00036,DSC_0319.jpg,Leaf Smut,AGRO_V2_00036,Rice,icar_ogd,0.0,unsupported_domain,True,Corn___Common Rust,0.735,confident,False,Corn___Common Rust,0.735

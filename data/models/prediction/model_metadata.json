@@ -1,0 +1,67 @@
+{
+  "model_architecture": "EfficientNet_B0",
+  "pretrained_weights": "EfficientNet_B0_Weights.DEFAULT (ImageNet-1K, PyTorch Torchvision)",
+  "num_classes": 25,
+  "input_resolution": "224x224 RGB",
+  "supported_classes": [
+    "Apple___Apple Scab",
+    "Apple___Cedar Apple Rust",
+    "Apple___Healthy",
+    "Bell Pepper___Bacterial Spot",
+    "Bell Pepper___Healthy",
+    "Blueberry___Healthy",
+    "Corn___Common Rust",
+    "Corn___Gray Leaf Spot",
+    "Corn___Northern Leaf Blight",
+    "Grape___Black Rot",
+    "Grape___Healthy",
+    "Peach___Healthy",
+    "Potato___Early Blight",
+    "Potato___Late Blight",
+    "Raspberry___Healthy",
+    "Soybean___Healthy",
+    "Squash___Powdery Mildew",
+    "Strawberry___Healthy",
+    "Tomato___Bacterial Spot",
+    "Tomato___Early Blight",
+    "Tomato___Healthy",
+    "Tomato___Late Blight",
+    "Tomato___Leaf Mold",
+    "Tomato___Septoria Leaf Spot",
+    "Tomato___Yellow Leaf Curl Virus"
+  ],
+  "normalization": {
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ]
+  },
+  "confidence_threshold": 0.4,
+  "uncertainty_policy": "Flag as uncertain/unsupported if max probability < 0.40 or input belongs to excluded/OOD classes",
+  "library_versions": {
+    "torch": "2.14.1+cpu",
+    "torchvision": "0.29.1+cpu",
+    "scikit-learn": "1.9.0"
+  },
+  "training_metadata": {
+    "train_samples": 1468,
+    "val_samples": 489,
+    "test_samples": 490,
+    "group_deduplication": "StratifiedGroupKFold on dHash",
+    "epochs": 8,
+    "best_validation_macro_f1": 0.6326,
+    "held_out_test_accuracy": 0.6184,
+    "held_out_test_macro_f1": 0.6084,
+    "held_out_test_balanced_accuracy": 0.6143,
+    "test_ci_95": [
+      0.5746,
+      0.6603
+    ]
+  }
+}

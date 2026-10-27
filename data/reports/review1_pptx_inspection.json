@@ -1,0 +1,2911 @@
+[
+  {
+    "slide_number": 1,
+    "shapes": [
+      {
+        "index": 0,
+        "name": "Title 1",
+        "shape_type": "PLACEHOLDER (14)",
+        "left": 1097280,
+        "top": 1737360,
+        "width": 9875520,
+        "height": 1097280,
+        "text": "",
+        "runs": []
+      },
+      {
+        "index": 1,
+        "name": "Text Placeholder 2",
+        "shape_type": "PLACEHOLDER (14)",
+        "left": 1097280,
+        "top": 2880360,
+        "width": 9875520,
+        "height": 548640,
+        "text": "",
+        "runs": []
+      },
+      {
+        "index": 2,
+        "name": "Rectangle 3",
+        "shape_type": "AUTO_SHAPE (1)",
+        "left": 0,
+        "top": 0,
+        "width": 12191695,
+        "height": 6858000,
+        "text": "",
+        "runs": []
+      },
+      {
+        "index": 3,
+        "name": "Rectangle 4",
+        "shape_type": "AUTO_SHAPE (1)",
+        "left": 731520,
+        "top": 1645920,
+        "width": 137160,
+        "height": 2103120,
+        "text": "",
+        "runs": []
+      },
+      {
+        "index": 4,
+        "name": "TextBox 5",
+        "shape_type": "TEXT_BOX (17)",
+        "left": 1097280,
+        "top": 1371600,
+        "width": 10241280,
+        "height": 2569934,
+        "text": "\nAgroVision-Mine\nA Multimodal Data Warehouse and Visual Pattern Mining Framework\u000bfor Crop Disease and Pest Intelligence\n\n\nDATA WAREHOUSING & DATA MINING (CSI3010) - LAB PROJECT REVIEW 1\n",
+        "runs": [
+          {
+            "text": "AgroVision",
+            "font_name": "Bookman Old Style",
+            "font_size": null,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "-Mine",
+            "font_name": "Bookman Old Style",
+            "font_size": null,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "A Multimodal Data Warehouse and Visual Pattern Mining Framework",
+            "font_name": "Bookman Old Style",
+            "font_size": null,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "for Crop Disease and Pest Intelligence",
+            "font_name": "Bookman Old Style",
+            "font_size": null,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "DATA WAREHOUSING & DATA MINING (CSI3010) - LAB PROJECT REVIEW 1",
+            "font_name": "Bookman Old Style",
+            "font_size": null,
+            "bold": null,
+            "color": null
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "name": "TextBox 7",
+        "shape_type": "TEXT_BOX (17)",
+        "left": 731520,
+        "top": 4159957,
+        "width": 10058400,
+        "height": 954107,
+        "text": "PROJECT TEAM DETAILS\n\nTeam Members: [Boomika V – 23MID0326]  |  [Ajay M- 23MID0020]\nFaculty Guide: [Dr. Devipriya A]   |   Lab Slot: [L41+L42]   |   Academic Term: 2026-27",
+        "runs": [
+          {
+            "text": "PROJECT TEAM DETAILS",
+            "font_name": "Bookman Old Style",
+            "font_size": 14.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "Team Members: [",
+            "font_name": "Bookman Old Style",
+            "font_size": 14.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "Boomika V ",
+            "font_name": "Bookman Old Style",
+            "font_size": 14.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "–",
+            "font_name": "Bookman Old Style",
+            "font_size": 14.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": " ",
+            "font_name": "Bookman Old Style",
+            "font_size": 14.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "23MID0326",
+            "font_name": "Bookman Old Style",
+            "font_size": 14.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "]  |  [",
+            "font_name": "Bookman Old Style",
+            "font_size": 14.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "Ajay M",
+            "font_name": "Bookman Old Style",
+            "font_size": 14.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "- ",
+            "font_name": "Bookman Old Style",
+            "font_size": 14.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "23MID0020",
+            "font_name": "Bookman Old Style",
+            "font_size": 14.0,
+            "bold": null,
+            "color": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slide_number": 2,
+    "shapes": [
+      {
+        "index": 0,
+        "name": "Title 1",
+        "shape_type": "PLACEHOLDER (14)",
+        "left": 548640,
+        "top": 594360,
+        "width": 10789920,
+        "height": 777240,
+        "text": "Research Motivation: The Agricultural Data Gap",
+        "runs": [
+          {
+            "text": "Research Motivation: The Agricultural Data Gap",
+            "font_name": "Bookman Old Style",
+            "font_size": null,
+            "bold": null,
+            "color": null
+          }
+        ]
+      },
+      {
+        "index": 1,
+        "name": "Rounded Rectangle 2",
+        "shape_type": "AUTO_SHAPE (1)",
+        "left": 548640,
+        "top": 1463040,
+        "width": 5394960,
+        "height": 3840480,
+        "text": "",
+        "runs": []
+      },
+      {
+        "index": 2,
+        "name": "TextBox 3",
+        "shape_type": "TEXT_BOX (17)",
+        "left": 731520,
+        "top": 1645920,
+        "width": 5029200,
+        "height": 3631187,
+        "text": "LIMITATIONS OF CURRENT APPROACHES\n• Isolated Point Classifiers: Standard deep learning (CNNs/YOLO) treats foliar disease identification as an isolated inference task without data warehousing.\n• Absence of Relational Rigor: Images reside in flat, disconnected directories. No referential integrity linking images to botanical taxonomy, cryptographic digests, or extracted features.\n• Inability to Perform OLAP Exploration: Researchers cannot run aggregate queries across agronomic hierarchies (e.g. comparing lesion texture of bacterial vs fungal pathogens).\n• Lack of Explainable Lineage: Black-box neural embeddings cannot explain why an image exhibits specific texture or foliar discoloration patterns.",
+        "runs": [
+          {
+            "text": "LIMITATIONS OF CURRENT APPROACHES",
+            "font_name": "Bookman Old Style",
+            "font_size": 16.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "• Isolated Point Classifiers: Standard deep learning (CNNs/YOLO) treats foliar disease identification as an isolated inference task without data warehousing.",
+            "font_name": "Bookman Old Style",
+            "font_size": 12.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "• Absence of Relational Rigor: Images reside in flat, disconnected directories. No referential integrity linking images to botanical taxonomy, cryptographic digests, or extracted features.",
+            "font_name": "Bookman Old Style",
+            "font_size": 12.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "• Inability to Perform OLAP Exploration: Researchers cannot run aggregate queries across agronomic hierarchies (e.g. comparing lesion texture of bacterial vs fungal pathogens).",
+            "font_name": "Bookman Old Style",
+            "font_size": 12.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "• Lack of Explainable Lineage: Black-box neural embeddings cannot explain why an image exhibits specific texture or foliar discoloration patterns.",
+            "font_name": "Bookman Old Style",
+            "font_size": 12.0,
+            "bold": null,
+            "color": null
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "name": "Rounded Rectangle 4",
+        "shape_type": "AUTO_SHAPE (1)",
+        "left": 6217920,
+        "top": 1463040,
+        "width": 5394960,
+        "height": 3977640,
+        "text": "",
+        "runs": []
+      },
+      {
+        "index": 4,
+        "name": "TextBox 5",
+        "shape_type": "TEXT_BOX (17)",
+        "left": 6400800,
+        "top": 1645920,
+        "width": 5029200,
+        "height": 3633944,
+        "text": "THE AGROVISION-MINE SOLUTION\n✓ Multimodal Data Warehouse: First-of-its-kind architecture applying Ralph Kimball's Star Schema methodology to agricultural imagery and classical visual features.\n✓ Explainable Feature Store: 34 classical descriptors (RGB/HSV color moments, Haralick GLCM textures, morphometric shape contours) in a 44-column analytical dataset.\n✓ SQL-Backed OLAP Analytics: Executes real SQL queries across dimensions: Roll-up to crop categories, True Drill-down to diseases, Slicing by crops, Dicing, and Pivoting.\n✓ Enterprise Data Integrity: Surrogate keys, native SQLite foreign key enforcement (PRAGMA foreign_keys = 1), and idempotent ETL guarantee 100% database consistency.",
+        "runs": [
+          {
+            "text": "THE AGROVISION-MINE SOLUTION",
+            "font_name": "Bookman Old Style",
+            "font_size": 16.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "✓ Multimodal Data Warehouse: First-of-its-kind architecture applying Ralph Kimball's Star Schema methodology to agricultural imagery and classical visual features.",
+            "font_name": "Bookman Old Style",
+            "font_size": 12.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "✓ Explainable Feature Store: 34 classical descriptors (RGB/HSV color moments, ",
+            "font_name": "Bookman Old Style",
+            "font_size": 12.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "Haralick",
+            "font_name": "Bookman Old Style",
+            "font_size": 12.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": " GLCM textures, morphometric shape contours) in a 44-column analytical dataset.",
+            "font_name": "Bookman Old Style",
+            "font_size": 12.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "✓ SQL-Backed OLAP Analytics: Executes real SQL queries across dimensions: Roll-up to crop categories, True Drill-down to diseases, Slicing by crops, Dicing, and Pivoting.",
+            "font_name": "Bookman Old Style",
+            "font_size": 12.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "✓ Enterprise Data Integrity: Surrogate keys, native SQLite foreign key enforcement (PRAGMA ",
+            "font_name": "Bookman Old Style",
+            "font_size": 12.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "foreign_keys",
+            "font_name": "Bookman Old Style",
+            "font_size": 12.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": " = 1), and idempotent ETL guarantee 100% database consistency.",
+            "font_name": "Bookman Old Style",
+            "font_size": 12.0,
+            "bold": null,
+            "color": null
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "name": "Rounded Rectangle 6",
+        "shape_type": "AUTO_SHAPE (1)",
+        "left": 548640,
+        "top": 5486400,
+        "width": 11064240,
+        "height": 502920,
+        "text": "",
+        "runs": []
+      },
+      {
+        "index": 6,
+        "name": "TextBox 7",
+        "shape_type": "TEXT_BOX (17)",
+        "left": 645459,
+        "top": 5532121,
+        "width": 10967421,
+        "height": 457200,
+        "text": "Core Research Question: How can image-based crop disease observations be transformed into a multimodal analytical warehouse for explainable multidimensional decision support?",
+        "runs": [
+          {
+            "text": "Core Research Question: How can image-based crop disease observations be transformed into a multimodal analytical warehouse for explainable multidimensional decision support?",
+            "font_name": "Bookman Old Style",
+            "font_size": 12.0,
+            "bold": null,
+            "color": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slide_number": 3,
+    "shapes": [
+      {
+        "index": 0,
+        "name": "Title 1",
+        "shape_type": "PLACEHOLDER (14)",
+        "left": 822960,
+        "top": 411480,
+        "width": 10789920,
+        "height": 777240,
+        "text": "Project Objectives & Multimodal Pipeline Flow",
+        "runs": [
+          {
+            "text": "Project Objectives & Multimodal Pipeline Flow",
+            "font_name": "Bookman Old Style",
+            "font_size": null,
+            "bold": null,
+            "color": null
+          }
+        ]
+      },
+      {
+        "index": 1,
+        "name": "Rounded Rectangle 2",
+        "shape_type": "AUTO_SHAPE (1)",
+        "left": 548640,
+        "top": 1463040,
+        "width": 3520440,
+        "height": 1143000,
+        "text": "",
+        "runs": []
+      },
+      {
+        "index": 2,
+        "name": "TextBox 3",
+        "shape_type": "TEXT_BOX (17)",
+        "left": 658368,
+        "top": 1549792,
+        "width": 3300984,
+        "height": 1046440,
+        "text": "1. Ingestion & Anti-Fabrication\nIngest authentic ICAR Indian agricultural imagery; derive botanical metadata dynamically without synthetic fabrication.",
+        "runs": [
+          {
+            "text": "1. Ingestion & Anti-Fabrication",
+            "font_name": "Bookman Old Style",
+            "font_size": 14.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "Ingest authentic ICAR Indian agricultural imagery; derive botanical metadata dynamically without synthetic fabrication.",
+            "font_name": "Bookman Old Style",
+            "font_size": 12.0,
+            "bold": null,
+            "color": null
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "name": "Rounded Rectangle 4",
+        "shape_type": "AUTO_SHAPE (1)",
+        "left": 4315968,
+        "top": 1463040,
+        "width": 3520440,
+        "height": 1143000,
+        "text": "",
+        "runs": []
+      },
+      {
+        "index": 4,
+        "name": "TextBox 5",
+        "shape_type": "TEXT_BOX (17)",
+        "left": 4425696,
+        "top": 1554480,
+        "width": 3300984,
+        "height": 1046440,
+        "text": "2. Quality Gate Auditing\nEnforce automated validation: detect corrupted headers, exact MD5 duplicates, and sub-threshold images without silent deletion.",
+        "runs": [
+          {
+            "text": "2. Quality Gate Auditing",
+            "font_name": "Bookman Old Style",
+            "font_size": 14.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "Enforce automated validation: detect corrupted headers, exact MD5 duplicates, and sub-threshold images without silent deletion.",
+            "font_name": "Bookman Old Style",
+            "font_size": 12.0,
+            "bold": null,
+            "color": null
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "name": "Rounded Rectangle 6",
+        "shape_type": "AUTO_SHAPE (1)",
+        "left": 8083296,
+        "top": 1463040,
+        "width": 3520440,
+        "height": 1143000,
+        "text": "",
+        "runs": []
+      },
+      {
+        "index": 6,
+        "name": "TextBox 7",
+        "shape_type": "TEXT_BOX (17)",
+        "left": 8193024,
+        "top": 1554480,
+        "width": 3300984,
+        "height": 1046440,
+        "text": "3. Classical Feature Store\nExtract 34 explainable visual descriptors (Color moments, Haralick GLCM, morphometric contours) with full Image_ID lineage.",
+        "runs": [
+          {
+            "text": "3. Classical Feature Store",
+            "font_name": "Bookman Old Style",
+            "font_size": 14.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "Extract 34 explainable visual descriptors (Color moments, ",
+            "font_name": "Bookman Old Style",
+            "font_size": 12.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "Haralick",
+            "font_name": "Bookman Old Style",
+            "font_size": 12.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": " GLCM, morphometric contours) with full ",
+            "font_name": "Bookman Old Style",
+            "font_size": 12.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "Image_ID",
+            "font_name": "Bookman Old Style",
+            "font_size": 12.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": " lineage.",
+            "font_name": "Bookman Old Style",
+            "font_size": 12.0,
+            "bold": null,
+            "color": null
+          }
+        ]
+      },
+      {
+        "index": 7,
+        "name": "Rounded Rectangle 8",
+        "shape_type": "AUTO_SHAPE (1)",
+        "left": 548640,
+        "top": 2770632,
+        "width": 3520440,
+        "height": 1143000,
+        "text": "",
+        "runs": []
+      },
+      {
+        "index": 8,
+        "name": "TextBox 9",
+        "shape_type": "TEXT_BOX (17)",
+        "left": 658368,
+        "top": 2862072,
+        "width": 3300984,
+        "height": 1046440,
+        "text": "4. Kimball Star Schema\nDeploy ANSI SQL relational schema centered on individual image observations surrounded by 4 empirically-supported dimensions.",
+        "runs": [
+          {
+            "text": "4. Kimball Star Schema",
+            "font_name": "Bookman Old Style",
+            "font_size": 14.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "Deploy ANSI SQL relational schema centered on individual image observations surrounded by 4 empirically-supported dimensions.",
+            "font_name": "Bookman Old Style",
+            "font_size": 12.0,
+            "bold": null,
+            "color": null
+          }
+        ]
+      },
+      {
+        "index": 9,
+        "name": "Rounded Rectangle 10",
+        "shape_type": "AUTO_SHAPE (1)",
+        "left": 4315968,
+        "top": 2770632,
+        "width": 3520440,
+        "height": 1143000,
+        "text": "",
+        "runs": []
+      },
+      {
+        "index": 10,
+        "name": "TextBox 11",
+        "shape_type": "TEXT_BOX (17)",
+        "left": 4425696,
+        "top": 2862072,
+        "width": 3300984,
+        "height": 1046440,
+        "text": "5. Production Idempotent ETL\nBuild dimension-first ETL pipeline enforcing native SQLite foreign keys (PRAGMA foreign_keys = 1) with 0 duplicate fact re-runs.",
+        "runs": [
+          {
+            "text": "5. Production Idempotent ETL",
+            "font_name": "Bookman Old Style",
+            "font_size": 14.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "Build dimension-first ETL pipeline enforcing native SQLite foreign keys (PRAGMA ",
+            "font_name": "Bookman Old Style",
+            "font_size": 12.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "foreign_keys",
+            "font_name": "Bookman Old Style",
+            "font_size": 12.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": " = 1) with 0 duplicate fact re-runs.",
+            "font_name": "Bookman Old Style",
+            "font_size": 12.0,
+            "bold": null,
+            "color": null
+          }
+        ]
+      },
+      {
+        "index": 11,
+        "name": "Rounded Rectangle 12",
+        "shape_type": "AUTO_SHAPE (1)",
+        "left": 8083296,
+        "top": 2770632,
+        "width": 3520440,
+        "height": 1143000,
+        "text": "",
+        "runs": []
+      },
+      {
+        "index": 12,
+        "name": "TextBox 13",
+        "shape_type": "TEXT_BOX (17)",
+        "left": 8193024,
+        "top": 2862072,
+        "width": 3300984,
+        "height": 1046440,
+        "text": "6. Real SQL-Backed OLAP\nImplement and evaluate genuine SQL analytical queries: Roll-up, True Drill-down, Slice, Dice, and Pivot over physical facts.",
+        "runs": [
+          {
+            "text": "6. Real SQL-Backed OLAP",
+            "font_name": "Bookman Old Style",
+            "font_size": 14.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "Implement and evaluate genuine SQL analytical queries: Roll-up, True Drill-down, Slice, Dice, and Pivot over physical facts.",
+            "font_name": "Bookman Old Style",
+            "font_size": 12.0,
+            "bold": null,
+            "color": null
+          }
+        ]
+      },
+      {
+        "index": 13,
+        "name": "Picture 14",
+        "shape_type": "PICTURE (13)",
+        "left": 548640,
+        "top": 4206240,
+        "width": 11064240,
+        "height": 1783080,
+        "is_picture": true,
+        "image_filename": "slide_3_img_13.png"
+      }
+    ]
+  },
+  {
+    "slide_number": 4,
+    "shapes": [
+      {
+        "index": 0,
+        "name": "Title 1",
+        "shape_type": "PLACEHOLDER (14)",
+        "left": 548640,
+        "top": 617220,
+        "width": 10789920,
+        "height": 777240,
+        "text": "Dataset Description & Agronomic Taxonomy",
+        "runs": [
+          {
+            "text": "Dataset Description & Agronomic Taxonomy",
+            "font_name": "Bookman Old Style",
+            "font_size": null,
+            "bold": null,
+            "color": null
+          }
+        ]
+      },
+      {
+        "index": 1,
+        "name": "Table 2",
+        "shape_type": "TABLE (19)",
+        "left": 548640,
+        "top": 1463040,
+        "width": 5943600,
+        "height": 4389120
+      },
+      {
+        "index": 2,
+        "name": "Rounded Rectangle 3",
+        "shape_type": "AUTO_SHAPE (1)",
+        "left": 6766560,
+        "top": 1463040,
+        "width": 4846320,
+        "height": 4389120,
+        "text": "",
+        "runs": []
+      },
+      {
+        "index": 3,
+        "name": "TextBox 4",
+        "shape_type": "TEXT_BOX (17)",
+        "left": 6949440,
+        "top": 1645920,
+        "width": 4480560,
+        "height": 4087786,
+        "text": "AGRONOMIC SIGNIFICANCE & DATA GOVERNANCE\n• Critical Staple Crop: Rice feeds >60% of India's population. Microbial infections (Xanthomonas oryzae, Bipolaris oryzae) cause devastating seasonal yield losses of up to 40%.\n• Authentic Working Subset: The 36 authentic observations represent the verified project subset from official Indian repositories, ensuring full reproducible auditability.\n• Control Baseline Policy (HEALTHY): HEALTHY is maintained in dim_disease as an unpopulated control reference value (0 facts). The working subset contains pathological foliar specimens exclusively; no synthetic healthy observations were fabricated.\n• Anti-Fabrication Mandate: Unsupported dimensions (Pest, Time, Geography) were strictly excluded because source images lack verified empirical field tags.",
+        "runs": [
+          {
+            "text": "AGRONOMIC SIGNIFICANCE & DATA GOVERNANCE",
+            "font_name": "Bookman Old Style",
+            "font_size": 14.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "• Critical Staple Crop: Rice feeds >60% of India's population. Microbial infections (Xanthomonas oryzae, ",
+            "font_name": "Bookman Old Style",
+            "font_size": 11.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "Bipolaris",
+            "font_name": "Bookman Old Style",
+            "font_size": 11.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": " oryzae) cause devastating seasonal yield losses of up to 40%.",
+            "font_name": "Bookman Old Style",
+            "font_size": 11.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "• Authentic Working Subset: The 36 authentic observations represent the verified project subset from official Indian repositories, ensuring full reproducible auditability.",
+            "font_name": "Bookman Old Style",
+            "font_size": 11.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "• Control Baseline Policy (HEALTHY): HEALTHY is maintained in ",
+            "font_name": "Bookman Old Style",
+            "font_size": 11.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "dim_disease",
+            "font_name": "Bookman Old Style",
+            "font_size": 11.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": " as an unpopulated control reference value (0 facts). The working subset contains pathological foliar specimens exclusively; no synthetic healthy observations were fabricated.",
+            "font_name": "Bookman Old Style",
+            "font_size": 11.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "• Anti-Fabrication Mandate: Unsupported dimensions (Pest, Time, Geography) were strictly excluded because source images lack verified empirical field tags.",
+            "font_name": "Bookman Old Style",
+            "font_size": 11.0,
+            "bold": null,
+            "color": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slide_number": 5,
+    "shapes": [
+      {
+        "index": 0,
+        "name": "Title 1",
+        "shape_type": "PLACEHOLDER (14)",
+        "left": 822960,
+        "top": 553492,
+        "width": 10789920,
+        "height": 777240,
+        "text": "Image Preprocessing & Quality Gate Verification",
+        "runs": [
+          {
+            "text": "Image Preprocessing & Quality Gate Verification",
+            "font_name": "Bookman Old Style",
+            "font_size": null,
+            "bold": null,
+            "color": null
+          }
+        ]
+      },
+      {
+        "index": 1,
+        "name": "Rounded Rectangle 2",
+        "shape_type": "AUTO_SHAPE (1)",
+        "left": 548640,
+        "top": 1463039,
+        "width": 5394960,
+        "height": 2169319,
+        "text": "",
+        "runs": []
+      },
+      {
+        "index": 2,
+        "name": "TextBox 3",
+        "shape_type": "TEXT_BOX (17)",
+        "left": 641873,
+        "top": 1519408,
+        "width": 5029200,
+        "height": 2112951,
+        "text": "CONTROLLED DIAGNOSTIC EDGE HARNESS (data/diagnostic_tests/)\n• corrupted_header_test.jpg -> Truncated byte stream -> REJECTED (CORRUPTED)\n• invalid_dim_tiny.jpg -> Dimensions 16x16px < 32px -> REJECTED (INVALID_DIM)\n• duplicate_exact_test.jpg -> Exact MD5 match -> REJECTED (EXACT_HASH)\n• unsupported_extension.txt -> Non-image MIME -> REJECTED (UNSUPPORTED_FORMAT)",
+        "runs": [
+          {
+            "text": "CONTROLLED DIAGNOSTIC EDGE HARNESS (data/",
+            "font_name": "Bookman Old Style",
+            "font_size": 13.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "diagnostic_tests",
+            "font_name": "Bookman Old Style",
+            "font_size": 13.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "/)",
+            "font_name": "Bookman Old Style",
+            "font_size": 13.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "• corrupted_header_test.jpg -> Truncated byte stream -> REJECTED (CORRUPTED)",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "• invalid_dim_tiny.jpg -> Dimensions 16x16px < 32px -> REJECTED (INVALID_DIM)",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "• duplicate_exact_test.jpg -> Exact MD5 match -> REJECTED (EXACT_HASH)",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "• unsupported_extension.txt -> Non-image MIME -> REJECTED (UNSUPPORTED_FORMAT)",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "name": "Rounded Rectangle 4",
+        "shape_type": "AUTO_SHAPE (1)",
+        "left": 6217920,
+        "top": 1463040,
+        "width": 5394960,
+        "height": 1920240,
+        "text": "",
+        "runs": []
+      },
+      {
+        "index": 4,
+        "name": "TextBox 5",
+        "shape_type": "TEXT_BOX (17)",
+        "left": 6400800,
+        "top": 1600200,
+        "width": 5029200,
+        "height": 1650773,
+        "text": "AUTHENTIC RESEARCH DATASET STANDARDIZATION\n✓ 36 Authentic Field Images Discovered: 36 Successfully Standardized\n✓ Quality Pass Rate: 100% (Zero authentic research observations rejected)\n✓ Standardization: 256 x 256 px RGB, Lanczos anti-aliased resampling\n✓ Non-Destructive Storage: Raw originals preserved; cleaned copies in data/processed/\n✓ Laplacian Variance Blur Scoring: Mean score = 185.34 (Threshold = 100.0)",
+        "runs": [
+          {
+            "text": "AUTHENTIC RESEARCH DATASET STANDARDIZATION",
+            "font_name": "Bookman Old Style",
+            "font_size": 13.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "✓ 36 Authentic Field Images Discovered: 36 Successfully Standardized",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "✓ Quality Pass Rate: 100% (Zero authentic research observations rejected)",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "✓ Standardization: 256 x 256 ",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "px",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": " RGB, Lanczos anti-aliased resampling",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "✓ Non-Destructive Storage: Raw originals preserved; cleaned copies in data/processed/",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "✓ Laplacian Variance Blur Scoring: Mean score = 185.34 (Threshold = 100.0)",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "name": "Picture 6",
+        "shape_type": "PICTURE (13)",
+        "left": 548640,
+        "top": 3960607,
+        "width": 11064240,
+        "height": 2377440,
+        "is_picture": true,
+        "image_filename": "slide_5_img_5.png"
+      }
+    ]
+  },
+  {
+    "slide_number": 6,
+    "shapes": [
+      {
+        "index": 0,
+        "name": "Title 1",
+        "shape_type": "PLACEHOLDER (14)",
+        "left": 2158702,
+        "top": 571866,
+        "width": 10789920,
+        "height": 777240,
+        "text": "Visual Feature Extraction & Attribute Summary",
+        "runs": [
+          {
+            "text": "Visual Feature Extraction & Attribute Summary",
+            "font_name": "Bookman Old Style",
+            "font_size": null,
+            "bold": null,
+            "color": null
+          }
+        ]
+      },
+      {
+        "index": 1,
+        "name": "Table 2",
+        "shape_type": "TABLE (19)",
+        "left": 548640,
+        "top": 1463040,
+        "width": 7315200,
+        "height": 3830319
+      },
+      {
+        "index": 2,
+        "name": "Rounded Rectangle 3",
+        "shape_type": "AUTO_SHAPE (1)",
+        "left": 8138160,
+        "top": 1463040,
+        "width": 3474720,
+        "height": 3749039,
+        "text": "",
+        "runs": []
+      },
+      {
+        "index": 3,
+        "name": "TextBox 4",
+        "shape_type": "TEXT_BOX (17)",
+        "left": 8275320,
+        "top": 1600200,
+        "width": 3200400,
+        "height": 3497945,
+        "text": "44-COLUMN FEATURE DATASET\n34 Explainable Visual Descriptors\n• 17 Color Descriptors (RGB/HSV moments & ExG index)\n• 7 Haralick GLCM Textures (Contrast, Energy, ASM, Homogeneity, Correlation, Dissimilarity)\n• 7 Morphometric Shape Contours (Area, Perimeter, Aspect Ratio, Solidity, Coverage)\n10 Lineage / Metadata Fields\n• image_id, filename, raw_path, processed_path, crop_label, condition_label, disease_label, pest_label, is_pest, md5_hash\n100% Traceability\n• Every row maps 1:1 to an authenticated image via image_id and MD5 cryptographic hash.",
+        "runs": [
+          {
+            "text": "44-COLUMN FEATURE DATASET",
+            "font_name": "Bookman Old Style",
+            "font_size": 13.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "34 Explainable Visual Descriptors",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "• 17 Color Descriptors (RGB/HSV moments & ",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "ExG",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": " index)",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "• 7 ",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "Haralick",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": " GLCM Textures (Contrast, Energy, ASM, Homogeneity, Correlation, Dissimilarity)",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "• 7 Morphometric Shape Contours (Area, Perimeter, Aspect Ratio, Solidity, Coverage)",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "10 Lineage / Metadata Fields",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "name": "Rounded Rectangle 5",
+        "shape_type": "AUTO_SHAPE (1)",
+        "left": 548640,
+        "top": 5440680,
+        "width": 11064240,
+        "height": 502920,
+        "text": "",
+        "runs": []
+      },
+      {
+        "index": 5,
+        "name": "TextBox 6",
+        "shape_type": "TEXT_BOX (17)",
+        "left": 831924,
+        "top": 5481935,
+        "width": 10528151,
+        "height": 461665,
+        "text": "Standard Terminology Verification: 34 explainable visual descriptors stored in a 44-column analytical feature dataset (data/features/image_features.csv).",
+        "runs": [
+          {
+            "text": "Standard Terminology Verification: 34 explainable visual descriptors stored in a 44-column analytical feature dataset (data/features/image_features.csv).",
+            "font_name": "Bookman Old Style",
+            "font_size": 12.0,
+            "bold": null,
+            "color": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slide_number": 7,
+    "shapes": [
+      {
+        "index": 0,
+        "name": "Title 1",
+        "shape_type": "PLACEHOLDER (14)",
+        "left": 822960,
+        "top": 411480,
+        "width": 10789920,
+        "height": 777240,
+        "text": "Multimodal Data Warehouse - Star Schema Topology",
+        "runs": [
+          {
+            "text": "Multimodal Data Warehouse - Star Schema Topology",
+            "font_name": "Bookman Old Style",
+            "font_size": null,
+            "bold": null,
+            "color": null
+          }
+        ]
+      },
+      {
+        "index": 1,
+        "name": "Picture 2",
+        "shape_type": "PICTURE (13)",
+        "left": 548640,
+        "top": 1417320,
+        "width": 6949440,
+        "height": 4526280,
+        "is_picture": true,
+        "image_filename": "slide_7_img_1.png"
+      },
+      {
+        "index": 2,
+        "name": "Rounded Rectangle 3",
+        "shape_type": "AUTO_SHAPE (1)",
+        "left": 7680960,
+        "top": 1417319,
+        "width": 3931920,
+        "height": 4660751,
+        "text": "",
+        "runs": []
+      },
+      {
+        "index": 3,
+        "name": "TextBox 4",
+        "shape_type": "TEXT_BOX (17)",
+        "left": 7818120,
+        "top": 1554480,
+        "width": 3657600,
+        "height": 4436664,
+        "text": "PHYSICAL WAREHOUSE INVENTORY\n• disease_observation_fact (36 Rows)\nPK: observation_key\u000b• FKs: crop_key, disease_key, image_key, feature_key\u000b• Measures: count (1), severity [2.13-4.98], sharpness [5.9-789.8], coverage [0.21-0.50], GLCM contrast\n• dim_crop (1 Row)\nHost taxonomy: RICE (Oryza sativa), Cereal\n• dim_disease (4 Rows)\nBacterial Leaf Blight, Brown Spot, Leaf Smut\u000b• HEALTHY (Unpopulated Control Baseline)\n• dim_image (36 Rows)\nOptical geometry, MD5 hash, blur score, paths\n• dim_visual_feature (36 Rows)\n34 color, Haralick texture, shape contour descriptors\n• Data Governance Mandate\nSchema strictly follows observed source attributes. Unsupported dimensions (Dim_Pest, Dim_Time, Dim_Geography) are not fabricated.",
+        "runs": [
+          {
+            "text": "PHYSICAL WAREHOUSE INVENTORY",
+            "font_name": "Bookman Old Style",
+            "font_size": 14.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "• ",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "disease_observation_fact",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": " (36 Rows)",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "PK: ",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "observation_key",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "• FKs: ",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "crop_key",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": ", ",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "disease_key",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slide_number": 8,
+    "shapes": [
+      {
+        "index": 0,
+        "name": "Title 1",
+        "shape_type": "PLACEHOLDER (14)",
+        "left": 822960,
+        "top": 411480,
+        "width": 10789920,
+        "height": 777240,
+        "text": "Warehouse Design & Production ETL Architecture",
+        "runs": [
+          {
+            "text": "Warehouse Design & Production ETL Architecture",
+            "font_name": "Bookman Old Style",
+            "font_size": null,
+            "bold": null,
+            "color": null
+          }
+        ]
+      },
+      {
+        "index": 1,
+        "name": "Rounded Rectangle 2",
+        "shape_type": "AUTO_SHAPE (1)",
+        "left": 548640,
+        "top": 1463040,
+        "width": 3520440,
+        "height": 4434840,
+        "text": "",
+        "runs": []
+      },
+      {
+        "index": 2,
+        "name": "TextBox 3",
+        "shape_type": "TEXT_BOX (17)",
+        "left": 685800,
+        "top": 1600200,
+        "width": 3246120,
+        "height": 3282502,
+        "text": "Fact Table & Measures\n• Grain: Exactly ONE row per validated, preprocessed multimodal image observation.\n• Additive Measure:\u000b  • observation_count (Constant 1 per record)\n• Semi-Additive Measures:\u000b  • lesion_severity_score [0.0 - 10.0]\u000b  • image_sharpness_score (Laplacian Var)\u000b  • lesion_coverage_ratio [0.0 - 1.0]\u000b  • texture_contrast_norm [0.0 - 1.0]\u000b  • processing_latency_ms\n• Referential Integrity:\u000b  • 4 Foreign Keys with ON DELETE RESTRICT\u000b  • Zero orphan keys, zero null measure values",
+        "runs": [
+          {
+            "text": "Fact Table & Measures",
+            "font_name": "Bookman Old Style",
+            "font_size": 14.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "• Grain: Exactly ONE row per validated, preprocessed multimodal image observation.",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "• Additive Measure:",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "  • ",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "observation_count",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": " (Constant 1 per record)",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "• Semi-Additive Measures:",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "  • ",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "lesion_severity_score",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": " [0.0 - 10.0]",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "name": "Rounded Rectangle 4",
+        "shape_type": "AUTO_SHAPE (1)",
+        "left": 4315968,
+        "top": 1463040,
+        "width": 3520440,
+        "height": 4434840,
+        "text": "",
+        "runs": []
+      },
+      {
+        "index": 4,
+        "name": "TextBox 5",
+        "shape_type": "TEXT_BOX (17)",
+        "left": 4453128,
+        "top": 1600200,
+        "width": 3246120,
+        "height": 3051669,
+        "text": "Dimensions & Hierarchies\n• Botanical Host Hierarchy:\u000b  Observation -> Crop Name -> Crop Category\u000b  (e.g., DSC_0365 -> Rice -> Cereal)\n• Microbial Pathology Hierarchy:\u000b  Pathogen Type -> Disease Diagnosis\u000b  (Bacterial -> Bacterial Leaf Blight)\u000b  (Fungal -> Brown Spot | Leaf Smut)\n• Visual Feature Dimension (1:1):\u000b  34 Color moments, Haralick GLCM textures, morphometric shape descriptors\n• Physical Image Dimension (1:1):\u000b  Cryptographic MD5 hash, blur score, file paths",
+        "runs": [
+          {
+            "text": "Dimensions & Hierarchies",
+            "font_name": "Bookman Old Style",
+            "font_size": 14.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "• Botanical Host Hierarchy:",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "  Observation -> Crop Name -> Crop Category",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "  (e.g., DSC_0365 -> Rice -> Cereal)",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "• Microbial Pathology Hierarchy:",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "  Pathogen Type -> Disease Diagnosis",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "  (Bacterial -> Bacterial Leaf Blight)",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "  (Fungal -> Brown Spot | Leaf Smut)",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "• Visual Feature Dimension (1:1):",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "  34 Color moments, ",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "name": "Rounded Rectangle 6",
+        "shape_type": "AUTO_SHAPE (1)",
+        "left": 8083296,
+        "top": 1463040,
+        "width": 3520440,
+        "height": 4434840,
+        "text": "",
+        "runs": []
+      },
+      {
+        "index": 6,
+        "name": "TextBox 7",
+        "shape_type": "TEXT_BOX (17)",
+        "left": 8220456,
+        "top": 1600200,
+        "width": 3246120,
+        "height": 3282502,
+        "text": "Production ETL & Idempotency\n• EXTRACT Phase:\u000b  - Ingests raw images, cleaned metadata, and extracted visual feature store\n• TRANSFORM Phase:\u000b  - Quality validation, surrogate key mapping, botanical taxonomy normalization\n• LOAD Phase (Dimension-First):\u000b  - Loads dim_crop, dim_disease, dim_image, dim_visual_feature, then fact table\n• VERIFIED IDEMPOTENCY AUDIT:\u000b  - 1st Run: 36 facts inserted\u000b  - 2nd Run: 0 inserted, 36 duplicates skipped\u000b  - Native SQLite PRAGMA foreign_keys = 1",
+        "runs": [
+          {
+            "text": "Production ETL & Idempotency",
+            "font_name": "Bookman Old Style",
+            "font_size": 14.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "• EXTRACT Phase:",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "  - Ingests raw images, cleaned metadata, and extracted visual feature store",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "• TRANSFORM Phase:",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "  - Quality validation, surrogate key mapping, botanical taxonomy normalization",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "• LOAD Phase (Dimension-First):",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "  - Loads ",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "dim_crop",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": ", ",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "dim_disease",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slide_number": 9,
+    "shapes": [
+      {
+        "index": 0,
+        "name": "Title 1",
+        "shape_type": "PLACEHOLDER (14)",
+        "left": 822960,
+        "top": 411480,
+        "width": 10789920,
+        "height": 777240,
+        "text": "Code: Creating the Warehouse (ANSI SQL DDL)",
+        "runs": [
+          {
+            "text": "Code: Creating the Warehouse (ANSI SQL DDL)",
+            "font_name": null,
+            "font_size": null,
+            "bold": null,
+            "color": null
+          }
+        ]
+      },
+      {
+        "index": 1,
+        "name": "Rounded Rectangle 2",
+        "shape_type": "AUTO_SHAPE (1)",
+        "left": 563879,
+        "top": 1437564,
+        "width": 8266922,
+        "height": 4165386,
+        "text": "",
+        "runs": []
+      },
+      {
+        "index": 2,
+        "name": "TextBox 3",
+        "shape_type": "TEXT_BOX (17)",
+        "left": 632679,
+        "top": 1437564,
+        "width": 10789920,
+        "height": 4131900,
+        "text": "-- 1. Dimension Tables: Botanical Crop & Pathology Diagnosis\nCREATE TABLE dim_crop (\n    crop_key INTEGER PRIMARY KEY AUTOINCREMENT,\n    crop_code VARCHAR(50) NOT NULL UNIQUE, crop_name VARCHAR(100) NOT NULL,\n    botanical_name VARCHAR(150), crop_category VARCHAR(50) NOT NULL\n);\nCREATE TABLE dim_disease (\n    disease_key INTEGER PRIMARY KEY AUTOINCREMENT,\n    disease_code VARCHAR(50) NOT NULL UNIQUE, disease_name VARCHAR(150) NOT NULL,\n    pathogen_type VARCHAR(50) NOT NULL, -- Bacterial, Fungal, None (HEALTHY Control)\n    causal_agent VARCHAR(150), primary_symptom VARCHAR(200)\n);\n-- dim_image & dim_visual_feature: Store optical parameters & 34 explainable visual descriptors\n-- 2. Central Fact Table: Granular Grain (1 Row per Preprocessed Observation)\nCREATE TABLE disease_observation_fact (\n    observation_key INTEGER PRIMARY KEY AUTOINCREMENT,\n    crop_key INTEGER NOT NULL REFERENCES dim_crop(crop_key),\n    disease_key INTEGER NOT NULL REFERENCES dim_disease(disease_key),\n    image_key INTEGER NOT NULL UNIQUE REFERENCES dim_image(image_key),\n    feature_key INTEGER NOT NULL UNIQUE REFERENCES dim_visual_feature(feature_key),\n    observation_count INTEGER NOT NULL DEFAULT 1,\n    lesion_severity_score FLOAT, image_sharpness_score FLOAT,\n    lesion_coverage_ratio FLOAT, texture_contrast_norm FLOAT, etl_batch_id VARCHAR(50)\n);\nCREATE INDEX idx_fact_crop_disease ON disease_observation_fact(crop_key, disease_key);",
+        "runs": [
+          {
+            "text": "-- 1. Dimension Tables: Botanical Crop & Pathology Diagnosis",
+            "font_name": null,
+            "font_size": 10.5,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "CREATE TABLE ",
+            "font_name": null,
+            "font_size": 10.5,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "dim_crop",
+            "font_name": null,
+            "font_size": 10.5,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": " (",
+            "font_name": null,
+            "font_size": 10.5,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "    ",
+            "font_name": null,
+            "font_size": 10.5,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "crop_key",
+            "font_name": null,
+            "font_size": 10.5,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": " INTEGER PRIMARY KEY AUTOINCREMENT,",
+            "font_name": null,
+            "font_size": 10.5,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "    ",
+            "font_name": null,
+            "font_size": 10.5,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "crop_code",
+            "font_name": null,
+            "font_size": 10.5,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": " VARCHAR(50) NOT NULL UNIQUE, ",
+            "font_name": null,
+            "font_size": 10.5,
+            "bold": null,
+            "color": null
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "name": "Rounded Rectangle 4",
+        "shape_type": "AUTO_SHAPE (1)",
+        "left": 563879,
+        "top": 5828362,
+        "width": 11064240,
+        "height": 457200,
+        "text": "",
+        "runs": []
+      },
+      {
+        "index": 4,
+        "name": "TextBox 5",
+        "shape_type": "TEXT_BOX (17)",
+        "left": 394126,
+        "top": 5791973,
+        "width": 11403747,
+        "height": 461665,
+        "text": "DATABASE INTEGRITY VERIFICATION: SQLite PRAGMA foreign_keys = 1 natively enforced via SQLAlchemy listener. Invalid foreign key insertion attempt natively raises sqlalchemy.exc.IntegrityError.",
+        "runs": [
+          {
+            "text": "DATABASE INTEGRITY VERIFICATION: SQLite PRAGMA ",
+            "font_name": "Bookman Old Style",
+            "font_size": 12.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "foreign_keys",
+            "font_name": "Bookman Old Style",
+            "font_size": 12.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": " = 1 natively enforced via ",
+            "font_name": "Bookman Old Style",
+            "font_size": 12.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "SQLAlchemy",
+            "font_name": "Bookman Old Style",
+            "font_size": 12.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": " listener. Invalid foreign key insertion attempt natively raises ",
+            "font_name": "Bookman Old Style",
+            "font_size": 12.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "sqlalchemy.exc.IntegrityError",
+            "font_name": "Bookman Old Style",
+            "font_size": 12.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": ".",
+            "font_name": "Bookman Old Style",
+            "font_size": 12.0,
+            "bold": null,
+            "color": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slide_number": 10,
+    "shapes": [
+      {
+        "index": 0,
+        "name": "Title 1",
+        "shape_type": "PLACEHOLDER (14)",
+        "left": 822960,
+        "top": 411480,
+        "width": 10789920,
+        "height": 777240,
+        "text": "Code: Production ETL Pipeline (Python & SQLAlchemy)",
+        "runs": [
+          {
+            "text": "Code: Production ETL Pipeline (Python & SQLAlchemy)",
+            "font_name": null,
+            "font_size": null,
+            "bold": null,
+            "color": null
+          }
+        ]
+      },
+      {
+        "index": 1,
+        "name": "Rounded Rectangle 2",
+        "shape_type": "AUTO_SHAPE (1)",
+        "left": 548640,
+        "top": 1463039,
+        "width": 7358231,
+        "height": 4187767,
+        "text": "",
+        "runs": []
+      },
+      {
+        "index": 2,
+        "name": "TextBox 3",
+        "shape_type": "TEXT_BOX (17)",
+        "left": 685800,
+        "top": 1572768,
+        "width": 10789920,
+        "height": 4078039,
+        "text": "# Production ETL Pipeline (Extract -> Transform -> Dimension-First Load -> Idempotency Check)\nfrom sqlalchemy import event, Engine\nfrom src.warehouse.connection import get_db_session\nfrom src.warehouse.models import DimCrop, DimDisease, DimImage, DimVisualFeature, DiseaseObservationFact\n\n# 1. Enforce Native SQLite Foreign Keys Connection Listener\n@event.listens_for(Engine, 'connect')\ndef set_sqlite_pragma(dbapi_conn, conn_record):\n    if type(dbapi_conn).__module__.startswith('sqlite3'):\n        cursor = dbapi_conn.cursor()\n        cursor.execute('PRAGMA foreign_keys=ON')\n        cursor.close()\n\n# 2. Dimension-First Loading & Idempotent Fact Insertion\ndef load_observation_facts(session, staged_data, batch_id):\n    for item in staged_data['fact_records']:\n        # Verify uniqueness to prevent duplicate insertion on repeated ETL runs\n        existing = session.query(DiseaseObservationFact).filter_by(image_key=item['image_key']).first()\n        if existing:\n            load_stats['duplicates_skipped'] += 1\n            continue\n        fact = DiseaseObservationFact(\n            crop_key=item['crop_key'], disease_key=item['disease_key'],\n            image_key=item['image_key'], feature_key=item['feature_key'],\n            observation_count=1, lesion_severity_score=item['lesion_severity_score'],\n            image_sharpness_score=item['sharpness_score'], etl_batch_id=batch_id\n        )\n        session.add(fact)\n    session.commit()  # Atomic transaction commit",
+        "runs": [
+          {
+            "text": "# Production ETL Pipeline (Extract -> Transform -> Dimension-First Load -> Idempotency Check)",
+            "font_name": null,
+            "font_size": 9.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "from ",
+            "font_name": null,
+            "font_size": 9.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "sqlalchemy",
+            "font_name": null,
+            "font_size": 9.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": " import event, Engine",
+            "font_name": null,
+            "font_size": 9.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "from ",
+            "font_name": null,
+            "font_size": 9.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "src.warehouse.connection",
+            "font_name": null,
+            "font_size": 9.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": " import ",
+            "font_name": null,
+            "font_size": 9.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "get_db_session",
+            "font_name": null,
+            "font_size": 9.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "from ",
+            "font_name": null,
+            "font_size": 9.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "src.warehouse.models",
+            "font_name": null,
+            "font_size": 9.0,
+            "bold": null,
+            "color": null
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "name": "Rounded Rectangle 4",
+        "shape_type": "AUTO_SHAPE (1)",
+        "left": 563880,
+        "top": 5879592,
+        "width": 11064240,
+        "height": 457200,
+        "text": "",
+        "runs": []
+      },
+      {
+        "index": 4,
+        "name": "TextBox 5",
+        "shape_type": "TEXT_BOX (17)",
+        "left": 548640,
+        "top": 5866432,
+        "width": 11064240,
+        "height": 461665,
+        "text": "ETL VERIFICATION RESULT: 1st Run: 36 facts loaded  |  2nd Run: 0 inserted, 36 duplicates skipped (100% Idempotent). Referential Audit: 0 orphan foreign keys, 0 nulls, atomic rollback on exception.",
+        "runs": [
+          {
+            "text": "ETL VERIFICATION RESULT: 1st Run: 36 facts loaded  |  2nd Run: 0 inserted, 36 duplicates skipped (100% Idempotent). Referential Audit: 0 orphan foreign keys, 0 nulls, atomic rollback on exception.",
+            "font_name": "Bookman Old Style",
+            "font_size": 12.0,
+            "bold": null,
+            "color": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slide_number": 11,
+    "shapes": [
+      {
+        "index": 0,
+        "name": "Title 1",
+        "shape_type": "PLACEHOLDER (14)",
+        "left": 822960,
+        "top": 411480,
+        "width": 10789920,
+        "height": 777240,
+        "text": "SQL-Backed OLAP Operations Engine",
+        "runs": [
+          {
+            "text": "SQL-Backed OLAP Operations Engine",
+            "font_name": "Bookman Old Style",
+            "font_size": null,
+            "bold": null,
+            "color": null
+          }
+        ]
+      },
+      {
+        "index": 1,
+        "name": "Rounded Rectangle 2",
+        "shape_type": "AUTO_SHAPE (1)",
+        "left": 548640,
+        "top": 1463040,
+        "width": 2084831,
+        "height": 4480560,
+        "text": "",
+        "runs": []
+      },
+      {
+        "index": 2,
+        "name": "Rectangle 3",
+        "shape_type": "AUTO_SHAPE (1)",
+        "left": 548640,
+        "top": 1463040,
+        "width": 2084831,
+        "height": 502920,
+        "text": "Roll-up",
+        "runs": [
+          {
+            "text": "Roll-up",
+            "font_name": "Bookman Old Style",
+            "font_size": null,
+            "bold": null,
+            "color": null
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "name": "TextBox 4",
+        "shape_type": "TEXT_BOX (17)",
+        "left": 621792,
+        "top": 2011680,
+        "width": 1938527,
+        "height": 400110,
+        "text": "Observation -> Crop -> Crop Category",
+        "runs": [
+          {
+            "text": "Observation -> Crop -> Crop Category",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "name": "TextBox 5",
+        "shape_type": "TEXT_BOX (17)",
+        "left": 603504,
+        "top": 2514600,
+        "width": 1975103,
+        "height": 1938992,
+        "text": "SELECT c.crop_category,\n  COUNT(f.observation_key) AS obs,\n  ROUND(AVG(f.lesion_severity_score),2)\n  AS avg_sev\nFROM disease_observation_fact f\nJOIN dim_crop c ON f.crop_key = c.crop_key\nGROUP BY c.crop_category;",
+        "runs": [
+          {
+            "text": "SELECT c.crop_category,",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "  COUNT(f.observation_key) AS obs,",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "  ROUND(AVG(f.lesion_severity_score),2)",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "  AS avg_sev",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "FROM disease_observation_fact f",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "JOIN dim_crop c ON f.crop_key = c.crop_key",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "GROUP BY c.crop_category;",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "name": "TextBox 6",
+        "shape_type": "TEXT_BOX (17)",
+        "left": 621792,
+        "top": 5120640,
+        "width": 1938527,
+        "height": 400110,
+        "text": "Result: Cereal -> 36 Obs (Avg Sev: 3.57)",
+        "runs": [
+          {
+            "text": "Result: Cereal -> 36 Obs (Avg Sev: 3.57)",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "name": "Rounded Rectangle 7",
+        "shape_type": "AUTO_SHAPE (1)",
+        "left": 2798063,
+        "top": 1463040,
+        "width": 2084831,
+        "height": 4480560,
+        "text": "",
+        "runs": []
+      },
+      {
+        "index": 7,
+        "name": "Rectangle 8",
+        "shape_type": "AUTO_SHAPE (1)",
+        "left": 2798063,
+        "top": 1463040,
+        "width": 2084831,
+        "height": 502920,
+        "text": "True Drill-down",
+        "runs": [
+          {
+            "text": "True Drill-down",
+            "font_name": "Bookman Old Style",
+            "font_size": null,
+            "bold": null,
+            "color": null
+          }
+        ]
+      },
+      {
+        "index": 8,
+        "name": "TextBox 9",
+        "shape_type": "TEXT_BOX (17)",
+        "left": 2871215,
+        "top": 2011680,
+        "width": 1938527,
+        "height": 400110,
+        "text": "Pathogen Type -> Disease Name",
+        "runs": [
+          {
+            "text": "Pathogen Type -> Disease Name",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          }
+        ]
+      },
+      {
+        "index": 9,
+        "name": "TextBox 10",
+        "shape_type": "TEXT_BOX (17)",
+        "left": 2852927,
+        "top": 2514600,
+        "width": 1975103,
+        "height": 2554545,
+        "text": "SELECT d.pathogen_type,\n  d.disease_name,\n  COUNT(f.observation_key) AS obs,\n  ROUND(AVG(f.lesion_severity_score),2)\n  AS avg_sev\nFROM disease_observation_fact f\nJOIN dim_disease d ON f.disease_key\n  = d.disease_key\nGROUP BY d.pathogen_type,\n  d.disease_name;",
+        "runs": [
+          {
+            "text": "SELECT d.pathogen_type,",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "  d.disease_name,",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "  COUNT(f.observation_key) AS obs,",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "  ROUND(AVG(f.lesion_severity_score),2)",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "  AS avg_sev",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "FROM disease_observation_fact f",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "JOIN dim_disease d ON f.disease_key",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "  = d.disease_key",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "GROUP BY d.pathogen_type,",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "  d.disease_name;",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          }
+        ]
+      },
+      {
+        "index": 10,
+        "name": "TextBox 11",
+        "shape_type": "TEXT_BOX (17)",
+        "left": 2871215,
+        "top": 5120640,
+        "width": 1938527,
+        "height": 553998,
+        "text": "Result: Bacterial: 12 | Fungal: 24 (Brown Spot: 12, Leaf Smut: 12)",
+        "runs": [
+          {
+            "text": "Result: Bacterial: 12 | Fungal: 24 (Brown Spot: 12, Leaf Smut: 12)",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          }
+        ]
+      },
+      {
+        "index": 11,
+        "name": "Rounded Rectangle 12",
+        "shape_type": "AUTO_SHAPE (1)",
+        "left": 5047486,
+        "top": 1463040,
+        "width": 2084831,
+        "height": 4480560,
+        "text": "",
+        "runs": []
+      },
+      {
+        "index": 12,
+        "name": "Rectangle 13",
+        "shape_type": "AUTO_SHAPE (1)",
+        "left": 5047486,
+        "top": 1463040,
+        "width": 2084831,
+        "height": 502920,
+        "text": "Slice",
+        "runs": [
+          {
+            "text": "Slice",
+            "font_name": "Bookman Old Style",
+            "font_size": null,
+            "bold": null,
+            "color": null
+          }
+        ]
+      },
+      {
+        "index": 13,
+        "name": "TextBox 14",
+        "shape_type": "TEXT_BOX (17)",
+        "left": 5120638,
+        "top": 2011680,
+        "width": 1938527,
+        "height": 246221,
+        "text": "Crop = 'Rice'",
+        "runs": [
+          {
+            "text": "Crop = 'Rice'",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          }
+        ]
+      },
+      {
+        "index": 14,
+        "name": "TextBox 15",
+        "shape_type": "TEXT_BOX (17)",
+        "left": 5102350,
+        "top": 2514600,
+        "width": 1975103,
+        "height": 1938992,
+        "text": "SELECT d.disease_name,\n  COUNT(f.observation_key)\nFROM disease_observation_fact f\nJOIN dim_crop c ON f.crop_key = c.crop_key\nJOIN dim_disease d ON f.disease_key\n  = d.disease_key\nWHERE LOWER(c.crop_name) = 'rice'\nGROUP BY d.disease_name;",
+        "runs": [
+          {
+            "text": "SELECT d.disease_name,",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "  COUNT(f.observation_key)",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "FROM disease_observation_fact f",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "JOIN dim_crop c ON f.crop_key = c.crop_key",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "JOIN dim_disease d ON f.disease_key",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "  = d.disease_key",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "WHERE LOWER(c.crop_name) = 'rice'",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "GROUP BY d.disease_name;",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          }
+        ]
+      },
+      {
+        "index": 15,
+        "name": "TextBox 16",
+        "shape_type": "TEXT_BOX (17)",
+        "left": 5120638,
+        "top": 5120640,
+        "width": 1938527,
+        "height": 553998,
+        "text": "Result: 2D Sub-Plane on Rice (36 Obs: 12 BLB, 12 BS, 12 LS)",
+        "runs": [
+          {
+            "text": "Result: 2D Sub-Plane on Rice (36 Obs: 12 BLB, 12 BS, 12 LS)",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          }
+        ]
+      },
+      {
+        "index": 16,
+        "name": "Rounded Rectangle 17",
+        "shape_type": "AUTO_SHAPE (1)",
+        "left": 7296909,
+        "top": 1463040,
+        "width": 2084831,
+        "height": 4480560,
+        "text": "",
+        "runs": []
+      },
+      {
+        "index": 17,
+        "name": "Rectangle 18",
+        "shape_type": "AUTO_SHAPE (1)",
+        "left": 7296909,
+        "top": 1463040,
+        "width": 2084831,
+        "height": 502920,
+        "text": "Dice",
+        "runs": [
+          {
+            "text": "Dice",
+            "font_name": "Bookman Old Style",
+            "font_size": null,
+            "bold": null,
+            "color": null
+          }
+        ]
+      },
+      {
+        "index": 18,
+        "name": "TextBox 19",
+        "shape_type": "TEXT_BOX (17)",
+        "left": 7370061,
+        "top": 2011680,
+        "width": 1938527,
+        "height": 400110,
+        "text": "Multi-Dimensional Sub-Cube",
+        "runs": [
+          {
+            "text": "Multi-Dimensional Sub-Cube",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          }
+        ]
+      },
+      {
+        "index": 19,
+        "name": "TextBox 20",
+        "shape_type": "TEXT_BOX (17)",
+        "left": 7351773,
+        "top": 2514600,
+        "width": 1975103,
+        "height": 3016210,
+        "text": "SELECT c.crop_name, d.disease_name,\n  COUNT(*)\nFROM disease_observation_fact f\nJOIN dim_crop c ON f.crop_key = c.crop_key\nJOIN dim_disease d ON f.disease_key\n  = d.disease_key\nJOIN dim_visual_feature vf ON\n  f.feature_key = vf.feature_key\nWHERE c.crop_name = 'Rice' AND\n  vf.glcm_contrast >= 0.1\nGROUP BY c.crop_name, d.disease_name;",
+        "runs": [
+          {
+            "text": "SELECT c.crop_name, d.disease_name,",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "  COUNT(*)",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "FROM disease_observation_fact f",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "JOIN dim_crop c ON f.crop_key = c.crop_key",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "JOIN dim_disease d ON f.disease_key",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "  = d.disease_key",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "JOIN dim_visual_feature vf ON",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "  f.feature_key = vf.feature_key",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "WHERE c.crop_name = 'Rice' AND",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "  vf.glcm_contrast >= 0.1",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          }
+        ]
+      },
+      {
+        "index": 20,
+        "name": "TextBox 21",
+        "shape_type": "TEXT_BOX (17)",
+        "left": 7370061,
+        "top": 5412462,
+        "width": 1938527,
+        "height": 553998,
+        "text": "Result: 36 Obs meeting criteria (GLCM Contrast >= 0.10)",
+        "runs": [
+          {
+            "text": "Result: 36 Obs meeting criteria (GLCM Contrast >= 0.10)",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          }
+        ]
+      },
+      {
+        "index": 21,
+        "name": "Rounded Rectangle 22",
+        "shape_type": "AUTO_SHAPE (1)",
+        "left": 9546332,
+        "top": 1463040,
+        "width": 2084831,
+        "height": 4480560,
+        "text": "",
+        "runs": []
+      },
+      {
+        "index": 22,
+        "name": "Rectangle 23",
+        "shape_type": "AUTO_SHAPE (1)",
+        "left": 9546332,
+        "top": 1463040,
+        "width": 2084831,
+        "height": 502920,
+        "text": "Pivot",
+        "runs": [
+          {
+            "text": "Pivot",
+            "font_name": "Bookman Old Style",
+            "font_size": null,
+            "bold": null,
+            "color": null
+          }
+        ]
+      },
+      {
+        "index": 23,
+        "name": "TextBox 24",
+        "shape_type": "TEXT_BOX (17)",
+        "left": 9619484,
+        "top": 2011680,
+        "width": 1938527,
+        "height": 400110,
+        "text": "Rows: Crop x Cols: Pathogen Type",
+        "runs": [
+          {
+            "text": "Rows: Crop x Cols: Pathogen Type",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          }
+        ]
+      },
+      {
+        "index": 24,
+        "name": "TextBox 25",
+        "shape_type": "TEXT_BOX (17)",
+        "left": 9601196,
+        "top": 2514600,
+        "width": 1975103,
+        "height": 3016210,
+        "text": "SELECT c.crop_name,\n  SUM(CASE WHEN d.pathogen_type\n    = 'Fungal' THEN 1 ELSE 0 END)\n    AS Fungal,\n  SUM(CASE WHEN d.pathogen_type\n    = 'Bacterial' THEN 1 ELSE 0 END)\n    AS Bacterial\nFROM disease_observation_fact f\nJOIN dim_crop c ON f.crop_key = c.crop_key\nJOIN dim_disease d ON f.disease_key\n  = d.disease_key\nGROUP BY c.crop_name;",
+        "runs": [
+          {
+            "text": "SELECT ",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "c.crop_name",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": ",",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "  SUM(CASE WHEN ",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "d.pathogen_type",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "    = 'Fungal' THEN 1 ELSE 0 END)",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "    AS Fungal,",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "  SUM(CASE WHEN ",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "d.pathogen_type",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "    = 'Bacterial' THEN 1 ELSE 0 END)",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          }
+        ]
+      },
+      {
+        "index": 25,
+        "name": "TextBox 26",
+        "shape_type": "TEXT_BOX (17)",
+        "left": 9631681,
+        "top": 5433565,
+        "width": 1938527,
+        "height": 400110,
+        "text": "Result: Rice -> Fungal: 24, Bacterial: 12, Total: 36",
+        "runs": [
+          {
+            "text": "Result: Rice -> Fungal: 24, Bacterial: 12, Total: 36",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slide_number": 12,
+    "shapes": [
+      {
+        "index": 0,
+        "name": "Title 1",
+        "shape_type": "PLACEHOLDER (14)",
+        "left": 822960,
+        "top": 411480,
+        "width": 10789920,
+        "height": 777240,
+        "text": "Actual OLAP Query Results from Physical Warehouse",
+        "runs": [
+          {
+            "text": "Actual OLAP Query Results from Physical Warehouse",
+            "font_name": "Bookman Old Style",
+            "font_size": null,
+            "bold": null,
+            "color": null
+          }
+        ]
+      },
+      {
+        "index": 1,
+        "name": "Table 2",
+        "shape_type": "TABLE (19)",
+        "left": 548640,
+        "top": 1463040,
+        "width": 5303520,
+        "height": 868680
+      },
+      {
+        "index": 2,
+        "name": "Table 3",
+        "shape_type": "TABLE (19)",
+        "left": 548640,
+        "top": 2468880,
+        "width": 5303520,
+        "height": 1539240
+      },
+      {
+        "index": 3,
+        "name": "Table 4",
+        "shape_type": "TABLE (19)",
+        "left": 548640,
+        "top": 4128467,
+        "width": 5303520,
+        "height": 868680
+      },
+      {
+        "index": 4,
+        "name": "TextBox 5",
+        "shape_type": "TEXT_BOX (17)",
+        "left": 247650,
+        "top": 5047268,
+        "width": 5905500,
+        "height": 553998,
+        "text": "*Healthy = 0 is intentional: the authentic ICAR research dataset comprises pathological specimens exclusively. HEALTHY is maintained in dim_disease as an unpopulated control baseline.",
+        "runs": [
+          {
+            "text": "*Healthy = 0 is intentional: the authentic ICAR research dataset comprises pathological specimens exclusively. HEALTHY is maintained in ",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "dim_disease",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": " as an unpopulated control baseline.",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "name": "Picture 6",
+        "shape_type": "PICTURE (13)",
+        "left": 6035040,
+        "top": 1463040,
+        "width": 5577840,
+        "height": 3108960,
+        "is_picture": true,
+        "image_filename": "slide_12_img_5.png"
+      },
+      {
+        "index": 6,
+        "name": "Rounded Rectangle 7",
+        "shape_type": "AUTO_SHAPE (1)",
+        "left": 6035040,
+        "top": 4709160,
+        "width": 5577840,
+        "height": 1338382,
+        "text": "",
+        "runs": []
+      },
+      {
+        "index": 7,
+        "name": "TextBox 8",
+        "shape_type": "TEXT_BOX (17)",
+        "left": 6217920,
+        "top": 4754880,
+        "width": 5212080,
+        "height": 1292662,
+        "text": "DIAGNOSTIC MULTI-DIMENSIONAL BREAKDOWN (DRILL-ACROSS)\nCrosses dimensional boundaries: Crop Category -> Crop -> Disease -> Dominant Visual Tone.\nResult: Brown Spot (11 Yellowish, 1 Brown) | Bacterial Blight (8 Yellowish, 4 Brown) | Leaf Smut (7 Brown, 5 Yellowish). Correlates foliar tone with pathogen kingdom.",
+        "runs": [
+          {
+            "text": "DIAGNOSTIC MULTI-DIMENSIONAL BREAKDOWN (DRILL-ACROSS)",
+            "font_name": "Bookman Old Style",
+            "font_size": 14.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "Crosses dimensional boundaries: Crop Category -> Crop -> Disease -> Dominant Visual Tone.",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "Result: Brown Spot (11 Yellowish, 1 Brown) | Bacterial Blight (8 Yellowish, 4 Brown) | Leaf Smut (7 Brown, 5 Yellowish). Correlates foliar tone with pathogen kingdom.",
+            "font_name": "Bookman Old Style",
+            "font_size": 10.0,
+            "bold": null,
+            "color": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slide_number": 13,
+    "shapes": [
+      {
+        "index": 0,
+        "name": "Title 1",
+        "shape_type": "PLACEHOLDER (14)",
+        "left": 822960,
+        "top": 411480,
+        "width": 10789920,
+        "height": 777240,
+        "text": "Dashboard Demonstration, Quality Audit",
+        "runs": [
+          {
+            "text": "Dashboard Demonstration, Quality Audit",
+            "font_name": null,
+            "font_size": null,
+            "bold": null,
+            "color": null
+          }
+        ]
+      },
+      {
+        "index": 1,
+        "name": "Picture 2",
+        "shape_type": "PICTURE (13)",
+        "left": 548640,
+        "top": 1463040,
+        "width": 5852160,
+        "height": 4434840,
+        "is_picture": true,
+        "image_filename": "slide_13_img_1.png"
+      },
+      {
+        "index": 2,
+        "name": "Rounded Rectangle 3",
+        "shape_type": "AUTO_SHAPE (1)",
+        "left": 6583680,
+        "top": 1463040,
+        "width": 5029200,
+        "height": 4434840,
+        "text": "",
+        "runs": []
+      },
+      {
+        "index": 3,
+        "name": "TextBox 4",
+        "shape_type": "TEXT_BOX (17)",
+        "left": 6766560,
+        "top": 1600200,
+        "width": 4663440,
+        "height": 3785652,
+        "text": "✓ Dataset Integrity: 36 authentic rice images verified\n✓ Quality Gates: Corrupted, duplicate, tiny checks verified\n✓ Feature Extraction: 34 descriptors in 44-column store\n✓ Kimball Star Schema: 4 dimensions, 1 fact table deployed\n✓ Database Integrity: Native SQLite PRAGMA foreign_keys = 1\n✓ ETL Idempotency: 36 loaded Run 1, 0 inserted Run 2\n✓ SQL OLAP Engine: Roll-up, Drill-down, Slice, Dice, Pivot\n✓ Interactive Dashboard: Streamlit HTTP 200 OK verified\n\u000b\"AgroVision-Mine transforms agricultural image observations from classification inputs into multidimensional analytical knowledge.\"",
+        "runs": [
+          {
+            "text": "✓ Dataset Integrity: 36 authentic rice images verified",
+            "font_name": "Bookman Old Style",
+            "font_size": 11.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "✓ Quality Gates: Corrupted, duplicate, tiny checks verified",
+            "font_name": "Bookman Old Style",
+            "font_size": 11.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "✓ Feature Extraction: 34 descriptors in 44-column store",
+            "font_name": "Bookman Old Style",
+            "font_size": 11.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "✓ Kimball Star Schema: 4 dimensions, 1 fact table deployed",
+            "font_name": "Bookman Old Style",
+            "font_size": 11.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "✓ Database Integrity: Native SQLite PRAGMA ",
+            "font_name": "Bookman Old Style",
+            "font_size": 11.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "foreign_keys",
+            "font_name": "Bookman Old Style",
+            "font_size": 11.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": " = 1",
+            "font_name": "Bookman Old Style",
+            "font_size": 11.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "✓ ETL Idempotency: 36 loaded Run 1, 0 inserted Run 2",
+            "font_name": "Bookman Old Style",
+            "font_size": 11.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "✓ SQL OLAP Engine: Roll-up, Drill-down, Slice, Dice, Pivot",
+            "font_name": "Bookman Old Style",
+            "font_size": 11.0,
+            "bold": null,
+            "color": null
+          },
+          {
+            "text": "✓ Interactive Dashboard: ",
+            "font_name": "Bookman Old Style",
+            "font_size": 11.0,
+            "bold": null,
+            "color": null
+          }
+        ]
+      }
+    ]
+  }
+]

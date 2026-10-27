@@ -3,6 +3,7 @@ import { api } from '../services/api'
 import type { WarehouseSchemaResponse, TableInfo } from '../types/api'
 import { SectionCard } from '../components/common/SectionCard'
 import { KPICard } from '../components/common/KPICard'
+import { AppIcon } from '../components/common/AppIcon'
 
 export const WarehousePage: React.FC = () => {
   const [data, setData] = useState<WarehouseSchemaResponse | null>(null)
@@ -25,9 +26,7 @@ export const WarehousePage: React.FC = () => {
   if (loading || !data) {
     return (
       <div className="flex flex-col items-center justify-center py-24 gap-3 text-[#404943]">
-        <span className="material-symbols-outlined text-4xl animate-spin text-[#175D44]">
-          progress_activity
-        </span>
+        <AppIcon name="progress_activity" className="text-4xl animate-spin text-[#175D44]" />
         <span className="text-sm font-mono">Connecting to SQLite Star Schema warehouse...</span>
       </div>
     )
@@ -44,7 +43,7 @@ export const WarehousePage: React.FC = () => {
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-[#E0F2E8] text-[#175D44] flex items-center justify-center">
-              <span className="material-symbols-outlined text-[24px]">database</span>
+              <AppIcon name="database" className="text-[24px]" />
             </div>
             <div>
               <div className="flex items-center gap-2">
@@ -170,7 +169,7 @@ export const WarehousePage: React.FC = () => {
               }`}
             >
               <div className="w-10 h-10 rounded-full bg-[#E0F2E8] text-[#175D44] flex items-center justify-center">
-                <span className="material-symbols-outlined text-[20px]">hub</span>
+                <AppIcon name="hub" className="text-[20px]" />
               </div>
               <h3 className="font-headline font-bold text-sm">disease_observation_fact</h3>
               <span className="font-mono text-[10px] px-2 py-0.5 rounded bg-black/10">

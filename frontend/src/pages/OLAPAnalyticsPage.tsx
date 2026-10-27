@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { api } from '../services/api'
 import type { OLAPQueryResponse } from '../types/api'
 import { SectionCard } from '../components/common/SectionCard'
+import { AppIcon } from '../components/common/AppIcon'
 
 export const OLAPAnalyticsPage: React.FC = () => {
   const [activeOp, setActiveOp] = useState<string>('rollup')
@@ -74,7 +75,7 @@ export const OLAPAnalyticsPage: React.FC = () => {
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-[#E0F2E8] text-[#175D44] flex items-center justify-center">
-              <span className="material-symbols-outlined text-[24px]">view_in_ar</span>
+              <AppIcon name="view_in_ar" className="text-[24px]" />
             </div>
             <div>
               <div className="flex items-center gap-2">
@@ -215,7 +216,7 @@ export const OLAPAnalyticsPage: React.FC = () => {
           onClick={() => runQuery(activeOp)}
           className="px-3.5 py-1.5 rounded-lg bg-[#175D44] text-white hover:bg-[#34765B] font-semibold text-xs flex items-center gap-1.5 transition-colors shadow-xs"
         >
-          <span className="material-symbols-outlined text-[15px]">play_arrow</span>
+          <AppIcon name="play_arrow" className="text-[15px]" />
           <span>Execute OLAP Query</span>
         </button>
       </div>
@@ -255,7 +256,7 @@ export const OLAPAnalyticsPage: React.FC = () => {
       >
         {loading ? (
           <div className="flex items-center justify-center py-12 gap-2 text-xs text-[#404943]">
-            <span className="material-symbols-outlined animate-spin text-[18px]">progress_activity</span>
+            <AppIcon name="progress_activity" className="animate-spin text-[18px]" />
             <span>Executing dimensional SQL query...</span>
           </div>
         ) : queryResult && queryResult.data.length > 0 ? (

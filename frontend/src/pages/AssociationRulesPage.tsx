@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { api } from '../services/api'
 import type { AssociationRulesResponse, AssociationRule } from '../types/api'
 import { SectionCard } from '../components/common/SectionCard'
+import { AppIcon } from '../components/common/AppIcon'
 
 export const AssociationRulesPage: React.FC = () => {
   const [mode, setMode] = useState<'visual' | 'labeled'>('visual')
@@ -85,7 +86,7 @@ export const AssociationRulesPage: React.FC = () => {
                 : 'text-[#404943] hover:text-[#0F1F18]'
             }`}
           >
-            <span className="material-symbols-outlined text-[16px]">blur_on</span>
+            <AppIcon name="blur_on" className="text-[16px]" />
             <span>Mode A: Visual-Feature-Only</span>
             <span className="ml-1 px-1.5 py-0.2 rounded font-mono text-[9px] bg-[#34765B] text-white">
               Unsupervised (880)
@@ -102,7 +103,7 @@ export const AssociationRulesPage: React.FC = () => {
                 : 'text-[#404943] hover:text-[#0F1F18]'
             }`}
           >
-            <span className="material-symbols-outlined text-[16px]">label</span>
+            <AppIcon name="label" className="text-[16px]" />
             <span>Mode B: Label-Conditioned</span>
             <span className="ml-1 px-1.5 py-0.2 rounded font-mono text-[9px] bg-black/15 text-current">
               Exploratory (285)
@@ -114,15 +115,13 @@ export const AssociationRulesPage: React.FC = () => {
       {/* Mode B Terracotta Warning Disclosure Banner */}
       {mode === 'labeled' && (
         <div className="p-4 rounded-xl bg-[#FFDAD6] border border-[#FFDAD6] text-[#93000A] flex items-start gap-3 shadow-xs">
-          <span className="material-symbols-outlined text-[#BA1A1A] text-[22px] shrink-0 mt-0.5">
-            warning_amber
-          </span>
+          <AppIcon name="warning_amber" className="text-[#BA1A1A] text-[22px] shrink-0 mt-0.5" />
           <div className="flex flex-col text-xs">
             <span className="font-mono text-[10px] font-bold tracking-wider uppercase text-[#BA1A1A]">
               METHODOLOGICAL DISCLOSURE
             </span>
             <p className="mt-0.5 leading-relaxed">
-              This mode includes ground-truth condition labels (<code className="bg-white/50 px-1 py-0.5 rounded font-mono">condition_label_Healthy</code>, <code className="bg-white/50 px-1 py-0.5 rounded font-mono">pathogen_type_Unknown</code>) in the itemset mining matrix. Rules reflect supervised statistical co-occurrence rather than purely unsupervised image feature discovery.
+              This mode includes ground-truth condition labels (<code className="bg-white/50 px-1 py-0.5 rounded font-mono">condition_status_Healthy</code>, <code className="bg-white/50 px-1 py-0.5 rounded font-mono">pathogen_type_None</code>) in the itemset mining matrix. Rules reflect supervised statistical co-occurrence rather than purely unsupervised image feature discovery.
             </p>
           </div>
         </div>
@@ -134,27 +133,38 @@ export const AssociationRulesPage: React.FC = () => {
         <div className="lg:col-span-8">
           <SectionCard
             moduleNumber="Algorithmic Rigor"
-            title="Apriori vs FP-Growth Execution Benchmark"
-            subtitle="Verified algorithmic parity and computational performance comparison over 32 discretized features"
+            title={mode === 'visual' ? "Mode A: Apriori vs FP-Growth Execution Benchmark" : "Mode B: Apriori vs FP-Growth Execution Benchmark"}
+            subtitle={mode === 'visual' ? "Verified algorithmic parity and computational performance comparison over 36 discretized visual items" : "Verified algorithmic parity and computational performance comparison over 57 items (visual + labels)"}
             badge="Verified Equivalence"
           >
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 pt-1">
               <div className="p-3.5 bg-[#F7F6EF] rounded-xl border border-[#E2E7DF] flex flex-col">
                 <span className="font-mono text-[10px] text-[#404943] uppercase">
-                  Generated Rules
+                  {mode === 'visual' ? 'Generated Rules' : 'Label-Conditioned Rules'}
                 </span>
                 <div className="flex items-baseline gap-1 mt-1">
                   <span className="font-headline text-2xl font-bold text-[#0F1F18]">
-                    {data?.algorithm_benchmark?.fpgrowth?.rules_count ?? 880}
+                    {mode === 'visual'
+                      ? (data?.algorithm_benchmark?.fpgrowth?.rules_count ?? 880)
+                      : (data?.algorithm_benchmark?.fpgrowth?.label_conditioned_rules_count ?? (data?.total_generated_rules ?? 285))}
                   </span>
                   <span className="font-mono text-[10px] text-[#175D44] font-semibold">Parity</span>
                 </div>
                 <div className="mt-2 text-[10px] font-mono text-[#707973] flex justify-between">
-                  <span>Apriori: {data?.algorithm_benchmark?.apriori?.rules_count ?? 880}</span>
-                  <span>FP: {data?.algorithm_benchmark?.fpgrowth?.rules_count ?? 880}</span>
+                  {mode === 'visual' ? (
+                    <>
+                      <span>Apriori: {data?.algorithm_benchmark?.apriori?.rules_count ?? 880}</span>
+                      <span>FP: {data?.algorithm_benchmark?.fpgrowth?.rules_count ?? 880}</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>Matrix: {data?.algorithm_benchmark?.fpgrowth?.rules_count ?? 1165}</span>
+                      <span>Active: {data?.total_filtered_rules ?? 276}</span>
+                    </>
+                  )}
                 </div>
                 <span className="mt-1 text-[11px] text-[#175D44] font-medium flex items-center gap-1">
-                  <span className="material-symbols-outlined text-[13px]">check_circle</span>
+                  <AppIcon name="check_circle" className="text-[13px]" />
                   <span>100% Rule Parity</span>
                 </span>
               </div>
@@ -165,16 +175,18 @@ export const AssociationRulesPage: React.FC = () => {
                 </span>
                 <div className="flex items-baseline gap-1 mt-1">
                   <span className="font-headline text-2xl font-bold text-[#0F1F18]">
-                    {data?.algorithm_benchmark?.fpgrowth?.frequent_itemsets_count ?? 223}
+                    {data?.algorithm_benchmark?.fpgrowth?.frequent_itemsets_count ?? (mode === 'visual' ? 223 : 387)}
                   </span>
-                  <span className="font-mono text-[10px] text-[#404943]">L1-L4</span>
+                  <span className="font-mono text-[10px] text-[#404943]">
+                    {mode === 'visual' ? '36 Items' : '57 Items'}
+                  </span>
                 </div>
                 <div className="mt-2 text-[10px] font-mono text-[#707973] flex justify-between">
-                  <span>Apriori: {data?.algorithm_benchmark?.apriori?.frequent_itemsets_count ?? 223}</span>
-                  <span>FP: {data?.algorithm_benchmark?.fpgrowth?.frequent_itemsets_count ?? 223}</span>
+                  <span>Apriori: {data?.algorithm_benchmark?.apriori?.frequent_itemsets_count ?? (mode === 'visual' ? 223 : 387)}</span>
+                  <span>FP: {data?.algorithm_benchmark?.fpgrowth?.frequent_itemsets_count ?? (mode === 'visual' ? 223 : 387)}</span>
                 </div>
                 <span className="mt-1 text-[11px] text-[#404943] font-medium flex items-center gap-1">
-                  <span className="material-symbols-outlined text-[13px]">verified</span>
+                  <AppIcon name="verified" className="text-[13px]" />
                   <span>Zero Divergence</span>
                 </span>
               </div>
@@ -185,17 +197,17 @@ export const AssociationRulesPage: React.FC = () => {
                 </span>
                 <div className="flex items-baseline gap-1 mt-1">
                   <span className="font-headline text-2xl font-bold text-[#175D44]">
-                    {data?.algorithm_benchmark?.fpgrowth?.median_runtime_sec ? `${data.algorithm_benchmark.fpgrowth.median_runtime_sec.toFixed(3)}s` : '0.302s'}
+                    {data?.algorithm_benchmark?.fpgrowth?.median_runtime_sec != null ? `${data.algorithm_benchmark.fpgrowth.median_runtime_sec.toFixed(3)}s` : (mode === 'visual' ? '0.070s' : '0.094s')}
                   </span>
-                  <span className="font-mono text-[10px] text-[#404943]">FP-Tree</span>
+                  <span className="font-mono text-[10px] text-[#404943]">FP-Growth</span>
                 </div>
                 <div className="mt-2 text-[10px] font-mono text-[#707973] flex justify-between">
-                  <span>Apriori: {data?.algorithm_benchmark?.apriori?.median_runtime_sec ? `${data.algorithm_benchmark.apriori.median_runtime_sec.toFixed(3)}s` : '0.062s'}</span>
-                  <span className="text-[#175D44] font-bold">FP: {data?.algorithm_benchmark?.fpgrowth?.median_runtime_sec ? `${data.algorithm_benchmark.fpgrowth.median_runtime_sec.toFixed(3)}s` : '0.302s'}</span>
+                  <span>Apriori: {data?.algorithm_benchmark?.apriori?.median_runtime_sec != null ? `${data.algorithm_benchmark.apriori.median_runtime_sec.toFixed(3)}s` : (mode === 'visual' ? '0.013s' : '0.014s')}</span>
+                  <span className="text-[#175D44] font-bold">FP: {data?.algorithm_benchmark?.fpgrowth?.median_runtime_sec != null ? `${data.algorithm_benchmark.fpgrowth.median_runtime_sec.toFixed(3)}s` : (mode === 'visual' ? '0.070s' : '0.094s')}</span>
                 </div>
                 <span className="mt-1 text-[11px] text-[#175D44] font-bold flex items-center gap-1">
-                  <span className="material-symbols-outlined text-[14px]">bolt</span>
-                  <span>Fast Sub-Second Mining</span>
+                  <AppIcon name="bolt" className="text-[14px]" />
+                  <span>Sub-Second ({data?.algorithm_benchmark?.benchmark_repetitions ?? 10} Runs)</span>
                 </span>
               </div>
 
@@ -212,7 +224,7 @@ export const AssociationRulesPage: React.FC = () => {
                   <span>Conf / Lift: 0.0</span>
                 </div>
                 <span className="mt-1 text-[11px] text-[#426831] font-medium flex items-center gap-1">
-                  <span className="material-symbols-outlined text-[13px]">check</span>
+                  <AppIcon name="check" className="text-[13px]" />
                   <span>Output Equivalence: 100%</span>
                 </span>
               </div>
@@ -233,15 +245,15 @@ export const AssociationRulesPage: React.FC = () => {
               </p>
               <div className="p-3 rounded-lg bg-[#F7F6EF] border border-[#E2E7DF] flex flex-col gap-1.5 font-mono text-[11px] text-[#0F1F18]">
                 <div className="flex items-center gap-1.5 text-[#175D44]">
-                  <span className="material-symbols-outlined text-[14px]">check</span>
+                  <AppIcon name="check" className="text-[14px]" />
                   <span>Tertile Quantile Binning (Low, Medium, High)</span>
                 </div>
                 <div className="flex items-center gap-1.5 text-[#175D44]">
-                  <span className="material-symbols-outlined text-[14px]">check</span>
+                  <AppIcon name="check" className="text-[14px]" />
                   <span>Min Support: 15% | Min Confidence: 60%</span>
                 </div>
                 <div className="flex items-center gap-1.5 text-[#6C4C00]">
-                  <span className="material-symbols-outlined text-[14px]">info</span>
+                  <AppIcon name="info" className="text-[14px]" />
                   <span>Filtered for low-variance noise</span>
                 </div>
               </div>
@@ -253,9 +265,7 @@ export const AssociationRulesPage: React.FC = () => {
       {/* Threshold Filters & Search */}
       <section className="bg-white rounded-xl p-4 border border-[#E2E7DF] flex flex-wrap items-center justify-between gap-4">
         <form onSubmit={handleSearchSubmit} className="relative w-full sm:w-80">
-          <span className="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-[#707973] text-[18px]">
-            search
-          </span>
+          <AppIcon name="search" className="absolute left-2.5 top-1/2 -translate-y-1/2 text-[#707973] text-[18px]" />
           <input
             type="text"
             value={search}
@@ -329,7 +339,7 @@ export const AssociationRulesPage: React.FC = () => {
       >
         {loading ? (
           <div className="flex items-center justify-center py-16 gap-2 text-xs text-[#404943]">
-            <span className="material-symbols-outlined animate-spin text-[18px]">progress_activity</span>
+            <AppIcon name="progress_activity" className="animate-spin text-[18px]" />
             <span>Querying association rules matrix...</span>
           </div>
         ) : data?.rules.length === 0 ? (

@@ -239,6 +239,50 @@ export interface AssociationRulesResponse {
   }
 }
 
+export interface PredictionCandidate {
+  rank: number
+  composite_class: string
+  label: string
+  crop_name: string
+  disease_name: string
+  condition_status: string
+  probability: number
+  probability_percent: number
+  raw_logit: number
+}
+
+export interface SupervisedPredictionResult {
+  status: 'confident' | 'uncertain'
+  is_uncertain: boolean
+  uncertainty_reason?: string | null
+  predicted_class: string
+  predicted_label: string
+  crop_name: string
+  disease_name: string
+  condition_status: string
+  confidence_score: number
+  confidence_percent: number
+  raw_logit: number
+  prediction_entropy: number
+  normalized_entropy: number
+  top_candidates: PredictionCandidate[]
+  model_metadata: {
+    architecture: string
+    pretrained_origin: string
+    input_resolution: string
+    supported_classes_count: number
+    benchmark_sample_size: number
+    test_macro_f1: number
+    test_accuracy: number
+    test_ci_95: [number, number]
+    confidence_threshold: number
+  }
+  scientific_advisory: {
+    interpretation: string
+    nearest_reference_separation: string
+  }
+}
+
 export interface NearestSpecimen {
   rank: number
   image_id: string
@@ -249,10 +293,12 @@ export interface NearestSpecimen {
   dataset_source: string
   euclidean_distance: number
   visual_similarity_score: number
+  is_self_match?: boolean
   image_url: string
 }
 
 export interface ImageAnalysisResponse {
+  prediction?: SupervisedPredictionResult | null
   validation: {
     is_valid: boolean
     filename: string
@@ -319,6 +365,20 @@ export interface ImageAnalysisResponse {
     total_explained_pct: number
   }
   nearest_specimens: NearestSpecimen[]
+  diagnostic_interpretation?: {
+    status: string
+    message: string
+    notice: string
+    majority_label_warning: string
+    supervised_classifier: string
+  }
+  repository_distribution?: {
+    total: number
+    diseased: number
+    healthy: number
+    diseased_pct: number
+    healthy_pct: number
+  }
   scientific_caveats: {
     disease_classification: string
     classification_disclosure: string

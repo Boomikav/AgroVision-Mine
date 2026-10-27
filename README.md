@@ -6,7 +6,7 @@
 [![Tailwind CSS](https://img.shields.io/badge/Design-Botanical%20Precision%20Tailwind-38b2ac.svg)]()
 [![FastAPI](https://img.shields.io/badge/API-FastAPI%20Adapter-009688.svg)]()
 [![Database](https://img.shields.io/badge/Warehouse-SQLite%203%20Star%20Schema-orange.svg)]()
-[![Tests](https://img.shields.io/badge/Tests-81%2F81%20Passed-success.svg)]()
+[![Tests](https://img.shields.io/badge/Tests-117%2F117%20Passed-success.svg)]()
 [![Dataset Status](https://img.shields.io/badge/Dataset-v2.0%20Frozen%20(2%2C596%20Records)-brightgreen.svg)]()
 
 ---
@@ -17,7 +17,7 @@ Unlike conventional computer vision applications that treat crop disease identif
 
 1. **Frozen Canonical Agricultural Corpus**: 2,596 verified leaf image records across 14 crops and 17 foliar pathologies, sourced from the **PlantDoc** benchmark (2,560 images) and the **Indian Council of Agricultural Research (ICAR / data.gov.in)** (36 images).
 2. **Quality Assurance & Preprocessing Gates**: Laplacian variance blur scoring, MD5 cryptographic deduplication, uniform 256×256 bilinear normalization, and zero image corruptions.
-3. **Classical Explainable Visual Feature Store**: 32 continuous descriptors (9 RGB/HSV color moments & excess green indices, 16 GLCM Haralick texture descriptors, and 7 morphometric contour/shape metrics) stored in a standardized 44-column analytical feature matrix.
+3. **Classical Explainable Visual Feature Store**: 32 continuous descriptors (19 colour & vegetation features [18 RGB/HSV channel moments + 1 Excess Green Index ExG], 7 GLCM Haralick texture statistics, and 6 morphometric contour and lesion coverage parameters) stored in a standardized 44-column analytical feature matrix.
 4. **Kimball Star Schema Data Warehouse**: Relational star schema with surrogate keys, native database foreign-key enforcement (`PRAGMA foreign_keys = ON`), referential integrity, and dual-dialect compatibility.
 5. **SQL-Backed OLAP Engine**: Real ANSI SQL execution of **Roll-up**, **True Drill-down** (single-dimension hierarchy) & **Diagnostic Drill-Across**, **Slice by Crop/Pathogen**, **Dice Sub-Cube**, and **Pivot Matrix**.
 6. **Unsupervised Visual Pattern Mining**: Dual K-Means clustering ($K=2$ optimal metric-supported solution vs $K=4$ exploratory sub-partition) and 2D Principal Component Analysis (PCA) capturing 59.6% total explained variance.
@@ -241,6 +241,22 @@ The Stitch-integrated frontend provides 8 fully functional navigation modules:
 8. **Reports & Methodology**: Comprehensive academic documentation tabs, scientific boundaries and ethical caveats, and raw JSON artifact viewers with direct download links.
 
 ---
+
+## 🔬 Supervised Classifier Benchmark Tournament Results
+
+To evaluate whether classical explainable visual descriptors suffice for fine-grained foliar disease discrimination compared to deep convolutional architectures, a tournament benchmark was executed across the strictly held-out test split ( = 490$ specimens) using StratifiedGroupKFold on perceptual dHash (preventing near-duplicate image leakage):
+
+| Model Architecture | Feature Representation | Training Latency | Val Macro-F1 | Held-out Test Acc | Test Balanced Acc | Held-out Test Macro-F1 | Evaluation Verdict |
+|---|---|---:|---:|---:|---:|---:|---|
+| **EfficientNet-B0 (Transfer Learning)** |  \times 224$ Normalized Tensors | 1,200.48 s | **63.26%** | **61.84%** | **61.43%** | **60.84%** (95% CI: [57.46%, 66.03%]) | **Best Evaluated Model (Optimal)** |
+| **Random Forest Classifier** | Standardized 32D Feature Store | 1.15 s | 17.02% | 19.80% | 19.78% | 19.19% | Handcrafted Baseline (Substantial Underperformance) |
+| **Support Vector Machine (RBF-SVM)** | Standardized 32D Feature Store | 1.43 s | 15.12% | 19.80% | 20.13% | 19.01% | Kernel Baseline (Substantial Underperformance) |
+| **Majority Class Baseline** | Zero-Rule Frequency Prior | < 0.01 s | 0.58% | 7.76% | 4.00% | 0.58% | Naive Trivial Predictor |
+| **Decision Tree Classifier (CART)** | Standardized 32D Feature Store | N/A | N/A | N/A | N/A | N/A | Reference Implementation (Not Benchmarked in Tournament) |
+
+### Key Scientific Findings:
+1. **Transfer Learning Superiority:** Deep hierarchical features (EfficientNet-B0) achieve 60.84% Macro-F1, substantially outperforming classical handcrafted 32D features (19.19% for Random Forest and 19.01% for RBF-SVM).
+2. **Uncertainty & Domain Shift Policy:** Predictions with top-1 softmax probability below 0.35 or normalized Shannon entropy exceeding 0.85 are flagged as mathematically uncertain. In addition, ICAR flatbed scanner images (36 specimens) are identified via a source metadata policy gate as out-of-domain (OOD) relative to PlantDoc in-the-wild photography.
 
 ## ⚖️ Scientific Boundaries & Limitations
 
